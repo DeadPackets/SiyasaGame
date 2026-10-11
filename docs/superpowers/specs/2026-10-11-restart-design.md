@@ -1,105 +1,121 @@
 # Restart: the Compass game (prototype design)
 
-Date: 2026-10-11. Status: draft for owner review. Working title: Body Politic (not decided). Look: pending the owner's pick of 3 mocks (cinematic, tabletop, state papers).
+Date: 2026-10-11. Status: draft for owner review. Working title: Body Politic (not decided). Look: pending the owner's pick of 3 mocks (cinematic, tabletop, state papers), docs/mocks/v7.
 
 ## Why a restart
-v4 "The Ruler" was not fun in 3 owner playtests. Measured: 16 to 34 clicks per signed act, 75 min per term, and in run 3 the player's 21 acts cost 17 final-vote points net, so doing nothing scored better. v4 grew systems (25 powers, typed orders, a clerk model that set numbers) to chase fun. The hits in the genre (Reigns 1.8M copies, Sultan's Game 1M+, Suzerain 650K+) share a small core: 2 answers per decision, 3 to 5 meters, one demand at a time, short terms, people carrying each choice.
+v4 "The Ruler" was not fun in 3 owner playtests. Measured: 16 to 34 clicks per signed act, 75 min per term, and in run 3 the player's 21 acts cost 17 final-vote points net, so doing nothing scored better. v4 grew systems (25 powers, typed orders, a clerk model that set numbers) to chase fun. The hits (Reigns 1.8M copies, Sultan's Game 1M+, Suzerain 650K+) share a small core: 2 answers per decision, 3 to 5 meters, one demand at a time, short terms, people carrying each choice.
 
 ## Goal
-A single-player game where the player rules any world they choose, reads political situations, and steers the nation between real ideologies without being torn apart by its factions. Fun first, then accuracy. Desktop only, fullscreen.
+A single-player game where the player rules any world they name (a real country at any date, an alternate history, a fiction), reads its politics, and remakes the nation in their image without being torn apart. Fun first, then accuracy. Desktop only, fullscreen.
 
-## Player freedom (owner rule, 2026-10-11)
-"Player freedom is critical. There should be no dominant ideology, and the powers the player has purely depend on their playstyle." So:
-- Every corner and the Pragmatist centre is a viable way to win in every world. The start can be historically uneven (accurate starting support stays), but no corner is a trap and none is the best path.
-- The player's powers come only from how they play: **what they stand for** (the zone gives its laws) and **how they rule** (the verbs they use grow stronger, see Mastery).
-- The best player either adapts to the situation (moves across the Compass and keeps laws from earlier zones) or masters one style. Both must beat a player who does neither.
+Audiences, in order: history and alternate-history fans, grand strategists, casual politics players. The hook that spreads is "I typed X, look what happened"; the ending card shows your timeline beside history's.
+
+## Owner rules (2026-10-11)
+- **No typed input in play.** The world prompt is the only typing.
+- **Player freedom.** No dominant ideology. Powers come only from playstyle. The best player adapts to the situation or masters one style; both beat a player who does neither.
+- **Ideologies are real political ideologies of that era**, never parties.
+- **No deckbuilder.** Situations are a hidden deck; powers are a fixed hand with no draw.
 
 ## Player flow
-1. **Choose a world.** The only typing in the game: "Which world will you rule?". The library of built worlds shows below. Prototype: the library holds 3 worlds built offline; an unknown name says it is not built yet. Later: an unknown name starts one build.
-2. **Briefing.** The polity, your office, the date, the Compass with each corner explained in one line, the factions on it, how you fall and how you win. Then pick 1 agenda, one per corner plus one for the centre, and press Take office.
-3. **The term.** 12 months. Each month: 1 situation, then 2 actions, then month end.
-4. **The end.** You fall (a faction brings you down) or you reach month 12. The ending names your rule by your final zone ("Egypt under a Pragmatist"), scores the agenda, and replays the answers that decided the term.
+1. **Choose a world.** "Which world will you rule?" and the library of built worlds. Prototype: 3 worlds built offline; an unknown name says it is not built yet. Later: an unknown name starts one build.
+2. **Briefing.** The polity, your office, the date, the Reckoning date, the Compass with each corner in one line, the factions and patrons on it. Pick a **Vision** (or Free hand) and press Take office.
+3. **The term.** One month at a time until the Reckoning: 1 situation, 2 plays from your hand, month end.
+4. **The end.** You fall early, or you reach the Reckoning. The epilogue shows your timeline beside history's, names your rule by your final zone and grip ("Egypt under an iron Military nationalist"), and scores the Vision.
 
-## The Compass
-- A regular polygon with **3 to 5 corners** on a unit circle. The build sets the count for the era. Each corner is a real political ideology of that place and time under its period name (Egypt 2011: Military nationalism, Liberalism, Islamism, Salafism, Nasserism; Ottoman 1520: Absolutism, Theocracy, Feudalism). Ideologies are never parties.
-- The build orders the corners: allies next to each other, enemies opposite.
-- Each corner maps to one **archetype** from a fixed game catalog (Order, Faith, Market, Collective, Nation, Reform, Tradition, Technocracy, Liberty, Commons). The archetype is a game rule and sets the kinds of laws that corner can hold. The world gives the names. No world fact is hardcoded.
-- **Factions** (4 to 6) are fixed points on the field, placed by their real positions. A faction is an actor that can decide and act as one (the owner's group-split rule).
-- **The marker** is the ruler's position. It starts where the real ruler stood on the start date (set by the build).
-- No ideology shifts during a run in the prototype (owner, 2026-10-11: later).
+## The Compass (what you stand for)
+- A regular polygon with **3 to 5 corners**, set by the build for the era. Each corner is a real ideology of that place and time under its period name (Egypt 2011: Military nationalism, Liberalism, Islamism, Salafism, Nasserism; Ottoman 1520: Absolutism, Theocracy, Feudalism).
+- Allies sit next to each other, enemies far apart. Positions must be true to the era; the owner judges factions first.
+- Each corner maps to one **archetype** from a fixed game catalog (Order, Faith, Market, Collective, Nation, Reform, Tradition, Technocracy, Liberty, Commons). The archetype sets the kinds of laws the corner holds. The world gives the names. No world fact is hardcoded.
+- **Factions** (4 to 6) are points on the field, actors that can decide and act as one. **Patrons** (2 to 3) are foreign backers, drawn as different tokens on an outer ring near the corner they favour.
+- **The marker** starts where the real ruler stood on the start date. No ideology shifts during a run (later).
+
+## Grip (how you hold power)
+A dial from 0 (Open) to 100 (Iron). It starts where the real ruler stood. Iron cards push it up (crackdowns, military trials, a banned party); Open cards push it down (elections, amnesty, a free press). An Islamist can rule open or iron; a liberal can too.
+| Band | Effect |
+|---|---|
+| Iron (60+) | Iron cards in hand. Authority +2 a month (fear). Each faction under 30 loses 2 more support a month (resentment). |
+| Middle (41-59) | Neither family. |
+| Open (40 or less) | Open cards in hand. Each faction at 60+ gives 2 Authority instead of 1. Election situations become eligible, and you can lose them. |
+
+## Resources
+| Resource | Comes from | Spent on | Egypt name |
+|---|---|---|---|
+| **Authority** (small integer) | 2 a month, +1 per faction at 60+, grip effects | most cards (1 to 4) | Mandate |
+| **Treasury** (world units) | the world's monthly balance (written at build; Egypt 2011 drains), patron cards, some answers and laws | subsidy and patronage cards | Reserves ($B) |
+Treasury under 0 at a month end forces a bread-riot class situation and every faction -5. Two month ends in a row under 0 is a fall (state collapse), warned a month ahead.
+
+## The hand (powers)
+A fixed hand, no draw, at most 6 cards, 2 plays a month. The hand is dimmed until the month's situation is answered.
+- **2 basic cards, always:** Talk to a faction (1 Authority: +8 support, a 0.05 step toward it) and Address the nation (1 Authority: a 0.08 step toward a corner you pick).
+- **Up to 4 power cards, from where you stand:**
+  - **Zone laws:** the laws of each corner whose zone you are in (tier I within 0.9 of the corner, II within 0.6, III within 0.3) and of the Pragmatist centre (within 0.25 of the middle). A law, once enacted, is permanent and leaves the hand for the statute book.
+  - **Grip cards:** Iron or Open, by band.
+  - **Patron cards:** a patron at 60+ offers its card (aid, a loan, arms, mediation).
+  When more than 4 are eligible, the hand shows the highest tiers and "+N more".
+- **Upgrades (growth, chosen):** the first time you reach tier II or III of any corner, the centre, or a grip extreme (20 or less, 80 or more), pick 1 of 3 upgrades from a fixed catalog of about 15 (world-named), or skip. 3 to 5 picks a term. Examples: Talk costs 0; laws of this corner cost 1 less; patron cards twice as strong; a third play every third month.
+
+## A month
+1. **Situation.** One card, carried by a named person, with 2 answers. Before choosing, each answer shows only its text and a **"who cares" mark** per faction or patron it moves: 1 to 3 dots, no direction, no ideology. After choosing, **the reveal**: the ideology stamp, the marker moving, each change with a one-line reason, and on history cards the line "In history: ...". Next month's situation shows face down with its title only.
+2. **2 plays** from the hand. A card you cannot pay for shows greyed with its price.
+3. **Month end.** Support drifts, the balance is paid, factions and patrons declare their **intents** for next month with the trigger number. A divergence meter shows how far your timeline is from history.
 
 ## Numbers (engine-owned; Jev never sets a number)
 | Rule | Value |
 |---|---|
 | Answer push toward a corner or the centre | small 0.08, medium 0.15, large 0.25 (unit circle) |
-| Address the nation push | 0.08 toward the picked corner |
-| Win over push | 0.05 toward the faction's point |
 | Affinity of a faction | 100 x (1 - distance / 2) |
+| Patron affinity | the same, plus its grip preference (written at build): -10 per 20 grip points away from it |
 | Support drift each month end | 25% of the gap toward affinity |
-| Direct support change from an answer | 4, 8 or 12 (written at build as small, medium, large) |
-| Fall line | support under 15 |
-| Legitimacy at start / income each month | 6 / 2 + 1 per faction at 60 or more |
-| Action costs | law tier I 2, tier II 4, tier III 6, centre law 3; win over 2 (+8 support); crack down 3 (-6 support, blocks its move; factions whose corner has the Order archetype +4); address 1 |
-| Zones | tier I: within 0.9 of a corner; II: within 0.6; III: within 0.3; Pragmatist centre: within 0.25 of the middle |
+| Direct change from an answer or card | 4, 8 or 12 (small, medium, large) |
+| Fall line (factions) | under 15 |
+| Authority at start / cap | 6 / 12 |
+| Card costs | Authority 1 to 4 by tier; Treasury in world units |
+All values are TUNE constants in one file; the bot sims set the final values.
 
-All values are TUNE constants in one file; the bot sims below set the final values.
+## Factions and patrons act (Jev)
+At month end one Jev call fans out one Choice per faction and per patron, over a closed list by support band:
+| | 60+ | 30-59 | 15-29 | under 15 |
+|---|---|---|---|---|
+| Faction | back you (+2 Authority), negotiate | back you, negotiate, march (marker pushed 0.05 toward it, -1 Authority), strike (-2 Authority) | negotiate, march, strike | **plot** (forced): "brings you down at the end of next month if still under 15" |
+| Patron | aid (its card stays cheap), pressure (its next situation first) | pressure, stay quiet | pressure, stay quiet | **sanction** (forced): its monthly sanction, written at build, hits Treasury |
+The state holds the actor's persona, support, corner, your grip, and your last 3 answers and plays. A plot still under 15 at the next month end ends the run in that faction's own way (written at build: a coup, an uprising, a walkout). **Losing is never a surprise.**
 
-## A month
-1. **Situation.** One card from the world's deck, carried by a named person. 2 answers. Before choosing, each answer shows only its text and a **"who cares" mark** per faction it moves: 1 to 3 dots by size, no direction, no ideology (owner ruling). After choosing, **the reveal**: the ideology stamp, the marker moving, and each moved faction's change with a one-line reason written at build.
-2. **2 actions** from 4 verbs, the same in every world, named by the world:
-   - **Enact a law** from the book of the zone you stand in. Permanent. A law stays enacted after you move away.
-   - **Win over a faction:** +8 support and a small step toward it.
-   - **Crack down on a faction:** -6 support and its next move is blocked.
-   - **Address the nation:** step toward a corner you pick.
-   An action you cannot pay for is shown greyed with its price.
-3. **Month end.** Support drifts, supports tick, Legitimacy is paid, then each faction shows its **intent** for next month with the trigger number ("Brotherhood: calls a Friday march; support 43").
-
-## Factions act (Jev)
-At month end, one Jev call fans out one Choice per faction. Options depend on the support band:
-| Support | Options |
-|---|---|
-| 60 or more | back you (+2 Legitimacy), negotiate (its next situation is offered first if eligible) |
-| 30 to 59 | back you, negotiate, march (marker pushed 0.05 toward its point, -1 Legitimacy), strike (-2 Legitimacy) |
-| 15 to 29 | negotiate, march, strike |
-| under 15 | plot (forced, not Jev): the intent says "brings you down at the end of next month if still under 15" |
-The Jev state holds the faction's persona, its support, its corner, and the last 3 answers and actions with their ideology. A plot that is still under 15 at the next month end ends the run in that faction's own way (written at build: a coup, an uprising, a walkout). **Losing is never a surprise: a full month of warning.**
+## History track and divergence
+- The build writes **10 to 15 dated history cards**: the real events of the term (Egypt: the referendum, Maspero, Mohamed Mahmoud, the parliamentary elections, Port Said, the presidential vote). For an alternate-history premise, the build writes that world's own canon.
+- Before a history card fires, one Jev Noul asks whether it still happens in this timeline, given the state; the engine rolls (seeded). If it happens, it is the month's situation: a fork with 2 real roads, one tagged as the road history took. If it does not, the reveal says what history did instead.
+- **Divergence** = the share of history cards that did not happen plus history forks you took differently. The epilogue lists each history card: "In history" beside "In yours".
 
 ## Story director (Jev)
-The deck holds 30 to 40 situations per world (prototype). A card is eligible by its month window, an optional zone, flags set by earlier answers, and a faction support band. Jev picks the next card with one Choice over the eligible cards, given the last month's events. Ties and Jev failures fall back to an engine weighted pick with a seeded RNG. Cost: about 2 Jev calls a month, about $0.005 a term.
+The deck holds **60 to 80 situations** per world plus the history cards (Old World needed 3,000+ events; 30 to 40 is used up in about 3 terms). A situation is eligible by month window, zone, grip band, flags set by earlier answers, and support bands. Jev picks the next one with one Choice over the eligible cards, given last month. Ties and Jev failures fall back to an engine weighted pick with a seeded RNG. Later: a cheap model writes fresh situations per run.
 
-## Agendas
-The build writes **one agenda per corner plus one for the centre** (4 to 6), each from a path that really existed in that world (Tantawi: keep the army above the state, Military nationalism; hand power to an elected president, Liberalism; make a deal with the Brotherhood, Islamism; and so on). At Take office the player picks one. An agenda is engine-checkable: its zone at month 12 (tier II or deeper, or the centre) plus 2 of its 3 listed laws enacted. **Changing course:** once a term the player may switch agenda for 4 Legitimacy; laws already enacted count if listed. Score: reach month 12 (base), agenda met (large), average support (small).
+## Visions and the Reckoning (the goal)
+- The build writes **4 to 6 Visions** from paths that really existed, covering every corner and the centre at least once (Egypt: The new Pharaoh, The Western partner, The Arab nationalist, The Islamic project, The national consensus), plus **Free hand** for players who want no goal. Each Vision has 3 to 4 engine-checkable pillars: a zone or tier, a grip band, a law enacted, a faction or patron at a support level, Treasury above a level.
+- Once a term the player may switch Vision for 3 Authority.
+- **The Reckoning** is the world's natural climax, set by the build, 12 to 18 months in (Egypt: SCAF's promised handover, 30 June 2012, month 17). At its month end: your order **endures** if the power-weighted average support of the factions (weights written at build) is 50 or more.
+- Outcomes: Vision fulfilled (endures, all pillars), survived (endures), swept away (does not endure), fallen (before the Reckoning). The Free hand score is average support and divergence.
 
-## Mastery (how you rule)
-Each of the 4 verbs gains a rank as you use it: rank I at 3 uses, II at 6, III at 10. A rank makes that verb stronger (TUNE):
-| Verb | Rank I | Rank II | Rank III |
-|---|---|---|---|
-| Enact a law | laws cost 1 less | a law also gives +4 to factions in its corner | one free law per term |
-| Win over | +10 instead of +8 | costs 1 | also lifts that faction's neighbour by 4 |
-| Crack down | costs 2 | -8 instead of -6 | blocks 2 moves |
-| Address the nation | push 0.10 | push 0.12 and +1 Legitimacy | a second address each month is free |
-Ranks last the term. They show on the actions bar as small pips, so a player can see their style forming.
+## Jev's jobs (about 3 calls a month, about $0.01 a term)
+Faction and patron moves; the story director; history plausibility. At build: the legibility check (below). Jev never sets a number.
 
 ## The world build (offline script in the prototype)
-- One big Opus 5.5 call writes the world JSON (owner: one big call). Model choice is tested later (owner: prototype first). Content: polity, office, start date, era, theme tokens, corners (3 to 5, period name, archetype, one line), factions (4 to 6, real names, position, starting support, persona, how it brings you down), the marker start, laws (3 per corner by tier plus 2 centre laws), 3 agendas, 30 to 40 situations.
-- Validation: schema, counts, each corner gets an equal share of answer pushes (within 1), every faction delta has a reason, every agenda law exists, positions inside the polygon. One repair call on failure.
-- **Legibility check (Jev):** for each answer, a Choice over the corners and the centre from the answer text and the world. An answer whose own push target scores under 0.6 is too vague to guess fairly; it goes back to one repair call.
-- The content rule carries over unchanged (`CONTENT_RULE`): real interests, unmoralised; only orders of mass killing of civilians, ethnic cleansing or expulsion are refused.
+- One big Opus 5.5 call writes the world JSON (owner: one big call; model tests come after the prototype). Content: polity, office, start date, Reckoning, theme tokens, corners, factions (position, starting support, persona, power weight, how it brings you down), patrons (position, grip preference, card, sanction), the marker and grip start, the monthly Treasury balance, laws (3 per corner by tier, 2 centre), grip and patron cards, Visions with pillars, 60 to 80 situations, 10 to 15 history cards.
+- Validation: schema, counts, every Vision pillar checkable and reachable, each corner gets an equal share of answer pushes (within 1), every change has a reason, positions inside the polygon. One repair call on failure.
+- **Legibility check (Jev):** for each answer, a Choice over the corners and the centre from its text; under 0.6 on its own target means too vague to guess, and it goes to one repair call.
+- The content rule carries over unchanged (`CONTENT_RULE`).
 - Prototype worlds: Egypt, February 2011; USA, January 2022; Kepler Base, 1 AE.
 
 ## Stack (prototype)
-Local only. A Bun server holds the OpenRouter key and calls Jev (the call shape and client carry over from `worker/jev.ts`). The client is React 19 and Vite in the look the owner picks. The engine is pure TypeScript shared by the client, the server and the bots. Branch `restart`; v4 is untouched.
+Local only. A Bun server holds the OpenRouter key and calls Jev (call shape from `worker/jev.ts`). The client is React 19 and Vite in the picked look. The engine is pure TypeScript shared by client, server and bots. Branch `restart`; v4 is untouched.
 
 ## Verification
-- **Bot sims** (engine only, a Jev stand-in): 1,000 terms per world for each bot: random; one greedy bot per agenda (each corner and the centre); one bot per verb style (prefers one verb); one adaptive bot (2-month lookahead, switches agenda when behind). Targets:
+- **Bot sims** (engine only, a Jev stand-in), 1,000 terms per world per bot: random; one greedy bot per Vision; one adaptive bot (2-month lookahead, switches Vision when behind). Targets:
   - random falls in 60% or more of terms;
-  - **no dominant ideology:** the agenda-met rates of the per-agenda greedy bots are all within 15 points of each other, in every world;
-  - **no dominant style:** the verb-style bots' survival rates are within 15 points of each other;
+  - **no dominant ideology:** every per-Vision bot fulfils its Vision at a rate within 15 points of the others, in every world;
   - **skill pays:** the adaptive bot beats every single-plan bot by 15 points or more;
-  - no single action is the best pick in more than 50% of months.
-  The build repairs a world that fails the ideology target (deck coverage, law strength) before it enters the library.
-- **One E2E run** in Chrome per world: a full term played by script against real Jev, saving a screenshot per month and the run log as a repeatable artifact.
-- Then the owner plays 2 terms. A short interview after each.
+  - no single card is the best play in more than 50% of months.
+  A world that fails is repaired (situation coverage, law strength) before it enters the library.
+- **One E2E run** in Chrome per world: a full term by script against real Jev, a screenshot per month and the run log as a repeatable artifact.
+- Then the owner plays 2 terms, with a short interview after each.
 
 ## Out of scope for the prototype
-In-app world generation, model optimisation (Sonnet and Haiku tests), ideology shifts, the name, Steam, mobile, sound, sharing.
+In-app world generation, model optimisation, fresh per-run situations, ideology shifts, the name, Steam, mobile, sound, sharing.
