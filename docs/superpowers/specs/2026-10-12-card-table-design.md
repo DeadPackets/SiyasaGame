@@ -115,7 +115,7 @@ Targets: a holder, the holders leaning to an ideology, all factions, all patrons
 1. **Draw.** The engine lists the eligible cards (month window, flags required or blocked, grip band, zone, support bands). Intent cards jump the queue. The engine shortlists up to 5 by seeded weight; Jev picks 1. A history card first gets a Jev plausibility score, then a seeded roll.
 2. **Answer.** 2 or 3 answers, each with a "who cares" mark per holder it moves (1 to 3 dots, no direction). On choice: sizes become numbers, then one Jev nudge per holder; grip moves; the card files; the marker moves; unlocks and picks are checked. The reveal shows the ideology stamp, each change with its reason, and on history cards "In history: ...". The change markers stay on the rows.
 3. **Up to 2 plays** from the hand.
-4. **Month end.** Drift toward resting levels; resource income and the Money balance; band effects; intents; Vision pillars; on the last month, the Reckoning.
+4. **Month end.** First, each holder under 15 acts (on the support you left it at, before any drift); then drift toward resting levels; resource income and the Money balance; band effects; intents; Vision pillars; on the last month, the Reckoning.
 
 ## Intents and falls
 - A holder under 30 at a month end brings its **intent card** as next month's card (written at build, 2 to 3 answers).
