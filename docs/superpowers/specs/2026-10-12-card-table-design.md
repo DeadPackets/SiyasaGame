@@ -3,7 +3,7 @@
 Date: 2026-10-12. Status: draft for owner review. Supersedes `2026-10-11-restart-design.md` where they differ; that spec's reasons and research still hold. The look is the v16 mock (`docs/mocks/v16`, layout `?skin=0&rv=b&pv=a&n=3`); the placement of the new elements is pending the owner's pick of the v17 mocks.
 
 ## Goal
-A single-player game where the player rules any world they name, reads its politics, and remakes it in their image without being torn apart. One term is about 20 minutes. Fun first, then accuracy. Desktop only, fullscreen. Target weight: about 2.8 on the BGG scale (judgement, not measured).
+A single-player game where the player rules any world they name, reads its politics, and remakes it in their image without being torn apart. One term is about 20 minutes. Fun first, then accuracy. Desktop only, fullscreen. Target weight: about 3.0 on the BGG scale (judgement, not measured).
 
 ## Owner rules
 - No typed input in play. The world prompt is the only typing.
@@ -17,7 +17,7 @@ A single-player game where the player rules any world they name, reads its polit
 ## The 9 replay drivers (owner: all 9 are in)
 | Driver | Carried by |
 |---|---|
-| 1. Every choice hurts someone | Answers move 4 to 6 holders both ways, your marker and your grip |
+| 1. Every choice hurts someone | Answers move 4 to 6 holders both ways, your marker, your grip and your resources |
 | 2. A clock and visible danger | Reckoning countdown, next card face down, intents with their trigger number |
 | 3. Builds and combos | Picks and laws built from primitives; 2 to 3 cross-ideology combos per world, written on purpose |
 | 4. A reason to replay a world | Visions, grip, zones: the same world plays as an iron Islamist or an open Liberal |
@@ -34,7 +34,7 @@ A single-player game where the player rules any world they name, reads its polit
 4. **The end.** You fall early, or you reach the Reckoning. The epilogue shows your timeline beside history's, names your rule by your zone and grip ("Egypt under an iron Military nationalist"), and scores the Vision.
 
 ## The screen
-The v16 board: holders at home (ranked ledger) and abroad on the left, the stage in the centre, the hand on the right, the record bar at the bottom, resources in the top bar. New elements, each shown only from the moment it first matters:
+The v16 board: holders at home (ranked ledger) and abroad on the left, the stage in the centre, the hand on the right, the record bar at the bottom, the 4 resources at the top right. The seal (the Compass inside a ring of the term's months) sits at the exact centre of the top bar, with grip and the Vision to its left and the Reckoning to its right (owner pick: v17 `?rv=b&pv=a&n=3&xv=c`). New elements, each shown only from the moment it first matters:
 | Element | First shown |
 |---|---|
 | Change markers (signed chip and moved stretch of the bar) | first answer; cleared at the next batch of changes or the next draw |
@@ -63,24 +63,32 @@ The v16 board: holders at home (ranked ledger) and abroad on the left, the stage
 A dial from 0 (Open) to 100 (Iron), starting where the real ruler stood. Answers and cards that open up or crack down carry a grip tag (small, medium, large = 5, 10, 15 points).
 | Band | Effect |
 |---|---|
-| Iron (60 and up) | +2 Mandate a month. Each faction under 30 loses 2 more support a month. Iron cards in hand. |
+| Iron (60 and up) | +1 Force a month. Each faction under 30 loses 2 more support a month. Iron cards in hand. |
 | Middle (41 to 59) | None. |
-| Open (40 and less) | Each faction at 60 and up gives 2 Mandate instead of 1. Open cards in hand. Election cards become eligible. |
+| Open (40 and less) | +1 Voice a month. Open cards in hand. Election cards become eligible. |
 
-**Elections** (2 to 3 per world, open band only) are an early Reckoning. The card shows the current weighted support against 50 before you choose. Weighted support 50 and up: +1 Mandate a month for the rest of the term. Under 50: you fall.
+**Elections** (2 to 3 per world, open band only) are an early Reckoning. The card shows the current weighted support against 50 before you choose. Weighted support 50 and up: +1 Voice and +1 Trust a month for the rest of the term. Under 50: you fall.
 
-## Resources
-| Resource | Comes from | Spent on |
-|---|---|---|
-| **Mandate** (world-named) | 2 a month, +1 per faction at 60 and up, grip effects, some answers | hand cards (1 to 4) |
-| **Reserves** (world units) | the world's monthly balance (written at build), patron cards, some answers and cards | subsidy and patronage cards |
+## Resources (SHASN-style; owner, 2026-10-12)
+Four fixed roles. The engine owns what each does; the world writes each one's name and icon. **The colour is fixed per role**, so the eye learns it once across every world.
+| Role | Colour | Comes from | Spent on | Egypt 2011 |
+|---|---|---|---|---|
+| **Money** | gold | the world's monthly balance (written at build), holders that produce it, some answers | subsidies, patronage, buying off an intent | Reserves ($B) |
+| **Force** | red | holders that produce it, iron grip | crackdowns, decrees, iron cards | Security |
+| **Voice** | blue | holders that produce it, open grip | speeches, campaigns, elections | Airwaves |
+| **Trust** | green | holders that produce it, callbacks where you kept your word | talks, deals, social and religious laws | Street |
 
-Reserves under 0 at a month end makes next month's card a shortage card and moves every faction down 5. Two month ends in a row under 0 is a fall, warned one month ahead.
+- **Support feeds the economy.** Each holder produces one kind (written at build). At a month end, each holder at 60 and up gives 1 of its kind.
+- **Answers pay or cost.** Each answer shows its resource chips before you choose. An answer you cannot pay for shows greyed with its price.
+- **Cards cost a mix** of kinds (basic cards 1, power cards 2 to 3, laws 3 to 5).
+- Each kind runs 0 to 10. Money alone can go under 0 (debt). Money under 0 at a month end makes next month's card a shortage card and moves every faction down 5. Two month ends in a row under 0 is a fall, warned one month ahead.
+- There is no separate action currency; plays stay at 2 a month.
+- On screen: 4 chips at the top right (icon, number). Hovering one shows next month's income by source. A holder that is producing shows a small chip of its kind on its row.
 
 ## The hand
 At most 8 cards, 2 plays a month, dimmed until the month's card is answered. A card you cannot pay for shows its price, greyed.
-- **Always:** Talk to a faction (1 Mandate: one holder up 8). Address the nation (1 Mandate: your next answer counts twice: its changes double and it files 2 cards).
-- **Power cards:** at 3 cards in a stack, that ideology's power card joins the hand. Reusable, costs Mandate.
+- **Always:** Talk to a faction (1 Trust: one holder up 8). Address the nation (1 Voice: your next answer counts twice: its changes double and it files 2 cards).
+- **Power cards:** at 3 cards in a stack, that ideology's power card joins the hand. Reusable, costs a mix of resources.
 - **Major laws:** at 5 cards, that ideology's major law joins the hand. Enacted once, permanent; then it leaves the hand and shows as a seal on its stack. Playable only while the marker is in that corner's zone; out of zone it shows "Stand closer to <ideology>".
 - **Centre laws** (2 per world): in hand while the marker is in the centre zone.
 - **Grip cards** (2 iron, 2 open per world): in hand while grip is in that band.
@@ -97,9 +105,9 @@ Take 1 of 3 face-up modifiers, or skip. A modifier changes a rule for the rest o
 ## Effects (primitives)
 Every answer side effect, card, law and modifier is a list of primitives. Opus writes the name and one flavour line. **The engine writes the rules line from the primitives**, so one mechanic reads the same in every world.
 
-One-shot effects: `move(target, dir, size)` · `grip(dir, size)` · `mandate(n)` · `reserves(n)` · `file(ideology, n)` · `boostNext(ideology|any, steps)` · `hold(holder, floor|ceiling, level, months)` · `setFlag(flag)` · `queueNext(tag)` · `cancelIntent(holder)`.
+One-shot effects: `move(target, dir, size)` · `grip(dir, size)` · `gain(kind, n)` · `spend(kind, n)` · `file(ideology, n)` · `boostNext(ideology|any, steps)` · `hold(holder, floor|ceiling, level, months)` · `setFlag(flag)` · `queueNext(tag)` · `cancelIntent(holder)`.
 
-Modifiers: `cost(family, delta)` · `sizeUp(ideology)` · `drift(target, multiplier)` · `gripRate(multiplier)` · `extraPlay(everyNMonths)` · `income(resource, n, condition)` · `trigger(condition, effect)`.
+Modifiers: `cost(family, kind, delta)` · `sizeUp(ideology)` · `drift(target, multiplier)` · `gripRate(multiplier)` · `extraPlay(everyNMonths)` · `income(kind, n, condition)` · `exchange(fromKind, toKind, rate)` · `trigger(condition, effect)`.
 
 Targets: a holder, the holders leaning to an ideology, all factions, all patrons, the lowest faction. Conditions: a holder above or below a level, a grip band, a stack count, in a zone, month end.
 
@@ -107,7 +115,7 @@ Targets: a holder, the holders leaning to an ideology, all factions, all patrons
 1. **Draw.** The engine lists the eligible cards (month window, flags required or blocked, grip band, zone, support bands). Intent cards jump the queue. The engine shortlists up to 5 by seeded weight; Jev picks 1. A history card first gets a Jev plausibility score, then a seeded roll.
 2. **Answer.** 2 or 3 answers, each with a "who cares" mark per holder it moves (1 to 3 dots, no direction). On choice: sizes become numbers, then one Jev nudge per holder; grip moves; the card files; the marker moves; unlocks and picks are checked. The reveal shows the ideology stamp, each change with its reason, and on history cards "In history: ...". The change markers stay on the rows.
 3. **Up to 2 plays** from the hand.
-4. **Month end.** Drift toward resting levels; Mandate income; the Reserves balance; band effects; intents; Vision pillars; on the last month, the Reckoning.
+4. **Month end.** Drift toward resting levels; resource income and the Money balance; band effects; intents; Vision pillars; on the last month, the Reckoning.
 
 ## Intents and falls
 - A holder under 30 at a month end brings its **intent card** as next month's card (written at build, 2 to 3 answers).
@@ -123,7 +131,7 @@ Targets: a holder, the holders leaning to an ideology, all factions, all patrons
 | Drift each month end | 20% of the gap |
 | Corner zone / centre zone | 0.6 / 0.25 |
 | Stack thresholds: pick / power / major | 2 / 3 / 5 |
-| Mandate at start / cap | 6 / 12 |
+| Resources at start / cap per kind (Money excepted) | written at build, 2 to 6 / 10 |
 | Plays a month / hand cap | 2 / 8 |
 | Intent / act and plot | under 30 / under 15 |
 | Reckoning and election bar | weighted support 50 |
@@ -134,8 +142,8 @@ Targets: a holder, the holders leaning to an ideology, all factions, all patrons
 - **Divergence** = the share of history cards that did not happen plus history forks taken differently. The epilogue lists each history card: "In history" beside "In yours".
 
 ## Visions, the Reckoning and the score
-- The build writes **4 to 6 Visions** from paths that really existed, covering every corner and the centre at least once, plus **Free hand**. Each Vision has 3 to 4 engine-checked pillars: a stack count or zone, a grip band, a law enacted, a holder at a level, Reserves above a level.
-- Switch Vision once a term for 3 Mandate.
+- The build writes **4 to 6 Visions** from paths that really existed, covering every corner and the centre at least once, plus **Free hand**. Each Vision has 3 to 4 engine-checked pillars: a stack count or zone, a grip band, a law enacted, a holder at a level, a resource above a level.
+- Switch Vision once a term for 1 of each non-Money kind.
 - **The Reckoning** is the world's natural climax, 12 to 18 months in, set by the build. Your order endures if the power-weighted average support of the factions is 50 or more.
 - Outcomes: Vision fulfilled (endures, all pillars), survived (endures), swept away (does not endure), fallen (before the Reckoning). Free hand scores average support and divergence.
 
@@ -145,7 +153,7 @@ Level 0 is the base. Fulfilling any Vision at level N unlocks level N+1, stored 
 |---|---|
 | 1 | Drift 25% |
 | 2 | Intents fire under 35 |
-| 3 | Mandate income -1 |
+| 3 | Holders produce only at 65 and up |
 | 4 | Fall line 20 |
 | 5 | Patron sanctions twice as hard; election and Reckoning bar 55 |
 
@@ -159,10 +167,10 @@ Level 0 is the base. Fulfilling any Vision at level N unlocks level N+1, stored 
 The call shape comes from v4 `worker/jev.ts`. The state sent holds the holders' personas, support, positions, grip, and the last 3 answers and plays.
 
 ## The world build (offline script in the prototype)
-- Opus 5.5 writes the pack: polity, office, dates, Reckoning, corners and order, holders (mix, support, power weight, intent card, act, fall), patrons' grip preference and card, the marker and grip start, the monthly balance, Mandate and Reserves names, per ideology a power card, a major law and 3 modifiers, 2 centre laws, 3 iron, 3 open and 3 centre modifiers, 2 iron and 2 open cards, 2 to 3 elections, 60 to 80 situations, 10 to 15 history cards, 10 to 15 callback cards, 4 to 6 Visions, the skin, and the music brief.
+- Opus 5.5 writes the pack: polity, office, dates, Reckoning, corners and order, holders (mix, support, power weight, intent card, act, fall), patrons' grip preference and card, the marker and grip start, the monthly balance, the name and icon of each resource role, each holder's produced kind, start values, per ideology a power card, a major law and 3 modifiers, 2 centre laws, 3 iron, 3 open and 3 centre modifiers, 2 iron and 2 open cards, 2 to 3 elections, 60 to 80 situations, 10 to 15 history cards, 10 to 15 callback cards, 4 to 6 Visions, the skin, and the music brief.
 - Each situation answer: text, sub-line, ideology, per holder a direction, size and one-line reason, an optional grip tag, optional effects and flags.
 - **Required combos:** 2 to 3 pairs of cards or modifiers from different ideologies that work together, named in the pack for the bots to test.
-- **Validation:** schema and counts; every effect compiles to primitives; no single play can return more Mandate than it costs; no trigger can fire itself; `extraPlay` no more often than every 2 months; every Vision pillar checkable and reachable; each corner within 1 of an equal share of answers; every change has a reason; the music brief passes the arranger's validator. One repair call on failure.
+- **Validation:** schema and counts; every effect compiles to primitives; no single play can return more resources than it costs (all kinds counted); `exchange` never above 1 to 1; no trigger can fire itself; `extraPlay` no more often than every 2 months; every Vision pillar checkable and reachable; each corner within 1 of an equal share of answers; every change has a reason; the music brief passes the arranger's validator. One repair call on failure.
 - **Legibility check (Jev):** for each answer, a Choice over the corners from its text; under 0.6 on its own corner means too vague, and it goes to the repair call.
 - The content rule carries over unchanged (`CONTENT_RULE`).
 
@@ -187,6 +195,7 @@ Local only, on branch `restart`, in a new `table/` folder so no v4 file changes.
   - no dominant ideology: every per-Vision bot fulfils its Vision within 15 points of the others, in every world;
   - skill pays: the adaptive bot beats every single-plan bot by 15 points or more;
   - no single card is the best play in more than 50% of months;
+  - every resource kind is spent in 15% or more of plays, and no kind sits at its cap for more than 30% of months (no dead or hoarded kind);
   - answers cause 50% or more of all support change (drift does not erase choices);
   - each named combo raises the Vision rate by 10 points or more over the same build without it.
 - **One E2E run** in Chrome per world: a full term by script against real Jev, a screenshot per month and the run log as a repeatable artifact.
