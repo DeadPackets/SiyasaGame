@@ -1,6 +1,6 @@
 # Restart: the Compass game (prototype design)
 
-Date: 2026-10-11. Status: draft for owner review. Working title: Body Politic (not decided). Look: pending the owner's pick of 3 mocks (cinematic, tabletop, state papers), docs/mocks/v7.
+Date: 2026-10-11. Status: superseded by `2026-10-12-card-table-design.md` where they differ. Working title: Body Politic (not decided). Look: pending the owner's pick of 3 mocks (cinematic, tabletop, state papers), docs/mocks/v7.
 
 ## Why a restart
 v4 "The Ruler" was not fun in 3 owner playtests. Measured: 16 to 34 clicks per signed act, 75 min per term, and in run 3 the player's 21 acts cost 17 final-vote points net, so doing nothing scored better. v4 grew systems (25 powers, typed orders, a clerk model that set numbers) to chase fun. The hits (Reigns 1.8M copies, Sultan's Game 1M+, Suzerain 650K+) share a small core: 2 answers per decision, 3 to 5 meters, one demand at a time, short terms, people carrying each choice.
