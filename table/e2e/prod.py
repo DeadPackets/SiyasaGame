@@ -13,7 +13,7 @@ with sync_playwright() as p:
     b = p.chromium.launch()
     for path, name, ready in [("/", "landing", "document.querySelector('#prompt, textarea, input[type=text]')")] + [(f"/play?w={w}&walk=1&tutor=0", w, "document.getElementById('briefing')?.shadowRoot?.querySelector('.scr')") for w in worlds]:
         pg = b.new_page(viewport={"width": 1440, "height": 900}); errs = []
-        pg.on("console", lambda m: m.type == "error" and errs.append(m.text)); pg.on("pageerror", lambda e: errs.append(str(e)))
+        pg.on("console", lambda m: m.type == "error" and "challenges.cloudflare.com" not in m.location.get("url", "") and errs.append(m.text))  # Turnstile's iframe logs its own CSP blocks; pg.on("pageerror", lambda e: errs.append(str(e)))
         pg.goto(BASE + path)
         try: pg.wait_for_function(ready, timeout=25000); loaded = True
         except Exception: loaded = False
