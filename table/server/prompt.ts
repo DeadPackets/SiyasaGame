@@ -67,22 +67,20 @@ export async function onPrompt(env: Env, req: Request, ctx: ExecutionContext): P
   const open = await gate.peek(key);
   if (open !== "ok") return Response.json({ state: open, opensAt: nextOpen() });
 
-  // safety first: a refused prompt costs no build and no count. If Jev is down, the build's own content rule still holds.
+  // a build starts only on Jev's answers (owner ruling O8): with Jev down, building is closed and costs nothing
+  const down = Response.json({ state: "invalid", reason: "Building is paused for a moment. Try again in a few minutes, or play a world from the library." }, { status: 503 });
   try {
     const a = await jev(env, { prompt }, { refuse: { type: "noul", instructions: `${CONTENT_RULE} Is this prompt asking for what that rule refuses, for content that harasses or mocks a real private person, or for sexual content?` } });
-    if ((a.refuse?.noul ?? 0) >= 0.5) return Response.json({ state: "refused", reason: "Siyasa does not build this world. Try a place and a time." });
-  } catch (e) {
-    console.warn("safety check failed", String(e));
-  }
-
-  if (body?.force !== true) {
-    try {
+    if (typeof a.refuse?.noul !== "number") throw new Error("no safety answer");
+    if (a.refuse.noul >= 0.5) return Response.json({ state: "refused", reason: "Siyasa does not build this world. Try a place and a time." });
+    if (body?.force !== true) {
       const hit = await similar(env, prompt);
       if (hit && "load" in hit) return Response.json({ state: "exists", world: hit.load });
       if (hit) return Response.json({ state: "similar", worlds: hit.offer });
-    } catch (e) {
-      console.warn("similar failed", String(e));
     }
+  } catch (e) {
+    console.warn("jev checks failed", String(e));
+    return down;
   }
 
   const day = today(), claim = await gate.claim(key);

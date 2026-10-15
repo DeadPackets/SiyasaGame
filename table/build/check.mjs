@@ -287,7 +287,6 @@ export function checkDeck(d, w, opts = {}) {
 
   // cards with answers
   const tally = Object.fromEntries(I.map((i) => [i, 0])), M = w.months;
-  let carried = 0, real = 0;
   const card = (c, where, kind) => {
     if (!c) return e.push(`${where}: missing`);
     reg(c.id, kind, where); const at = c.id ?? where;
@@ -296,8 +295,6 @@ export function checkDeck(d, w, opts = {}) {
     if (c.band != null && !["iron", "open"].includes(c.band)) e.push(`${at}: band must be iron or open`);
     if (c.zone != null && c.zone !== "centre" && !I.includes(c.zone)) e.push(`${at}: zone ${c.zone} not valid`);
     for (const f of [...(c.requires ?? []), ...(c.blocks ?? [])]) needFlags.push([f, at]);
-    if (!str(c.carrier?.name) || !str(c.carrier?.role) || typeof c.carrier?.real !== "boolean") e.push(`${at}: carrier needs name, role and real`);
-    carried++; if (c.carrier?.real) real++;
     const A = c.answers ?? [];
     if (A.length < 2 || A.length > 3) e.push(`${at}: ${A.length} answers; need 2 or 3`);
     A.forEach((a, k) => {
@@ -347,7 +344,6 @@ export function checkDeck(d, w, opts = {}) {
   }
   const off = opts.quota ? [] : I.filter((i) => Math.abs(tally[i] - share) > 1);
   if (off.length) e.push(`ideology tally of answers (situations, history, callbacks) is ${JSON.stringify(tally)}; each must be within 1 of ${share.toFixed(1)}: retag or rewrite answers of ${off.join(", ")}`);
-  if (real > carried * 0.1) e.push(`${real} of ${carried} cards have a real carrier; at most ${Math.floor(carried * 0.1)}`);
   e.push(...Object.values(style(d, w)).flat());
 
   // visions and combos
@@ -382,17 +378,15 @@ export function checkDeck(d, w, opts = {}) {
 export const LIMITS = { title: 5, question: 14, body: 50, text: 9, sub: 11, reason: 11, gripWhy: 11, history: 29, flavour: 14, line: 18 };
 const wc = (s) => (typeof s === "string" ? s.trim().split(/\s+/).filter(Boolean).length : 0);
 export function style(d, w) {
-  const r = { voice: [], words: [], free: [], real: [], floor: [] };
+  const r = { voice: [], words: [], free: [], floor: [] };
   const long = (at, k, s) => { const n = wc(s); if (n > LIMITS[k]) r.words.push(`${at} ${k}: ${n} words; at most ${LIMITS[k]}`); };
   const cards = [...(d.situations ?? []), ...(d.history ?? []), ...(d.callbacks ?? []), ...(d.elections ?? []), ...Object.values(d.intents ?? {})].filter(Boolean);
   const hands = [...Object.values(d.ideologies ?? {}).flatMap((x) => [x?.power, x?.law, ...(x?.picks ?? [])]), ...(d.centreLaws ?? []), ...Object.values(d.picks ?? {}).flat(), ...Object.values(d.gripCards ?? {}).flat(), ...Object.values(d.patronCards ?? {})].filter(Boolean);
-  const known = (w.facts?.people?.length ? w.facts.people : w.people ?? []).map((p) => p.name.toLowerCase());
   const floors = (w.facts?.numbers ?? []).filter((x) => num(x.floor) && str(x.key));
   for (const c of cards) {
-    const at = c.id, q = c.question ?? "", who = c.carrier?.name?.toLowerCase() ?? "";
+    const at = c.id, q = c.question ?? "";
     if (!/\byour?s?\b/i.test(q) || /\b(we|our|the council)\b/i.test(q) || /\bus\b/.test(q)) r.voice.push(`${at} question: ask what YOU will do, with "you" or "your"; never "we", "our", "us" or "the Council"`);
     for (const k of ["title", "question", "body", "history"]) long(at, k, c[k]);
-    if (c.carrier?.real && !known.some((n) => n.includes(who) || who.includes(n))) r.real.push(`${at}: real carrier ${c.carrier.name} is not in facts.people; invent a minor carrier and set real false`);
     (c.answers ?? []).forEach((a, k) => {
       const aw = `${at} answer ${k + 1}`;
       if (!Object.values(a.moves ?? {}).some((v) => /^-[ml]$/.test(v)) && !Object.values(a.res ?? {}).some((v) => v < 0) && !(a.effects ?? []).some((p) => p?.op === "spend"))

@@ -19,10 +19,3 @@ export async function jev(env: Env, state: unknown, questions: Record<string, Qu
   if (!r.ok) throw new Error(`jev ${r.status}: ${(await r.text()).slice(0, 200)}`);
   return ((await r.json()) as { answers: Answers }).answers;
 }
-
-// one D1 row per day and kind; past the budget every call takes the engine's fallback, so play never stops
-export async function underBudget(env: Env, kind: string): Promise<boolean> {
-  const day = new Date().toISOString().slice(0, 10), cap = Number(env.JEV_DAILY_CALLS ?? "20000");
-  const row = await env.DB.prepare("INSERT INTO meter (day, kind, n) VALUES (?, ?, 1) ON CONFLICT (day, kind) DO UPDATE SET n = n + 1 RETURNING n").bind(day, kind).first<{ n: number }>();
-  return Number.isFinite(cap) && (row?.n ?? 0) <= cap;
-}

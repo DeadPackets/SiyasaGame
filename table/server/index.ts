@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import type { Env } from "./env";
-import { jev, underBudget } from "./jev";
+import { jev } from "./jev";
 import { verifyId } from "./identity";
 import { indexWorld, onBuild, onPrompt } from "./prompt";
 import { ipKey } from "./gate";
@@ -32,10 +32,35 @@ app.get("/api/worlds/:id", async (c) => {
   return new Response(obj.body, { headers: { "content-type": "application/json", "cache-control": "public, max-age=3600" } });
 });
 
+const PRESETS = ["story", "standard", "hard", "brutal", "custom"];
+const presetOf = (x: unknown) => (PRESETS.includes(x as string) ? (x as string) : "standard");
+const ownerOf = async (c: { env: Env; req: { header: (k: string) => string | undefined } }) => {
+  const raw = (c.req.header("cookie") ?? "").split(";").map((p) => p.trim()).find((p) => p.startsWith("siyasa_id="));
+  return raw ? verifyId(c.env.IDENTITY_SECRET, raw.slice(10)) : null;
+};
+
 app.post("/api/worlds/:id/play", async (c) => {
   const { success } = await c.env.RL.limit({ key: `play:${ipKey(ip(c.req.raw))}` });
   if (!success) return c.json({ ok: false }, 429);
-  await c.env.DB.prepare("UPDATE worlds SET plays = plays + 1 WHERE id = ?").bind(c.req.param("id")).run();
+  const id = c.req.param("id"), preset = presetOf((await c.req.json().catch(() => null))?.preset);
+  const hit = await c.env.DB.prepare("UPDATE worlds SET plays = plays + 1 WHERE id = ?").bind(id).run();
+  if (hit.meta.changes) await c.env.DB.prepare("INSERT INTO world_plays (world, preset, n) VALUES (?, ?, 1) ON CONFLICT (world, preset) DO UPDATE SET n = n + 1").bind(id, preset).run();
+  return c.json({ ok: true });
+});
+
+// every game, upserted after each month and at the end, for later analysis (owner ruling O13)
+app.post("/api/games", async (c) => {
+  const { success } = await c.env.RL.limit({ key: `games:${ipKey(ip(c.req.raw))}` });
+  if (!success) return c.json({ ok: false }, 429);
+  const raw = await c.req.text();
+  if (raw.length > 200_000) return c.json({ ok: false }, 413);
+  let b: { id?: unknown; world?: unknown; preset?: unknown; state?: { month?: unknown; over?: { kind?: unknown } | null } } | null = null;
+  try { b = JSON.parse(raw); } catch { /* bad JSON */ }
+  const id = str(b?.id, 40), world = str(b?.world, 40), month = Number(b?.state?.month);
+  if (!/^[0-9a-f-]{36}$/.test(id) || !world || !Number.isInteger(month) || !b?.state) return c.json({ ok: false }, 400);
+  const outcome = b.state.over ? str(b.state.over.kind, 20) || "over" : null, now = Date.now(), owner = await ownerOf(c);
+  await c.env.DB.prepare("INSERT INTO games (id, world, preset, owner, month, outcome, state, created, updated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET month = excluded.month, outcome = excluded.outcome, state = excluded.state, updated = excluded.updated")
+    .bind(id, world, presetOf(b.preset), owner, month, outcome, JSON.stringify(b.state), now, now).run();
   return c.json({ ok: true });
 });
 
@@ -51,15 +76,14 @@ function ctxOf(body: unknown): Ctx | null {
   };
 }
 
-async function gate(c: { env: Env; req: { raw: Request } }, kind: string): Promise<boolean> {
+async function gate(c: { env: Env; req: { raw: Request } }): Promise<boolean> {
   if (!c.env.OPENROUTER_API_KEY) return false;
-  const { success } = await c.env.RL.limit({ key: ipKey(ip(c.req.raw)) });
-  return success && (await underBudget(c.env, kind));
+  return (await c.env.RL.limit({ key: ipKey(ip(c.req.raw)) })).success;
 }
 
 app.post("/api/jev/nudge", async (c) => {
   const body = await c.req.json().catch(() => null), ctx = ctxOf(body?.ctx), answer = str(body?.answer, 300), ids: string[] = (body?.moved ?? []).slice(0, 8).map((x: unknown) => str(x, 8));
-  if (!ctx || !answer || !ids.length || !(await gate(c, "nudge"))) return c.json({ nudge: null });
+  if (!ctx || !answer || !ids.length || !(await gate(c))) return c.json({ nudge: null });
   try {
     const qs = Object.fromEntries(ids.flatMap((id) => {
       const h = ctx.holders.find((x) => x.id === id);
@@ -75,7 +99,7 @@ app.post("/api/jev/nudge", async (c) => {
 app.post("/api/jev/director", async (c) => {
   const body = await c.req.json().catch(() => null), ctx = ctxOf(body?.ctx);
   const cards: { id: string; title: string; question: string }[] = (body?.cards ?? []).slice(0, 5).map((x: { id: unknown; title: unknown; question: unknown }) => ({ id: str(x.id, 20), title: str(x.title, 80), question: str(x.question, 200) }));
-  if (!ctx || cards.length < 2 || !(await gate(c, "director"))) return c.json({ pick: null });
+  if (!ctx || cards.length < 2 || !(await gate(c))) return c.json({ pick: null });
   try {
     const a = await jev(c.env, ctx, {
       pick: { type: "choice", instructions: `Choose the card that makes the strongest next month for this ruler: it follows from what the ruler did lately, raises the stakes, and fits the date. Cards: ${cards.map((x) => `${x.id}: ${x.title}. ${x.question}`).join(" | ")}`, options: cards.map((x) => x.id) },
@@ -90,7 +114,7 @@ app.post("/api/jev/director", async (c) => {
 
 app.post("/api/jev/plausibility", async (c) => {
   const body = await c.req.json().catch(() => null), ctx = ctxOf(body?.ctx), event = str(body?.event, 300), date = str(body?.date, 20);
-  if (!ctx || !event || !(await gate(c, "plausibility"))) return c.json({ p: null });
+  if (!ctx || !event || !(await gate(c))) return c.json({ p: null });
   try {
     const a = await jev(c.env, ctx, { p: { type: "noul", instructions: `In real history, on ${date}: ${event}. Given what this ruler has done so far, does this event still happen in this timeline? 1 = certainly, 0 = it cannot.` } });
     const p = a.p?.noul;
@@ -104,8 +128,7 @@ app.get("/api/config", (c) => c.json({ turnstile: c.env.TURNSTILE_SITE_KEY ?? nu
 
 // your worlds: the ones this browser built (signed cookie), with any build still running
 app.get("/api/mine", async (c) => {
-  const raw = (c.req.header("cookie") ?? "").split(";").map((p) => p.trim()).find((p) => p.startsWith("siyasa_id="));
-  const id = raw ? await verifyId(c.env.IDENTITY_SECRET, raw.slice(10)) : null;
+  const id = await ownerOf(c);
   if (!id) return c.json({ worlds: [], builds: [] });
   const worlds = await c.env.DB.prepare("SELECT id, title, polity, date, blurb, card FROM worlds WHERE owner = ? ORDER BY created DESC LIMIT 50").bind(id).all();
   const builds = await c.env.DB.prepare("SELECT id, prompt, status, created FROM builds WHERE owner = ? AND status = 'running' ORDER BY created DESC LIMIT 5").bind(id).all();

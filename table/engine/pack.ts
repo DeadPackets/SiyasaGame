@@ -93,7 +93,7 @@ export interface Card {
   question: string;
   body: string;
   months: [number, number];
-  carrier: { name: string; role: string; real: boolean };
+  carrier?: { name: string; role: string; real: boolean }; // dropped from new packs (owner, 2026-10-15)
   answers: Answer[];
   band?: "iron" | "open";
   zone?: string;

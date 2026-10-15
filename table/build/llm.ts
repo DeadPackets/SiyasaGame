@@ -97,6 +97,11 @@ export async function call(c: Ctx, name: string, attempt: number, messages: any[
         break;
       }
       if (msg.stop_reason === "pause_turn" && k < 5) { // the server resumes its search loop
+        // each continuation is a new paid call: it must fit the budget like the first one did
+        if (ctx.spent + u.cost + est > ctx.budget) {
+          ctx.spent += u.cost;
+          throw new Error(`${name}: stopped before continuation ${k + 1}: $${(ctx.spent).toFixed(2)} spent + $${est.toFixed(2)} possible > budget $${ctx.budget}`);
+        }
         convo.push({ role: "assistant", content: msg.content });
         u.continues++;
         continue;

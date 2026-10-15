@@ -17,7 +17,7 @@ for (const dir of readdirSync(`${ROOT}packs`)) {
   const file = `${ROOT}dist/seed/${world.id}.json`;
   writeFileSync(file, JSON.stringify(pack));
   execFileSync("npx", ["wrangler", "r2", "object", "put", `siyasa-packs/packs/${world.id}.json`, "--file", file, "--content-type", "application/json", remote], { cwd: ROOT, stdio: "inherit" });
-  const card = { palette: skin.palette, fonts: skin.fonts, finish: skin.finish, ideologies: skin.ideologies.slice(0, 3) };
+  const card = { palette: skin.palette, fonts: skin.fonts, ideologies: skin.ideologies.slice(0, 3) };
   const blurb = String(world.timeline?.[0]?.event ?? world.reckoning.meaning).split(/(?<=\.)\s/)[0];
   const row = `INSERT INTO worlds (id, title, polity, date, blurb, card, created) VALUES (${sql(world.id)}, ${sql(world.title)}, ${sql(world.polity)}, ${sql(world.date)}, ${sql(blurb)}, ${sql(JSON.stringify(card))}, ${Date.now()}) ON CONFLICT (id) DO UPDATE SET title = excluded.title, polity = excluded.polity, date = excluded.date, blurb = excluded.blurb, card = excluded.card`;
   execFileSync("npx", ["wrangler", "d1", "execute", "siyasa", remote, "--command", row], { cwd: ROOT, stdio: "inherit" });

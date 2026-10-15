@@ -16,6 +16,5 @@ export type Env = {
   TURNSTILE_SECRET?: string;
   TURNSTILE_SITE_KEY?: string;
   DAILY_BUILD_CAP: string;
-  JEV_DAILY_CALLS?: string;
   FAKE_BUILD?: string;
 };

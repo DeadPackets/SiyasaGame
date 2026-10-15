@@ -14,7 +14,7 @@ const motifId = (L: any) => (L.family === "girih" ? `girih:${L.params?.tiling ||
 const tierOf = (L: any) => TIER[motifId(L)] || "support";
 const heroes = (tags: Set<string>) => Object.keys(TIER).filter((id) => TIER[id] === "hero" && (HOMES[id] || HOMES[`${id.split(":")[0]}:*`] || []).some((t) => tags.has(t)));
 const SLOT = /^(a|b|c|none)(\/[\d.]+)?$/;
-const REQUIRED = ["palette", "fonts", "finish", "house", "ideologies", "factions", "patrons"];
+const REQUIRED = ["palette", "fonts", "house", "ideologies", "factions", "patrons"];
 
 // the world's tradition tags, native hero motifs and motif homes, for the skin call (was `node final/validate.mjs --context`)
 export function skinContext(W: any) {

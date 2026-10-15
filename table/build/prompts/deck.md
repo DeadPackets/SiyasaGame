@@ -49,9 +49,8 @@ The holders are the heart of the game. What makes a card good:
 
 - **The player is the ruler, the one person who decides.** Every card speaks to the ruler directly as "you" (a title is fine: "Field Marshal, will you..."). Never "the Council", "we" or "the government" as the one who decides.
 - Use the world's `voice`. Short sentences, concrete period words, one fact per sentence. Numbers and names over adjectives.
-- Word limits: `title` 5, `question` 14 (spoken by the carrier to the ruler), `body` 50 (the facts of the moment, with the colour of the place), answer `text` 9 (an order or a decision), `sub` 11 (what it means in practice), each reason 11, `gripWhy` 11, `history` 29, card `flavour` 14, Vision `line` 18.
-- **Carriers** bring the cards: `{name, role, real}`. Most are invented people with names that fit the world's naming customs, always in a minor role: a spokesperson, an aide, an organiser, a junior officer, a clerk, a local preacher. Never put an invented person in a named top post (a minister, a chief of staff, a party leader, a commission member) that a real person held. At most 1 card in 10 has a real carrier (`real: true`).
-- **Real people** appear (as carriers or in the text) only if they are in `facts.people` (for an invented world, in `people`), in that role, within those dates. Never give a real person another job.
+- Word limits: `title` 5, `question` 14 (asked straight to the ruler), `body` 50 (the facts of the moment, with the colour of the place), answer `text` 9 (an order or a decision), `sub` 11 (what it means in practice), each reason 11, `gripWhy` 11, `history` 29, card `flavour` 14, Vision `line` 18.
+- **Real people** appear in the text only if they are in `facts.people` (for an invented world, in `people`), in that role, within those dates. Never give a real person another job.
 - **Documents**: a numbered decree, communiqué or law appears only if it is in `facts.documents`, with its real date and content.
 - **Figures** follow `facts.numbers`: the same unit every time; a figure moves only by its `change` rule (a reserve counted in days falls by at most 1 day per day with no new supply); a figure under its `floor` or over its `ceiling` is said in the card ("below the 180-day floor").
 
@@ -67,7 +66,6 @@ Ids: situations `s01`..., history `h01`..., callbacks `c01`..., elections `e01`.
 ```
 { "id": "s01", "title": "", "months": [first, last],
   "requires": ["flag"], "blocks": ["flag"], "band": "iron" | "open", "zone": "<ideologyId>" | "centre",
-  "carrier": {"name": "", "role": "", "real": false},
   "question": "", "body": "",
   "answers": [ { "text": "", "sub": "", "ideology": "<ideologyId>",
                  "res": {"<role>": -2 to 2},
@@ -83,7 +81,7 @@ Ids: situations `s01`..., history `h01`..., callbacks `c01`..., elections `e01`.
 - `effects`: optional one-shot primitives (below). `flags`: optional flags this answer sets, in snake_case, for callbacks.
 - History cards also have `"date": "YYYY-MM-DD"`, `"history": "In history: <what happened, with numbers>"`, and `"historyAnswer"`: the index of the answer history took.
 - Callback cards `requires` the flag an earlier answer set, and the body names that earlier choice.
-- Intent cards also have `"holder": "<holderId>"`; the carrier speaks for that holder.
+- Intent cards also have `"holder": "<holderId>"`; the question comes from that holder.
 - Election cards: one answer holds the election (`"holdsElection": true`); the others delay or rig it.
 
 **A hand card** (power cards, grip cards, patron cards, laws): `{ "id", "title", "flavour", "cost": {"<role>": n}, "effects": [] }`. Power cards cost 2 to 3 in all, grip cards and patron cards 1 to 3, laws 3 to 5. Power cards, grip cards and patron cards take one-shot effects; laws take one-shots and modifiers. **Force is a cost on at least a third of the hand cards** (power cards, laws, grip cards and patron cards together), so no resource is dead. **No card returns more resources than it costs**: the sum of its `gain` amounts is at most the sum of its cost and `spend` amounts, all kinds counted together.
@@ -130,6 +128,8 @@ Modifier (rules for the rest of the term):
 Conditions: `{"if": "support", "target", "above" | "below": 0-100}` · `{"if": "grip", "band": "iron" | "middle" | "open"}` · `{"if": "stack", "ideology", "min": n}` · `{"if": "zone", "zone": "<ideologyId>" | "centre"}` · `{"if": "monthEnd"}`.
 
 ## Output
+
+**Plain words (owner rule).** Write for a player who has never heard of this place or era and reads fast. Short sentences (at most 20 words), everyday words, active voice. Use a world-specific term only when it carries meaning, and the first time the player could meet it, say what it is in a few words ("the Margin, the colony's reserve of air and water"). No stacks of invented nouns ("Charter writ levy cut"), no unexplained acronyms. Science fiction and fantasy worlds follow the same rule: strange worlds need plainer sentences, not denser ones.
 
 Hard rules, checked in code:
 - Every question contains "you" or "your" and asks what YOU will do; never "we", "our" or "the Council". Bad: "Do we sign the loan?" Good: "Will you sign the loan?"

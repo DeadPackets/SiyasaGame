@@ -77,7 +77,7 @@ export class WorldBuild extends WorkflowEntrypoint<Env, BuildParams> {
       await step.do("list", async () => {
         const [deck, skin, music] = await Promise.all([get("deck.json"), get("skin.json"), get("music.json")]);
         await env.PACKS.put(`packs/${slug}.json`, JSON.stringify({ ...clean({ world, deck, skin }), music }));
-        const card = { palette: skin.palette, fonts: skin.fonts, finish: skin.finish, ideologies: skin.ideologies.slice(0, 3) };
+        const card = { palette: skin.palette, fonts: skin.fonts, ideologies: skin.ideologies.slice(0, 3) };
         const blurb = String(world.timeline?.[0]?.event ?? world.reckoning.meaning).split(/(?<=\.)\s/)[0];
         await env.DB.prepare("INSERT OR REPLACE INTO worlds (id, title, polity, date, blurb, prompt, card, created, owner) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")
           .bind(slug, clean(world.title), clean(world.polity), world.date, clean(blurb), prompt, JSON.stringify(clean(card)), Date.now(), owner).run();
