@@ -1,6 +1,6 @@
 import { band, clamp, resting, standing, zone } from "./geo";
-import { type Card, type Pack, type Res, type Role, type Size, card, handDef, kindOf } from "./pack";
-import { addRes, apply, costOf, fileTo, gripBy, hash01, holdsCond, modsOf, moveBy, pay, plan, runTriggers, sizeNum, targets } from "./rules";
+import { type Ask, type Card, type Choice, type Pack, ROLES, type Res, type Role, type Size, card, handDef, kindOf } from "./pack";
+import { addRes, apply, asksOf, costOf, fileTo, gripBy, hash01, holdsCond, modsOf, moveBy, pay, plan, runTriggers, sizeNum, targets } from "./rules";
 import { type Ev, type Outcome, type State, rand } from "./state";
 import { TUNE } from "./tune";
 
@@ -149,15 +149,15 @@ export function takePick(p: Pack, s: State, id: string | null): Ev[] {
 }
 
 export type Kind = "talk" | "address" | "law" | "power" | "grip" | "patron";
-export interface HandCard { id: string; kind: Kind; cost: Res; ok: boolean; why?: "phase" | "plays" | "zone" | "cost"; target: boolean }
+export interface HandCard { id: string; kind: Kind; cost: Res; ok: boolean; why?: "phase" | "plays" | "zone" | "cost"; target: boolean; asks: Ask[] }
 
 export function hand(p: Pack, s: State): HandCard[] {
   const z = zone(p, s), b = band(s.grip), d = p.deck, out: HandCard[] = [];
   const add = (id: string, kind: Kind, base: Res, inZone = true) => {
     if (s.banned.includes(id)) return;
-    const cost = costOf(s, kind, base);
+    const cost = costOf(s, kind, base), asks = asksOf(handDef(p, id)?.effects ?? []);
     const why = s.phase !== "play" ? "phase" : s.plays < 1 ? "plays" : !inZone ? "zone" : plan(s, cost) === null ? "cost" : undefined;
-    out.push(why ? { id, kind, cost, ok: false, why, target: kind === "talk" } : { id, kind, cost, ok: true, target: kind === "talk" });
+    out.push(why ? { id, kind, cost, ok: false, why, target: kind === "talk", asks } : { id, kind, cost, ok: true, target: kind === "talk", asks });
   };
   add("talk", "talk", TUNE.talk.cost);
   add("address", "address", TUNE.address.cost);
@@ -178,17 +178,24 @@ export function hand(p: Pack, s: State): HandCard[] {
   return out;
 }
 
-export function play(p: Pack, s: State, id: string, target?: string): Ev[] {
+// every option an ask allows; a choice outside it is refused
+export function askOptions(p: Pack, a: Ask): string[] {
+  const w = p.world;
+  return a === "holder" ? [...w.factions, ...w.patrons].map((h) => h.id) : a === "kind" ? [...ROLES] : a === "dir" ? ["iron", "open"] : [...w.compass];
+}
+
+export function play(p: Pack, s: State, id: string, target?: string, ch: Choice = {}): Ev[] {
   const h = hand(p, s).find((x) => x.id === id);
   if (!h?.ok) throw new Error(`cannot play ${id}: ${h?.why ?? "not in hand"}`);
   if (id === "talk" && !p.world.factions.some((f) => f.id === target)) throw new Error("Talk needs a faction");
+  for (const a of h.asks) if (!askOptions(p, a).includes(String(ch[a]))) throw new Error(`${id} needs a chosen ${a}`);
   const ev: Ev[] = [];
   pay(s, h.cost, ev);
   s.plays--;
   if (id === "talk") moveBy(s, target as string, TUNE.talk.up, ev, "talk");
   else if (id === "address") s.doubleNext = true;
   else {
-    for (const e of handDef(p, id)?.effects ?? []) apply(p, s, e, ev);
+    for (const e of handDef(p, id)?.effects ?? []) apply(p, s, e, ev, "card", ch);
     if (h.kind === "law") {
       s.laws.push(id);
       ev.push({ t: "law", id });

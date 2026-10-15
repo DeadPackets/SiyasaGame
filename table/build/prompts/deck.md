@@ -106,6 +106,8 @@ Every effect is an object with `op`. The engine writes the rules line the player
 
 Targets: a holder id, `"lean:<ideologyId>"` (the holders leaning to it), `"factions"`, `"patrons"`, `"lowest"` (the lowest faction). Sizes: `"s"`, `"m"`, `"l"`.
 
+**Choices (hand cards only).** In a hand card's one-shot effects, `"choose"` lets the player pick at play time: `move` or `hold` `"target": "choose"` (any holder), `cancelIntent` `"holder": "choose"`, `gain` or `spend` `"kind": "choose"` (any resource), `grip` `"dir": "choose"` (Iron or Open), `file` or `boostNext` `"ideology": "choose"`. **Every power card must include at least one choice.** A power card is a tool the player bends to whatever the board needs, the way SHASN's ideology powers work ("take 2 of any resource you choose"), never a fixed recipe that only helps one named group. Its title and flavour say what the ruler does in this world; the choice is what makes it useful in any situation. Grip, patron and law cards may use choices too. Never in answers, picks or triggers.
+
 One-shot:
 - `{"op": "move", "target", "dir": "+" | "-", "size"}`
 - `{"op": "grip", "dir": "open" | "iron", "size"}`

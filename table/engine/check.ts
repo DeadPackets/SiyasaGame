@@ -47,22 +47,23 @@ export function checkPack(pack: Pack): string[] {
     }[c?.if as string];
     if (!ok?.()) e.push(`${at}: bad condition ${JSON.stringify(c)}`);
   };
-  const effects = (list: any, at: string, mods: boolean) => {
+  const effects = (list: any, at: string, mods: boolean, hand = false) => {
+    const ch = (v: any) => hand && v === "choose";
     if (list == null) return;
     if (!Array.isArray(list)) return e.push(`${at}: effects must be a list`);
     for (const x of list) {
       if (!ONE_SHOT.includes(x?.op) && !mods) { e.push(`${at}: ${x?.op} is a modifier; only one-shot effects here`); continue; }
       const ok = (() => {
         switch (x.op) {
-          case "move": return target(x.target) && ["+", "-"].includes(x.dir) && SIZES.includes(x.size);
-          case "grip": return ["open", "iron"].includes(x.dir) && SIZES.includes(x.size);
-          case "gain": case "spend": return role(x.kind) && num(x.n, 1, 5);
-          case "file": return I.includes(x.ideology) && num(x.n, 1, 2);
-          case "boostNext": return (x.ideology === "any" || I.includes(x.ideology)) && num(x.steps, 1, 2);
-          case "hold": return target(x.target) && ["floor", "ceiling"].includes(x.bound) && num(x.level, 0, 100) && num(x.months, 1, 6);
+          case "move": return (target(x.target) || ch(x.target)) && ["+", "-"].includes(x.dir) && SIZES.includes(x.size);
+          case "grip": return (["open", "iron"].includes(x.dir) || ch(x.dir)) && SIZES.includes(x.size);
+          case "gain": case "spend": return (role(x.kind) || ch(x.kind)) && num(x.n, 1, 5);
+          case "file": return (I.includes(x.ideology) || ch(x.ideology)) && num(x.n, 1, 2);
+          case "boostNext": return (x.ideology === "any" || I.includes(x.ideology) || ch(x.ideology)) && num(x.steps, 1, 2);
+          case "hold": return (target(x.target) || ch(x.target)) && ["floor", "ceiling"].includes(x.bound) && num(x.level, 0, 100) && num(x.months, 1, 6);
           case "setFlag": flags.add(x.flag); return typeof x.flag === "string";
           case "queueNext": queued.push([x.tag, at]); return typeof x.tag === "string";
-          case "cancelIntent": return H.includes(x.holder);
+          case "cancelIntent": return H.includes(x.holder) || ch(x.holder);
           case "cost": return FAMILIES.includes(x.family) && role(x.kind) && num(x.delta, -2, 2);
           case "sizeUp": return I.includes(x.ideology);
           case "drift": return target(x.target) && num(x.multiplier, 0, 2);
@@ -83,7 +84,7 @@ export function checkPack(pack: Pack): string[] {
     ids.add(c.id);
     for (const [k, v] of Object.entries(c.cost ?? {})) if (!role(k) || !num(v, 1, 5)) e.push(`${c.id}: cost ${k} ${v}`);
     if (!c.effects?.length) e.push(`${c.id}: no effects`);
-    effects(c.effects, c.id, mods);
+    effects(c.effects, c.id, mods, true);
   };
   const pickCard = (c: any, at: string) => {
     handCard(c, at, true);
@@ -93,6 +94,7 @@ export function checkPack(pack: Pack): string[] {
     const x = d.ideologies?.[id];
     if (!x) { e.push(`deck.ideologies.${id} missing`); continue; }
     handCard(x.power, `${id}.power`, false);
+    if (!(x.power?.effects ?? []).some((f: any) => Object.values(f ?? {}).includes("choose"))) e.push(`${id}.power: a power card needs a choice ("choose")`);
     handCard(x.law, `${id}.law`, true);
     if (x.picks?.length !== 3) e.push(`${id}.picks: need 3`);
     (x.picks ?? []).forEach((m: any, k: number) => pickCard(m, `${id}.picks[${k}]`));

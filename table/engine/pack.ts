@@ -49,8 +49,8 @@ export type Family = "talk" | "address" | "power" | "law" | "grip" | "patron" | 
 
 export type Effect =
   | { op: "move"; target: string; dir: "+" | "-"; size: Size }
-  | { op: "grip"; dir: "open" | "iron"; size: Size }
-  | { op: "gain" | "spend"; kind: Role; n: number }
+  | { op: "grip"; dir: "open" | "iron" | "choose"; size: Size }
+  | { op: "gain" | "spend"; kind: Role | "choose"; n: number }
   | { op: "file"; ideology: string; n: number }
   | { op: "boostNext"; ideology: string; steps: number }
   | { op: "hold"; target: string; bound: "floor" | "ceiling"; level: number; months: number }
@@ -65,6 +65,11 @@ export type Effect =
   | { op: "income"; kind: Role; n: number; when?: Cond }
   | { op: "exchange"; from: Role; to: Role; rate: number }
   | { op: "trigger"; when: Cond; effects: Effect[] };
+
+// "choose" in a hand card's one-shot effect: the player picks at play time (owner ruling O12)
+export const CHOOSE = "choose";
+export type Ask = "holder" | "kind" | "dir" | "ideology";
+export type Choice = { holder?: string; kind?: Role; dir?: "iron" | "open"; ideology?: string };
 
 export const ONE_SHOT: string[] = ["move", "grip", "gain", "spend", "file", "boostNext", "hold", "setFlag", "queueNext", "cancelIntent"];
 

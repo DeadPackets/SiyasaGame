@@ -7,10 +7,11 @@ const FAMILY = { talk: "Talk", address: "Address", power: "power cards", law: "l
 const GROUPS = ["factions", "patrons"];
 
 export function describe(p: Pack, e: Effect): string {
-  const res = (k: Role) => p.world.resources[k].name;
-  const ideo = (id: string) => p.world.ideologies.find((i) => i.id === id)?.name ?? id;
+  const res = (k: Role | "choose") => (k === "choose" ? "of one resource you choose" : p.world.resources[k].name);
+  const ideo = (id: string) => (id === "choose" ? "an ideology you choose" : p.world.ideologies.find((i) => i.id === id)?.name ?? id);
   const who = (t: string) =>
-    t === "factions" ? "every faction"
+    t === "choose" ? "a holder you choose"
+    : t === "factions" ? "every faction"
     : t === "patrons" ? "every foreign backer"
     : t === "lowest" ? "the weakest faction"
     : t.startsWith("lean:") ? `every holder near ${ideo(t.slice(5))}`
@@ -27,7 +28,8 @@ export function describe(p: Pack, e: Effect): string {
   };
   switch (e.op) {
     case "move": return `${cap(who(e.target))} ${e.dir}${sizeNum(e.size)}.`;
-    case "grip": return `Grip ${e.dir === "iron" ? "+" : "-"}${TUNE.gripSize[e.size]}, toward ${e.dir === "iron" ? "Iron" : "Open"}.`;
+    case "grip": if (e.dir === "choose") return `Grip ${TUNE.gripSize[e.size]} toward Iron or Open, as you choose.`;
+      return `Grip ${e.dir === "iron" ? "+" : "-"}${TUNE.gripSize[e.size]}, toward ${e.dir === "iron" ? "Iron" : "Open"}.`;
     case "gain": return `Get ${e.n} ${res(e.kind)}.`;
     case "spend": return `Pay ${e.n} ${res(e.kind)}.`;
     case "file": return `File ${e.n} card${e.n > 1 ? "s" : ""} under ${ideo(e.ideology)}.`;
@@ -35,7 +37,7 @@ export function describe(p: Pack, e: Effect): string {
     case "hold": return `${cap(who(e.target))} cannot go ${e.bound === "floor" ? "below" : "above"} ${e.level} for ${e.months} month${e.months > 1 ? "s" : ""}.`;
     case "setFlag": return "";
     case "queueNext": return `Next month's card: ${card(p, e.tag)?.title ?? "a set card"}.`;
-    case "cancelIntent": return `${holder(p, e.holder).short} drops its demand.`;
+    case "cancelIntent": return `${cap(who(e.holder))} drops its demand.`;
     case "cost": return `${cap(FAMILY[e.family])} cost ${Math.abs(e.delta)} ${e.delta < 0 ? "less" : "more"} ${res(e.kind)}.`;
     case "sizeUp": return `${ideo(e.ideology)} answers move support 1 size more.`;
     case "drift": return e.multiplier === 0 ? `${cap(who(e.target))}: support does not drift.` : `${cap(who(e.target))}: support drifts ${pct(e.multiplier)} ${e.multiplier < 1 ? "slower" : "faster"}.`;

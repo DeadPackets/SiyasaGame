@@ -1,11 +1,11 @@
-import { choose, clamp, corners, dist, draw, endMonth, hand, marker, options, type Pack, pass, pillars, play, type State, shortlist, standing, switchVision, takePick } from "../engine";
+import { askOptions, type Choice, choose, clamp, corners, dist, draw, endMonth, hand, marker, options, type Pack, pass, pillars, play, type State, shortlist, standing, switchVision, takePick } from "../engine";
 
 export interface Bot {
   name: string;
   vision(p: Pack, s: State): string | null;
   answer(p: Pack, s: State): number;
   pick(p: Pack, s: State): string | null;
-  play(p: Pack, s: State): { id: string; target?: string } | null;
+  play(p: Pack, s: State): { id: string; target?: string; ch?: Choice } | null;
 }
 
 const mulberry = (seed: number) => () => {
@@ -48,7 +48,18 @@ function value(p: Pack, s: State, vision: string | null): number {
   return 50 * (vision ? progressOf(p, s, vision) : st) + 30 * st + 20 * safe + 6 * purse;
 }
 
-type Move = { kind: "answer"; i: number } | { kind: "pick"; id: string | null } | { kind: "play"; id: string; target?: string } | { kind: "stop" };
+type Move = { kind: "answer"; i: number } | { kind: "pick"; id: string | null } | { kind: "play"; id: string; target?: string; ch?: Choice } | { kind: "stop" };
+
+// a few sensible answers per ask: the weakest and strongest holders, every resource, both grip sides, every ideology
+function choices(p: Pack, s: State, asks: (keyof Choice)[]): Choice[] {
+  const opts = (a: keyof Choice) => {
+    if (a !== "holder") return askOptions(p, a);
+    const by = [...p.world.factions].sort((x, y) => s.support[x.id] - s.support[y.id]).map((h) => h.id);
+    const pat = [...p.world.patrons].sort((x, y) => s.support[x.id] - s.support[y.id])[0]?.id;
+    return [...new Set([by[0], by[1], by[by.length - 1], pat].filter(Boolean))] as string[];
+  };
+  return asks.reduce<Choice[]>((acc, a) => acc.flatMap((c) => opts(a).map((v) => ({ ...c, [a]: v }))), [{}]);
+}
 
 function moves(p: Pack, s: State): Move[] {
   if (s.phase === "answer") return options(p, s).flatMap((o, i) => (o.ok ? [{ kind: "answer" as const, i }] : []));
@@ -58,14 +69,14 @@ function moves(p: Pack, s: State): Move[] {
     { kind: "stop" },
     ...hand(p, s)
       .filter((c) => c.ok)
-      .flatMap((c) => (c.target ? low.map((f) => ({ kind: "play" as const, id: c.id, target: f.id })) : [{ kind: "play" as const, id: c.id }])),
+      .flatMap<Move>((c) => (c.target ? low.map((f) => ({ kind: "play" as const, id: c.id, target: f.id })) : choices(p, s, c.asks).map((ch) => ({ kind: "play" as const, id: c.id, ch })))),
   ];
 }
 
 function step(p: Pack, s: State, m: Move) {
   if (m.kind === "answer") choose(p, s, m.i);
   else if (m.kind === "pick") takePick(p, s, m.id);
-  else if (m.kind === "play") play(p, s, m.id, m.target);
+  else if (m.kind === "play") play(p, s, m.id, m.target, m.ch);
 }
 
 // finish the current month and `months` more with the greedy policy, on a copy
@@ -113,7 +124,7 @@ const asBot = (name: string, pickVision: (p: Pack, s: State) => string | null, c
   },
   play: (p, s) => {
     const m = choice(p, s);
-    return m.kind === "play" ? { id: m.id, target: m.target } : null;
+    return m.kind === "play" ? { id: m.id, target: m.target, ch: m.ch } : null;
   },
 });
 
@@ -128,7 +139,7 @@ export function randomBot(seed: number): Bot {
 // prefer: card or pick ids taken whenever offered or playable (the combo measurement)
 export const greedyBot = (vision: string | null, prefer: string[] = []): Bot =>
   asBot(`greedy:${vision ?? "free"}`, () => vision, (p, s) => {
-    const want = s.phase === "pick" ? s.offer?.ids.find((id) => prefer.includes(id)) : s.phase === "play" ? hand(p, s).find((c) => c.ok && !c.target && prefer.includes(c.id))?.id : undefined;
+    const want = s.phase === "pick" ? s.offer?.ids.find((id) => prefer.includes(id)) : s.phase === "play" ? hand(p, s).find((c) => c.ok && !c.target && !c.asks.length && prefer.includes(c.id))?.id : undefined;
     if (want) return s.phase === "pick" ? { kind: "pick", id: want } : { kind: "play", id: want };
     return best(p, s, s.vision);
   });

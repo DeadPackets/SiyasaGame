@@ -1,5 +1,5 @@
 import { band, clamp, zone } from "./geo";
-import { type Cond, type Effect, type Family, type Pack, ROLES, type Res, type Role, type Size } from "./pack";
+import { type Ask, CHOOSE, type Choice, type Cond, type Effect, type Family, type Pack, ROLES, type Res, type Role, type Size } from "./pack";
 import type { Ev, MoveSrc, State } from "./state";
 import { TUNE } from "./tune";
 
@@ -101,14 +101,28 @@ export function holdsCond(p: Pack, s: State, c: Cond): boolean {
   }
 }
 
-export function apply(p: Pack, s: State, e: Effect, ev: Ev[], src: MoveSrc = "card") {
+// which choice each effect waits for, by field
+const ASKS: [string, string, Ask][] = [["move", "target", "holder"], ["hold", "target", "holder"], ["cancelIntent", "holder", "holder"], ["gain", "kind", "kind"], ["spend", "kind", "kind"], ["grip", "dir", "dir"], ["file", "ideology", "ideology"], ["boostNext", "ideology", "ideology"]];
+export const asksOf = (effects: Effect[]): Ask[] =>
+  [...new Set(effects.flatMap((e) => ASKS.filter(([op, k]) => e.op === op && (e as Record<string, unknown>)[k] === CHOOSE).map((x) => x[2])))];
+
+function fill(e: Effect, ch: Choice): Effect {
+  const x = ASKS.find(([op, k]) => e.op === op && (e as Record<string, unknown>)[k] === CHOOSE);
+  if (!x) return e;
+  const v = ch[x[2]];
+  if (v == null) throw new Error(`${e.op} needs a chosen ${x[2]}`);
+  return { ...e, [x[1]]: v } as Effect;
+}
+
+export function apply(p: Pack, s: State, e0: Effect, ev: Ev[], src: MoveSrc = "card", ch: Choice = {}) {
+  const e = fill(e0, ch);
   switch (e.op) {
     case "move":
       for (const h of targets(p, s, e.target)) moveBy(s, h, (e.dir === "+" ? 1 : -1) * sizeNum(e.size), ev, src);
       return;
     case "grip": return gripBy(s, (e.dir === "iron" ? 1 : -1) * TUNE.gripSize[e.size], ev);
-    case "gain": return addRes(s, e.kind, e.n, ev);
-    case "spend": return addRes(s, e.kind, -e.n, ev);
+    case "gain": return addRes(s, e.kind as Role, e.n, ev);
+    case "spend": return addRes(s, e.kind as Role, -e.n, ev);
     case "file": return fileTo(s, e.ideology, e.n, ev);
     case "boostNext":
       s.boost.push({ ideology: e.ideology, steps: e.steps });

@@ -234,14 +234,16 @@ export function checkDeck(d, w, opts = {}) {
     else if (type === "W") cond(v, where); else if (type === "W?") { if (v != null) cond(v, where); }
     else if (type === "ONE") { if (!Array.isArray(v) || !v.length) bad(); else compile(v, where, false); }
   };
-  function compile(list, where, mods) {
+  // "choose": the player picks at play time; hand cards only (owner ruling O12)
+  const CH = { move: "target", hold: "target", cancelIntent: "holder", gain: "kind", spend: "kind", grip: "dir", file: "ideology", boostNext: "ideology" };
+  function compile(list, where, mods, hand = false) {
     if (list == null) return;
     if (!Array.isArray(list)) return e.push(`${where}: effects must be a list`);
     for (const p of list) {
       const spec = ONE[p?.op] ?? (mods ? MOD[p?.op] : null), at = `${where} ${p?.op}`;
       if (!spec) { e.push(`${where}: "${p?.op}" is not a ${mods ? "" : "one-shot "}primitive here`); continue; }
       for (const k of Object.keys(p)) if (k !== "op" && !(k in spec)) e.push(`${at}: unknown field ${k}`);
-      for (const [k, t] of Object.entries(spec)) if (p[k] !== undefined || !String(t).endsWith("?")) arg(t, p[k], at, k);
+      for (const [k, t] of Object.entries(spec)) if (!(hand && CH[p.op] === k && p[k] === "choose") && (p[k] !== undefined || !String(t).endsWith("?"))) arg(t, p[k], at, k);
       if (p.op === "trigger" && Array.isArray(p.effects)) for (const f of p.effects) {
         const c = p.when ?? {};
         const self = (c.if === "support" && f.op === "move" && (f.target === c.target || f.target === "factions" || f.target === "lowest") && ((c.above != null && f.dir === "+") || (c.below != null && f.dir === "-")))
@@ -257,7 +259,7 @@ export function checkDeck(d, w, opts = {}) {
     reg(c.id, src, where); if (!str(c.title) || !str(c.flavour)) e.push(`${c.id}: needs title and flavour`);
     for (const [k, v] of Object.entries(c.cost ?? {})) if (!ROLES.includes(k) || !num(v, 1, 5)) e.push(`${c.id}: cost ${k} ${v} not valid`);
     const cost = total(c.cost); if (cost < lo || cost > hi) e.push(`${c.id}: costs ${cost} in all; need ${lo} to ${hi}`);
-    compile(c.effects, c.id, mods);
+    compile(c.effects, c.id, mods, true);
     if (!c.effects?.length) e.push(`${c.id}: no effects`);
     const gain = (c.effects ?? []).filter((p) => p.op === "gain").reduce((a, p) => a + (+p.n || 0), 0), spend = (c.effects ?? []).filter((p) => p.op === "spend").reduce((a, p) => a + (+p.n || 0), 0);
     if (gain > cost + spend) e.push(`${c.id}: returns ${gain} resources for a cost of ${cost + spend}; no play returns more than it costs`);
@@ -273,7 +275,8 @@ export function checkDeck(d, w, opts = {}) {
   if (has("ideologies")) for (const id of I) {
     const x = d.ideologies?.[id];
     if (!x) { e.push(`ideologies.${id} missing`); continue; }
-    hand(x.power, `ideologies.${id}.power`, id, 2, 3, false); hand(x.law, `ideologies.${id}.law`, id, 3, 5, true);
+    hand(x.power, `ideologies.${id}.power`, id, 2, 3, false);
+    if (x.power && !(x.power.effects ?? []).some((p) => CH[p?.op] && p[CH[p.op]] === "choose")) e.push(`${x.power.id}: a power card must let the player choose: set at least one of its effects' ${[...new Set(Object.values(CH))].join(" / ")} to "choose"`); hand(x.law, `ideologies.${id}.law`, id, 3, 5, true);
     count(x.picks, 3, 3, `ideologies.${id}.picks`).forEach((m, k) => mod(m, `ideologies.${id}.picks[${k}]`, id));
   }
   for (const k of Object.keys(d.ideologies ?? {})) if (!I.includes(k)) e.push(`ideologies.${k} is not a world ideology`);

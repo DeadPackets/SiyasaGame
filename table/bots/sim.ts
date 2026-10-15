@@ -62,7 +62,7 @@ export function runTerm(p: Pack, bot: Bot, seed: number, opts: { rules?: Preset;
       }
       const m = bot.play(p, s);
       if (!m) break;
-      track(play(p, s, m.id, m.target), `play ${m.id}`, true);
+      track(play(p, s, m.id, m.target, m.ch), `play ${m.id}`, true);
       if (first) {
         r.firstPlays.push(m.id);
         first = false;
