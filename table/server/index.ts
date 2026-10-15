@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import type { Env } from "./env";
 import { jev, underBudget } from "./jev";
 import { verifyId } from "./identity";
-import { onBuild, onPrompt } from "./prompt";
+import { indexWorld, onBuild, onPrompt } from "./prompt";
 
 export { GateDO } from "./gate";
 export { WorldBuild } from "./workflow";
@@ -98,6 +98,14 @@ app.get("/api/mine", async (c) => {
   const worlds = await c.env.DB.prepare("SELECT id, title, polity, date, blurb, card FROM worlds WHERE owner = ? ORDER BY created DESC LIMIT 50").bind(id).all();
   const builds = await c.env.DB.prepare("SELECT id, prompt, status, created FROM builds WHERE owner = ? AND status = 'running' ORDER BY created DESC LIMIT 5").bind(id).all();
   return c.json({ worlds: worlds.results.map((r) => ({ ...r, card: JSON.parse(String(r.card)) })), builds: builds.results });
+});
+
+// lead-only: embed every listed world into Vectorize (seeds and repairs); the build Workflow indexes its own world
+app.post("/api/admin/reindex", async (c) => {
+  if (!c.env.IDENTITY_SECRET || c.req.header("x-admin") !== c.env.IDENTITY_SECRET) return c.json({ error: "no" }, 403);
+  const { results } = await c.env.DB.prepare("SELECT id, title, polity, date, blurb FROM worlds WHERE hidden = 0").all<{ id: string; title: string; polity: string; date: string; blurb: string }>();
+  for (const w of results) await indexWorld(c.env, w);
+  return c.json({ indexed: results.length });
 });
 
 app.post("/api/prompt", (c) => onPrompt(c.env, c.req.raw, c.executionCtx as ExecutionContext));

@@ -1,11 +1,13 @@
 {
- "id": "mars-colony-2091",
+ "id": "mars-2091",
  "title": "Ares Landing: The Margin Years",
  "voice": "Clipped habitat-log prose: Charter clauses and Directorate margin reports in days-of-reserve, over a street that talks in airlock graffiti and Dustline slogans, where pressure is politics and every sentence costs air.",
  "polity": "Ares Landing, Charter Settlement of Arcadia Planitia",
  "office": {
   "title": "Governor of Ares Landing under the Arcadia Charter",
-  "holder": "Teodora Ilunga-Varga"
+  "holder": "Teodora Ilunga-Varga",
+  "oath": "I, standing before the settlers of Ares Landing, do solemnly swear that I will faithfully execute the office of Governor, uphold and defend the Arcadia Charter, keep honest account of our air, water, power and food, guard the margins on which every life here depends, and serve all who breathe beneath these domes and vaults without favour, so long as I hold this trust.",
+  "oathSource": "Arcadia Charter, Article IV, sworn at investiture before the Settlement Assembly in the Erebus tube."
  },
  "date": "2091-04",
  "months": 16,

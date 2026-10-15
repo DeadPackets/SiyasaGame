@@ -18,6 +18,10 @@ export async function embed(env: Env, text: string): Promise<number[]> {
   return r.data[0];
 }
 
+export async function indexWorld(env: Env, w: { id: string; title: string; polity: string; date: string; blurb: string }) {
+  await env.VEC.upsert([{ id: w.id, values: await embed(env, `${w.title}. ${w.polity}, ${w.date}. ${w.blurb}`) }]);
+}
+
 async function similar(env: Env, prompt: string): Promise<{ load: Candidate } | { offer: Candidate[] } | null> {
   const q = await env.VEC.query(await embed(env, prompt), { topK: 20 });
   const ids = q.matches.filter((m) => m.score >= COSINE_FLOOR).map((m) => m.id);

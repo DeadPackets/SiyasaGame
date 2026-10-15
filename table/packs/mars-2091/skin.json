@@ -1,0 +1,307 @@
+{
+ "palette": {
+  "ground": "#0e1014",
+  "panel": "#181b21",
+  "panel2": "#22262e",
+  "ink": "#e8eaee",
+  "ink2": "#a8adb8",
+  "line": "#3a3f4a",
+  "accent": "#e0782a",
+  "up": "#4cc47a",
+  "down": "#e0563a"
+ },
+ "fonts": {
+  "pair": "techno",
+  "display": "Chakra Petch",
+  "body": "Noto Sans"
+ },
+ "finish": {
+  "type": "enamel",
+  "foilSlot": "c",
+  "intensity": 0.5
+ },
+ "house": {
+  "families": [
+   "scifi",
+   "tech"
+  ],
+  "tradition": "future",
+  "why": "The colony is built from hull plates, machined panels, domes and boards. Machined spacecraft structure is its high craft, so every creed is cut from that one engineered kit."
+ },
+ "ideologies": [
+  {
+   "id": "chr",
+   "name": "Charter Unionism",
+   "a": "#4a7fd0",
+   "b": "#0c1830",
+   "c": "#b9cdea",
+   "recipe": {
+    "layers": [
+     {
+      "family": "scifi",
+      "params": {
+       "motif": "rings",
+       "scale": 2,
+       "radius": 0.6,
+       "band": 4,
+       "line": "a",
+       "edge": "b",
+       "outline": 1.2,
+       "dot": 2,
+       "dotSlot": "c"
+      }
+     }
+    ],
+    "seed": 11,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "globe",
+    "slot": "c",
+    "ring": "a"
+   },
+   "fit": {
+    "tradition": "future",
+    "variant": "Steady interlaced rings, each one bound to its neighbours like clauses of a charter, in Charter blue on a deep navy ground.",
+    "emblem": "The Concord globe of the Charter."
+   },
+   "why": "Linked rings read as law and mutual guarantee, and they echo the orbit line. Charter blue suits its dutiful, homesick mood."
+  },
+  {
+   "id": "cor",
+   "name": "Concessionary Enterprise",
+   "a": "#a978e0",
+   "b": "#170f26",
+   "c": "#cbb4e8",
+   "recipe": {
+    "layers": [
+     {
+      "family": "tech",
+      "params": {
+       "motif": "circuit",
+       "scale": 2,
+       "lines": 3,
+       "stroke": 2.5,
+       "line": "a",
+       "pad": 0.08,
+       "padSlot": "c",
+       "holeSlot": "b",
+       "vias": true,
+       "viaSlot": "c/0.7"
+      }
+     }
+    ],
+    "seed": 204,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "coin",
+    "slot": "c",
+    "ring": "a"
+   },
+   "fit": {
+    "tradition": "electronics",
+    "variant": "Polished buses and pads like the lit Exchange boards: flows of credit routed and priced, in bright violet on dark plum.",
+    "emblem": "The Charter credit coin."
+   },
+   "why": "A circuit of buses and pads carries the restless, transactional flow of the Exchange arcade, with the credit coin at its centre."
+  },
+  {
+   "id": "ind",
+   "name": "Areanism",
+   "a": "#c4502c",
+   "b": "#2a0f08",
+   "c": "#f0c0a6",
+   "recipe": {
+    "layers": [
+     {
+      "family": "scifi",
+      "params": {
+       "motif": "heatshield",
+       "scale": 3,
+       "tall": 0.85,
+       "gap": 1.2,
+       "round": 0.2,
+       "seq": [
+        "a",
+        "a/0.8",
+        "a/0.65"
+       ]
+      }
+     }
+    ],
+    "seed": 77,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "orbit",
+    "slot": "c",
+    "ring": "a"
+   },
+   "fit": {
+    "tradition": "future",
+    "variant": "Heavy staggered tiles in close rust tones, like sintered regolith tile: raw, rooted, a whole planet's skin.",
+    "emblem": "The rust disc with the orbits of Phobos and Deimos."
+   },
+   "why": "Bold, solid rust-red tiles of Mars' own soil suit a defiant native creed. The two-moon orbit is its own sign."
+  },
+  {
+   "id": "lab",
+   "name": "Habitat Syndicalism",
+   "a": "#e8781e",
+   "b": "#24120a",
+   "c": "#fbd3a8",
+   "recipe": {
+    "layers": [
+     {
+      "family": "scifi",
+      "params": {
+       "motif": "isogrid",
+       "scale": 1,
+       "rib": 3,
+       "fillet": 0.25,
+       "pocket": "a/0.3",
+       "inner": "a/0.45",
+       "step": "a/0.65",
+       "boss": 0.12,
+       "bossSlot": "c",
+       "ribLine": "a"
+      }
+     }
+    ],
+    "seed": 330,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "gear",
+    "n": 12,
+    "slot": "c",
+    "ring": "a"
+   },
+   "fit": {
+    "tradition": "future",
+    "variant": "A hard, load-bearing triangular rib grid with filled pockets and bosses: collective strength, every rib carrying its share, in safety orange.",
+    "emblem": "The meshed gear of the union."
+   },
+   "why": "A machined isogrid is practical, stubborn structure. Safety orange and the gear belong to the work crews."
+  },
+  {
+   "id": "tec",
+   "name": "Margin Technocracy",
+   "a": "#46b874",
+   "b": "#0a1f14",
+   "c": "#a6dab6",
+   "recipe": {
+    "layers": [
+     {
+      "family": "scifi",
+      "params": {
+       "motif": "geodesic",
+       "scale": 1,
+       "stroke": 2.5,
+       "line": "a",
+       "sub": true,
+       "hubSlot": "c",
+       "glaze": "a/0.3"
+      }
+     }
+    ],
+    "seed": 512,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "clock",
+    "slot": "c",
+    "ring": "a"
+   },
+   "fit": {
+    "tradition": "future",
+    "variant": "Sparse, precise triangulated struts with lit hubs over faintly glazed panes, a calculated dome frame in cold margin green on near-black.",
+    "emblem": "The reserve gauge dial."
+   },
+   "why": "Austere, exact geodesic struts read as engineered certainty. Margin green and the gauge dial are the Directorate's own."
+  }
+ ],
+ "factions": [
+  {
+   "id": "aco",
+   "name": "Arcadia Constabulary",
+   "emblem": {
+    "kind": "shield"
+   },
+   "accent": "#4a7fd0",
+   "why": "The blue shield of the Charter police and lock security."
+  },
+  {
+   "id": "hsd",
+   "name": "Habitat Systems Directorate",
+   "emblem": {
+    "kind": "clock"
+   },
+   "accent": "#3fae6a",
+   "why": "The reserve gauge dial, with its green margin line."
+  },
+  {
+   "id": "lme",
+   "name": "Landing Merchants' Exchange",
+   "emblem": {
+    "kind": "tower"
+   },
+   "accent": "#d4a838",
+   "why": "The Exchange's stacked-tower logo in gold piping."
+  },
+  {
+   "id": "cas",
+   "name": "Colonial Assembly",
+   "emblem": {
+    "kind": "book"
+   },
+   "why": "The open book at the centre of the Assembly's ring of stars."
+  },
+  {
+   "id": "riw",
+   "name": "Regolith and Ice Workers' Union",
+   "emblem": {
+    "kind": "gear"
+   },
+   "accent": "#ff7a1a",
+   "why": "The RIWU's meshed gear on safety orange."
+  },
+  {
+   "id": "fam",
+   "name": "Free Arcadia Movement",
+   "emblem": {
+    "kind": "wheel"
+   },
+   "accent": "#c4502c",
+   "why": "The closed lock wheel of the Mars-born in rust red."
+  }
+ ],
+ "patrons": [
+  {
+   "id": "mca",
+   "name": "Mars Charter Authority",
+   "emblem": {
+    "kind": "globe"
+   },
+   "why": "The Concord globe ringed by its orbit line."
+  },
+  {
+   "id": "hac",
+   "name": "Helion-Ares Consortium",
+   "emblem": {
+    "kind": "sun"
+   },
+   "why": "The Helion-Ares sunburst wordmark."
+  },
+  {
+   "id": "upa",
+   "name": "Utopia Planitia Administration",
+   "emblem": {
+    "kind": "star",
+    "n": 5
+   },
+   "why": "The five-pointed gold star of the Utopia settlement."
+  }
+ ]
+}
