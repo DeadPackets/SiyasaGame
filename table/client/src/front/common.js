@@ -20,7 +20,7 @@ import { monthName } from "../shared/dates.js";
 import { applySkin } from "../shared/skin.js";
 import { badges, playedOn } from "../shared/badges.js";
 
-// world cards: each in its own skin; the finish engine loads on the first card
+// world cards: each in its own skin, medallions in gold leaf; the finish engine loads on the first card
 let FIN = null;
 const fin = () => (FIN ??= import("../patterns/finish.js").then((m) => (m.start() ? m : null), () => null));
 export function worldCard(w) {
@@ -38,6 +38,6 @@ export function worldCard(w) {
   if (two[0]) tileVars(a, two[0], 0.62);
   if (w.card?.palette) applySkin(w.card, a).catch(() => {});
   li._w = w;
-  fin().then((f) => { const c = w.card?.finish; if (f && c) $$(".med", li).forEach((el, j) => f.assign(f.surface(el), medal(two[j]), pal(two[j]), c.type, c.foilSlot)); });
+  fin().then((f) => { if (f) $$(".med", li).forEach((el, j) => f.assign(f.surface(el), medal(two[j]), pal(two[j]), "gold-leaf", w.card?.finish?.foilSlot)); });
   return li;
 }

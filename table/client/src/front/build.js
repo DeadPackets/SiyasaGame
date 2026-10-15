@@ -34,7 +34,7 @@ function skin(s) {
   F.face = face(F.ideos.map((x) => x.sk));
   // a faction wears the pattern of the ideology whose colour it carries; patrons without one take the ideologies in turn
   F.facs.forEach((f, i) => { const b = byF[f.id]; f.lean = s.ideologies.find((x) => b?.accent && x.a === b.accent) || s.ideologies[i % s.ideologies.length]; f.emblem = b?.emblem; });
-  F.look = `${LETTERS[s.fonts.pair] ?? `${s.fonts.display} letters`}${s.house?.families?.length ? `, ${and(s.house.families)} patterns` : ""}${s.finish?.type ? `, ${s.finish.type.replace(/-/g, " ")}` : ""}`;
+  F.look = `${LETTERS[s.fonts.pair] ?? `${s.fonts.display} letters`}${s.house?.families?.length ? `, ${and(s.house.families)} patterns` : ""}`;
   loadFont(s.fonts.display); // fetched now so the face is ready when its beat comes
 }
 function music(m) {
