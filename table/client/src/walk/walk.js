@@ -2,6 +2,7 @@
 // Runs when the page has ?walk=1: 8 screens, one idea each, ending in the pledge; Take office starts the term.
 import { gsap, RM } from "../shared/motion.js";
 import { applySkin } from "../shared/skin.js";
+import { monthName } from "../shared/dates.js";
 import { render, renderMedallion, colorize, dataURL } from "../patterns/engine.js";
 import emblem from "../patterns/emblem.js";
 import { PRESETS as RULESETS, TUNE } from "../../../engine/tune.ts";
@@ -24,7 +25,7 @@ async function start() {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-  const MONTH = (ym, month = "long") => new Date(`${ym}-01T00:00:00Z`).toLocaleDateString("en-GB", { month, year: "numeric", timeZone: "UTC" });
+  const MONTH = monthName;
   const WORDS = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split(" ");
   const word = (n) => WORDS[n] ?? String(n);
   const cap = (s) => s[0].toUpperCase() + s.slice(1);
@@ -157,7 +158,6 @@ ${css}</style><div class="wk"></div>`;
   const head = (h, lede) => `<header class="sh" data-in><h1 class="h disp" id="sh">${h}</h1>${lede ? `<p class="lede t1">${lede}</p>` : ""}</header>`;
   const visionLine = () => (vision ? vision.line : "No aims to check. Only your standing counts at the Reckoning.");
   const and = (a) => (a.length < 2 ? a.join("") : `${a.slice(0, -1).join(", ")} and ${a.at(-1)}`);
-  const end = new Date(`${F.reck.date}-01T00:00:00Z`);
 
   const SCREENS = [
     { name: "The world", spot: "#top .where", where: ["up-left", "the place and the date, top left"],
@@ -298,10 +298,9 @@ ${css}</style><div class="wk"></div>`;
   }
 
   // ---------- the pledge: the world's own oath, word for word ----------
-  const yearOf = new Intl.DateTimeFormat("en-GB", { year: "numeric", timeZone: "UTC" });
   function oath() {
     const o = F.oath, text = o?.text ?? `I take the office of ${F.office} of ${F.polity}, and I will hold it until ${esc(MONTH(F.reck.date))}.`;
-    const html = `<p class="ot" id="ot" lang="en" data-l>${esc(text)}</p><p class="ov t1" data-l>Your Vision: ${vision ? esc(vision.name) : "a free hand"}</p><p class="osrc t1" data-l>${esc(o?.source ?? `${F.office}, ${yearOf.format(end)}`)}</p>`;
+    const html = `<p class="ot" id="ot" lang="en" data-l>${esc(text)}</p><p class="ov t1" data-l>Your Vision: ${vision ? esc(vision.name) : "a free hand"}</p><p class="osrc t1" data-l>${esc(o?.source ?? `${F.office}, ${MONTH(F.reck.date)}`)}</p>`;
     return { html, label: text };
   }
   let pledgeTl = null;
