@@ -51,6 +51,21 @@ def run():
             check(n >= 1, f"landing {tag}: library shows {n} world(s)")
             ctx.close()
 
+        # 0. refused, first: once this address has built today, the gate answers before the safety check (only when Jev can answer)
+        if JEV:
+            ctx, pg = page(b, 1280, 800)
+            landing(pg, "refused")
+            pg.keyboard.type(REFUSED)
+            pg.keyboard.press("Enter")
+            try:
+                pg.wait_for_selector("#err.on", timeout=30000)
+                check(True, f"refused: {pg.inner_text('#err').strip(' !\n')}")
+                pg.screenshot(path=str(OUT / "state-refused.png"))
+            except Exception:
+                check(False, f"refused: no refusal ({pg.evaluate('location.pathname')})")
+            ctx.close()
+        else:
+            print("SKIP refused: no Jev key in table/.dev.vars")
         # 2. a prompt by keyboard goes through the fake build to "Begin the briefing"
         ctx, pg = page(b, 1280, 800)
         landing(pg, "build")
@@ -85,10 +100,10 @@ def run():
         rows = pg.evaluate("[...document.querySelectorAll('.row')].map((r) => r.classList.contains('done'))")
         check(all(rows) and len(rows) == 6, f"build: all 6 steps done {rows}")
 
-        # 3. back on the landing: "Your worlds" links to the build, and a second prompt is spaced; the library stays playable
+        # 3. back on the landing: the finished build has left "Your worlds", and a second prompt is spaced; the library stays playable
         landing(pg, "after")
         mine = pg.evaluate(f"!!document.querySelector('#mine:not([hidden]) a[href*=\"{build_id}\"]')")
-        check(mine, "landing: Your worlds links back to the build")
+        check(not mine, "landing: a finished build is no longer listed as building")
         pg.focus("#prompt")
         pg.keyboard.type("Byzantium, May 1453")
         pg.keyboard.press("Enter")
@@ -138,21 +153,6 @@ def run():
         check(not pg.errors, f"stubbed states: 0 console errors {pg.errors[:3]}")
         ctx.close()
 
-        # 5. refused: only when Jev can answer
-        if JEV:
-            ctx, pg = page(b, 1280, 800)
-            landing(pg, "refused")
-            pg.keyboard.type(REFUSED)
-            pg.keyboard.press("Enter")
-            try:
-                pg.wait_for_selector("#err.on", timeout=30000)
-                check(True, f"refused: {pg.inner_text('#err').strip(' !\n')}")
-                pg.screenshot(path=str(OUT / "state-refused.png"))
-            except Exception:
-                check(False, f"refused: no refusal ({pg.evaluate('location.pathname')})")
-            ctx.close()
-        else:
-            print("SKIP refused: no Jev key in table/.dev.vars")
         return finish(b)
 
 def finish(b):

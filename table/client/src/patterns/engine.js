@@ -172,7 +172,9 @@ export function tileURL(recipe, pal, opt = {}) {
 }
 
 // ---------- colour helpers for consumers ----------
-export const colorize = (svg, p) => svg.replace(/var\(--([abc])\)/g, (_, k) => p[k]);
+// a skin colour that is not plain hex never reaches the markup (built skins come from strangers' prompts)
+const HEX = /^#[0-9a-f]{3,8}$/i;
+export const colorize = (svg, p) => svg.replace(/var\(--([abc])\)/g, (_, k) => (HEX.test(p[k]) ? p[k] : "#808080"));
 export const motif = (svg) => svg.replace(/<rect width="[\d.]+" height="[\d.]+" fill="var\(--b\)"\/>/, "");
 // luminance mask for the finish: the foil slot is white, everything else black
 export const foilMask = (svg, foil = "a") => svg.replace(/var\(--([abc])\)/g, (_, k) => (foil.includes(k) ? "#fff" : "#000"));

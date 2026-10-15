@@ -1,5 +1,5 @@
 import type { Env } from "./env";
-import { ipKey } from "./gate";
+import { ipKey, today } from "./gate";
 import { identity } from "./identity";
 import { jev } from "./jev";
 
@@ -53,14 +53,19 @@ async function human(env: Env, token: unknown, ip: string): Promise<boolean> {
 }
 
 export async function onPrompt(env: Env, req: Request, ctx: ExecutionContext): Promise<Response> {
+  // JSON only: a cross-site form post cannot send it without a preflight
+  if (!req.headers.get("content-type")?.includes("application/json")) return Response.json({ state: "invalid", reason: "Try again." }, { status: 415 });
   const body = (await req.json().catch(() => null)) as { prompt?: unknown; token?: unknown; force?: unknown } | null;
   const prompt = typeof body?.prompt === "string" ? body.prompt.trim().replace(/\s+/g, " ") : "";
   if (prompt.length < 3) return Response.json({ state: "invalid", reason: "Name a place and a time." }, { status: 400 });
   if (prompt.length > 300) return Response.json({ state: "invalid", reason: "Use 300 characters or fewer." }, { status: 400 });
-  const ip = req.headers.get("cf-connecting-ip") ?? "local";
+  const ip = req.headers.get("cf-connecting-ip") ?? "local", key = ipKey(ip), gate = env.GATE.get(env.GATE.idFromName("global"));
   if (!(await human(env, body?.token, ip))) return Response.json({ state: "invalid", reason: "Try again." }, { status: 403 });
-  const { success } = await env.RL.limit({ key: `prompt:${ip}` });
+  const { success } = await env.RL.limit({ key: `prompt:${key}` });
   if (!success) return Response.json({ state: "invalid", reason: "Wait a minute, then try again." }, { status: 429 });
+  // the paid checks below run only for an address that could still build today
+  const open = await gate.peek(key);
+  if (open !== "ok") return Response.json({ state: open, opensAt: nextOpen() });
 
   // safety first: a refused prompt costs no build and no count. If Jev is down, the build's own content rule still holds.
   try {
@@ -80,19 +85,17 @@ export async function onPrompt(env: Env, req: Request, ctx: ExecutionContext): P
     }
   }
 
-  const gate = env.GATE.get(env.GATE.idFromName("global")), key = ipKey(ip);
-  const claim = await gate.claim(key);
+  const day = today(), claim = await gate.claim(key);
   if (claim !== "ok") return Response.json({ state: claim, opensAt: nextOpen() });
 
   const who = await identity(env.IDENTITY_SECRET, req), id = crypto.randomUUID(), fake = env.FAKE_BUILD === "1";
-  await env.DB.prepare("INSERT INTO builds (id, prompt, owner, status, fake, created) VALUES (?, ?, ?, 'running', ?, ?)").bind(id, prompt, who.id, fake ? 1 : 0, Date.now()).run();
-  if (!fake) {
-    try {
-      await env.BUILD.create({ id, params: { build: id, prompt, owner: who.id, key } });
-    } catch (e) {
-      ctx.waitUntil(gate.release(key));
-      await env.DB.prepare("UPDATE builds SET status = 'failed', error = ? WHERE id = ?").bind(String(e).slice(0, 300), id).run();
-    }
+  try {
+    await env.DB.prepare("INSERT INTO builds (id, prompt, owner, status, fake, created) VALUES (?, ?, ?, 'running', ?, ?)").bind(id, prompt, who.id, fake ? 1 : 0, Date.now()).run();
+    if (!fake) await env.BUILD.create({ id, params: { build: id, prompt, owner: who.id, key, day } });
+  } catch (e) {
+    console.error("build start failed", String(e));
+    ctx.waitUntil(gate.release(key, day));
+    await env.DB.prepare("UPDATE builds SET status = 'failed', error = ? WHERE id = ?").bind("The build could not start.", id).run().catch(() => {});
   }
   return Response.json({ state: "building", build: id }, { headers: who.header ? { "set-cookie": who.header } : {} });
 }
@@ -131,6 +134,11 @@ export async function onBuild(env: Env, id: string): Promise<Response> {
     const r = await fakeParts(env, row.created);
     if (r.status !== "running" && row.status === "running") await env.DB.prepare("UPDATE builds SET status = ?, world = ? WHERE id = ?").bind(r.status, r.world ?? null, id).run();
     return Response.json(r);
+  }
+  // a build the platform lost never reports back: after 90 minutes it is failed (no refund; it may have spent)
+  if (row.status === "running" && Date.now() - row.created > 90 * 60 * 1000) {
+    await env.DB.prepare("UPDATE builds SET status = 'failed', error = ? WHERE id = ? AND status = 'running'").bind("The build stopped answering.", id).run();
+    return Response.json({ status: "failed", parts: JSON.parse(row.parts), world: null, error: "The build stopped answering." });
   }
   return Response.json({ status: row.status, parts: JSON.parse(row.parts), world: row.world, error: row.error });
 }

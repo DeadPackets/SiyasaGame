@@ -5,7 +5,7 @@ import emblem from "../patterns/emblem.js";
 import { $, $$, esc, ARROW, MONTH, and, playURL, pal, medData, tile, face, json } from "./common.js";
 
 const ID = new URLSearchParams(location.search).get("b") || "";
-const TARGET = 300; // s: the product target, about 5 minutes from the prompt to a world
+const TARGET = 900; // s: measured 14 min for the first production build (world 8 min, deck 6 min in parallel with skin and music)
 const BEAT = 1.2; // s: the least time one visual beat holds the stage
 const POLL = 1500;
 const root = document.documentElement, stage = $("#stage");
@@ -350,17 +350,21 @@ function enqueue(st) {
 async function pump() {
   if (pumping) return;
   pumping = true;
-  while (mainQ.length || fillQ.length) {
-    const takeFill = fillQ.length && (!mainQ.length || lastMain || mainQ[0].last);
-    const b = takeFill ? fillQ.shift() : mainQ.shift();
-    lastMain = !!b.main;
-    ON[b.key](live, b);
-    if (live) await wait(b.dur);
+  try {
+    while (mainQ.length || fillQ.length) {
+      const takeFill = fillQ.length && (!mainQ.length || lastMain || mainQ[0].last);
+      const b = takeFill ? fillQ.shift() : mainQ.shift();
+      lastMain = !!b.main;
+      // one beat that throws is skipped; the queue, the failed screen and Begin still come
+      try { ON[b.key](live, b); } catch (e) { console.warn("beat", b.key, e); }
+      if (live) await wait(b.dur);
+    }
+  } finally {
+    pumping = false;
   }
-  pumping = false;
 }
 
-// ---------- the clock: time since the prompt against the 5-minute target ----------
+// ---------- the clock: time since the prompt against the 15-minute target ----------
 const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 let clockT = 0;
 function tick() {
@@ -451,7 +455,7 @@ async function poll() {
   try { st = await json(`/api/builds/${encodeURIComponent(ID)}`); } catch (e) { console.warn("build status unavailable", e); }
   if (st?.status === "missing") return lost();
   if (st) {
-    enqueue(st);
+    try { enqueue(st); } catch (e) { console.warn("build part", e); }
     if (st.status === "failed") { await until(() => !pumping); return failed(st.error); }
     if (st.status === "done") return;
   }

@@ -3,6 +3,7 @@ import type { Env } from "./env";
 import { jev, underBudget } from "./jev";
 import { verifyId } from "./identity";
 import { indexWorld, onBuild, onPrompt } from "./prompt";
+import { ipKey } from "./gate";
 
 export { GateDO } from "./gate";
 export { WorldBuild } from "./workflow";
@@ -24,12 +25,16 @@ app.get("/api/worlds", async (c) => {
 });
 
 app.get("/api/worlds/:id", async (c) => {
+  const row = await c.env.DB.prepare("SELECT hidden FROM worlds WHERE id = ?").bind(c.req.param("id")).first<{ hidden: number }>();
+  if (row?.hidden) return c.json({ error: "This world is not built." }, 404);
   const obj = await c.env.PACKS.get(`packs/${c.req.param("id")}.json`);
   if (!obj) return c.json({ error: "This world is not built." }, 404);
   return new Response(obj.body, { headers: { "content-type": "application/json", "cache-control": "public, max-age=3600" } });
 });
 
 app.post("/api/worlds/:id/play", async (c) => {
+  const { success } = await c.env.RL.limit({ key: `play:${ipKey(ip(c.req.raw))}` });
+  if (!success) return c.json({ ok: false }, 429);
   await c.env.DB.prepare("UPDATE worlds SET plays = plays + 1 WHERE id = ?").bind(c.req.param("id")).run();
   return c.json({ ok: true });
 });
@@ -48,7 +53,7 @@ function ctxOf(body: unknown): Ctx | null {
 
 async function gate(c: { env: Env; req: { raw: Request } }, kind: string): Promise<boolean> {
   if (!c.env.OPENROUTER_API_KEY) return false;
-  const { success } = await c.env.RL.limit({ key: ip(c.req.raw) });
+  const { success } = await c.env.RL.limit({ key: ipKey(ip(c.req.raw)) });
   return success && (await underBudget(c.env, kind));
 }
 
@@ -109,7 +114,7 @@ app.get("/api/mine", async (c) => {
 
 // lead-only: embed every listed world into Vectorize (seeds and repairs); the build Workflow indexes its own world
 app.post("/api/admin/reindex", async (c) => {
-  if (!c.env.IDENTITY_SECRET || c.req.header("x-admin") !== c.env.IDENTITY_SECRET) return c.json({ error: "no" }, 403);
+  if (!c.env.ADMIN_TOKEN || c.req.header("x-admin") !== c.env.ADMIN_TOKEN) return c.json({ error: "no" }, 403);
   const { results } = await c.env.DB.prepare("SELECT id, title, polity, date, blurb FROM worlds WHERE hidden = 0").all<{ id: string; title: string; polity: string; date: string; blurb: string }>();
   for (const w of results) await indexWorld(c.env, w);
   return c.json({ indexed: results.length });

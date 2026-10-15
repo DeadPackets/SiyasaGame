@@ -102,6 +102,9 @@ export function checkSkin(skin: any, W: any): string[] {
     const d = kinds.filter((q, i) => q && kinds.indexOf(q) !== i);
     if (d.length) errors.push(`${k}: emblems must all differ; repeated: ${[...new Set(d)].join(", ")}`);
   }
+  const hex = /^#[0-9a-f]{6}$/i;
+  for (const [k, v] of Object.entries(skin.palette || {})) if (typeof v === "string" && v.startsWith("#") && !hex.test(v)) errors.push(`palette ${k} must be #rrggbb`);
+  for (const k of ["ideologies", "factions", "patrons"]) for (const x of skin[k] || []) for (const c of ["a", "b", "c"]) if (x[c] != null && !hex.test(x[c])) errors.push(`${k} ${x.id}: ${c} must be #rrggbb`);
   for (const f of skin.factions || []) if (W.factions.some((b: any) => b.id === f.id) && f.accent && !/^#[0-9a-f]{6}$/i.test(f.accent)) errors.push(`factions ${f.id}: accent must be #rrggbb`);
   return errors;
 }

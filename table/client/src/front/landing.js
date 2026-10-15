@@ -354,7 +354,7 @@ function worldCard(w) {
 function nextCard() {
   const li = document.createElement("li");
   li.className = "next";
-  li.innerHTML = `<button type="button" class="wcard blank"><span class="band" aria-hidden="true"></span><span class="wt t2 disp">The next world is yours</span><span class="wi t1">Name a place and a time. Siyasa builds it in about 5 minutes.</span><span class="play t1">Write a prompt${ARROW}</span></button>`;
+  li.innerHTML = `<button type="button" class="wcard blank"><span class="band" aria-hidden="true"></span><span class="wt t2 disp">The next world is yours</span><span class="wi t1">Name a place and a time. Siyasa builds it in about 15 minutes.</span><span class="play t1">Write a prompt${ARROW}</span></button>`;
   $("button", li).onclick = () => { scrollTo({ top: 0, behavior: RM ? "auto" : "smooth" }); $("#prompt").focus({ preventScroll: true }); };
   return li;
 }
