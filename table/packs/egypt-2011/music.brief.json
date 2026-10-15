@@ -1,0 +1,232 @@
+{
+ "title": "Communiqué Number One",
+ "bpm": 96,
+ "bars": 24,
+ "tonic": 50,
+ "scale": [
+  0,
+  1.5,
+  3,
+  5,
+  7,
+  8,
+  10
+ ],
+ "chords": "<0!2 6 0 3!2 6 0 0!2 6 0 3 2 6 0 3!2 4!2 6 3 4 0>",
+ "theme": "<[0 1 2 3 4@2 3 2] [3 2 1 2 1@2 0 ~] [-1 0 1 2 1@2 0 -1] [0 1 0 -1 0@4] [3 4 5 4 3@2 2 3] [4 5 4 3 2@2 3 ~] [2 1 2 3 2 1 -1 ~] [0 1 2 1 0@4] [0 1 2 3 4@2 3 2] [3 2 1 2 1@2 0 ~] [-1 0 1 2 3 2 1 -1] [0@6 ~@2] ~ ~ ~ ~ [3 4 5 6 7@2 6 5] [5 6 7 8 7@2 6 5] [4 5 6 7 8@2 7 6] [7 6 5 4 5@2 4 ~] [5 4 3 2 3@2 2 1] [3 4 3 2 1@2 2 3] [4 3 2 1 2@2 1 -1] [0@6 ~@2]>",
+ "solo": "<~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ [7 6 5 4 3@2 4 5] [4 3 2 3 2@2 1 2] [1 2 1 0 -1@2 0 1] [0@4 ~@4] ~ ~ ~ ~ ~ ~ ~ ~>",
+ "sighs": "<[5@3 4] [1@3 0] [6@3 5] [1@3 0]>",
+ "form": {
+  "climb": [
+   17,
+   20
+  ],
+  "solo": [
+   13,
+   16
+  ]
+ },
+ "ensemble": {
+  "lead": {
+   "sound": "ney",
+   "oct": 1
+  },
+  "section": "violins",
+  "bed": [
+   "violas",
+   "celli"
+  ],
+  "bass": "bass",
+  "pulse": "bass_pizz",
+  "arp": "harp",
+  "brass": [
+   "horn",
+   "trombone"
+  ],
+  "soloist": "violin_solo",
+  "figure": "[0 1 2 1 0 ~ -1 ~]",
+  "cymbal": "cymbal"
+ },
+ "rhythm": {
+  "village": {
+   "sound": "framedrum",
+   "hit": "[x ~ x x ~ x x ~]",
+   "vel": "[1 .5 .7 .6 .5 .8 .6 .5]"
+  },
+  "fills": {
+   "sound": "tek",
+   "hit": "<~ ~ ~ [~ ~ ~ ~ x x x x]>",
+   "vel": "[.6 .7 .8 1]"
+  },
+  "shaker": {
+   "sound": "tambourine",
+   "hit": "[x x x x x x x x]",
+   "vel": "[.8 .4 .6 .4 .8 .4 .6 .4]"
+  },
+  "city": {
+   "hit": "[dum tek ~ tek dum ~ tek ~]"
+  },
+  "strict": {
+   "hit": "[bassdrum ~ snare ~ bassdrum ~ snare snare]"
+  },
+  "tension": {
+   "hit": "<[dum ~ ~ ~] [dum ~ ~ ~] [dum ~ ~ ~] [dum ~ dum dum]>"
+  },
+  "crisis": {
+   "hit": "[dum ~ ~ tek ~ ~ tek ~]",
+   "accents": "[x ~ ~ x ~ ~ x ~]"
+  }
+ },
+ "moods": {
+  "tension": {
+   "tune": "celli",
+   "ostinato": "celli_spic",
+   "tremolo": "violins_trem",
+   "cry": "violin_solo",
+   "heartbeat": "timpani",
+   "roll": "timpani_roll"
+  },
+  "crisis": {
+   "tune": [
+    "violins",
+    "horn"
+   ],
+   "drive": [
+    "violins_spic",
+    "celli_spic"
+   ],
+   "stab": [
+    "horn_stac",
+    "trumpet_stac"
+   ],
+   "low": "bass_pizz",
+   "timp": "timpani"
+  }
+ },
+ "fills": [
+  {
+   "sound": "cymbal",
+   "vel": 0.8
+  },
+  {
+   "sound": "timpani_roll",
+   "vel": 0.7
+  }
+ ],
+ "ideologies": {
+  "nat": {
+   "name": "State Nationalism",
+   "tune": [
+    {
+     "sound": "horn",
+     "oct": 0,
+     "climb": true
+    }
+   ],
+   "share": 0.8,
+   "colour": [
+    {
+     "type": "drums",
+     "hit": "[bassdrum ~ snare ~ bassdrum snare snare ~]",
+     "vel": "[1 .5 .8 .5 1 .6 .7 .5]"
+    }
+   ],
+   "thins": {
+    "lead": 0.2,
+    "ornaments": 0.5,
+    "drums": 0
+   }
+  },
+  "nas": {
+   "name": "Nasserism",
+   "tune": [
+    {
+     "sound": "oud",
+     "oct": 0,
+     "ornament": true
+    },
+    {
+     "sound": "accordion",
+     "oct": 1
+    }
+   ],
+   "share": 0.7,
+   "colour": [
+    {
+     "type": "calls",
+     "sound": "accordion"
+    }
+   ]
+  },
+  "lib": {
+   "name": "Liberalism",
+   "tune": [
+    {
+     "sound": "electric_guitar_clean",
+     "oct": 0
+    }
+   ],
+   "share": 0.6,
+   "colour": [
+    {
+     "type": "pulse",
+     "sound": "electric_guitar_clean",
+     "rhythm": "[x ~ x ~ x x ~ x]"
+    },
+    {
+     "type": "drums",
+     "hit": "[dum ~ ka tek dum ka tek ~]",
+     "vel": "[1 .5 .6 .7 .9 .5 .7 .4]"
+    }
+   ]
+  },
+  "isl": {
+   "name": "Islamism",
+   "tune": [
+    {
+     "sound": "choir_aahs",
+     "oct": 0
+    }
+   ],
+   "share": 0.7,
+   "colour": [
+    {
+     "type": "drone",
+     "sound": "choir_aahs",
+     "degrees": [
+      0,
+      4
+     ],
+     "oct": 0
+    }
+   ],
+   "thins": {
+    "lead": 0.1,
+    "ornaments": 0.6,
+    "drums": 0.5
+   }
+  },
+  "sal": {
+   "name": "Salafism",
+   "colour": [
+    {
+     "type": "calls",
+     "sound": "choir_aahs"
+    },
+    {
+     "type": "drone",
+     "sound": "choir_aahs",
+     "degrees": [
+      0
+     ],
+     "oct": 0
+    }
+   ],
+   "thins": {
+    "lead": 0.3,
+    "ornaments": 0.9,
+    "drums": 0.9
+   }
+  }
+ }
+}

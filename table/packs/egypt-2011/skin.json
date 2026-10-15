@@ -1,0 +1,287 @@
+{
+ "palette": {
+  "ground": "#14100c",
+  "panel": "#1f1912",
+  "panel2": "#2a221a",
+  "ink": "#f2e8d6",
+  "ink2": "#c4b49a",
+  "line": "#4a3e30",
+  "accent": "#c9a23a",
+  "up": "#4caf6a",
+  "down": "#d0503c"
+ },
+ "fonts": {
+  "pair": "kufi",
+  "display": "Reem Kufi",
+  "body": "Hanken Grotesk"
+ },
+ "finish": {
+  "type": "gold-leaf",
+  "foilSlot": "a",
+  "intensity": 0.5
+ },
+ "house": {
+  "families": [
+   "zellij",
+   "girih"
+  ],
+  "tradition": "mamluk",
+  "why": "Cairo's Mamluk star geometry (Sultan Hassan, al-Azhar woodwork, Khan el-Khalili brass) is the city's highest craft and is still printed by state and mosque alike."
+ },
+ "ideologies": [
+  {
+   "id": "nat",
+   "name": "State Nationalism",
+   "a": "#c0392b",
+   "b": "#2a0e0c",
+   "c": "#f0c8b8",
+   "recipe": {
+    "layers": [
+     {
+      "family": "zellij",
+      "params": {
+       "motif": "star",
+       "scale": 2,
+       "n": 8,
+       "band": 2
+      }
+     }
+    ],
+    "seed": 11,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "shield"
+   },
+   "fit": {
+    "tradition": "mamluk",
+    "variant": "Dense ranks of filled 8-point stars joined by diagonal bands: ordered, martial and regular, in the red of the tricolour.",
+    "emblem": "A plain military shield, the guardian state without the eagle."
+   },
+   "why": "Close-set banded stars like a parade ground; tricolour red on dark ground; the shield of the guardian army."
+  },
+  {
+   "id": "nas",
+   "name": "Nasserism",
+   "a": "#d4a020",
+   "b": "#2a1f08",
+   "c": "#f4e2a8",
+   "recipe": {
+    "layers": [
+     {
+      "family": "zellij",
+      "params": {
+       "motif": "burst",
+       "scale": 1,
+       "n": 8,
+       "width": 0.12,
+       "knock": 0.12,
+       "core": 0.08,
+       "disc": 0.12
+      }
+     }
+    ],
+    "seed": 22,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "star",
+    "n": 5
+   },
+   "fit": {
+    "tradition": "mamluk",
+    "variant": "Bold 8-ray bursts meeting tip to tip at scale 1, echoing Nasser-era sun-ray posters; defiant gold on dark.",
+    "emblem": "The five-pointed star of the United Arab Republic flag."
+   },
+   "why": "Large confident ray bursts recall star-and-ray posters; mill-worker gold; the UAR star."
+  },
+  {
+   "id": "lib",
+   "name": "Liberalism",
+   "a": "#4f6fd0",
+   "b": "#0d1530",
+   "c": "#c8d4f4",
+   "recipe": {
+    "layers": [
+     {
+      "family": "zellij",
+      "params": {
+       "motif": "circles",
+       "scale": 1,
+       "stroke": 3.5,
+       "small": 0.2,
+       "smallSlot": "c",
+       "dot": 4,
+       "dotSlot": "c"
+      }
+     }
+    ],
+    "seed": 33,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "crescentcross"
+   },
+   "fit": {
+    "tradition": "mamluk",
+    "variant": "Open intersecting rings with light dots where they meet: airy, hopeful, much open ground, in Mediterranean blue.",
+    "emblem": "The 1919 crescent embracing the cross of national unity."
+   },
+   "why": "Airy interlocking rings for an open civil state; Alexandrian blue; crescent-and-cross of Muslim-Copt unity."
+  },
+  {
+   "id": "isl",
+   "name": "Islamism",
+   "a": "#2e9a5a",
+   "b": "#0b2216",
+   "c": "#c0e0c8",
+   "recipe": {
+    "layers": [
+     {
+      "family": "girih",
+      "params": {
+       "tiling": "3.12.12",
+       "scale": 1,
+       "angle": 66,
+       "width": 2.2,
+       "outline": 0.9,
+       "petals": 0.42,
+       "fills": {
+        "star12": "a",
+        "petal": "a/0.6",
+        "core": "c",
+        "star3": "c/0.8"
+       }
+      }
+     }
+    ],
+    "seed": 44,
+    "cell": "hex"
+   },
+   "emblem": {
+    "kind": "book"
+   },
+   "fit": {
+    "tradition": "mamluk",
+    "variant": "Layered 12-point rosettes of Mamluk mosque ornament, patient and pious, in Freedom and Justice green.",
+    "emblem": "The open Quran, the book at the heart of the movement."
+   },
+   "why": "Mamluk 12-point rosettes for a disciplined devout creed; FJP green; the open book."
+  },
+  {
+   "id": "sal",
+   "name": "Salafism",
+   "a": "#2aa0a8",
+   "b": "#071a1c",
+   "c": "#9cc8cb",
+   "recipe": {
+    "layers": [
+     {
+      "family": "girih",
+      "params": {
+       "tiling": "4.8.8",
+       "scale": 1,
+       "angle": 60,
+       "width": 3.4,
+       "outline": 0,
+       "interlace": true,
+       "gap": 1,
+       "line": "a"
+      }
+     }
+    ],
+    "seed": 55,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "crescent"
+   },
+   "fit": {
+    "tradition": "mamluk",
+    "variant": "A sparse line-only interlaced 8-point star net, no fills: austere and rigorous but keeping its knots, teal on near-black.",
+    "emblem": "The plain crescent, an aniconic mark of faith."
+   },
+   "why": "Bare interlaced star lines for an austere, aniconic creed; deep teal; the crescent."
+  }
+ ],
+ "factions": [
+  {
+   "id": "army",
+   "name": "Egyptian Armed Forces high command",
+   "emblem": {
+    "kind": "sword"
+   },
+   "accent": "#c0392b",
+   "why": "The field marshal's sabre, in tricolour red."
+  },
+  {
+   "id": "mb",
+   "name": "Society of the Muslim Brothers (Muslim Brotherhood) and its Freedom and Justice Party",
+   "emblem": {
+    "kind": "crescent"
+   },
+   "accent": "#2e9a5a",
+   "why": "The crescent in the Freedom and Justice Party's green."
+  },
+  {
+   "id": "salc",
+   "name": "Salafist Call (al-Da'wa al-Salafiyya) and its Nour Party",
+   "emblem": {
+    "kind": "flame"
+   },
+   "why": "Nour means light: a simple flame."
+  },
+  {
+   "id": "moi",
+   "name": "Ministry of Interior, the Central Security Forces and State Security Investigations",
+   "emblem": {
+    "kind": "tower"
+   },
+   "why": "A watchtower for the police and surveillance state."
+  },
+  {
+   "id": "fel",
+   "name": "National Democratic Party networks and the Mubarak-era business elite (the feloul, 'remnants')",
+   "emblem": {
+    "kind": "coin"
+   },
+   "why": "The coin of the tycoons and patronage networks."
+  },
+  {
+   "id": "rev",
+   "name": "Revolution Youth Coalition and the April 6 Youth Movement",
+   "emblem": {
+    "kind": "star",
+    "n": 5
+   },
+   "why": "A plain star of hope for the youth who held Tahrir."
+  }
+ ],
+ "patrons": [
+  {
+   "id": "usa",
+   "name": "United States of America",
+   "emblem": {
+    "kind": "star",
+    "n": 5
+   },
+   "why": "The star of the Stars and Stripes."
+  },
+  {
+   "id": "ksa",
+   "name": "Kingdom of Saudi Arabia",
+   "emblem": {
+    "kind": "coin"
+   },
+   "why": "The $4 billion pledged to the Military Council."
+  },
+  {
+   "id": "qat",
+   "name": "State of Qatar",
+   "emblem": {
+    "kind": "orbit"
+   },
+   "why": "Satellite broadcasting: Al Jazeera's reach."
+  }
+ ]
+}

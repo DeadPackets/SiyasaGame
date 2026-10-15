@@ -1,0 +1,1494 @@
+{
+ "id": "mars-colony-2091",
+ "title": "Ares Landing: The Margin Years",
+ "voice": "Clipped habitat-log prose: Charter clauses and Directorate margin reports in days-of-reserve, over a street that talks in airlock graffiti and Dustline slogans, where pressure is politics and every sentence costs air.",
+ "polity": "Ares Landing, Charter Settlement of Arcadia Planitia",
+ "office": {
+  "title": "Governor of Ares Landing under the Arcadia Charter",
+  "holder": "Teodora Ilunga-Varga"
+ },
+ "date": "2091-04",
+ "months": 16,
+ "reckoning": {
+  "date": "2092-08",
+  "name": "The Window Fleet and the Charter Review",
+  "meaning": "The Window Fleet enters orbit with 3,100 settlers and 400 Charter Marines just as the Colonial Assembly votes on renewing the Arcadia Charter or declaring self-government. The question is whether the governor's order can hold the domes, the ice and the air together under one authority."
+ },
+ "ideologies": [
+  {
+   "id": "chr",
+   "name": "Charter Unionism",
+   "stands": "Ares Landing is a trust of the Earth Concord, held under the Arcadia Charter. Earth law, Earth citizenship and Earth's rescue guarantee are the colony's only lasting protection against the vacuum.",
+   "base": "Earth-born settlers of the 2070s and 2080s, Constabulary officers, Charter clerks, the medical service, families with relatives and pensions on Earth, the Chapel of the Long Night's older congregation.",
+   "culture": "They gather in Dome 1's Assembly Hall and the Charter Reading Room, keep Earth time beside sol time, watch the delayed Geneva feeds, wear pressed Charter-blue jumpsuits with the twelve-star cuff, and toast 'Home and Hull' on Charter Day.",
+   "symbols": "The Concord globe ringed by an orbit line, the twelve white stars of the Charter, the balance scales of Charter law, Charter blue and white.",
+   "roots": "Earth institutional modernism: Concord insignia, engraved Charter certificates and Earth-printed safety placards, kept up in the oldest Dome 1 modules.",
+   "mood": "dutiful, legalistic, homesick, steady, anxious",
+   "emblems": [
+    "globe",
+    "star",
+    "scales"
+   ],
+   "ruler": "Charterist",
+   "sound": "Recorded Earth orchestras playing the Charter Hymn in a slow 4/4, and hymns sung in unison under the Dome 1 ribs."
+  },
+  {
+   "id": "cor",
+   "name": "Concessionary Enterprise",
+   "stands": "Air, ice and pads should be priced, traded and owned. Concessions, private shops and investment from Earth bondholders are what make the colony grow, and charters and committees mainly get in the way.",
+   "base": "Exchange merchant families, pad and fabrication concessionaires, Helion-Ares contract managers, air-credit brokers in the Erebus Tube, wealthy second-wave settlers.",
+   "culture": "They trade in the Exchange arcade under the Pad Field gantries, watch commodity tickers in ice-tonnes, wear tailored suit liners in company colours, and close deals with a handshake and a shared ration of real coffee.",
+   "symbols": "The Charter credit coin, the cargo lander silhouette, the Helion-Ares sunburst wordmark, the Exchange's stacked-tower logo.",
+   "roots": "Corporate brand livery from Earth, cargo stencils and lander-hull lettering, the lit display boards of the Exchange arcade.",
+   "mood": "confident, transactional, polished, restless, opportunist",
+   "emblems": [
+    "coin",
+    "ship",
+    "tower"
+   ],
+   "ruler": "concessionary",
+   "sound": "Imported Earth lounge and pop on the arcade speakers, and synthesiser jingles that announce the Exchange tickers."
+  },
+  {
+   "id": "ind",
+   "name": "Areanism",
+   "stands": "The Mars-born are a people, and Arcadia is their homeland. Ares Landing must govern itself, keep its own ice and close the airlock on Geneva's orders.",
+   "base": "The 11,400 Mars-born, above all those under 30, tube-district youth, schoolteachers, Dustline listeners, settlers who stayed after their contracts ran out.",
+   "culture": "They gather in the Erebus Tube concourse and the basalt galleries, carve meander and spiral bands into lava-rock, count only in sols, wear rust-dyed suit liners stitched with two small moons, and greet each other with 'Pressure holds'.",
+   "symbols": "The rust-red disc with two small circles for Phobos and Deimos, carved basalt spirals, the closed-airlock wheel, the slogan 'Air Is Ours'.",
+   "roots": "Spiral and meander bands cut into Arcadian basalt in the lava tube, sintered regolith tile and stencilled lock-door graffiti.",
+   "mood": "defiant, young, rooted, raw, proud",
+   "emblems": [
+    "orbit",
+    "star",
+    "wheel"
+   ],
+   "traditions": [
+    "paleolithic"
+   ],
+   "ruler": "Areanist",
+   "sound": "Duct-drums in the 13-count sol rhythm under call-and-response chants that echo down the lava tube."
+  },
+  {
+   "id": "lab",
+   "name": "Habitat Syndicalism",
+   "stands": "Air, water and calories are a common stock, earned by the people who mine the ice and run the plants. Elected shift and block councils should allocate them, not Geneva, the Exchange or the engineers' board.",
+   "base": "Ice Field crews, Sabatier and electrolysis hall operators, hydroponics deck workers, hab maintenance gangs, the RIWU rank and file.",
+   "culture": "They meet in the union hall at Ice Field 7 and the greenhouse decks, read shift bulletins and the union's own sheet, wear patched orange work suits with crew numbers, and vote by raised gloves.",
+   "symbols": "The meshed gear, the wheat sheaf of the greenhouse decks, the ice-core cylinder, the raised glove.",
+   "roots": "Union banners sewn from retired suit fabric, workshop stencils and the bold block-colour posters of 1920s workers' movements.",
+   "mood": "collective, hard, stubborn, practical, militant",
+   "emblems": [
+    "gear",
+    "wheat"
+   ],
+   "adoptions": [
+    {
+     "tag": "soviet-1920s-30s",
+     "note": "The RIWU print shop at Ice Field 7 has copied constructivist diagonal block-colour posters for its strike bulletins since the 2083 quota dispute."
+    }
+   ],
+   "ruler": "syndicalist",
+   "sound": "Work songs to the cycler pump beat, sung over pipe zithers in the union hall."
+  },
+  {
+   "id": "tec",
+   "name": "Margin Technocracy",
+   "stands": "The colony lives or dies by its reserve margins. Certified engineers, not votes or Earth decrees, should decide power, air and labour, and politics must stop where the gauges start.",
+   "base": "The Habitat Systems Directorate's engineers and controllers, reactor crews, life-support certifiers, older First Landing veterans, scientific staff.",
+   "culture": "They gather in the Control Ring under the margin boards, read the daily reserve log as scripture, wear grey Directorate coveralls with certification bars, and hold 'zero briefings' at shift change where each margin is read aloud.",
+   "symbols": "The reserve gauge dial, the meshed gear, the open eye of the monitoring board, the green margin line.",
+   "roots": "Control-room interface design, engineering schematics and the sintered vaults of the Directorate plants.",
+   "mood": "precise, cold, vigilant, austere, paternal",
+   "emblems": [
+    "clock",
+    "gear",
+    "eye"
+   ],
+   "ruler": "technocratic",
+   "sound": "Sine-tone pulses and drones from the control-room alarm bank, turned into slow ambient pieces played at shift change."
+  }
+ ],
+ "compass": [
+  "chr",
+  "cor",
+  "ind",
+  "lab",
+  "tec"
+ ],
+ "marker": [
+  [
+   "chr",
+   0.6
+  ],
+  [
+   "tec",
+   0.4
+  ]
+ ],
+ "grip": 45,
+ "factions": [
+  {
+   "id": "aco",
+   "name": "Arcadia Constabulary",
+   "short": "Constabulary",
+   "who": "The colony's armed police and lock-security service, about 600 officers who answer to the governor under the Charter and hold the armouries, the airlock codes of public spaces and the Pad Field gates.",
+   "leader": {
+    "name": "Rafael Osei-Brandt",
+    "role": "Commandant of the Arcadia Constabulary"
+   },
+   "mix": [
+    [
+     "chr",
+     0.6
+    ],
+    [
+     "tec",
+     0.4
+    ]
+   ],
+   "support": 72,
+   "power": 3,
+   "produces": "force",
+   "persona": "It wants order in the tube, a clear chain of command up to Geneva and its own budget line. It fears being outgunned by Areanist youth or replaced by the Charter Marines. Its red line is any amnesty for attacks on Constabulary officers or locks. It respects an iron governor and grows insubordinate under one it sees as soft on the Free Arcadia Movement.",
+   "act": {
+    "text": "The Constabulary pulls its officers off the Erebus Tube posts, and Commandant Osei-Brandt cables the Charter Authority directly, going over the governor's head.",
+    "res": {
+     "force": -2,
+     "trust": -1
+    },
+    "sup": {
+     "mca": -5,
+     "fam": 3
+    }
+   },
+   "fall": "Commandant Osei-Brandt seals Dome 1, takes the Control Ring under the Charter's emergency clause and declares the governorship vacant until Geneva names a successor.",
+   "fates": {
+    "hi": "The Constabulary stands as the colony's loyal armed service under the renewed order, and its Commandant sits on the governor's council.",
+    "lo": "The Constabulary is purged and folded under new commanders, with half its officers sent home on the Window Fleet's return leg."
+   },
+   "insignia": "The Charter's twelve stars over a closed lock wheel on a blue shield, and silver cuff bars."
+  },
+  {
+   "id": "hsd",
+   "name": "Habitat Systems Directorate",
+   "short": "Systems Directorate",
+   "who": "The engineering bureau that ran Ares Landing for thirty years before the governorship. It runs the reactors, electrolysis and Sabatier trains, water plants and the margin boards, and certifies every reserve figure.",
+   "leader": {
+    "name": "Noor Haddad-Lindqvist",
+    "role": "Chief Systems Engineer of the Habitat Systems Directorate"
+   },
+   "mix": [
+    [
+     "tec",
+     0.8
+    ],
+    [
+     "chr",
+     0.2
+    ]
+   ],
+   "support": 58,
+   "power": 3,
+   "produces": "money",
+   "persona": "It wants the margins kept above the Charter floor and the final word on power and air. It fears politicians cooking reserve figures and strikes in the plants. Its red line is any order to falsify a margin report. It works with an iron governor who protects the plants, and it resents one who opens margin decisions to the Assembly or the street.",
+   "act": {
+    "text": "The Directorate puts the colony on certified-minimum operation, cuts every non-life-support load and publishes its own margin log without the governor's sign-off.",
+    "res": {
+     "money": -2,
+     "trust": -1
+    },
+    "sup": {
+     "lme": -4,
+     "cas": -3
+    }
+   },
+   "fall": "Dr. Haddad-Lindqvist declares a Margin Emergency under Charter Article 31, takes the allocation of power and air and invites the Charter Authority to remove a governor it calls unsafe.",
+   "fates": {
+    "hi": "The Directorate runs the plants as the order's trusted technical arm, and its margin board binds every decree.",
+    "lo": "The Directorate is broken up, its controllers answer to elected or Earth commissioners, and its certifications lose their force."
+   },
+   "insignia": "A green margin line across a reserve gauge dial, and grey certification bars."
+  },
+  {
+   "id": "lme",
+   "name": "Landing Merchants' Exchange",
+   "short": "Merchants' Exchange",
+   "who": "The chartered association of merchant families, pad and fabrication concessionaires and air-credit brokers who run the colony's private trade from the Exchange arcade.",
+   "leader": {
+    "name": "Priya Castellanos-Abe",
+    "role": "Chair of the Landing Merchants' Exchange"
+   },
+   "mix": [
+    [
+     "cor",
+     0.7
+    ],
+    [
+     "ind",
+     0.3
+    ]
+   ],
+   "support": 50,
+   "power": 1,
+   "produces": "money",
+   "persona": "It wants concessions, low levies, private greenhouse and pad rights and a Window Fleet manifest with room for paying cargo. It fears both Directorate requisitions and union councils. Its red line is confiscation of private decks or stock. It welcomes an open governor who trades, and it tolerates an iron one only if markets are left alone.",
+   "act": {
+    "text": "The Exchange hoards spares and sealant stock, suspends credit to the colony treasury and moves its accounts onto Helion-Ares books on Earth.",
+    "res": {
+     "money": -3
+    },
+    "sup": {
+     "hac": -3,
+     "riw": 2
+    }
+   },
+   "fall": "The Exchange and its bondholder friends halt the arcade, stop paying levies and back a petition to Geneva to put the colony under a corporate receiver.",
+   "fates": {
+    "hi": "The Exchange families hold the concessions and seats of the new order and grow rich on ice exports.",
+    "lo": "The Exchange's decks and stocks are requisitioned, and its families either leave on the return leg or trade under licence."
+   },
+   "insignia": "Stacked-tower logo over a Charter credit coin, and gold suit-liner piping."
+  },
+  {
+   "id": "cas",
+   "name": "Colonial Assembly",
+   "short": "Colonial Assembly",
+   "who": "The 50-seat elected Assembly of Ares Landing. Under the Charter it advises the governor and votes the local levy, and it is now split between a Charter bench, an Exchange bench and a growing Areanist-leaning self-government bloc.",
+   "leader": {
+    "name": "Tomasz Ferreira-Oyelaran",
+    "role": "Speaker of the Colonial Assembly"
+   },
+   "mix": [
+    [
+     "cor",
+     0.4
+    ],
+    [
+     "ind",
+     0.3
+    ],
+    [
+     "chr",
+     0.3
+    ]
+   ],
+   "support": 44,
+   "power": 2,
+   "produces": "trust",
+   "persona": "It wants real powers: control of the levy, a say over margins and a self-government bill on the table. It fears dissolution by Charter decree and being outflanked by the Free Arcadia Movement in the tube. Its red line is suspension of its sittings. It rallies to an open governor who shares power and turns into a hostile chamber under an iron one.",
+   "act": {
+    "text": "The Assembly refuses to vote the levy, passes a motion of no confidence in the governor and sends a delegation to plead its case on the Geneva link.",
+    "res": {
+     "trust": -2,
+     "money": -1
+    },
+    "sup": {
+     "fam": 4,
+     "mca": -3
+    }
+   },
+   "fall": "The Assembly votes the governor unfit, declares itself the provisional authority of Ares Landing and calls the settlers to obey it rather than Dome 1.",
+   "fates": {
+    "hi": "The Assembly becomes the colony's legislature with the levy, the budget and a voice in the margins.",
+    "lo": "The Assembly is suspended or reduced to a rubber stamp, and its Speaker is in exile or under house rules."
+   },
+   "insignia": "Fifty small stars arranged in a ring around an open book, on a white field."
+  },
+  {
+   "id": "riw",
+   "name": "Regolith and Ice Workers' Union",
+   "short": "Ice Workers' Union",
+   "who": "The RIWU, the colony's one great union, organising about 2,900 Ice Field crews and the operators of the electrolysis halls, Sabatier trains and hydroponics decks.",
+   "leader": {
+    "name": "Dolores Kamau-Quispe",
+    "role": "General Secretary of the Regolith and Ice Workers' Union"
+   },
+   "mix": [
+    [
+     "lab",
+     0.7
+    ],
+    [
+     "ind",
+     0.3
+    ]
+   ],
+   "support": 33,
+   "power": 2,
+   "produces": "money",
+   "persona": "It wants lower quotas, union medical inspection of perchlorate dust cases, a seat on the allocation board and common ownership of the ice plants. It fears Helion-Ares export deals that sell its ice abroad and Constabulary breaking of pickets. Its red line is armed police in the halls. It bargains with an open governor and strikes against an iron one.",
+   "act": {
+    "text": "The RIWU stops the ice tankers at Ice Field 7 and puts the electrolysis halls on work-to-rule, and the water and oxygen lines start to drop.",
+    "res": {
+     "money": -2,
+     "trust": -1
+    },
+    "sup": {
+     "hsd": -4,
+     "fam": 3
+    }
+   },
+   "fall": "The RIWU calls a general strike, occupies the electrolysis hall and the ice fields and offers to run the colony's air under workers' councils without the governor.",
+   "fates": {
+    "hi": "The union holds a guaranteed seat on the allocation board, and its councils run the ice and the decks.",
+    "lo": "The union is broken into licensed crews under Directorate or concession managers, and its leaders are barred from the halls."
+   },
+   "insignia": "A meshed gear around an ice-core cylinder, over a raised glove, on safety orange."
+  },
+  {
+   "id": "fam",
+   "name": "Free Arcadia Movement",
+   "short": "Free Arcadia",
+   "who": "The Areanist independence movement of the Mars-born. It organises through tube block committees and the pirate Dustline channel, and it has a militant fringe, the Pressure Cells.",
+   "leader": {
+    "name": "Ezra Valdivia",
+    "role": "Founder and spokesman of the Free Arcadia Movement"
+   },
+   "mix": [
+    [
+     "ind",
+     0.7
+    ],
+    [
+     "lab",
+     0.3
+    ]
+   ],
+   "support": 22,
+   "power": 2,
+   "produces": "voice",
+   "persona": "It wants self-government, recognition of the Mars-born as Arcadians and the ice held by the colony. It fears the Charter Marines and the new settler roll. Its red lines are the citizenship oath and extradition of its leaders to Earth. An open governor gets its rallies and petitions, and an iron one drives its youth into the Pressure Cells.",
+   "act": {
+    "text": "Free Arcadia fills the Erebus concourse, takes over the Habitat Channel relay for a night and calls the Mars-born to refuse every Charter roll and ration card.",
+    "res": {
+     "voice": -2,
+     "trust": -1
+    },
+    "sup": {
+     "aco": -3,
+     "cas": 3
+    }
+   },
+   "fall": "Free Arcadia proclaims an Arcadian Congress in the tube, shuts the inner locks against Dome 1 and declares the governor's writ void below the basalt line.",
+   "fates": {
+    "hi": "Free Arcadia's leaders sit in the new order as the voice of the Mars-born, and its banner flies beside or above the Charter's.",
+    "lo": "Free Arcadia is banned, its committees are broken up and its leaders are jailed or shipped Earthward."
+   },
+   "insignia": "A rust-red disc with two small moon circles, a closed lock wheel and carved basalt spirals."
+  }
+ ],
+ "patrons": [
+  {
+   "id": "mca",
+   "name": "Mars Charter Authority",
+   "short": "Charter Authority",
+   "who": "The Earth Concord's office in Geneva that holds the Arcadia Charter, appoints the governor, pays the life-support subsidy and controls rescue and return passage.",
+   "leader": {
+    "name": "Jean-Baptiste Mwangi-Rousseau",
+    "role": "Charter Commissioner for Mars"
+   },
+   "mix": [
+    [
+     "chr",
+     1
+    ]
+   ],
+   "support": 68,
+   "grip": 55,
+   "produces": "trust",
+   "persona": "It wants the Charter renewed, the Mars-born registered as Earth citizens and no precedent for secession anywhere in the system. It fears a declaration of independence on its watch and a Utopian foothold. Its red line is recognition of any authority other than the Charter. It backs a firm governor and recalls a weak one.",
+   "act": {
+    "text": "The Charter Authority freezes the monthly subsidy and suspends the governor's emergency powers, pending a Geneva inquiry.",
+    "res": {
+     "money": -3,
+     "trust": -1
+    },
+    "sup": {
+     "aco": -3,
+     "fam": 2
+    }
+   },
+   "fall": "The Commissioner revokes the governor's appointment and names the Window Fleet's Marine commander acting governor on arrival.",
+   "fates": {
+    "hi": "The Charter is renewed, and Geneva's writ, subsidy and rescue guarantee run in Arcadia for another decade.",
+    "lo": "Geneva keeps only a nominal tie or a treaty mission, and the Charter is dead in all but name."
+   },
+   "insignia": "The Concord globe ringed by an orbit line inside twelve white stars, on Charter blue."
+  },
+  {
+   "id": "hac",
+   "name": "Helion-Ares Consortium",
+   "short": "Helion-Ares",
+   "who": "The Earth industrial consortium that built the First Landing modules and holds the colony's development bonds, ice-export contracts and most of the Window Fleet's cargo slots.",
+   "leader": {
+    "name": "Katharina Sørlie-Tan",
+    "role": "Chief Executive of the Helion-Ares Consortium"
+   },
+   "mix": [
+    [
+     "cor",
+     0.7
+    ],
+    [
+     "tec",
+     0.3
+    ]
+   ],
+   "support": 55,
+   "grip": 60,
+   "produces": "money",
+   "persona": "It wants its bonds serviced, exclusive export rights to Arcadian ice and a seat at the margin board. It fears union councils and Areanist repudiation of colonial debt. Its red line is confiscation of its ice plant. It prefers a firm governor who keeps the fields working and keeps the Assembly away from the bonds.",
+   "act": {
+    "text": "Helion-Ares calls in the bond tranche in an Earth court and pulls the colony's spares off the Window Fleet manifest.",
+    "res": {
+     "money": -3
+    },
+    "sup": {
+     "lme": -4,
+     "hsd": -2
+    }
+   },
+   "fall": "The Consortium files for receivership of the colony's assets, and Geneva puts Ares Landing's plants under a corporate trustee who answers to the bondholders.",
+   "fates": {
+    "hi": "Helion-Ares holds the ice exports and the bonds of the new order, and its managers sit beside the Directorate.",
+    "lo": "The Consortium's assets are seized or bought out, and it sues from Earth over debt it will never collect."
+   },
+   "insignia": "The Helion-Ares sunburst wordmark in white on graphite grey."
+  },
+  {
+   "id": "upa",
+   "name": "Utopia Planitia Administration",
+   "short": "Utopia Planitia",
+   "who": "The state-run China-led settlement of about 12,000 people at Utopia Planitia, 3,800 km west. It is a rival and neighbour that sells machinery and rescue and wants Arcadian ice and influence.",
+   "leader": {
+    "name": "Wen Zhaolin",
+    "role": "Director of the Utopia Planitia Administration"
+   },
+   "mix": [
+    [
+     "tec",
+     0.7
+    ],
+    [
+     "lab",
+     0.3
+    ]
+   ],
+   "support": 35,
+   "grip": 70,
+   "produces": "force",
+   "persona": "It wants ice leases, a liaison office in the Domes and an Ares Landing that leans on Utopia rather than Geneva. It fears the Charter Marines and Helion-Ares export monopolies. Its red line is any Marine base pointed west. It prefers an iron, orderly governor, but it will flirt with Areanists if that loosens Geneva's hold.",
+   "act": {
+    "text": "Utopia Planitia recalls its technicians, stops the overland spares convoys and offers Free Arcadia a back channel.",
+    "res": {
+     "force": -2,
+     "money": -1
+    },
+    "sup": {
+     "fam": 3,
+     "hsd": -3
+    }
+   },
+   "fall": "Utopia Planitia recognises an Arcadian authority in the tube and sends rovers and technicians to keep it breathing, so the governor's rule becomes a rump in Dome 1.",
+   "fates": {
+    "hi": "Utopia Planitia becomes Ares Landing's partner in ice, rescue and machinery, with a permanent liaison in the Domes.",
+    "lo": "Utopia Planitia is shut out of Arcadia and watches from the west as a hostile neighbour."
+   },
+   "insignia": "A five-pointed gold star over a stylised plain line, on red."
+  }
+ ],
+ "resources": {
+  "money": {
+   "name": "Charter Credits",
+   "icon": "coin",
+   "unit": "₵100M (hundred million Charter credits)",
+   "value": 24
+  },
+  "force": {
+   "name": "Lock Security",
+   "icon": "shield",
+   "value": 5
+  },
+  "voice": {
+   "name": "Habitat Channel",
+   "icon": "screen",
+   "value": 4
+  },
+  "trust": {
+   "name": "Margin Faith",
+   "icon": "hand",
+   "value": 3
+  }
+ },
+ "balance": -1.5,
+ "balanceWhy": "The Charter subsidy and ice-export receipts no longer cover the imported spares, the bond interest and the rising cost of keeping the ageing Dome 1 and Dome 3 modules sealed, so the treasury loses about ₵150M every month.",
+ "timeline": [
+  {
+   "date": "2091-04-01",
+   "event": "Teodora Ilunga-Varga is sworn in in the Dome 1 Assembly Hall as the first appointed Governor of Ares Landing, ending thirty years of Directorate rule over a roll of 40,212 settlers, 11,400 of them Mars-born.",
+   "holders": [
+    "mca",
+    "hsd",
+    "cas"
+   ]
+  },
+  {
+   "date": "2091-04-22",
+   "event": "The Directorate's quarterly margin report puts the oxygen reserve at 186 days against the Charter floor of 180 and water at 240 days.",
+   "holders": [
+    "hsd",
+    "mca"
+   ]
+  },
+  {
+   "date": "2091-06-03",
+   "event": "2,900 RIWU crews stop work at Ice Field 7 for 72 hours after Helion-Ares raises shift quotas by 15 percent.",
+   "holders": [
+    "riw",
+    "hac",
+    "hsd"
+   ]
+  },
+  {
+   "date": "2091-08-09",
+   "event": "The Constabulary detains Ezra Valdivia under Charter Article 19 for sedition after his 'close the airlock on Geneva' broadcast.",
+   "holders": [
+    "aco",
+    "fam",
+    "mca"
+   ]
+  },
+  {
+   "date": "2091-09-14",
+   "event": "Pressure Day: 6,000 settlers fill the Erebus Tube concourse demanding Valdivia's release, and the Constabulary detains 41.",
+   "holders": [
+    "fam",
+    "aco",
+    "cas"
+   ]
+  },
+  {
+   "date": "2091-09-20",
+   "event": "A regional dust storm rolls over Arcadia Planitia and cuts the solar fields' output by 40 percent for 51 sols.",
+   "holders": [
+    "hsd",
+    "lme"
+   ]
+  },
+  {
+   "date": "2091-10-18",
+   "event": "A fire in Sabatier Train 3 kills two operators and cuts methane and water recovery output by 30 percent.",
+   "holders": [
+    "hsd",
+    "riw"
+   ]
+  },
+  {
+   "date": "2091-10-30",
+   "event": "Helion-Ares rolls over the ₵1.2 billion bond tranche for six months at 9 percent interest.",
+   "holders": [
+    "hac",
+    "lme"
+   ]
+  },
+  {
+   "date": "2091-11-20",
+   "event": "A Utopia Planitia convoy of 14 rovers arrives after 3,800 km overland, carrying 40 tonnes of electrolysis spares.",
+   "holders": [
+    "upa",
+    "hsd"
+   ]
+  },
+  {
+   "date": "2091-11-24",
+   "event": "Valdivia's trial opens before a mixed bench of a Charter judge on the Geneva link and settler assessors.",
+   "holders": [
+    "fam",
+    "mca",
+    "cas"
+   ]
+  },
+  {
+   "date": "2091-12-02",
+   "event": "The margin report puts the oxygen reserve at 141 days, under the Charter floor, and the Charter Authority is formally notified.",
+   "holders": [
+    "hsd",
+    "mca"
+   ]
+  },
+  {
+   "date": "2091-12-12",
+   "event": "The Charter Authority announces that a battalion of 400 Charter Marines will sail with the Window Fleet.",
+   "holders": [
+    "mca",
+    "aco",
+    "fam"
+   ]
+  },
+  {
+   "date": "2092-01-17",
+   "event": "Reactor Two scrams, and a 22-sol brownout falls across Domes 2 to 5.",
+   "holders": [
+    "hsd",
+    "riw",
+    "lme"
+   ]
+  },
+  {
+   "date": "2092-02-03",
+   "event": "The Window Fleet of nine ships leaves Earth orbit with 3,100 settlers, the Marines and Helion-Ares cargo.",
+   "holders": [
+    "mca",
+    "hac"
+   ]
+  },
+  {
+   "date": "2092-03-09",
+   "event": "The Colonial Assembly passes the first reading of the Self-Government Bill by 31 votes to 19.",
+   "holders": [
+    "cas",
+    "fam",
+    "mca"
+   ]
+  },
+  {
+   "date": "2092-04-21",
+   "event": "The bench acquits Valdivia of sedition, convicts him of unlawful assembly and sentences him to 90 sols, served at once.",
+   "holders": [
+    "fam",
+    "mca",
+    "aco"
+   ]
+  },
+  {
+   "date": "2092-05-11",
+   "event": "The RIWU and Free Arcadia begin a nine-sol general strike, and workers occupy the main electrolysis hall.",
+   "holders": [
+    "riw",
+    "fam",
+    "aco",
+    "hsd"
+   ]
+  },
+  {
+   "date": "2092-06-15",
+   "event": "The Charter Review Commission opens hearings on the Geneva link, and the Assembly passes the bill's second reading 33 to 17.",
+   "holders": [
+    "mca",
+    "cas",
+    "fam"
+   ]
+  },
+  {
+   "date": "2092-08-12",
+   "event": "The Window Fleet enters Mars orbit as the Colonial Assembly meets to vote between Charter renewal and a Declaration of Self-Government.",
+   "holders": [
+    "mca",
+    "hac",
+    "cas",
+    "fam",
+    "aco"
+   ]
+  }
+ ],
+ "people": [
+  {
+   "name": "Teodora Ilunga-Varga",
+   "role": "Governor of Ares Landing",
+   "holder": null
+  },
+  {
+   "name": "Laszlo Hartmann-Diallo",
+   "role": "Chief of Staff to the Governor",
+   "holder": null
+  },
+  {
+   "name": "Rafael Osei-Brandt",
+   "role": "Commandant of the Arcadia Constabulary",
+   "holder": "aco"
+  },
+  {
+   "name": "Ilya Novak-Sato",
+   "role": "Major, Constabulary lock-security commander",
+   "holder": "aco"
+  },
+  {
+   "name": "Noor Haddad-Lindqvist",
+   "role": "Chief Systems Engineer, Habitat Systems Directorate",
+   "holder": "hsd"
+  },
+  {
+   "name": "Amara Begić",
+   "role": "Chief Medical Officer of Ares Landing",
+   "holder": "hsd"
+  },
+  {
+   "name": "Priya Castellanos-Abe",
+   "role": "Chair of the Landing Merchants' Exchange",
+   "holder": "lme"
+  },
+  {
+   "name": "Tomasz Ferreira-Oyelaran",
+   "role": "Speaker of the Colonial Assembly",
+   "holder": "cas"
+  },
+  {
+   "name": "Dolores Kamau-Quispe",
+   "role": "General Secretary of the RIWU",
+   "holder": "riw"
+  },
+  {
+   "name": "Ezra Valdivia",
+   "role": "Mars-born founder of the Free Arcadia Movement, aged 27",
+   "holder": "fam"
+  },
+  {
+   "name": "Juno Arrieta",
+   "role": "Organiser of the militant Pressure Cells",
+   "holder": "fam"
+  },
+  {
+   "name": "Mira Solheim",
+   "role": "Voice of the pirate Dustline channel",
+   "holder": "fam"
+  },
+  {
+   "name": "Benedikt Oduya",
+   "role": "Chaplain of the ecumenical Chapel of the Long Night",
+   "holder": null
+  },
+  {
+   "name": "Jean-Baptiste Mwangi-Rousseau",
+   "role": "Charter Commissioner for Mars",
+   "holder": "mca"
+  },
+  {
+   "name": "Katharina Sørlie-Tan",
+   "role": "Chief Executive of the Helion-Ares Consortium",
+   "holder": "hac"
+  },
+  {
+   "name": "Wen Zhaolin",
+   "role": "Director of the Utopia Planitia Administration",
+   "holder": "upa"
+  }
+ ],
+ "seeds": [
+  {
+   "id": "s01",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "tec",
+   "line": "Dr. Haddad-Lindqvist reports the oxygen reserve at 186 days, six over the Charter floor, and asks the governor to choose between an 8 percent colony-wide air and power ration and a quiet cut to RIWU shifts at Ice Field 7.",
+   "arc": {
+    "id": "o2",
+    "part": 1
+   }
+  },
+  {
+   "id": "s02",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "chr",
+   "line": "Commissioner Mwangi-Rousseau's inauguration directive asks the governor to fly the Charter flag in every dome and swear the Constabulary to the Charter rather than to the Directorate, and Free Arcadia vows to tear the flags down in the tube."
+  },
+  {
+   "id": "s03",
+   "months": [
+    1,
+    3
+   ],
+   "corner": "cor",
+   "line": "Chair Castellanos-Abe asks the governor to legalise the grey market in resold air credits in the Erebus Tube, taxing it for the treasury instead of letting the Constabulary raid it."
+  },
+  {
+   "id": "s04",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "ind",
+   "line": "Free Arcadia and the Assembly's self-government bloc demand that Assembly sittings run uncut on the Habitat Channel, ending the governor's office's right to edit them."
+  },
+  {
+   "id": "s05",
+   "months": [
+    1,
+    3
+   ],
+   "corner": "lab",
+   "line": "The RIWU brings 140 perchlorate dust lung cases from Ice Field 7 and demands union-appointed medical inspectors with the power to halt a shift."
+  },
+  {
+   "id": "s06",
+   "months": [
+    2,
+    3
+   ],
+   "corner": "cor",
+   "line": "Helion-Ares envoy Sørlie-Tan offers to roll over the ₵1.2 billion bond tranche for six months, but only if the governor grants the Consortium exclusive rights to export Arcadian ice.",
+   "arc": {
+    "id": "bond",
+    "part": 1
+   }
+  },
+  {
+   "id": "s07",
+   "months": [
+    2,
+    4
+   ],
+   "corner": "chr",
+   "line": "The Charter Authority orders a new settler roll recording Earth citizenship for every Mars-born child, and Free Arcadia calls it a leash and tells families not to register.",
+   "arc": {
+    "id": "roll",
+    "part": 1
+   }
+  },
+  {
+   "id": "s08",
+   "months": [
+    2,
+    3
+   ],
+   "corner": "tec",
+   "line": "The Directorate asks the governor to requisition the Exchange families' private greenhouse decks into the common calorie plan before the storm season."
+  },
+  {
+   "id": "s09",
+   "months": [
+    2,
+    4
+   ],
+   "corner": "ind",
+   "line": "Mars-born teachers ask the Assembly and governor to replace the Earth syllabus with an Arcadian history and areography curriculum, and the Charter Authority objects."
+  },
+  {
+   "id": "s10",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "lab",
+   "line": "The RIWU votes a 72-hour stoppage at Ice Field 7 over Helion-Ares's 15 percent quota rise, and Kamau-Quispe gives the governor one shift to answer.",
+   "arc": {
+    "id": "strike",
+    "part": 1
+   }
+  },
+  {
+   "id": "s11",
+   "months": [
+    3,
+    5
+   ],
+   "corner": "tec",
+   "line": "Director Wen of Utopia Planitia offers electrolysis stacks in exchange for 600 tonnes of Arcadian ice a year and a liaison office in the Domes, cutting into Helion-Ares's export claims.",
+   "arc": {
+    "id": "utopia",
+    "part": 1
+   }
+  },
+  {
+   "id": "s12",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "chr",
+   "line": "Commandant Osei-Brandt asks for permanent Constabulary posts in the Erebus Tube concourse after 'Air Is Ours' is painted across every Free Arcadia-district lock door."
+  },
+  {
+   "id": "s13",
+   "months": [
+    3,
+    5
+   ],
+   "corner": "cor",
+   "line": "The Exchange and Helion-Ares propose a for-profit landing-pad concession at the Pad Field that would charge Utopian and Charter ships alike."
+  },
+  {
+   "id": "s14",
+   "months": [
+    4,
+    5
+   ],
+   "corner": "ind",
+   "line": "After Valdivia's 'close the airlock on Geneva' broadcast, the Constabulary asks for a warrant to detain him for sedition under Charter Article 19.",
+   "arc": {
+    "id": "trial",
+    "part": 1
+   }
+  },
+  {
+   "id": "s15",
+   "months": [
+    4,
+    6
+   ],
+   "corner": "lab",
+   "line": "Hydroponics workers ask to take over Greenhouse Deck 4 as a cooperative run by an elected RIWU council, independent of the Directorate's calorie plan."
+  },
+  {
+   "id": "s16",
+   "months": [
+    4,
+    6
+   ],
+   "corner": "tec",
+   "line": "The Directorate wants to retire Dome 3, which leaks 0.4 percent of its air a sol, and move its 2,100 residents into the lava tube, and the Assembly members for Dome 3 refuse."
+  },
+  {
+   "id": "s17",
+   "months": [
+    4,
+    5
+   ],
+   "corner": "chr",
+   "line": "A Charter Authority audit team demands full access to the Assembly's levy accounts and the Directorate's raw margin data, and both bodies call it Geneva spying."
+  },
+  {
+   "id": "s18",
+   "months": [
+    5,
+    6
+   ],
+   "corner": "tec",
+   "line": "With the dust storm forecast and the reserve forecast down to 150 days, the Directorate asks for emergency rationing powers that override the Assembly for as long as the storm lasts.",
+   "arc": {
+    "id": "o2",
+    "part": 2
+   }
+  },
+  {
+   "id": "s19",
+   "months": [
+    5,
+    7
+   ],
+   "corner": "cor",
+   "line": "The Exchange offers to fund three storm shelters in the tube in return for a two-year levy holiday on its members' trade."
+  },
+  {
+   "id": "s20",
+   "months": [
+    5,
+    7
+   ],
+   "corner": "ind",
+   "line": "Free Arcadia asks for the Erebus concourse for a 'Pressure Day' rally demanding Valdivia's release, and the Constabulary wants it banned as a lock-safety hazard."
+  },
+  {
+   "id": "s21",
+   "months": [
+    5,
+    6
+   ],
+   "corner": "chr",
+   "line": "Dr. Begić proposes a voluntary, Charter-paid medical return passage for 300 frail and elderly settlers, and the Assembly fears it will become a quiet cull of the roll."
+  },
+  {
+   "id": "s22",
+   "months": [
+    6,
+    7
+   ],
+   "corner": "lab",
+   "line": "The stoppage has ended in work-to-rule that slows ice deliveries, and the RIWU now demands a permanent seat on the Directorate's allocation board as the price of full shifts.",
+   "arc": {
+    "id": "strike",
+    "part": 2
+   }
+  },
+  {
+   "id": "s23",
+   "months": [
+    6,
+    8
+   ],
+   "corner": "chr",
+   "line": "The Charter Authority offers to send a battalion of Charter Marines with the Window Fleet if the governor formally asks for it, and Free Arcadia calls such a request an invasion.",
+   "arc": {
+    "id": "garrison",
+    "part": 1
+   }
+  },
+  {
+   "id": "s24",
+   "months": [
+    6,
+    7
+   ],
+   "corner": "tec",
+   "line": "With the storm cutting solar output by 40 percent, the Directorate asks to shut the Exchange's fabrication shops for the duration and send their power to the air plants."
+  },
+  {
+   "id": "s25",
+   "months": [
+    6,
+    8
+   ],
+   "corner": "cor",
+   "line": "Helion-Ares offers emergency power cells at three times the contract price, and Utopia Planitia counters with cheaper cells that come with Utopian technicians."
+  },
+  {
+   "id": "s26",
+   "months": [
+    7,
+    8
+   ],
+   "corner": "cor",
+   "line": "The bond rollover comes due mid-storm, and Helion-Ares now demands a voting seat on the Directorate's board and a cap on the Assembly's levy power.",
+   "arc": {
+    "id": "bond",
+    "part": 2
+   }
+  },
+  {
+   "id": "s27",
+   "months": [
+    7,
+    8
+   ],
+   "corner": "tec",
+   "line": "Reactor Two is running hot through the storm, and engineers ask whether to take it down for 30 sols of repair with Utopian help or run it until it fails.",
+   "arc": {
+    "id": "reactor",
+    "part": 1
+   }
+  },
+  {
+   "id": "s28",
+   "months": [
+    7,
+    9
+   ],
+   "corner": "ind",
+   "line": "Mars-born youth form 'Tube Watches' and offer to patrol the lava-tube districts in place of the Constabulary, which calls them a Free Arcadia militia."
+  },
+  {
+   "id": "s29",
+   "months": [
+    7,
+    9
+   ],
+   "corner": "lab",
+   "line": "After the Sabatier Train 3 fire kills two operators, the RIWU demands a public joint inquiry with union investigators, not a closed Directorate review."
+  },
+  {
+   "id": "s30",
+   "months": [
+    8,
+    9
+   ],
+   "corner": "ind",
+   "line": "Valdivia's trial opens, and the Assembly demands a jury of settlers while the Charter Authority insists on a Charter judge sitting on the Geneva link.",
+   "arc": {
+    "id": "trial",
+    "part": 2
+   }
+  },
+  {
+   "id": "s31",
+   "months": [
+    8,
+    10
+   ],
+   "corner": "tec",
+   "line": "The Utopian convoy has crossed 3,800 km with 40 tonnes of spares, and Director Wen now asks for a lease on Ice Field 9 and a Utopian crew inside the Directorate.",
+   "arc": {
+    "id": "utopia",
+    "part": 2
+   }
+  },
+  {
+   "id": "s32",
+   "months": [
+    8,
+    9
+   ],
+   "corner": "chr",
+   "line": "Commandant Osei-Brandt asks for authority to monitor the Habitat Channel and jam the pirate Dustline, whose broadcasts reach every Free Arcadia block."
+  },
+  {
+   "id": "s33",
+   "months": [
+    8,
+    10
+   ],
+   "corner": "cor",
+   "line": "The Exchange proposes a local sol scrip, backed by ice stocks, to cover the treasury's Charter credit shortfall, and Geneva warns it would be an act of monetary secession."
+  },
+  {
+   "id": "s34",
+   "months": [
+    9,
+    10
+   ],
+   "corner": "tec",
+   "line": "The oxygen reserve is at 141 days, under the Charter floor, and the governor must decide whether to report it straight to the Charter Authority, declare a Margin Emergency, or let the Directorate re-baseline the figures.",
+   "arc": {
+    "id": "o2",
+    "part": 3
+   }
+  },
+  {
+   "id": "s35",
+   "months": [
+    9,
+    11
+   ],
+   "corner": "chr",
+   "line": "The roll counts 11,400 Mars-born, and Geneva now makes their Earth citizenship conditional on a Charter oath, while Free Arcadia plans public burnings of roll cards.",
+   "arc": {
+    "id": "roll",
+    "part": 2
+   }
+  },
+  {
+   "id": "s36",
+   "months": [
+    9,
+    10
+   ],
+   "corner": "lab",
+   "line": "The RIWU proposes communal kitchens across the tube to stretch calories, and Utopia Planitia offers algae protein for them."
+  },
+  {
+   "id": "s37",
+   "months": [
+    9,
+    11
+   ],
+   "corner": "ind",
+   "line": "Free Arcadia convenes a shadow Arcadian Congress in the Erebus Tube and asks the Assembly and the governor to recognise it as a consultative body."
+  },
+  {
+   "id": "s38",
+   "months": [
+    10,
+    11
+   ],
+   "corner": "lab",
+   "line": "The ice dispute has become a general ice strike that has idled the tankers and is draining the water reserve, and Kamau-Quispe offers to end it only for a guaranteed union say written into Assembly law.",
+   "arc": {
+    "id": "strike",
+    "part": 3
+   }
+  },
+  {
+   "id": "s39",
+   "months": [
+    10,
+    11
+   ],
+   "corner": "tec",
+   "line": "Reactor Two has scrammed, and with 22 sols of brownout ahead the governor must choose which domes go dark first, as Utopia offers rover-carried fuel cells.",
+   "arc": {
+    "id": "reactor",
+    "part": 2
+   }
+  },
+  {
+   "id": "s40",
+   "months": [
+    10,
+    12
+   ],
+   "corner": "cor",
+   "line": "The Exchange wants Window Fleet cargo space for paying luxury goods, the Directorate wants it all for machinery, and Helion-Ares controls the slots."
+  },
+  {
+   "id": "s41",
+   "months": [
+    10,
+    12
+   ],
+   "corner": "chr",
+   "line": "Chaplain Oduya plans a memorial for the Sabatier dead under the Charter flag in Dome Square, and Free Arcadia demands the Arcadian banner fly in its place."
+  },
+  {
+   "id": "s42",
+   "months": [
+    11,
+    12
+   ],
+   "corner": "ind",
+   "line": "Speaker Ferreira-Oyelaran tables the Self-Government Bill and asks whether the governor will use the Charter veto at first reading.",
+   "arc": {
+    "id": "vote",
+    "part": 1
+   }
+  },
+  {
+   "id": "s43",
+   "months": [
+    11,
+    13
+   ],
+   "corner": "chr",
+   "line": "The 400 Marines are confirmed aboard the fleet, and the Assembly demands they be quartered at the Pad Field while Commandant Osei-Brandt wants them under his own command.",
+   "arc": {
+    "id": "garrison",
+    "part": 2
+   }
+  },
+  {
+   "id": "s44",
+   "months": [
+    11,
+    12
+   ],
+   "corner": "tec",
+   "line": "The Directorate proposes a Systems Service obliging every adult from 16 to 60 to give ten hours a week of maintenance labour, and the RIWU calls it scab conscription."
+  },
+  {
+   "id": "s45",
+   "months": [
+    11,
+    13
+   ],
+   "corner": "lab",
+   "line": "The RIWU moves to take Helion-Ares's ice-processing plant into common ownership under a workers' council, and the Consortium threatens suit in Earth courts."
+  },
+  {
+   "id": "s46",
+   "months": [
+    12,
+    13
+   ],
+   "corner": "cor",
+   "line": "The rollover has expired, and Helion-Ares threatens default proceedings and a freeze of the fleet's cargo unless it gets 30-year field rights, while the Assembly debates repudiating the debt.",
+   "arc": {
+    "id": "bond",
+    "part": 3
+   }
+  },
+  {
+   "id": "s47",
+   "months": [
+    12,
+    14
+   ],
+   "corner": "ind",
+   "line": "Juno Arrieta's Pressure Cells cut a Charter relay antenna, and Valdivia offers to disown them publicly if the governor will negotiate with him."
+  },
+  {
+   "id": "s48",
+   "months": [
+    12,
+    13
+   ],
+   "corner": "tec",
+   "line": "The Directorate's ten-year plan asks the governor to choose between deep drilling the expanded crater with Utopian rigs and sinking the budget into expanding the lava tube."
+  },
+  {
+   "id": "s49",
+   "months": [
+    12,
+    14
+   ],
+   "corner": "chr",
+   "line": "The Charter Authority offers the governor's nominee a seat on the Charter Review Commission if the governor publicly backs renewal before the Assembly votes."
+  },
+  {
+   "id": "s50",
+   "months": [
+    13,
+    14
+   ],
+   "corner": "ind",
+   "line": "Valdivia, acquitted of sedition and serving 90 sols for unlawful assembly, faces a Charter Authority extradition order to Earth on the fleet's return leg, and the tube is already massing.",
+   "arc": {
+    "id": "trial",
+    "part": 3
+   }
+  },
+  {
+   "id": "s51",
+   "months": [
+    13,
+    15
+   ],
+   "corner": "lab",
+   "line": "Tube residents elect block committees to share out the water ration themselves, and the RIWU asks the governor to give them legal force over the Directorate's meters."
+  },
+  {
+   "id": "s52",
+   "months": [
+    13,
+    14
+   ],
+   "corner": "cor",
+   "line": "The Exchange proposes selling Earth tourism berths and naming rights to Ares Landing landmarks, with Helion-Ares as broker."
+  },
+  {
+   "id": "s53",
+   "months": [
+    13,
+    15
+   ],
+   "corner": "tec",
+   "line": "Dr. Haddad-Lindqvist threatens to resign unless the governor stops trading margins for votes, and her deputy is ready to take the Control Ring on the governor's terms."
+  },
+  {
+   "id": "s54",
+   "months": [
+    14,
+    15
+   ],
+   "corner": "cor",
+   "line": "Director Wen offers a mutual-rescue and trade pact that would recognise whatever authority emerges in Arcadia, and Commissioner Mwangi-Rousseau warns that signing it is treason.",
+   "arc": {
+    "id": "utopia",
+    "part": 3
+   }
+  },
+  {
+   "id": "s55",
+   "months": [
+    14,
+    15
+   ],
+   "corner": "ind",
+   "line": "The Self-Government Bill has passed second reading, and the Charter Authority now instructs the governor to dissolve the Colonial Assembly before the fleet arrives.",
+   "arc": {
+    "id": "vote",
+    "part": 2
+   }
+  },
+  {
+   "id": "s56",
+   "months": [
+    14,
+    16
+   ],
+   "corner": "lab",
+   "line": "In the nine-sol general strike, RIWU and Free Arcadia workers hold the electrolysis hall and offer to keep the air running under workers' control if the Constabulary stays out."
+  },
+  {
+   "id": "s57",
+   "months": [
+    14,
+    15
+   ],
+   "corner": "chr",
+   "line": "Earth-born loyalists form a Charter League and ask the governor to arm them as Constabulary auxiliaries before the Reckoning."
+  },
+  {
+   "id": "s58",
+   "months": [
+    15,
+    16
+   ],
+   "corner": "chr",
+   "line": "With the fleet two months out, the Marine commander asks the Constabulary to secure the Pad Field for landing, Free Arcadia vows to blockade the pads, and Utopia warns against a Marine base.",
+   "arc": {
+    "id": "garrison",
+    "part": 3
+   }
+  },
+  {
+   "id": "s59",
+   "months": [
+    15,
+    16
+   ],
+   "corner": "cor",
+   "line": "Exchange families broker a 'Concord of the Landing': dominion status under a revised Charter, with Helion-Ares's bonds honoured, and they ask the governor to sponsor it."
+  },
+  {
+   "id": "s60",
+   "months": [
+    15,
+    16
+   ],
+   "corner": "tec",
+   "line": "The Directorate asks to put every airlock code in the colony under its master key before the fleet arrives, which would take the locks out of Constabulary and block-committee hands."
+  },
+  {
+   "id": "s61",
+   "months": [
+    15,
+    16
+   ],
+   "corner": "ind",
+   "line": "Free Arcadia asks the governor to raise the rust-red two-moon banner beside the Charter flag on the Dome 1 mast for the Reckoning."
+  },
+  {
+   "id": "s62",
+   "months": [
+    16,
+    16
+   ],
+   "corner": "ind",
+   "line": "The Declaration of Self-Government reaches its final vote, Utopia stands ready to recognise it, and Speaker Ferreira-Oyelaran asks the governor to sign, veto, or put it to an all-settler referendum.",
+   "arc": {
+    "id": "vote",
+    "part": 3
+   }
+  },
+  {
+   "id": "s63",
+   "months": [
+    16,
+    16
+   ],
+   "corner": "lab",
+   "line": "The RIWU demands that every one of the fleet's 3,100 newcomers join the union and work under its shift rules from their first sol."
+  },
+  {
+   "id": "s64",
+   "months": [
+    16,
+    16
+   ],
+   "corner": "cor",
+   "line": "Helion-Ares offers to buy the Arcadia Charter outright as a corporate concession, promising debt relief, and the Exchange is split over it."
+  },
+  {
+   "id": "s65",
+   "months": [
+    16,
+    16
+   ],
+   "corner": "chr",
+   "line": "Commissioner Mwangi-Rousseau asks the governor to take the oath of the renewed Charter in orbit aboard the fleet's flagship before the Assembly's vote."
+  }
+ ],
+ "era_brief": "Ares Landing's look comes in layers. First come the Earth-built First Landing modules of 2061 to 2068: aluminium-composite cylinders in Helion-Ares graphite-and-white livery, with stencilled hull numbers and Concord safety placards. Over them, from 2066, rose the regolith-sintered vaults and the ribbed domes of the 2070s, rust-brown and heavy, their concrete pierced by 3D-printed lattice screens. Since 2078 the Erebus lava tube has filled with basalt-faced terraces lit by LED strips. Living crafts include basalt carving, sintered glazed tile in ochre and oxide green, patchwork quilts and banners sewn from retired suit fabric, and printed polymer lattice. The Charter camp uses Charter blue, white and the twelve stars, and avoids rust red. Areanists use rust red, the two moons and carved meander spirals, and shun Earth flags. Unionists use safety orange and gears, and the Directorate uses grey and green margin lines. Wood, real brass, large glass windows, open flame, horses and Earth vegetation are foreign here: rare imports or simply impossible.",
+ "traditions": [
+  "future",
+  "spaceflight",
+  "electronics",
+  "brutalist",
+  "corporate-modern"
+ ],
+ "adoptions": [
+  {
+   "tag": "soviet-1920s-30s",
+   "note": "RIWU strike posters at Ice Field 7 since the 2083 quota dispute."
+  },
+  {
+   "tag": "paleolithic",
+   "note": "Mars-born carvers in the Erebus Tube have cut meander and spiral bands into basalt since about 2080, as an Areanist 'first people' mark."
+  }
+ ],
+ "music": {
+  "tradition": "Ares Landing's music is made under pressure hulls, where air is metered and wood, gut and brass are scarce. Its instruments are synthesisers and recorded Earth libraries; duct-drums beaten on decommissioned ventilation sections; pipe zithers strung across coolant tubing; harmonicas and the voice, which cost little air to carry; and the tonal alarm banks of the Control Ring. Earth-born settlers use the twelve-tone major (2,2,1,2,2,2,1) and natural minor (2,1,2,2,1,2,2). The Mars-born favour the 'sol scale', a pentatonic of 2,3,2,2,3, and a dark mode of 1,2,2,2,1,3,1. Two rhythms dominate. The 'cycler' is a two-stroke airlock pump beat: 'seal', a low damped hit, then 'vent', an open hissing scrape. The 'sol rhythm' is 13 counts grouped 3+3+3+4, said to echo the sol's extra 39 minutes, with a seal on each group's first count and vents between.",
+  "ceremony": "State ceremony uses recorded Earth orchestras: the slow 4/4 Charter Hymn, with synthesised brass standing in for the real thing, played at the governor's oath, Charter Day and every Window Fleet landing. A single unison choir sings under the Dome 1 ribs, and the Control Ring's three-tone chime opens each margin reading.",
+  "street": "In the tube concourse, duct-drum circles beat the sol rhythm under call-and-response Areanist chants. Union crews sing cycler work songs over pipe zithers. Dustline plays sol-scale synth ballads and harmonica laments for the Sabatier dead. Protest is a wall of pounded ductwork and 'Air Is Ours' chanted until the locks ring.",
+  "ideologies": {
+   "chr": "Recorded Earth orchestras playing the Charter Hymn in a slow 4/4, and hymns sung in unison under the Dome 1 ribs.",
+   "cor": "Imported Earth lounge and pop on the arcade speakers, and synthesiser jingles that announce the Exchange tickers.",
+   "ind": "Duct-drums in the 13-count sol rhythm under call-and-response chants that echo down the lava tube.",
+   "lab": "Work songs to the cycler pump beat, sung over pipe zithers in the union hall.",
+   "tec": "Sine-tone pulses and drones from the control-room alarm bank, turned into slow ambient pieces played at shift change."
+  }
+ }
+}

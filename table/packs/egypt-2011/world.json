@@ -1,0 +1,1981 @@
+{
+ "id": "egypt-2011-v4",
+ "title": "Egypt: The Military Council",
+ "voice": "The clipped, paternal register of numbered communiqués read on state television, answered by Tahrir banners, Friday sermons and the furious columns of the independent dailies.",
+ "polity": "Arab Republic of Egypt",
+ "office": {
+  "title": "Chairman of the Supreme Council of the Armed Forces",
+  "holder": "Field Marshal Mohamed Hussein Tantawi"
+ },
+ "date": "2011-02",
+ "months": 16,
+ "reckoning": {
+  "date": "2012-06",
+  "name": "The Handover: the presidential runoff and the transfer of power",
+  "meaning": "Whether the Military Council hands the presidency to an elected civilian on its own terms, keeping the army's autonomy, budget and veto, or loses the state to the street, the Brotherhood or its own officers."
+ },
+ "ideologies": [
+  {
+   "id": "nat",
+   "name": "State Nationalism",
+   "stands": "The army is the spine of the nation and the guardian of the state since 1952; order, sovereignty and stability come before parties, and the military's economy, budget and command stay beyond civilian oversight.",
+   "base": "The officer corps, the police and security services, the state bureaucracy, the Upper Egyptian families tied to the old ruling party, older Cairenes who fear chaos, state media staff.",
+   "culture": "Officers' clubs in Heliopolis and Nasr City, state television and al-Ahram, October War commemorations, the 'Sofa Party' who watched the revolution from home; the slogan 'The army and the people are one hand'.",
+   "symbols": "The tricolour of red, white and black; the Eagle of Saladin (not drawn); five-pointed stars of rank; crossed sabres of the field marshal; the October 1973 crossing (not drawn).",
+   "roots": "Nasser-era and Sadat-era state emblems, military parade stands, the Unknown Soldier memorial pyramid in Nasr City, engraved Egyptian banknotes.",
+   "mood": "stern, paternal, martial, orderly, suspicious",
+   "emblems": [
+    "shield",
+    "star",
+    "laurel"
+   ],
+   "ruler": "a nationalist",
+   "sound": "Brass military bands playing 'Bilady, Bilady, Bilady' and the patriotic songs of the 1973 war on state television."
+  },
+  {
+   "id": "nas",
+   "name": "Nasserism",
+   "stands": "Social justice, a strong public sector, land and labour rights and Arab independence from American and Israeli pressure, in the line of Gamal Abdel Nasser; bread, freedom and social justice.",
+   "base": "Industrial workers of Mahalla and the textile mills, independent trade unions, public-sector employees, leftist students, the Karama and Tagammu parties, provincial towns of the Delta.",
+   "culture": "Strikes and sit-ins at factory gates, the songs of Sheikh Imam and the poems of Ahmed Fouad Negm, Nasser portraits carried in Tahrir, the newspaper al-Arabi; the chant 'Bread, freedom, social justice'.",
+   "symbols": "Portraits of Gamal Abdel Nasser (not drawn); the eagle of the 1952 republic (not drawn); the two stars of the United Arab Republic flag; the cogwheel and wheat of the workers' movement.",
+   "roots": "Nasser-era posters and stamps, Aswan High Dam monuments, socialist-realist murals in public-sector factories.",
+   "mood": "defiant, collective, nostalgic, plebeian, anti-imperial",
+   "emblems": [
+    "star",
+    "gear",
+    "rays"
+   ],
+   "traditions": [
+    "arab-nationalist",
+    "soviet-late"
+   ],
+   "ruler": "a Nasserist",
+   "sound": "Abdel Halim Hafez's anthems of the 1960s and the oud-and-voice protest songs of Sheikh Imam sung by crowds."
+  },
+  {
+   "id": "lib",
+   "name": "Liberalism",
+   "stands": "A civil state with a new constitution, free elections, an end to the Emergency Law and to military trials of civilians, accountability for the killing of protesters and equal citizenship for Muslims and Copts.",
+   "base": "Educated urban youth of Cairo and Alexandria, the April 6 and Khaled Said networks, lawyers and human-rights groups, the Wafd and Free Egyptians parties, Coptic professionals, artists and journalists.",
+   "culture": "Facebook pages and Twitter, the independent dailies al-Masry al-Youm and al-Shorouk, the sit-in camps of Tahrir, graffiti on Mohamed Mahmoud Street, cafés of downtown Cairo; the chants 'Down with military rule' and 'The people want the fall of the regime'.",
+   "symbols": "The crescent embracing the cross of national unity; the tricolour waved in Tahrir; portraits of martyrs such as Khaled Said (not drawn); the clenched fist of April 6 (not drawn).",
+   "roots": "Downtown Cairo's belle-époque and art-deco façades, street graffiti and stencils, 1919 revolution imagery of crescent and cross.",
+   "mood": "hopeful, irreverent, urban, restless, idealistic",
+   "emblems": [
+    "crescentcross",
+    "scales",
+    "book"
+   ],
+   "traditions": [
+    "belle-epoque"
+   ],
+   "ruler": "a liberal",
+   "sound": "Ramy Essam's guitar chant 'Irhal' and Cairokee's 'Sout al-Horeya', sung in Tahrir."
+  },
+  {
+   "id": "isl",
+   "name": "Islamism",
+   "stands": "A civil state with an Islamic reference, Article 2 and the principles of Sharia as the source of legislation, power won at the ballot box, and the Muslim Brotherhood's long-suppressed organisation brought into parliament and government.",
+   "base": "The Muslim Brotherhood's disciplined membership, provincial middle classes, professional syndicates of doctors and engineers, university students, mosque charities and clinics across the Delta and Upper Egypt.",
+   "culture": "Usra study cells, mosque-centred charity and clinics, Friday prayers in Tahrir, the newspaper and channel of the Freedom and Justice Party; the slogan 'Islam is the solution'.",
+   "symbols": "Two crossed swords beneath a Quran with the word 'Prepare' (not drawn); the Freedom and Justice Party's green and white colours; the crescent.",
+   "roots": "Mamluk and Ottoman-era mosque ornament of Cairo, Arabic calligraphy, Islamic geometric patterns in modern print.",
+   "mood": "disciplined, pious, patient, confident, organised",
+   "emblems": [
+    "book",
+    "crescent"
+   ],
+   "ruler": "an Islamist",
+   "sound": "Unaccompanied anashid of the Brotherhood, Quranic recitation and chants of 'Allahu akbar' at Friday rallies."
+  },
+  {
+   "id": "sal",
+   "name": "Salafism",
+   "stands": "Strict application of Sharia in the manner of the pious ancestors, defence of Article 2, morality in public life and resistance to secularism; entered party politics only after the revolution.",
+   "base": "The Salafist Call of Alexandria and its preachers, satellite religious channels' audiences, poorer urban quarters and rural Delta and Upper Egypt, young men in neighbourhood mosques.",
+   "culture": "Lessons in Alexandria's mosques, the al-Nas and al-Rahma satellite channels, cassette and online sermons, full beards and short gallabiyas, niqab for women; mass rallies such as the 'Friday of Kandahar'.",
+   "symbols": "The black banner of the shahada (not drawn); the crescent; the open book.",
+   "roots": "Aniconic Arabic calligraphy, plain mosque architecture, Gulf-printed religious books.",
+   "mood": "austere, devout, uncompromising, rigorous, communal",
+   "emblems": [
+    "crescent",
+    "book"
+   ],
+   "traditions": [
+    "mamluk"
+   ],
+   "ruler": "a Salafist",
+   "sound": "Unaccompanied voice only: Quranic recitation, chanted anashid without instruments, sermons on cassette."
+  }
+ ],
+ "compass": [
+  "nat",
+  "nas",
+  "lib",
+  "isl",
+  "sal"
+ ],
+ "marker": [
+  [
+   "nat",
+   0.85
+  ],
+  [
+   "nas",
+   0.15
+  ]
+ ],
+ "grip": 65,
+ "factions": [
+  {
+   "id": "army",
+   "name": "Egyptian Armed Forces high command",
+   "short": "Armed Forces",
+   "who": "The officer corps and the service commanders seated on the Supreme Council of the Armed Forces, guardians of a vast military economy and of $1.3 billion a year in American aid.",
+   "leader": {
+    "name": "Lieutenant General Sami Anan",
+    "role": "Chief of Staff of the Armed Forces"
+   },
+   "mix": [
+    [
+     "nat",
+     0.9
+    ],
+    [
+     "nas",
+     0.1
+    ]
+   ],
+   "support": 78,
+   "power": 3,
+   "produces": "force",
+   "persona": "Wants the army's budget, businesses and command kept beyond civilian oversight and an orderly handover that leaves it the arbiter of the state. Fears a revolution that turns on the officers, trials of commanders and an Islamist president controlling promotions. Its red line is civilian scrutiny of the military budget; it tolerates an iron ruler gladly but turns on one who drags the army into daily street killing or humiliates it before the cameras.",
+   "act": {
+    "text": "Senior commanders let it be known that the army will not fire on crowds for the Field Marshal and open talks with the Brotherhood behind his back.",
+    "res": {
+     "force": -3,
+     "trust": -1
+    },
+    "sup": {
+     "mb": 3,
+     "moi": -4
+    }
+   },
+   "fall": "The Chief of Staff and the younger generals retire the Field Marshal in a council coup and announce a new chairman on state television.",
+   "fates": {
+    "hi": "The army stands as the untouchable arbiter of the republic, its budget and businesses written beyond the reach of parliament.",
+    "lo": "The generals are retired and the high command reshuffled by the new civilian president, its autonomy cut back."
+   },
+   "insignia": "The Eagle of Saladin (not drawn); crossed sabres and stars of rank; the red, white and black roundel."
+  },
+  {
+   "id": "mb",
+   "name": "Society of the Muslim Brothers (Muslim Brotherhood) and its Freedom and Justice Party",
+   "short": "Muslim Brotherhood",
+   "who": "Egypt's largest and best-organised movement, banned under Mubarak, which formed the Freedom and Justice Party in April 2011 to contest the elections.",
+   "leader": {
+    "name": "Mohamed Badie",
+    "role": "General Guide of the Muslim Brotherhood"
+   },
+   "mix": [
+    [
+     "isl",
+     0.8
+    ],
+    [
+     "sal",
+     0.1
+    ],
+    [
+     "lib",
+     0.1
+    ]
+   ],
+   "support": 58,
+   "power": 3,
+   "produces": "voice",
+   "persona": "Wants fast elections, a parliament it dominates, the right to form the government and write the constitution, and in the end the presidency. Fears a return to the prisons of 1954 and 1965 and a supra-constitutional charter that binds an elected parliament. Its red line is the dissolution of an elected parliament or the cancellation of a vote; it will deal with an iron ruler who keeps the electoral timetable but mobilises the street against one who postpones it.",
+   "act": {
+    "text": "The Brotherhood fills Tahrir with hundreds of thousands under the banner of 'Handing over power' and its deputies denounce the Council in every mosque.",
+    "res": {
+     "voice": -2,
+     "trust": -2
+    },
+    "sup": {
+     "salc": -4,
+     "rev": 3
+    }
+   },
+   "fall": "The Brotherhood and its allies join the revolutionaries in an open-ended sit-in that paralyses Cairo until the Council is forced to hand power to a civilian presidential council.",
+   "fates": {
+    "hi": "The Brotherhood governs through parliament and the presidency, a junior partner the generals must bargain with.",
+    "lo": "The Brotherhood is shut out of power and drifts back toward confrontation, its gains stripped by court rulings."
+   },
+   "insignia": "Crossed swords beneath a Quran (not drawn); the green and white of the Freedom and Justice Party."
+  },
+  {
+   "id": "salc",
+   "name": "Salafist Call (al-Da'wa al-Salafiyya) and its Nour Party",
+   "short": "Salafist Call",
+   "who": "The Alexandria-based Salafist preaching movement, apolitical under Mubarak, which founded the Nour Party in 2011 and became the second force in parliament.",
+   "leader": {
+    "name": "Yasser Borhami",
+    "role": "Vice-President of the Salafist Call"
+   },
+   "mix": [
+    [
+     "sal",
+     0.85
+    ],
+    [
+     "isl",
+     0.15
+    ]
+   ],
+   "support": 50,
+   "power": 2,
+   "produces": "voice",
+   "persona": "Wants Article 2 kept and strengthened, Sharia in the constitution and public morality enforced, and a share of power rivalling the Brotherhood. Fears secularists, the Copts' influence and the Brotherhood swallowing the Islamist vote. Its red line is any tampering with Article 2; it accepts a stern ruler who respects religion and turns against a liberalising one.",
+   "act": {
+    "text": "Salafist preachers declare the Council's charter an assault on Islam and bus their followers into Tahrir for a mass Friday rally.",
+    "res": {
+     "voice": -2,
+     "trust": -1
+    },
+    "sup": {
+     "mb": -3,
+     "fel": 2
+    }
+   },
+   "fall": "The Salafist Call breaks with the transition and joins Hazem Salah Abu Ismail's followers in besieging the Defence Ministry until the Council's authority collapses.",
+   "fates": {
+    "hi": "The Nour Party sits as kingmaker of the Islamist camp, courted by the generals against the Brotherhood.",
+    "lo": "The Salafists are pushed to the margin of the new order, their candidates disqualified and their preachers watched."
+   },
+   "insignia": "The Nour Party's name in calligraphy; the black banner of the shahada (not drawn)."
+  },
+  {
+   "id": "moi",
+   "name": "Ministry of Interior, the Central Security Forces and State Security Investigations",
+   "short": "Interior Ministry",
+   "who": "The police state of the Mubarak years, its 300,000-strong Central Security Forces routed on 28 January 2011, its State Security Investigations service renamed the National Security Sector in March 2011.",
+   "leader": {
+    "name": "Mahmoud Wagdy",
+    "role": "Minister of Interior"
+   },
+   "mix": [
+    [
+     "nat",
+     0.9
+    ],
+    [
+     "nas",
+     0.1
+    ]
+   ],
+   "support": 62,
+   "power": 2,
+   "produces": "force",
+   "persona": "Wants its officers shielded from prosecution for the killing of protesters, its files and informers kept, and its authority on the street restored. Fears purges, the trial of Habib el-Adly reaching the ranks and the Brotherhood it once hunted taking the ministry. Its red line is a purge of officers; it loves an iron ruler and withdraws from the streets under an open one, leaving crime and chaos.",
+   "act": {
+    "text": "Police stations empty and officers stay home, leaving the streets to thugs and the army to face the crowds alone.",
+    "res": {
+     "force": -2,
+     "trust": -2
+    },
+    "sup": {
+     "army": -3,
+     "fel": -2
+    }
+   },
+   "fall": "The security apparatus lets the country slide into lawlessness and riot until the army demands a new ruler who can restore order.",
+   "fates": {
+    "hi": "The Interior Ministry returns to the streets intact, its officers unprosecuted and its old reach restored.",
+    "lo": "The ministry is purged and humiliated, its senior generals retired and its officers on trial."
+   },
+   "insignia": "The police eagle (not drawn); black Central Security uniforms and helmets."
+  },
+  {
+   "id": "fel",
+   "name": "National Democratic Party networks and the Mubarak-era business elite (the feloul, 'remnants')",
+   "short": "Feloul",
+   "who": "The provincial notables, NDP parliamentarians and tycoons of the Mubarak order who lost their party in April 2011 but kept their money, their families and their votes.",
+   "leader": {
+    "name": "Ahmed Shafik",
+    "role": "Prime Minister of Egypt"
+   },
+   "mix": [
+    [
+     "nat",
+     0.6
+    ],
+    [
+     "lib",
+     0.4
+    ]
+   ],
+   "support": 44,
+   "power": 1,
+   "produces": "money",
+   "persona": "Wants its fortunes, land and contracts protected, its men kept out of prison and back into politics through new parties or a presidential candidate. Fears the political isolation law, confiscation and corruption trials. Its red line is barring former NDP members from office; it rallies to an iron ruler who promises order and funds the opposition to an open one.",
+   "act": {
+    "text": "Mubarak-era tycoons move their money abroad and halt investment, and their clans withhold the provincial vote.",
+    "res": {
+     "money": -3
+    },
+    "sup": {
+     "moi": -2,
+     "salc": -1
+    }
+   },
+   "fall": "The remnants back a rival general and finance the strikes and disorder that make the Council's rule look impossible.",
+   "fates": {
+    "hi": "The old elite returns through the ballot box, its business empires intact and its candidate a power in the land.",
+    "lo": "The remnants are isolated by law, their tycoons in Tora prison and their assets frozen."
+   },
+   "insignia": "The banners and portraits of the dissolved National Democratic Party (not drawn); the tricolour at clan rallies in the provinces."
+  },
+  {
+   "id": "rev",
+   "name": "Revolution Youth Coalition and the April 6 Youth Movement",
+   "short": "Revolutionary Youth",
+   "who": "The young organisers who called the 25 January uprising: the April 6 movement, the Revolution Youth Coalition, the Khaled Said page and the leftist and liberal youth who held Tahrir.",
+   "leader": {
+    "name": "Ahmed Maher",
+    "role": "General Coordinator of the April 6 Youth Movement"
+   },
+   "mix": [
+    [
+     "lib",
+     0.55
+    ],
+    [
+     "nas",
+     0.35
+    ],
+    [
+     "isl",
+     0.1
+    ]
+   ],
+   "support": 36,
+   "power": 2,
+   "produces": "trust",
+   "persona": "Wants a full purge of the old regime, trials of Mubarak and the killers of protesters, an end to military trials and the Emergency Law and the army out of politics. Fears that the generals and the Brotherhood will divide the revolution between them. Its red line is the killing of protesters; it answers an iron ruler with sit-ins and 'Down with military rule' and gives an open ruler grudging credit.",
+   "act": {
+    "text": "The revolutionary youth retake Tahrir in an open-ended sit-in and the chant 'Down, down with military rule' spreads to Alexandria and Suez.",
+    "res": {
+     "trust": -2,
+     "voice": -1
+    },
+    "sup": {
+     "mb": -2,
+     "army": -3
+    }
+   },
+   "fall": "A second uprising fills the squares of every city and demands the Field Marshal's trial until the generals abandon him.",
+   "fates": {
+    "hi": "The revolutionaries win a seat at the table, their demands for justice written into the new order.",
+    "lo": "The revolutionary youth are scattered, prosecuted and branded foreign agents, their movement broken."
+   },
+   "insignia": "The April 6 clenched fist (not drawn); the tricolour with the date 25 January; stencilled martyrs' faces (not drawn)."
+  }
+ ],
+ "patrons": [
+  {
+   "id": "usa",
+   "name": "United States of America",
+   "short": "United States",
+   "who": "Egypt's chief strategic patron since 1979, paying $1.3 billion a year in military aid and pressing for a democratic transition and peace with Israel.",
+   "leader": {
+    "name": "Barack Obama",
+    "role": "President of the United States"
+   },
+   "mix": [
+    [
+     "lib",
+     1
+    ]
+   ],
+   "support": 52,
+   "grip": 40,
+   "produces": "money",
+   "persona": "Wants the peace treaty with Israel kept, the Suez Canal open, a credible transition to elected civilian rule and its NGOs free to work. Fears an anti-Western Egypt and massacres on television that Congress cannot forgive. Its red line is the prosecution of American citizens and the killing of protesters; it rewards an open ruler and threatens aid to an iron one.",
+   "act": {
+    "text": "Congress conditions the $1.3 billion in military aid and Washington freezes its support for an IMF loan.",
+    "res": {
+     "money": -2,
+     "force": -1
+    },
+    "sup": {
+     "rev": 2,
+     "army": -3
+    }
+   },
+   "fall": "Washington suspends military aid and spare parts and backs the generals who promise to replace the Field Marshal.",
+   "fates": {
+    "hi": "Washington remains Egypt's paymaster and partner, its aid flowing and its treaty secure.",
+    "lo": "Relations sour into suspicion, aid frozen and the alliance of 1979 in question."
+   },
+   "insignia": "The Stars and Stripes; the USAID clasped-hands shield (not drawn)."
+  },
+  {
+   "id": "ksa",
+   "name": "Kingdom of Saudi Arabia",
+   "short": "Saudi Arabia",
+   "who": "The Gulf monarchy that stood by Mubarak to the end and pledged $4 billion to the Military Council in May 2011 to keep Egypt stable and the Brotherhood out.",
+   "leader": {
+    "name": "King Abdullah bin Abdulaziz",
+    "role": "King of Saudi Arabia"
+   },
+   "mix": [
+    [
+     "nat",
+     0.5
+    ],
+    [
+     "sal",
+     0.5
+    ]
+   ],
+   "support": 72,
+   "grip": 75,
+   "produces": "money",
+   "persona": "Wants order, a strong army, Mubarak spared humiliation and the Brotherhood kept from power. Fears revolution spreading to the Gulf and a Brotherhood-Qatar axis in Cairo. Its red line is Mubarak's execution or an Islamist republic allied to Qatar and Iran; it rewards an iron ruler and withholds deposits from an open one.",
+   "act": {
+    "text": "Riyadh recalls its ambassador and delays its promised deposits to the Central Bank.",
+    "res": {
+     "money": -3
+    },
+    "sup": {
+     "salc": -2,
+     "fel": -2
+    }
+   },
+   "fall": "Riyadh cuts off money and oil and lets the Gulf press call for a new man in Cairo.",
+   "fates": {
+    "hi": "Saudi deposits prop up the pound and Riyadh stands as the Council's banker.",
+    "lo": "Riyadh turns cold and waits for a stronger general to emerge."
+   },
+   "insignia": "The green banner of the shahada (not drawn); crossed swords and palm (not drawn)."
+  },
+  {
+   "id": "qat",
+   "name": "State of Qatar",
+   "short": "Qatar",
+   "who": "The Gulf emirate whose Al Jazeera channel broadcast the revolution and whose emir backed the Muslim Brotherhood across the Arab Spring.",
+   "leader": {
+    "name": "Sheikh Hamad bin Khalifa Al Thani",
+    "role": "Emir of Qatar"
+   },
+   "mix": [
+    [
+     "isl",
+     0.8
+    ],
+    [
+     "lib",
+     0.2
+    ]
+   ],
+   "support": 40,
+   "grip": 35,
+   "produces": "voice",
+   "persona": "Wants the revolution carried through to elections the Brotherhood will win and Qatari influence in Cairo. Fears an army restoration under Saudi patronage. Its red line is a crackdown on the Brotherhood; it praises an open ruler on Al Jazeera and turns its cameras on an iron one.",
+   "act": {
+    "text": "Al Jazeera Mubasher Misr broadcasts every clash live and Doha shelves its promised investments.",
+    "res": {
+     "voice": -2,
+     "money": -1
+    },
+    "sup": {
+     "mb": -2,
+     "rev": -1
+    }
+   },
+   "fall": "Doha's channels and money turn the Arab world against the Council and finance the Brotherhood's open revolt.",
+   "fates": {
+    "hi": "Doha becomes a generous lender to a Brotherhood-led Cairo.",
+    "lo": "Qatar is cast as a meddler, Al Jazeera's Cairo office raided and its money refused."
+   },
+   "insignia": "The maroon and white serrated flag of Qatar; the Al Jazeera calligraphic logo."
+  }
+ ],
+ "resources": {
+  "money": {
+   "name": "Foreign Reserves",
+   "icon": "coin",
+   "unit": "billion US dollars",
+   "value": 35
+  },
+  "force": {
+   "name": "Military Police",
+   "icon": "shield",
+   "value": 5
+  },
+  "voice": {
+   "name": "Maspero Television",
+   "icon": "screen",
+   "value": 4
+  },
+  "trust": {
+   "name": "One Hand",
+   "icon": "hand",
+   "value": 5
+  }
+ },
+ "balance": -1.2,
+ "balanceWhy": "Tourism and foreign portfolio money fled after the uprising and the Central Bank sold dollars to hold the pound, draining reserves from about $36 billion before January 2011 to about $16 billion by early 2012.",
+ "timeline": [
+  {
+   "date": "2011-02-11",
+   "event": "Vice-President Omar Suleiman announces that Hosni Mubarak has resigned and handed power to the Supreme Council of the Armed Forces after 18 days of uprising.",
+   "holders": [
+    "army",
+    "rev",
+    "fel"
+   ]
+  },
+  {
+   "date": "2011-02-13",
+   "event": "The Council's first Constitutional Declaration suspends the 1971 constitution, dissolves parliament and assumes power for six months or until elections.",
+   "holders": [
+    "army",
+    "mb",
+    "rev"
+   ]
+  },
+  {
+   "date": "2011-03-03",
+   "event": "Prime Minister Ahmed Shafik resigns under protest pressure and the Council appoints former transport minister Essam Sharaf, who addresses Tahrir.",
+   "holders": [
+    "fel",
+    "rev"
+   ]
+  },
+  {
+   "date": "2011-03-19",
+   "event": "Constitutional amendments pass by referendum with 77.27% yes on 41.9% turnout, backed by the Brotherhood and Salafists and opposed by liberals and revolutionaries.",
+   "holders": [
+    "mb",
+    "salc",
+    "rev"
+   ]
+  },
+  {
+   "date": "2011-03-30",
+   "event": "The Council issues a 63-article Constitutional Declaration as an interim constitution setting parliamentary elections before a presidential vote.",
+   "holders": [
+    "army",
+    "mb"
+   ]
+  },
+  {
+   "date": "2011-04-16",
+   "event": "The Supreme Administrative Court dissolves the National Democratic Party and transfers its assets to the state.",
+   "holders": [
+    "fel"
+   ]
+  },
+  {
+   "date": "2011-05-21",
+   "event": "Field Marshal Tantawi announces a Saudi pledge of $4 billion in soft loans, deposits and grants.",
+   "holders": [
+    "ksa"
+   ]
+  },
+  {
+   "date": "2011-06-29",
+   "event": "The government cancels a $3 billion IMF loan agreed at staff level, citing conditions and sovereignty.",
+   "holders": [
+    "usa",
+    "army"
+   ]
+  },
+  {
+   "date": "2011-08-03",
+   "event": "Hosni Mubarak goes on trial on a hospital bed in a cage at the Police Academy with Habib el-Adly and six police commanders.",
+   "holders": [
+    "fel",
+    "moi",
+    "rev"
+   ]
+  },
+  {
+   "date": "2011-10-09",
+   "event": "Army vehicles and troops crush a Coptic march at the Maspero television building; 28 are killed as state television urges citizens to defend the army.",
+   "holders": [
+    "army",
+    "rev"
+   ]
+  },
+  {
+   "date": "2011-11-01",
+   "event": "Deputy Prime Minister Ali al-Selmi publishes draft supra-constitutional principles giving the Council autonomy over the military budget, provoking Islamist and revolutionary protests.",
+   "holders": [
+    "army",
+    "mb",
+    "salc",
+    "rev"
+   ]
+  },
+  {
+   "date": "2011-11-19",
+   "event": "Police storm a Tahrir sit-in, beginning five days of battle on Mohamed Mahmoud Street in which about 45 die; Sharaf's government resigns and Kamal Ganzouri is named prime minister.",
+   "holders": [
+    "moi",
+    "rev",
+    "mb"
+   ]
+  },
+  {
+   "date": "2011-11-28",
+   "event": "People's Assembly elections open; by January the Freedom and Justice alliance wins 235 of 498 elected seats and the Nour-led Islamist Bloc 123.",
+   "holders": [
+    "mb",
+    "salc",
+    "fel"
+   ]
+  },
+  {
+   "date": "2011-12-29",
+   "event": "Security forces raid the offices of 17 democracy and rights groups, including American NGOs, leading to charges against 43 workers, among them 16 Americans placed under a travel ban.",
+   "holders": [
+    "usa",
+    "moi"
+   ]
+  },
+  {
+   "date": "2012-02-01",
+   "event": "74 people, 72 of them Al-Ahly fans, are killed at Port Said stadium while police stand by, setting off days of clashes outside the Interior Ministry.",
+   "holders": [
+    "moi",
+    "rev"
+   ]
+  },
+  {
+   "date": "2012-03-01",
+   "event": "The travel ban on the foreign NGO defendants is lifted and most Americans leave on bail of 2 million pounds each.",
+   "holders": [
+    "usa",
+    "army"
+   ]
+  },
+  {
+   "date": "2012-04-14",
+   "event": "The Presidential Election Commission disqualifies ten candidates, among them Khairat al-Shater, Omar Suleiman and Hazem Salah Abu Ismail.",
+   "holders": [
+    "mb",
+    "salc",
+    "fel"
+   ]
+  },
+  {
+   "date": "2012-05-23",
+   "event": "First round of the presidential election sends Mohamed Morsi and Ahmed Shafik to a runoff on 43% turnout.",
+   "holders": [
+    "mb",
+    "fel",
+    "rev"
+   ]
+  },
+  {
+   "date": "2012-06-14",
+   "event": "The Supreme Constitutional Court invalidates the parliamentary election law, dissolving the People's Assembly, and strikes down the political isolation law, keeping Shafik in the race.",
+   "holders": [
+    "mb",
+    "fel",
+    "army"
+   ]
+  },
+  {
+   "date": "2012-06-24",
+   "event": "Morsi is declared president with 51.73% to Shafik's 48.27%, a week after the Council's supplementary declaration reserved legislative and military powers to itself; he is sworn in on 30 June.",
+   "holders": [
+    "mb",
+    "army",
+    "fel"
+   ]
+  }
+ ],
+ "people": [
+  {
+   "name": "Sami Anan",
+   "role": "Chief of Staff of the Armed Forces",
+   "holder": "army"
+  },
+  {
+   "name": "Abdel Fattah el-Sisi",
+   "role": "Director of Military Intelligence",
+   "holder": "army"
+  },
+  {
+   "name": "Mohamed Badie",
+   "role": "General Guide of the Muslim Brotherhood",
+   "holder": "mb"
+  },
+  {
+   "name": "Khairat al-Shater",
+   "role": "Deputy General Guide of the Muslim Brotherhood",
+   "holder": "mb"
+  },
+  {
+   "name": "Mohamed Morsi",
+   "role": "Chairman of the Freedom and Justice Party",
+   "holder": "mb"
+  },
+  {
+   "name": "Yasser Borhami",
+   "role": "Vice-President of the Salafist Call",
+   "holder": "salc"
+  },
+  {
+   "name": "Emad Abdel Ghafour",
+   "role": "Chairman of the Nour Party",
+   "holder": "salc"
+  },
+  {
+   "name": "Hazem Salah Abu Ismail",
+   "role": "Salafist preacher and presidential hopeful",
+   "holder": "salc"
+  },
+  {
+   "name": "Mansour el-Essawy",
+   "role": "Minister of Interior",
+   "holder": "moi"
+  },
+  {
+   "name": "Ahmed Shafik",
+   "role": "Prime Minister, later presidential candidate",
+   "holder": "fel"
+  },
+  {
+   "name": "Hosni Mubarak",
+   "role": "Deposed president",
+   "holder": "fel"
+  },
+  {
+   "name": "Ahmed Maher",
+   "role": "General Coordinator of the April 6 Youth Movement",
+   "holder": "rev"
+  },
+  {
+   "name": "Mohamed ElBaradei",
+   "role": "Former IAEA Director General and reform campaigner",
+   "holder": "rev"
+  },
+  {
+   "name": "Essam Sharaf",
+   "role": "Prime Minister",
+   "holder": null
+  },
+  {
+   "name": "Kamal Ganzouri",
+   "role": "Prime Minister",
+   "holder": null
+  },
+  {
+   "name": "Pope Shenouda III",
+   "role": "Pope of Alexandria and Patriarch of the Coptic Orthodox Church",
+   "holder": null
+  },
+  {
+   "name": "Ahmed el-Tayeb",
+   "role": "Grand Imam of al-Azhar",
+   "holder": null
+  },
+  {
+   "name": "Hamdeen Sabahi",
+   "role": "Nasserist presidential candidate",
+   "holder": null
+  },
+  {
+   "name": "Hillary Clinton",
+   "role": "US Secretary of State",
+   "holder": "usa"
+  },
+  {
+   "name": "Sheikh Hamad bin Khalifa Al Thani",
+   "role": "Emir of Qatar",
+   "holder": "qat"
+  }
+ ],
+ "facts": {
+  "people": [
+   {
+    "name": "Mohamed Hussein Tantawi",
+    "role": "Chairman of the Supreme Council of the Armed Forces",
+    "from": "2011-02",
+    "to": "2012-06"
+   },
+   {
+    "name": "Mohamed Hussein Tantawi",
+    "role": "Minister of Defence and Military Production",
+    "from": "2011-02",
+    "to": null
+   },
+   {
+    "name": "Sami Anan",
+    "role": "Chief of Staff of the Armed Forces and Deputy Chairman of the Council",
+    "from": "2011-02",
+    "to": null
+   },
+   {
+    "name": "Mohsen el-Fangari",
+    "role": "Council member who read Communiqué No. 3 saluting the martyrs",
+    "from": "2011-02",
+    "to": null
+   },
+   {
+    "name": "Mamdouh Shahin",
+    "role": "Council member for legal and constitutional affairs",
+    "from": "2011-02",
+    "to": null
+   },
+   {
+    "name": "Abdel Fattah el-Sisi",
+    "role": "Director of Military Intelligence and Council member",
+    "from": "2011-02",
+    "to": null
+   },
+   {
+    "name": "Hosni Mubarak",
+    "role": "President of the Republic",
+    "from": "2011-02",
+    "to": "2011-02"
+   },
+   {
+    "name": "Omar Suleiman",
+    "role": "Vice-President of the Republic",
+    "from": "2011-02",
+    "to": "2011-02"
+   },
+   {
+    "name": "Omar Suleiman",
+    "role": "Presidential candidate, disqualified",
+    "from": "2012-04",
+    "to": "2012-04"
+   },
+   {
+    "name": "Ahmed Shafik",
+    "role": "Prime Minister",
+    "from": "2011-02",
+    "to": "2011-03"
+   },
+   {
+    "name": "Ahmed Shafik",
+    "role": "Presidential candidate, runoff loser with 48.27%",
+    "from": "2012-04",
+    "to": "2012-06"
+   },
+   {
+    "name": "Essam Sharaf",
+    "role": "Prime Minister",
+    "from": "2011-03",
+    "to": "2011-11"
+   },
+   {
+    "name": "Kamal Ganzouri",
+    "role": "Prime Minister",
+    "from": "2011-11",
+    "to": null
+   },
+   {
+    "name": "Ali al-Selmi",
+    "role": "Deputy Prime Minister for political affairs, author of the supra-constitutional principles",
+    "from": "2011-07",
+    "to": "2011-11"
+   },
+   {
+    "name": "Mahmoud Wagdy",
+    "role": "Minister of Interior",
+    "from": "2011-02",
+    "to": "2011-03"
+   },
+   {
+    "name": "Mansour el-Essawy",
+    "role": "Minister of Interior",
+    "from": "2011-03",
+    "to": "2011-11"
+   },
+   {
+    "name": "Mohamed Ibrahim Youssef",
+    "role": "Minister of Interior",
+    "from": "2011-12",
+    "to": null
+   },
+   {
+    "name": "Mohamed Badie",
+    "role": "General Guide of the Muslim Brotherhood",
+    "from": "2011-02",
+    "to": null
+   },
+   {
+    "name": "Khairat al-Shater",
+    "role": "Brotherhood presidential candidate, disqualified",
+    "from": "2012-03",
+    "to": "2012-04"
+   },
+   {
+    "name": "Mohamed Morsi",
+    "role": "Chairman of the Freedom and Justice Party",
+    "from": "2011-04",
+    "to": "2012-06"
+   },
+   {
+    "name": "Mohamed Morsi",
+    "role": "President of the Republic",
+    "from": "2012-06",
+    "to": null
+   },
+   {
+    "name": "Saad al-Katatni",
+    "role": "Speaker of the People's Assembly",
+    "from": "2012-01",
+    "to": "2012-06"
+   },
+   {
+    "name": "Emad Abdel Ghafour",
+    "role": "Chairman of the Nour Party",
+    "from": "2011-06",
+    "to": null
+   },
+   {
+    "name": "Farouk Sultan",
+    "role": "President of the Supreme Constitutional Court and of the Presidential Election Commission",
+    "from": "2011-02",
+    "to": null
+   },
+   {
+    "name": "Farouk el-Okdah",
+    "role": "Governor of the Central Bank of Egypt",
+    "from": "2011-02",
+    "to": null
+   },
+   {
+    "name": "Pope Shenouda III",
+    "role": "Pope of the Coptic Orthodox Church",
+    "from": "2011-02",
+    "to": "2012-03"
+   },
+   {
+    "name": "Ahmed el-Tayeb",
+    "role": "Grand Imam of al-Azhar",
+    "from": "2011-02",
+    "to": null
+   },
+   {
+    "name": "Hamdeen Sabahi",
+    "role": "Presidential candidate, third in the first round",
+    "from": "2012-04",
+    "to": "2012-05"
+   },
+   {
+    "name": "Mohamed ElBaradei",
+    "role": "Presidential hopeful, withdrew in protest",
+    "from": "2011-02",
+    "to": "2012-01"
+   }
+  ],
+  "documents": [
+   {
+    "name": "Communiqué No. 1 of the Supreme Council of the Armed Forces",
+    "date": "2011-02-10",
+    "content": "The Council announced it was in continuous session to safeguard the nation and support the legitimate demands of the people."
+   },
+   {
+    "name": "Constitutional Declaration of 13 February 2011",
+    "date": "2011-02-13",
+    "content": "The Council assumed power temporarily for six months or until elections, suspended the 1971 constitution, dissolved both houses of parliament and called for constitutional amendments and a referendum."
+   },
+   {
+    "name": "Constitutional amendments referendum",
+    "date": "2011-03-19",
+    "content": "Amendments limiting presidential terms and easing candidacy passed with 77.27% yes on 41.9% turnout."
+   },
+   {
+    "name": "Constitutional Declaration of 30 March 2011",
+    "date": "2011-03-30",
+    "content": "A 63-article interim constitution vesting legislative and executive power in the Council until elections, with parliament to choose a 100-member constituent assembly."
+   },
+   {
+    "name": "Supreme Administrative Court ruling dissolving the NDP",
+    "date": "2011-04-16",
+    "content": "Dissolved the National Democratic Party and ordered its funds and headquarters transferred to the state."
+   },
+   {
+    "name": "Al-Azhar Document on the Future of Egypt",
+    "date": "2011-06-20",
+    "content": "Grand Imam Ahmed el-Tayeb's charter endorsing a modern, democratic, constitutional state with Sharia principles as the main source of legislation."
+   },
+   {
+    "name": "Supra-constitutional principles (al-Selmi document)",
+    "date": "2011-11-01",
+    "content": "Draft principles granting the Council autonomy from oversight of the military budget and a permanent power to intervene in politics; withdrawn after mass protests."
+   },
+   {
+    "name": "Supreme Constitutional Court rulings of 14 June 2012",
+    "date": "2012-06-14",
+    "content": "Invalidated the law under which a third of the People's Assembly was elected, dissolving the house, and struck down the political isolation law barring Mubarak-era officials."
+   },
+   {
+    "name": "Supplementary Constitutional Declaration of 17 June 2012",
+    "date": "2012-06-17",
+    "content": "Reserved legislative power and full authority over military affairs to the Council until a new parliament, and limited the incoming president's war powers."
+   }
+  ],
+  "numbers": [
+   {
+    "name": "Net foreign reserves of the Central Bank of Egypt",
+    "key": "reserves",
+    "value": 35,
+    "unit": "billion US dollars",
+    "floor": 0,
+    "change": "Fell by about $1 to $1.8 billion a month through 2011 (to $24.0 billion in September 2011 and $16.35 billion in January 2012) as tourism and portfolio money fled; Gulf deposits or an IMF loan slow the fall."
+   },
+   {
+    "name": "US military aid to Egypt",
+    "key": "aid",
+    "value": 1.3,
+    "unit": "billion US dollars per year",
+    "floor": 0,
+    "change": "Fixed annual appropriation; Congress may condition or suspend it, and it resumes only with a waiver from the Secretary of State."
+   },
+   {
+    "name": "Saudi aid pledge",
+    "key": "saudi pledge",
+    "value": 4,
+    "unit": "billion US dollars",
+    "floor": 0,
+    "change": "Pledged May 2011 as soft loans, deposits and grants; disbursed in tranches at Riyadh's discretion, each tranche adding to reserves."
+   },
+   {
+    "name": "IMF stand-by loan on offer",
+    "key": "imf loan",
+    "value": 3,
+    "unit": "billion US dollars",
+    "floor": 0,
+    "change": "Agreed at staff level in June 2011 and cancelled by the government; available again only after negotiation and an IMF board vote."
+   },
+   {
+    "name": "Civilians tried before military courts",
+    "key": "military trials",
+    "value": 0,
+    "unit": "civilians",
+    "floor": 0,
+    "change": "Rose to more than 12,000 during 2011, with at least 9,000 convicted; grows each month the Council refers civilians to military prosecutors."
+   },
+   {
+    "name": "Elected seats in the People's Assembly",
+    "key": "parliament",
+    "value": 498,
+    "unit": "seats",
+    "ceiling": 508,
+    "change": "Fixed: 498 elected plus 10 appointed by the Council; filled by the November 2011 to January 2012 elections, emptied if the house is dissolved."
+   },
+   {
+    "name": "Duration of the Council's mandate",
+    "key": "mandate",
+    "value": 6,
+    "unit": "months",
+    "floor": 0,
+    "change": "Set at six months or until elections by the 13 February 2011 declaration; falls by one each month and can be extended only by a new declaration, at a cost in protest."
+   }
+  ]
+ },
+ "era_brief": "Egypt in 2011 wears five layers at once. Pharaonic monuments and their twentieth-century revival stamp banknotes, coins and state seals. Fatimid and Mamluk Cairo (969-1517) gives the minarets, carved wood, brass lanterns and star geometry of al-Azhar and Sultan Hassan; Ottoman-era houses add mashrabiya screens. The khedival downtown of 1870-1940 frames Tahrir with belle-époque and art-deco façades, while Nasser's republic (1952-70) left the Mogamma, eagle emblems, star-and-ray posters and the Soviet-built Aswan High Dam monument. Crafts still alive: Khan el-Khalili brass and lanterns, tentmakers' appliqué, inlaid mother-of-pearl, hand calligraphy. The army and state use the Eagle of Saladin, the tricolour, laurels and stern Nasser-era geometry. Islamists use calligraphy, green and Mamluk ornament and avoid figurative art; Salafists are fully aniconic. Revolutionaries use stencil graffiti, martyrs' portraits, the crescent-and-cross of 1919 and the 25 January date. Gulf glass towers and Western corporate branding are foreign intrusions; royal crowns and heraldry belong to a monarchy abolished in 1953.",
+ "traditions": [
+  "pharaonic",
+  "fatimid",
+  "mamluk",
+  "ottoman-arab",
+  "coptic",
+  "belle-epoque",
+  "arab-nationalist",
+  "banknote"
+ ],
+ "adoptions": [
+  {
+   "tag": "art-deco",
+   "note": "Downtown Cairo, Heliopolis and Alexandria apartment blocks and cinemas, 1920s-1940s."
+  },
+  {
+   "tag": "soviet-late",
+   "note": "The Soviet-designed Aswan High Dam lotus monument and Nasser-era industrial imagery, 1960s-1971."
+  }
+ ],
+ "music": {
+  "tradition": "Egyptian music in 2011 rests on the Arab maqam system played by the takht ensemble of oud, qanun, nay, violin and riqq, with the darbuka (tabla) and duff carrying the rhythm and the mizmar and rababa in Upper Egyptian and folk music. Common maqamat: Rast (steps 2, 1.5, 1.5, 2, 2, 1.5, 1.5), Bayati (1.5, 1.5, 2, 2, 1, 2, 2), Hijaz (1, 3, 1, 2, 1, 2, 2), Saba (1.5, 1.5, 1, 3, 1, 2, 2) and Nahawand (2, 1, 2, 2, 1, 3, 1). Rhythms: maqsum (dum-tek-x-tek-dum-x-tek-x in 4/4), baladi (dum-dum-x-tek-dum-x-tek-x), masmudi saghir, wahda and the fast malfuf (dum-x-x-tek-x-x-tek-x). Shaabi street weddings, Sufi dhikr inshad, Quranic recitation and the classic repertory of Umm Kulthum, Abdel Wahab and Abdel Halim Hafez fill the air, while the new electro-shaabi mahraganat of Cairo's informal districts is rising.",
+  "ceremony": "State ceremony sounds of brass and drum military bands, the national anthem 'Bilady, Bilady, Bilady' by Sayed Darwish, slow funeral marches for martyrs, and orchestral patriotic songs of 1956 and 1973 replayed on state television between the Council's communiqués.",
+  "street": "Tahrir sang to acoustic guitar and darbuka: Ramy Essam's 'Irhal', Cairokee's 'Sout al-Horeya', revived Sheikh Imam and Ahmed Fouad Negm songs and Shadia's 'Ya Habibti Ya Masr'; the Ultras of Al-Ahly and Zamalek brought drumming and call-and-response terrace chants, and mahraganat crews made the revolution a dance beat.",
+  "ideologies": {
+   "nat": "Brass military bands playing 'Bilady, Bilady, Bilady' and the patriotic songs of the 1973 war on state television.",
+   "nas": "Abdel Halim Hafez's anthems of the 1960s and the oud-and-voice protest songs of Sheikh Imam sung by crowds.",
+   "lib": "Ramy Essam's guitar chant 'Irhal' and Cairokee's 'Sout al-Horeya', sung in Tahrir.",
+   "isl": "Unaccompanied anashid of the Brotherhood, Quranic recitation and chants of 'Allahu akbar' at Friday rallies.",
+   "sal": "Unaccompanied voice only: Quranic recitation, chanted anashid without instruments, sermons on cassette."
+  }
+ },
+ "seeds": [
+  {
+   "id": "s01",
+   "months": [
+    1,
+    1
+   ],
+   "corner": "nat",
+   "line": "Omar Suleiman has been without office since Mubarak's fall, yet the General Intelligence directorate he ran still holds the regime's files. Sami Anan urges the Field Marshal to sideline him and take the service under the Council. Riyadh and Washington prize him as their trusted channel to Cairo."
+  },
+  {
+   "id": "s02",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "nat",
+   "line": "Riyadh's envoys ask the Field Marshal to guarantee that Hosni Mubarak stays unmolested in Sharm el-Sheikh. The Revolution Youth Coalition demands his arrest and a freeze on the family's assets. The choice is between protecting the old commander and feeding the square.",
+   "arc": {
+    "id": "mubarak",
+    "part": 1
+   }
+  },
+  {
+   "id": "s03",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "nas",
+   "line": "Mahalla textile workers and public-sector employees strike across the Delta for higher wages and the removal of their state-appointed union bosses. Sami Anan wants a communiqué ordering everyone back to work. The tycoons want their factories reopened.",
+   "arc": {
+    "id": "strikes",
+    "part": 1
+   }
+  },
+  {
+   "id": "s04",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "lib",
+   "line": "Lawyers and April 6 organisers bring lists of protesters still missing in police and military custody since the eighteen days. They demand their release and an end to the curfew. Washington asks the same, and the Interior Ministry denies holding anyone."
+  },
+  {
+   "id": "s05",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "nas",
+   "line": "Central Bank Governor Farouk el-Okdah reports that Mubarak-era tycoons and foreign portfolio funds are draining dollars while the stock exchange stays shut. The Council must choose between capital controls with travel bans on businessmen, and open markets to reassure investors and the Gulf."
+  },
+  {
+   "id": "s06",
+   "months": [
+    1,
+    3
+   ],
+   "corner": "nat",
+   "line": "Military police hold hundreds of curfew-breakers, looters and protesters. The military judiciary offers swift trials before military courts while the civilian courts are paralysed. The revolutionary youth call it the old regime in uniform.",
+   "arc": {
+    "id": "miltrials",
+    "part": 1
+   }
+  },
+  {
+   "id": "s07",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "isl",
+   "line": "Mohamed Badie asks for a Brotherhood jurist on the committee drafting the constitutional amendments, which would amount to public recognition of the movement. The youth coalition and the liberal parties object to one movement holding a seat. The Salafist Call watches for any word on Article 2."
+  },
+  {
+   "id": "s08",
+   "months": [
+    2,
+    2
+   ],
+   "corner": "lib",
+   "line": "Crowds have broken into State Security Investigations headquarters at Nasr City and found files shredded and burnt. The new Interior Minister Mansour el-Essawy asks the Council to choose: dissolve the service and hand the surviving files to prosecutors, or rename it and keep its officers.",
+   "arc": {
+    "id": "police",
+    "part": 1
+   }
+  },
+  {
+   "id": "s09",
+   "months": [
+    2,
+    3
+   ],
+   "corner": "lib",
+   "line": "The revolutionaries, the Brotherhood and Washington demand a firm date for lifting the Emergency Law of the Mubarak years. The Interior Ministry insists it needs emergency powers while its police are still off the streets.",
+   "arc": {
+    "id": "emergency",
+    "part": 1
+   }
+  },
+  {
+   "id": "s10",
+   "months": [
+    2,
+    3
+   ],
+   "corner": "sal",
+   "line": "A mob has burnt the church at Sol in Atfih, and Copts are camped outside the Maspero building. Salafist sheikhs offer a customary reconciliation session. Pope Shenouda III's bishops and the revolutionaries demand prosecutions and a church rebuilt by the army.",
+   "arc": {
+    "id": "copts",
+    "part": 1
+   }
+  },
+  {
+   "id": "s11",
+   "months": [
+    2,
+    3
+   ],
+   "corner": "nas",
+   "line": "Saboteurs have bombed the Sinai pipeline that carries Egyptian gas to Israel and Jordan. The petroleum ministry asks whether to resume pumping under the Mubarak-era contracts, which Nasserists and the youth call a giveaway. Washington is watching for any sign of strain on the treaty.",
+   "arc": {
+    "id": "israel",
+    "part": 1
+   }
+  },
+  {
+   "id": "s12",
+   "months": [
+    2,
+    3
+   ],
+   "corner": "isl",
+   "line": "Khairat al-Shater and other Brotherhood leaders are serving military-court sentences from the Mubarak years. Mohamed Badie asks for their release. The Interior Ministry warns of an emboldened Brotherhood, and Riyadh is alarmed."
+  },
+  {
+   "id": "s13",
+   "months": [
+    2,
+    3
+   ],
+   "corner": "lib",
+   "line": "The revolutionaries demand that leaders of the National Democratic Party be barred from the coming elections. Ahmed Shafik's allies and the provincial clans propose rebranding the party instead.",
+   "arc": {
+    "id": "isolation",
+    "part": 1
+   }
+  },
+  {
+   "id": "s14",
+   "months": [
+    3,
+    3
+   ],
+   "corner": "sal",
+   "line": "In Qena, Salafist preachers lead crowds blocking the railway against the new governor, a Copt and former police general. Essam Sharaf's cabinet asks the Council to stand by the appointment, freeze it, or send troops to reopen the line."
+  },
+  {
+   "id": "s15",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "nas",
+   "line": "The cabinet's new decree criminalising strikes that disrupt work is now being enforced against oil and port workers. The new independent unions demand legal recognition and the breaking of the state-controlled federation. The generals want production restored.",
+   "arc": {
+    "id": "strikes",
+    "part": 2
+   }
+  },
+  {
+   "id": "s16",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "isl",
+   "line": "With its Freedom and Justice Party now founded, the Brotherhood asks for legal registration of the Society itself and its Muqattam headquarters. The Interior Ministry still keeps its old files on every member."
+  },
+  {
+   "id": "s17",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "isl",
+   "line": "The Emir of Qatar offers investment pledges while Al Jazeera Mubasher Misr seeks a permanent Cairo licence. Riyadh warns against a Doha foothold, and the Brotherhood welcomes it. The Information Ministry must decide on the channel.",
+   "arc": {
+    "id": "qatar",
+    "part": 1
+   }
+  },
+  {
+   "id": "s18",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "nas",
+   "line": "The Foreign Ministry floats restoring relations with Iran, and Egyptian intelligence prepares to host a Fatah-Hamas reconciliation. Riyadh and Washington frown. Nasserists, the Brotherhood and Doha cheer a foreign policy freed from Mubarak's alignments."
+  },
+  {
+   "id": "s19",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "lib",
+   "line": "Military censors tell editors to clear every article about the armed forces in advance, and a blogger and a television host are summoned for insulting the army. The independent dailies, Al Jazeera and the US State Department protest."
+  },
+  {
+   "id": "s20",
+   "months": [
+    4,
+    4
+   ],
+   "corner": "sal",
+   "line": "Salafist crowds besieged churches in Imbaba over rumours of a convert held inside, and the night ended in deaths and a burnt church. Copts now demand the long-promised unified law on places of worship, and the Salafist Call rejects it. The Interior Ministry wants special powers in Giza.",
+   "arc": {
+    "id": "copts",
+    "part": 2
+   }
+  },
+  {
+   "id": "s21",
+   "months": [
+    4,
+    5
+   ],
+   "corner": "nas",
+   "line": "Hamas and the Brotherhood press for the Rafah crossing into Gaza to open permanently. Washington and Israel warn against it, and the army fears for Sinai. Doha offers to fund the traffic."
+  },
+  {
+   "id": "s22",
+   "months": [
+    4,
+    5
+   ],
+   "corner": "lib",
+   "line": "The finance ministry is negotiating a $3 billion IMF stand-by loan with Washington's blessing. The generals bristle at conditions touching subsidies and the state economy, while the business elite wants it signed.",
+   "arc": {
+    "id": "imf",
+    "part": 1
+   }
+  },
+  {
+   "id": "s23",
+   "months": [
+    4,
+    5
+   ],
+   "corner": "nat",
+   "line": "Mamdouh Shahin drafts the parliamentary election law. Individual seats favour the old ruling party's provincial families, and party lists favour the Brotherhood. The revolutionaries want more time to organise before any vote.",
+   "arc": {
+    "id": "elections",
+    "part": 1
+   }
+  },
+  {
+   "id": "s24",
+   "months": [
+    4,
+    5
+   ],
+   "corner": "sal",
+   "line": "Zealots attack Sufi shrines in the Delta and Alexandria. Grand Imam Ahmed el-Tayeb asks the state to guard them. Yasser Borhami's Salafist Call disowns the attacks but defends its preaching, and the police ask for orders."
+  },
+  {
+   "id": "s25",
+   "months": [
+    5,
+    6
+   ],
+   "corner": "nat",
+   "line": "Riyadh's $4 billion pledge must now take shape. Farouk el-Okdah wants Central Bank deposits to defend the pound, Riyadh prefers project grants released tranche by tranche at its discretion, and the generals want military-economy projects included.",
+   "arc": {
+    "id": "saudi",
+    "part": 1
+   }
+  },
+  {
+   "id": "s26",
+   "months": [
+    5,
+    6
+   ],
+   "corner": "sal",
+   "line": "Emad Abdel Ghafour's Nour Party applies for a licence, but the parties law bans parties founded on religion. The Brotherhood would rather not share the Islamist vote. Gulf-trained preachers promise a mass following."
+  },
+  {
+   "id": "s27",
+   "months": [
+    5,
+    6
+   ],
+   "corner": "isl",
+   "line": "Grand Imam Ahmed el-Tayeb asks the Council to adopt the Al-Azhar Document on the Future of Egypt as the shared basis for the constitution. The Brotherhood endorses it, Salafist preachers distrust its 'modern state', and the revolutionaries are divided."
+  },
+  {
+   "id": "s28",
+   "months": [
+    5,
+    6
+   ],
+   "corner": "lib",
+   "line": "Families of the martyrs camp in Tahrir. Mansour el-Essawy now proposes retiring hundreds of police generals and suspending officers charged with killing protesters. The ranks threaten to stay home and ask the Field Marshal to block the purge.",
+   "arc": {
+    "id": "police",
+    "part": 2
+   }
+  },
+  {
+   "id": "s29",
+   "months": [
+    5,
+    6
+   ],
+   "corner": "nas",
+   "line": "Essam Sharaf's cabinet drafts the first budget since the revolution. The unions demand a national minimum wage and permanent contracts for temporary workers. The business elite and Washington's economists warn of the deficit and falling reserves."
+  },
+  {
+   "id": "s30",
+   "months": [
+    6,
+    7
+   ],
+   "corner": "nat",
+   "line": "Mubarak is now detained, and his trial with Habib el-Adly and six police commanders must be staged. It can be held quietly in Sharm el-Sheikh, or at the Police Academy in Cairo with the deposed president in the defendants' cage on live television. Riyadh asks for dignity; the square wants the cage.",
+   "arc": {
+    "id": "mubarak",
+    "part": 2
+   }
+  },
+  {
+   "id": "s31",
+   "months": [
+    6,
+    7
+   ],
+   "corner": "nat",
+   "line": "Abdel Fattah el-Sisi's Military Intelligence brings a dossier on foreign funding of April 6 and the rights groups, from American democracy institutes to Gulf donors. Publishing it and opening a judicial inquiry would brand the youth as agents and anger Washington.",
+   "arc": {
+    "id": "ngo",
+    "part": 1
+   }
+  },
+  {
+   "id": "s32",
+   "months": [
+    6,
+    7
+   ],
+   "corner": "sal",
+   "line": "The Islamist Friday of 29 July filled Tahrir with Salafist banners and Saudi flags. Liberals call it the 'Friday of Kandahar' and demand that the Council curb religious slogans. The Salafist Call wants credit for its discipline, and Riyadh for its friends."
+  },
+  {
+   "id": "s33",
+   "months": [
+    6,
+    7
+   ],
+   "corner": "nat",
+   "line": "Deputy Prime Minister Ali al-Selmi drafts supra-constitutional principles to bind the future constituent assembly. Sami Anan wants clauses keeping the military budget beyond parliament. The Brotherhood and the Salafists warn of the street.",
+   "arc": {
+    "id": "supra",
+    "part": 1
+   }
+  },
+  {
+   "id": "s34",
+   "months": [
+    7,
+    8
+   ],
+   "corner": "nas",
+   "line": "Israeli forces pursuing raiders near Eilat have killed Egyptian border policemen. Crowds at the Israeli embassy demand the ambassador's expulsion and an end to gas exports, and the Brotherhood and Nasserists call for revising the treaty. Washington urges calm.",
+   "arc": {
+    "id": "israel",
+    "part": 2
+   }
+  },
+  {
+   "id": "s35",
+   "months": [
+    7,
+    8
+   ],
+   "corner": "lib",
+   "line": "The 'No to Military Trials' campaign now counts thousands of civilians convicted by military courts. An April 6 activist has been summoned before military prosecutors for criticising the Council online. Washington and rights groups demand civilian courts.",
+   "arc": {
+    "id": "miltrials",
+    "part": 2
+   }
+  },
+  {
+   "id": "s36",
+   "months": [
+    7,
+    8
+   ],
+   "corner": "nas",
+   "line": "Administrative courts annul Mubarak-era sales of public companies and state land. Workers demand renationalisation, while the tycoons and Gulf investors who bought the assets demand that the state appeal."
+  },
+  {
+   "id": "s37",
+   "months": [
+    8,
+    9
+   ],
+   "corner": "nat",
+   "line": "After crowds stormed the Israeli embassy, the Interior Ministry asks the Council to reactivate and widen the Emergency Law to cover strikes, road blocking and 'spreading rumours'. Revolutionaries and Washington see the promised lifting buried.",
+   "arc": {
+    "id": "emergency",
+    "part": 2
+   }
+  },
+  {
+   "id": "s38",
+   "months": [
+    8,
+    9
+   ],
+   "corner": "nas",
+   "line": "The strikes have gone national: teachers, doctors and Cairo bus drivers walk out as schools reopen, and Brotherhood-led syndicates join them. The Council can enforce the strike decree, pay out of shrinking reserves, or bargain with the independent unions.",
+   "arc": {
+    "id": "strikes",
+    "part": 3
+   }
+  },
+  {
+   "id": "s39",
+   "months": [
+    8,
+    9
+   ],
+   "corner": "isl",
+   "line": "The election law keeps individual seats for independents. The Brotherhood and allied parties threaten a boycott unless party members may contest those seats and old ruling-party men are barred. The Council must amend by decree or hold firm.",
+   "arc": {
+    "id": "elections",
+    "part": 2
+   }
+  },
+  {
+   "id": "s40",
+   "months": [
+    8,
+    9
+   ],
+   "corner": "nat",
+   "line": "Security forces have raided Al Jazeera Mubasher Misr's Cairo office over its licence. Doha protests, and the Brotherhood and the youth cry censorship. The Information Ministry wants the channel shut for good.",
+   "arc": {
+    "id": "qatar",
+    "part": 2
+   }
+  },
+  {
+   "id": "s41",
+   "months": [
+    9,
+    10
+   ],
+   "corner": "nas",
+   "line": "With the vote weeks away, revolutionaries and the Brotherhood demand the revived Treachery Law to bar former ruling-party officials. Old-party families in Upper Egypt threaten to block roads and railways if it is applied.",
+   "arc": {
+    "id": "isolation",
+    "part": 2
+   }
+  },
+  {
+   "id": "s42",
+   "months": [
+    9,
+    10
+   ],
+   "corner": "lib",
+   "line": "Twenty-eight Copts died at Maspero under army vehicles while state television urged citizens to defend the army, and the military prosecution has claimed the inquiry. Copts, revolutionaries and Washington demand a civilian investigation and accountability for the broadcast.",
+   "arc": {
+    "id": "copts",
+    "part": 3
+   }
+  },
+  {
+   "id": "s43",
+   "months": [
+    9,
+    10
+   ],
+   "corner": "sal",
+   "line": "Riyadh slows its tranches while Gulf charities and preachers pour money into the Salafist Call's campaign. Restricting private Gulf funding of parties risks the Saudi deposits; tolerating it hands the Salafists an army of volunteers.",
+   "arc": {
+    "id": "saudi",
+    "part": 2
+   }
+  },
+  {
+   "id": "s44",
+   "months": [
+    10,
+    10
+   ],
+   "corner": "sal",
+   "line": "The al-Selmi document is now public. The Salafist Call and the Brotherhood call a mass Friday against it and demand the withdrawal of the clauses on military autonomy and on the constituent assembly. Sami Anan wants them kept, and the youth join the march.",
+   "arc": {
+    "id": "supra",
+    "part": 2
+   }
+  },
+  {
+   "id": "s45",
+   "months": [
+    10,
+    10
+   ],
+   "corner": "isl",
+   "line": "The battle on Mohamed Mahmoud Street is broadcast live by Al Jazeera, and the youth and liberal parties demand postponing the 28 November vote. The Brotherhood insists the polls open on time. The Interior Ministry doubts it can guard them.",
+   "arc": {
+    "id": "elections",
+    "part": 3
+   }
+  },
+  {
+   "id": "s46",
+   "months": [
+    10,
+    10
+   ],
+   "corner": "lib",
+   "line": "Sharaf's government has resigned. Revolutionaries put forward Mohamed ElBaradei to lead a national salvation government with full powers. The Council's men favour Kamal Ganzouri, and the Brotherhood keeps its distance."
+  },
+  {
+   "id": "s47",
+   "months": [
+    10,
+    11
+   ],
+   "corner": "nat",
+   "line": "The Field Marshal can answer the street with a firm promise of a presidential election by the end of June 2012 and an offer of a referendum on the Council's rule, or keep the mandate open-ended. Washington wants a date, the Brotherhood wants parliament first, and the generals want time."
+  },
+  {
+   "id": "s48",
+   "months": [
+    10,
+    11
+   ],
+   "corner": "sal",
+   "line": "The Nour Party campaigns from the pulpit, with posters that replace its women candidates' faces with flowers. Rivals ask the election authorities to ban religious slogans. The Brotherhood fears losing ground to the Salafists."
+  },
+  {
+   "id": "s49",
+   "months": [
+    11,
+    12
+   ],
+   "corner": "lib",
+   "line": "Al Jazeera carries footage around the world of military police beating protesters and dragging a woman as the cabinet sit-in is cleared, and Hillary Clinton condemns it. The Council must choose between an apology with soldiers referred for investigation, and blaming infiltrators."
+  },
+  {
+   "id": "s50",
+   "months": [
+    11,
+    12
+   ],
+   "corner": "isl",
+   "line": "The Council creates an Advisory Council to propose rules for choosing the constituent assembly. The Brotherhood walks out, saying only elected deputies may choose. Liberals and old-party figures want the advisers to restrain the Islamist majority."
+  },
+  {
+   "id": "s51",
+   "months": [
+    11,
+    12
+   ],
+   "corner": "nas",
+   "line": "Kamal Ganzouri reopens talks on the IMF loan the government refused in June, as reserves keep sliding. The Fund asks for broad political backing. The Brotherhood will not endorse a loan it may inherit, and unions fear subsidy cuts.",
+   "arc": {
+    "id": "imf",
+    "part": 2
+   }
+  },
+  {
+   "id": "s52",
+   "months": [
+    11,
+    12
+   ],
+   "corner": "sal",
+   "line": "As the Nour Party surges in the polls, its leaders call for segregated beaches and limits on alcohol for tourists. Hotel and tourism tycoons demand public reassurance from the Council. Salafist preachers warn the state not to defy the people's choice."
+  },
+  {
+   "id": "s53",
+   "months": [
+    12,
+    12
+   ],
+   "corner": "lib",
+   "line": "Security forces raided 17 democracy and rights groups, American institutes among them, and prosecutors now move to charge their staff. Washington demands the property back and hints at the aid. The Interior Ministry and Military Intelligence call it sovereignty.",
+   "arc": {
+    "id": "ngo",
+    "part": 2
+   }
+  },
+  {
+   "id": "s54",
+   "months": [
+    12,
+    12
+   ],
+   "corner": "lib",
+   "line": "For the uprising's first anniversary, the Field Marshal can lift the Emergency Law entirely, lift it except for 'thuggery', or keep it. Interior Minister Mohamed Ibrahim Youssef wants the exception kept; revolutionaries call it a loophole for everything.",
+   "arc": {
+    "id": "emergency",
+    "part": 3
+   }
+  },
+  {
+   "id": "s55",
+   "months": [
+    12,
+    13
+   ],
+   "corner": "isl",
+   "line": "The People's Assembly convenes under Speaker Saad al-Katatni with an Islamist majority. The Brotherhood demands the right to dismiss Kamal Ganzouri and form a government, and the Nour Party wants ministries too. The Council's declaration gives parliament no such power.",
+   "arc": {
+    "id": "parliament",
+    "part": 1
+   }
+  },
+  {
+   "id": "s56",
+   "months": [
+    12,
+    13
+   ],
+   "corner": "sal",
+   "line": "Nour deputies table a bill on Islamic sukuk bonds, promising Saudi and Qatari capital as buyers. The Central Bank and the old business elite question it. The Brotherhood hesitates to be outflanked."
+  },
+  {
+   "id": "s57",
+   "months": [
+    13,
+    14
+   ],
+   "corner": "lib",
+   "line": "After 74 died at Port Said while police stood by, Ultras besiege the Interior Ministry. The People's Assembly demands Mohamed Ibrahim Youssef's dismissal and a full restructuring of the police. The ranks warn of a strike if officers are prosecuted.",
+   "arc": {
+    "id": "police",
+    "part": 3
+   }
+  },
+  {
+   "id": "s58",
+   "months": [
+    13,
+    14
+   ],
+   "corner": "nat",
+   "line": "Sixteen Americans are under a travel ban and US senators threaten the $1.3 billion in aid. Washington proposes bail and quiet departure. Nationalist papers and Brotherhood deputies demand the trial proceed, and the generals weigh the aid against their pride.",
+   "arc": {
+    "id": "ngo",
+    "part": 3
+   }
+  },
+  {
+   "id": "s59",
+   "months": [
+    13,
+    14
+   ],
+   "corner": "nas",
+   "line": "Reserves stand near $16 billion, and Farouk el-Okdah warns of devaluation and import rationing. The IMF mission returns and demands the Islamist parliament's endorsement, and the Brotherhood names its price.",
+   "arc": {
+    "id": "imf",
+    "part": 3
+   }
+  },
+  {
+   "id": "s60",
+   "months": [
+    13,
+    14
+   ],
+   "corner": "isl",
+   "line": "Freedom and Justice deputies on the defence committee ask to review the military budget and the army's businesses. Sami Anan calls it the red line. Washington privately favours oversight."
+  },
+  {
+   "id": "s61",
+   "months": [
+    13,
+    14
+   ],
+   "corner": "sal",
+   "line": "Bearded men calling themselves a committee for the promotion of virtue are reported harassing couples and shopkeepers. The Interior Ministry wants arrests, and the Nour Party denies any link. Salafist preachers defend the duty of enjoining good."
+  },
+  {
+   "id": "s62",
+   "months": [
+    14,
+    14
+   ],
+   "corner": "nat",
+   "line": "Generals and old-party men urge Omar Suleiman to stand for president as the state's candidate, though Sami Anan nurses ambitions of his own. Riyadh likes the former intelligence chief. Washington and the Brotherhood would see a restoration.",
+   "arc": {
+    "id": "presidency",
+    "part": 1
+   }
+  },
+  {
+   "id": "s63",
+   "months": [
+    14,
+    14
+   ],
+   "corner": "isl",
+   "line": "Deputies reject Kamal Ganzouri's programme, and the Brotherhood threatens to run its own presidential candidate unless it may form a government. The Council can keep Ganzouri, reshuffle with Brotherhood ministers, or call the bluff.",
+   "arc": {
+    "id": "parliament",
+    "part": 2
+   }
+  },
+  {
+   "id": "s64",
+   "months": [
+    14,
+    15
+   ],
+   "corner": "isl",
+   "line": "The Islamist majority fills the 100-member constituent assembly largely with its own. Liberals, al-Azhar and the Coptic Church walk out, and lawyers petition the courts. The Council can intervene, wait on the judges, or bless the assembly.",
+   "arc": {
+    "id": "supra",
+    "part": 3
+   }
+  },
+  {
+   "id": "s65",
+   "months": [
+    14,
+    14
+   ],
+   "corner": "isl",
+   "line": "The Brotherhood nominates Khairat al-Shater for president, but his Mubarak-era military-court conviction may bar him unless the Field Marshal grants full rehabilitation. Doha favours him and Riyadh dreads him."
+  },
+  {
+   "id": "s66",
+   "months": [
+    14,
+    15
+   ],
+   "corner": "nas",
+   "line": "After repeated pipeline bombings, the state gas company moves to cancel the export contract to Israel over unpaid dues. Washington warns of damage to the peace. Parliament and the Nasserists cheer, and the old contractors fear prosecution.",
+   "arc": {
+    "id": "israel",
+    "part": 3
+   }
+  },
+  {
+   "id": "s67",
+   "months": [
+    15,
+    15
+   ],
+   "corner": "nat",
+   "line": "Parliament has passed a political isolation law aimed at Omar Suleiman and Ahmed Shafik. The Field Marshal must ratify it, refer it to the Supreme Constitutional Court, or sit on it as the candidate list closes.",
+   "arc": {
+    "id": "isolation",
+    "part": 3
+   }
+  },
+  {
+   "id": "s68",
+   "months": [
+    15,
+    15
+   ],
+   "corner": "sal",
+   "line": "Farouk Sultan's commission has disqualified ten candidates, among them Hazem Salah Abu Ismail, Khairat al-Shater and Omar Suleiman. Abu Ismail's followers besiege the commission. The Council must back its ruling or reopen appeals.",
+   "arc": {
+    "id": "presidency",
+    "part": 2
+   }
+  },
+  {
+   "id": "s69",
+   "months": [
+    15,
+    15
+   ],
+   "corner": "sal",
+   "line": "Protesters besiege the Saudi embassy over an Egyptian lawyer detained in the kingdom, and Riyadh recalls its ambassador with much of the pledge still undelivered. The Salafist Call and the business elite urge an apology; the revolutionaries demand the lawyer's release.",
+   "arc": {
+    "id": "saudi",
+    "part": 3
+   }
+  },
+  {
+   "id": "s70",
+   "months": [
+    15,
+    16
+   ],
+   "corner": "sal",
+   "line": "Abu Ismail's followers camp outside the Defence Ministry in Abbasiya, and armed men attack the sit-in. The Council can impose a curfew and send arrested protesters to military prosecutors, or negotiate through Salafist sheikhs."
+  },
+  {
+   "id": "s71",
+   "months": [
+    15,
+    16
+   ],
+   "corner": "isl",
+   "line": "Doha offers billions in Central Bank deposits and investment, timed to a Brotherhood-led future. Accepting would ease the reserves crisis; refusing would please Riyadh, which still owes much of its own pledge.",
+   "arc": {
+    "id": "qatar",
+    "part": 3
+   }
+  },
+  {
+   "id": "s72",
+   "months": [
+    16,
+    16
+   ],
+   "corner": "lib",
+   "line": "Ahmed Shafik and Mohamed Morsi head to the runoff. Old-party networks, police and state television line up behind Shafik, and the Brotherhood warns of fraud. The Field Marshal decides how neutral the state will appear.",
+   "arc": {
+    "id": "presidency",
+    "part": 3
+   }
+  },
+  {
+   "id": "s73",
+   "months": [
+    16,
+    16
+   ],
+   "corner": "nas",
+   "line": "Hamdeen Sabahi, third in the first round, demands a recount and the suspension of the runoff, and his Nasserist and youth supporters fill Tahrir. Both runoff camps court his voters."
+  },
+  {
+   "id": "s74",
+   "months": [
+    16,
+    16
+   ],
+   "corner": "nat",
+   "line": "Mamdouh Shahin drafts a supplementary constitutional declaration reserving military affairs to the Council, and legislative power too should parliament fall, after the handover. The Brotherhood and Washington would call it a soft coup."
+  },
+  {
+   "id": "s75",
+   "months": [
+    16,
+    16
+   ],
+   "corner": "isl",
+   "line": "Farouk Sultan's Supreme Constitutional Court hears the challenge to the election law, and Islamist deputies move a bill curbing the court. The Council must decide whether to defend the judges or bargain with a parliament it may soon lose.",
+   "arc": {
+    "id": "parliament",
+    "part": 3
+   }
+  }
+ ]
+}
