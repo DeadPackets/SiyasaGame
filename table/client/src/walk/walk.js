@@ -70,6 +70,7 @@ ${css}</style><div class="wk"></div>`;
   let B, F;
   try {
     B = await whenBoard();
+    if (!B.walking()) return host.remove();
     F = facts(B.pack);
     await applySkin(B.pack.skin);
   } catch (e) {

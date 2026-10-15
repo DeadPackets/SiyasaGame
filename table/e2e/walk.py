@@ -39,6 +39,10 @@ with sync_playwright() as p:
     pg.screenshot(path=str(OUT / f"{W}-board.png"))
     ok(not st["walk"], "the briefing is gone after Take office")
     ok(st["vision"] is not None and st["rules"] and st["rules"].get("actUnder") == 20, f"the term carries the Vision and Custom rules: {json.dumps(st)[:200]}")
+    # a term in progress wins over the briefing: draw the month's card (an action, so the term saves), then open the same link again
+    pg.evaluate("document.querySelector('#stage button, #draw')?.click()"); pg.wait_for_timeout(2500)
+    pg.goto(URL); pg.wait_for_function("window.board?.state", timeout=20000); pg.wait_for_timeout(2000)
+    ok(pg.evaluate("!document.getElementById('briefing') && !location.search.includes('walk')"), "a saved term reopens without the briefing")
     ok(not errs, f"console errors: {errs[:3]}")
     b.close()
 (OUT / f"{W}-result.json").write_text(json.dumps({"fails": fails, "errors": errs}, indent=1))

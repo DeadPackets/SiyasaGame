@@ -40,7 +40,8 @@ const D = (s) => (RM ? 0.01 : s);
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const root = document.documentElement;
-const Q = new URLSearchParams(location.search), WID = Q.get("w") || "egypt-2011", WALK = Q.get("walk") === "1";
+const Q = new URLSearchParams(location.search), WID = Q.get("w") || "egypt-2011";
+let WALK = Q.get("walk") === "1";
 const SAVE = `siyasa-save:${WID}`, TUTOR_DONE = "siyasa-tutor-done", TOUR_KEY = "usoj-tour-v1";
 const store = {
   get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
@@ -1495,10 +1496,11 @@ async function boot() {
   glOn = !RM && !!SK.finish && SK.finish.type !== "ink" && FIN.start();
 
   const saved = loadSave(), forced = Q.get("tutor") === "1";
+  if (WALK && saved) { WALK = false; history.replaceState(null, "", location.pathname + location.search.replace(/[?&]walk=1/, "").replace(/^&/, "?")); } // a term in progress opens where it stands; the briefing waits for the next one
   if (forced) store.del(SAVE);
   G = WALK ? freshState() : (!forced && saved) || freshState();
   st = { phase: WALK ? "idle" : "rest" }; syncView();
-  window.board = { pack: PACK, newTerm, spot: spotlight, dim: dimBoard, phase: () => st.phase, playsLeft, state: () => G };
+  window.board = { pack: PACK, walking: () => WALK, newTerm, spot: spotlight, dim: dimBoard, phase: () => st.phase, playsLeft, state: () => G };
   initSeatState();
   tips = makeTips(resolveTip);
   field = makeField($("#field"), IDS, (id) => dataURL(colorize(renderMedallion(skI(id).recipe, { periods: 1.2 }).svg, pal(id))));
