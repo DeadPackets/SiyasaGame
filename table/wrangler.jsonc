@@ -7,8 +7,7 @@
   "observability": { "enabled": true },
   "assets": { "binding": "ASSETS", "directory": "./dist/client", "not_found_handling": "404-page", "run_worker_first": true },
   "routes": [
-    { "pattern": "siyasa.deadpackets.pw", "custom_domain": true },
-    { "pattern": "unitedstatesofjev.deadpackets.pw", "custom_domain": true }
+    { "pattern": "siyasa.deadpackets.pw", "custom_domain": true }
   ],
   "d1_databases": [{ "binding": "DB", "database_name": "siyasa", "database_id": "779f53f6-9606-454e-a365-c24fb3aa009b", "migrations_dir": "server/migrations" }],
   "r2_buckets": [{ "binding": "PACKS", "bucket_name": "siyasa-packs" }],

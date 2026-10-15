@@ -24,6 +24,7 @@ export async function indexWorld(env: Env, w: { id: string; title: string; polit
 
 async function similar(env: Env, prompt: string): Promise<{ load: Candidate } | { offer: Candidate[] } | null> {
   const q = await env.VEC.query(await embed(env, prompt), { topK: 20 });
+  console.log("similar: cosine", JSON.stringify(q.matches.slice(0, 5).map((m) => [m.id, Math.round(m.score * 1000) / 1000])));
   const ids = q.matches.filter((m) => m.score >= COSINE_FLOOR).map((m) => m.id);
   if (!ids.length) return null;
   const { results } = await env.DB.prepare(`SELECT id, title, date, polity, blurb FROM worlds WHERE hidden = 0 AND id IN (${ids.map(() => "?").join(",")})`).bind(...ids).all<Candidate>();
@@ -36,6 +37,7 @@ async function similar(env: Env, prompt: string): Promise<{ load: Candidate } | 
     },
   });
   const p = Object.entries(a.match?.probabilities ?? {}).sort((x, y) => y[1] - x[1]);
+  console.log("similar: jev", JSON.stringify(p.slice(0, 4)));
   const [top, topP] = p[0] ?? ["none_of_these", 0];
   if (top === "none_of_these") return null;
   if (topP >= 0.95) return { load: results.find((c) => c.id === top) as Candidate };
@@ -64,14 +66,18 @@ export async function onPrompt(env: Env, req: Request, ctx: ExecutionContext): P
   try {
     const a = await jev(env, { prompt }, { refuse: { type: "noul", instructions: `${CONTENT_RULE} Is this prompt asking for what that rule refuses, for content that harasses or mocks a real private person, or for sexual content?` } });
     if ((a.refuse?.noul ?? 0) >= 0.5) return Response.json({ state: "refused", reason: "Siyasa does not build this world. Try a place and a time." });
-  } catch {}
+  } catch (e) {
+    console.warn("safety check failed", String(e));
+  }
 
   if (body?.force !== true) {
     try {
       const hit = await similar(env, prompt);
       if (hit && "load" in hit) return Response.json({ state: "exists", world: hit.load });
       if (hit) return Response.json({ state: "similar", worlds: hit.offer });
-    } catch {}
+    } catch (e) {
+      console.warn("similar failed", String(e));
+    }
   }
 
   const gate = env.GATE.get(env.GATE.idFromName("global")), key = ipKey(ip);
