@@ -107,15 +107,24 @@ async function fakeParts(env: Env, since: number) {
   return got.includes("done") ? { status: "done", parts, world: w.id } : { status: "running", parts };
 }
 
-export const frameOf = (w: Record<string, any>) => ({
-  title: w.title, polity: w.polity, date: w.date, months: w.months, office: w.office,
-  ideologies: w.ideologies.map((x: { id: string; name: string }) => ({ id: x.id, name: x.name })),
-  factions: [...w.factions, ...w.patrons].map((x: { id: string; short: string }) => ({ id: x.id, short: x.short })),
-});
+// the seal's segments weigh each ideology by the factions' mix; patrons are not factions at home
+export const frameOf = (w: Record<string, any>) => {
+  const power: Record<string, number> = {};
+  for (const f of w.factions) for (const [id, v] of f.mix ?? []) power[id] = (power[id] ?? 0) + v;
+  return {
+    title: w.title, polity: w.polity, date: w.date, months: w.months, office: w.office,
+    ideologies: w.ideologies.map((x: { id: string; name: string }) => ({ id: x.id, name: x.name, power: power[x.id] ?? 0 })),
+    factions: w.factions.map((x: { id: string; short: string; who: string }) => ({ id: x.id, short: x.short, who: x.who })),
+  };
+};
 
 export async function onBuild(env: Env, id: string): Promise<Response> {
   const row = await env.DB.prepare("SELECT status, parts, world, error, fake, created FROM builds WHERE id = ?").bind(id).first<{ status: string; parts: string; world: string | null; error: string | null; fake: number; created: number }>();
   if (!row) return Response.json({ status: "missing" }, { status: 404 });
-  if (row.fake) return Response.json(await fakeParts(env, row.created));
+  if (row.fake) {
+    const r = await fakeParts(env, row.created);
+    if (r.status !== "running" && row.status === "running") await env.DB.prepare("UPDATE builds SET status = ?, world = ? WHERE id = ?").bind(r.status, r.world ?? null, id).run();
+    return Response.json(r);
+  }
   return Response.json({ status: row.status, parts: JSON.parse(row.parts), world: row.world, error: row.error });
 }

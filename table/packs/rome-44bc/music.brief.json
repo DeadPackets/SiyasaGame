@@ -1,0 +1,182 @@
+{
+ "title": "Tibia over the Forum",
+ "bpm": 84,
+ "bars": 24,
+ "tonic": 52,
+ "scale": [
+  0,
+  1,
+  3,
+  5,
+  7,
+  8,
+  10
+ ],
+ "chords": "<0 3 0 1 0 3 3 4 0 5 3 4 0 3 3 4 3 5 4!2 5 3 1 0>",
+ "theme": "<[0@2 1 2] [3@2 4 3] [2 1 2 3] [1@3 ~] [0@2 1 2] [3@2 4 3] [4 5 4 3] [2@3 ~] ~ ~ ~ ~ [0@2 1 2] [3@2 4 3] [4 5 6 5] [4@3 ~] [4@2 5 6] [7@2 6 7] [8@2 7 6] [7@3 ~] [6@2 5 4] [3@2 4 3] [2 1 2 1] [0@3 ~]>",
+ "solo": "<~!8 [4@2 3 2] [3 4 5 4] [3@2 2 1] [2 1 0@2] ~!12>",
+ "sighs": "<[1@3 0] [5@3 4] [3@3 2] [1@3 0]>",
+ "form": {
+  "climb": [
+   17,
+   20
+  ],
+  "solo": [
+   9,
+   12
+  ]
+ },
+ "ensemble": {
+  "lead": {
+   "sound": "ney",
+   "oct": 1
+  },
+  "section": "violins",
+  "bed": [
+   "celli",
+   "violas"
+  ],
+  "bass": "bass",
+  "pulse": "celli_pizz",
+  "arp": "harp",
+  "brass": [
+   "horn",
+   "trombone"
+  ],
+  "soloist": "oud",
+  "figure": "[0@2 ~ 2]",
+  "cymbal": "cymbal"
+ },
+ "rhythm": {
+  "village": {
+   "sound": "woodblock",
+   "hit": "x ~ x x",
+   "vel": "[1 0 .6 .7]"
+  },
+  "fills": {
+   "sound": "framedrum",
+   "hit": "<~ ~ ~ [~ x x x]>",
+   "vel": "[.6 .7 .8 1]"
+  },
+  "shaker": {
+   "sound": "shaker",
+   "hit": "[~ x]*2",
+   "vel": "[.5 .7]"
+  },
+  "city": {
+   "hit": "framedrum ~ tek ~ framedrum framedrum tek ~"
+  },
+  "strict": {
+   "sound": "timpani",
+   "hit": "x ~ x ~"
+  },
+  "tension": {
+   "sound": "framedrum",
+   "hit": "<[x ~ ~ ~] [x ~ ~ ~] [x ~ ~ ~] [x ~ x x]>"
+  },
+  "crisis": {
+   "hit": "bassdrum ~ snare ~ bassdrum bassdrum snare ~",
+   "accents": "x ~ ~ ~ x ~ x ~"
+  }
+ },
+ "moods": {
+  "tension": {
+   "tune": "celli",
+   "ostinato": "celli_spic",
+   "tremolo": "violins_trem",
+   "cry": "violin_solo",
+   "heartbeat": "timpani",
+   "roll": "timpani_roll"
+  },
+  "crisis": {
+   "tune": [
+    "violins",
+    "horn"
+   ],
+   "drive": [
+    "violas_spic",
+    "celli_spic"
+   ],
+   "stab": [
+    "horn_stac",
+    "trumpet_stac"
+   ],
+   "low": "bass_pizz",
+   "timp": "timpani"
+  }
+ },
+ "ideologies": {
+  "lib": {
+   "name": "Libertas",
+   "tune": [
+    {
+     "sound": "flute",
+     "oct": 1,
+     "ornament": true
+    }
+   ],
+   "share": 0.6,
+   "thins": {
+    "lead": 0,
+    "ornaments": 0.5,
+    "drums": 0.6
+   }
+  },
+  "opt": {
+   "name": "Optimatism",
+   "tune": [
+    {
+     "sound": "choir_aahs",
+     "oct": 0
+    }
+   ],
+   "share": 0.7,
+   "colour": [
+    {
+     "type": "calls",
+     "sound": "trombone"
+    }
+   ],
+   "thins": {
+    "lead": 0,
+    "ornaments": 0.3,
+    "drums": 0.2
+   }
+  },
+  "cae": {
+   "name": "Caesarism",
+   "tune": [
+    {
+     "sound": "horn",
+     "oct": 0,
+     "climb": true
+    }
+   ],
+   "share": 0.9,
+   "colour": [
+    {
+     "type": "drums",
+     "hit": "bassdrum ~ snare ~ bassdrum ~ snare snare",
+     "vel": "[1 0 .7 0 .9 0 .6 .7]"
+    }
+   ]
+  },
+  "pop": {
+   "name": "Popularism",
+   "tune": [
+    {
+     "sound": "church_organ",
+     "oct": 0
+    }
+   ],
+   "share": 0.8,
+   "colour": [
+    {
+     "type": "drums",
+     "hit": "woodblock woodblock ~ woodblock cymbal ~ tambourine ~",
+     "vel": "[.8 .6 0 .7 1 0 .7 0]"
+    }
+   ]
+  }
+ }
+}

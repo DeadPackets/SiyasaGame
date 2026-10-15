@@ -1,3 +1,109 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Siyasa</title></head>
-<body><p>Landing comes here.</p><a href="/play.html?w=egypt-2011">Play Egypt</a></body></html>
+<html lang="en" class="wait">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Siyasa</title>
+<meta name="description" content="Name a world, real or invented, and rule it for one term.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&text=Siyasa&display=swap">
+<link rel="stylesheet" href="./src/shared/tokens.css">
+<link rel="stylesheet" href="./src/front/landing.css">
+<script>setTimeout(() => document.documentElement.classList.remove("wait"), 4000); // never leave the page blank</script>
+</head>
+<body>
+<header class="hero" id="top">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="mast">
+    <a class="mark" href="/"><span class="mk" aria-hidden="true"></span><span class="t2 wm">Siyasa</span></a>
+  </div>
+  <div class="stage">
+    <form class="ask" id="ask" novalidate>
+      <h1 class="q disp"><label for="prompt"><span>What world do you want to rule today?</span></label></h1>
+      <div class="box">
+        <textarea id="prompt" name="prompt" class="t2" rows="2" maxlength="240" autofocus autocomplete="off" spellcheck="false" placeholder="A place and a moment, real or invented" aria-describedby="err cost"></textarea>
+        <div class="boxfoot">
+          <p class="t1 soft" id="cost">Takes about 5 minutes. One new world a day.</p>
+          <button class="go t1" type="submit">Build my world</button>
+        </div>
+      </div>
+      <div id="ts"></div>
+      <p class="err t1" id="err" aria-live="polite"></p>
+      <div class="try" id="try" hidden><span class="t1 soft" id="try-l">Try</span></div>
+      <div class="state" id="state"><p class="sl t1" id="state-l" role="status"></p><div class="picks" id="picks" hidden></div></div>
+      <a class="rule t1" id="rule" href="#library" hidden><span>Rule</span><span class="disp" id="world-name"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </form>
+    <figure class="world" id="world" hidden>
+      <div class="seal" aria-hidden="true"></div>
+    </figure>
+  </div>
+  <div class="foot">
+    <p class="gist t1 soft">One term is 12 to 18 months. It takes about 20 minutes to play.</p>
+    <a class="cue t1 soft" href="#term">How a term plays <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5"/></svg></a>
+  </div>
+  <div class="sash" aria-hidden="true"></div>
+</header>
+
+<main>
+  <section class="term" id="term" aria-labelledby="term-h" hidden>
+    <div class="sechead">
+      <h2 class="t3 disp" id="term-h">How a term plays</h2>
+      <p class="t1 soft" id="term-src"></p>
+    </div>
+    <ol class="beats">
+      <li class="beat">
+        <div class="plate frag-card" aria-hidden="true">
+          <div class="cd"><div class="side back"></div><div class="side face"><p class="who t1"></p><p class="ques t1"></p><p class="ans t1"></p><p class="ans t1"></p></div></div>
+        </div>
+        <div class="bt"><span class="n disp">1</span><div><p class="t2">Answer one situation a month.</p><p class="t1 soft">Someone brings you a question. Pick an answer, then Decide.</p></div></div>
+      </li>
+      <li class="beat">
+        <div class="plate frag-bars" aria-hidden="true"></div>
+        <div class="bt"><span class="n disp">2</span><div><p class="t2">Every answer moves the people who care.</p><p class="t1 soft">Each faction gains or loses support, and says why.</p></div></div>
+      </li>
+      <li class="beat">
+        <div class="plate frag-seal" aria-hidden="true"></div>
+        <div class="bt"><span class="n disp">3</span><div><p class="t2">Hold power until the Reckoning.</p><p class="t1 soft" id="reck"></p></div></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="lib mine" id="mine" aria-labelledby="mine-h" hidden>
+    <div class="libhead">
+      <div>
+        <h2 class="t3 disp" id="mine-h">Your worlds</h2>
+        <p class="t1 soft">The worlds you built from this browser.</p>
+      </div>
+    </div>
+    <ul class="grid" id="mine-grid"></ul>
+  </section>
+
+  <section class="lib" id="library" aria-labelledby="lib-h">
+    <div class="libhead">
+      <div>
+        <h2 class="t3 disp" id="lib-h">The library</h2>
+        <p class="t1 soft" id="lib-sub">Play a world that is already built.</p>
+      </div>
+      <div class="tools" id="tools" hidden>
+        <label class="sr" for="filter">Search the library by title, place or date</label>
+        <input class="filter t1" id="filter" type="search" placeholder="Search title, place or date" autocomplete="off">
+        <div class="seg" role="group" aria-label="Sort the library">
+          <button type="button" class="t1" data-sort="new" aria-pressed="true">Newest</button>
+          <button type="button" class="t1" data-sort="played" aria-pressed="false">Most played</button>
+        </div>
+      </div>
+    </div>
+    <ul class="grid" id="grid"></ul>
+    <p class="none t1" id="none" hidden></p>
+    <div class="more"><button type="button" class="t1" id="more" hidden></button></div>
+  </section>
+</main>
+
+<footer class="end t1 soft"><span class="wm">Siyasa</span> Name a world. Rule it.</footer>
+
+<script type="module" src="./src/front/landing.js"></script>
+</body>
+</html>

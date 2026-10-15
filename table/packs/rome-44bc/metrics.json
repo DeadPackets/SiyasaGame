@@ -1,0 +1,494 @@
+{
+ "scenario": "Rome, the Ides of March, 44 BC",
+ "slug": "rome-44bc",
+ "config": {
+  "world": {
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium"
+  },
+  "skin": {
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium"
+  },
+  "music": {
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium"
+  },
+  "deck": {
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium"
+  }
+ },
+ "budget": 9,
+ "times": {
+  "T_play": 594.8,
+  "T_month1": 688.5,
+  "T_full": 896.7,
+  "marks": {
+   "world": 536.4,
+   "music": 585.9,
+   "skin": 594.8,
+   "deck": 896.7,
+   "full": 896.7
+  }
+ },
+ "built": 34,
+ "checkPack": [],
+ "reach": {
+  "rates": {
+   "v1": 0.25,
+   "v2": 0.975,
+   "v3": 0.975,
+   "v4": 0.925,
+   "v5": 1
+  },
+  "errors": [],
+  "crashes": [],
+  "seconds": 0.657
+ },
+ "force": {
+  "cards": 7,
+  "of": 17
+ },
+ "seconds": 897.3,
+ "cost": 6.0597,
+ "tokens": {
+  "input": 1066462,
+  "cached": 913931,
+  "cacheWrite": 122592,
+  "output": 254712,
+  "reasoning": 145542
+ },
+ "steps": {
+  "world": {
+   "seconds": 536.4,
+   "firstErrors": 0,
+   "repairs": 0,
+   "pass": true,
+   "errors": []
+  },
+  "music": {
+   "seconds": 49.5,
+   "firstErrors": 0,
+   "repairs": 0,
+   "pass": true,
+   "errors": []
+  },
+  "skin": {
+   "seconds": 58.4,
+   "firstErrors": 1,
+   "repairs": 1,
+   "pass": true,
+   "errors": []
+  },
+  "rules-a": {
+   "seconds": 94.8,
+   "firstErrors": 0,
+   "repairs": 0,
+   "pass": true,
+   "errors": []
+  },
+  "sit-b1": {
+   "seconds": 152.1,
+   "firstErrors": 0,
+   "repairs": 0,
+   "pass": true,
+   "errors": []
+  },
+  "sit-b2": {
+   "seconds": 196.4,
+   "firstErrors": 1,
+   "repairs": 1,
+   "pass": true,
+   "errors": []
+  },
+  "rules-b": {
+   "seconds": 265.6,
+   "firstErrors": 1,
+   "repairs": 1,
+   "pass": true,
+   "errors": []
+  },
+  "sit-b4": {
+   "seconds": 312.7,
+   "firstErrors": 0,
+   "repairs": 0,
+   "pass": true,
+   "errors": []
+  },
+  "rules-c": {
+   "seconds": 343,
+   "firstErrors": 0,
+   "repairs": 0,
+   "pass": true,
+   "errors": []
+  },
+  "sit-b3": {
+   "seconds": 354.6,
+   "firstErrors": 0,
+   "repairs": 0,
+   "pass": true,
+   "errors": []
+  },
+  "reach": {
+   "first": {
+    "rates": {
+     "v1": 0.25,
+     "v2": 0.975,
+     "v3": 0.975,
+     "v4": 0.925,
+     "v5": 1
+    },
+    "errors": []
+   },
+   "rates": {
+    "v1": 0.25,
+    "v2": 0.975,
+    "v3": 0.975,
+    "v4": 0.925,
+    "v5": 1
+   },
+   "errors": [],
+   "crashes": [],
+   "seconds": 0.697,
+   "repaired": false
+  },
+  "deck": {
+   "seconds": 0.7,
+   "pass": true,
+   "errors": [],
+   "checkPack": [],
+   "repeats": [],
+   "built": 34,
+   "corners": {
+    "lib": 8,
+    "opt": 9,
+    "cae": 9,
+    "pop": 8
+   },
+   "month1": 688.5,
+   "parts": [
+    {
+     "name": "sit-b1",
+     "seeds": [
+      "s01",
+      "s02",
+      "s03",
+      "s04",
+      "s05",
+      "s06"
+     ],
+     "done": 688.5
+    },
+    {
+     "name": "rules-c",
+     "done": 884.4
+    },
+    {
+     "name": "rules-b",
+     "done": 807
+    },
+    {
+     "name": "sit-b2",
+     "seeds": [
+      "s07",
+      "s08",
+      "s09",
+      "s10",
+      "s11",
+      "s12",
+      "s13",
+      "s14",
+      "s15"
+     ],
+     "done": 737.8
+    },
+    {
+     "name": "sit-b3",
+     "seeds": [
+      "s16",
+      "s17",
+      "s18",
+      "s19",
+      "s20",
+      "s21",
+      "s22",
+      "s23",
+      "s24",
+      "s25"
+     ],
+     "done": 896
+    },
+    {
+     "name": "sit-b4",
+     "seeds": [
+      "s26",
+      "s27",
+      "s28",
+      "s29",
+      "s30",
+      "s31",
+      "s32",
+      "s33",
+      "s34"
+     ],
+     "done": 854.1
+    },
+    {
+     "name": "rules-a",
+     "done": 636.2
+    }
+   ],
+   "failed": []
+  }
+ },
+ "calls": [
+  {
+   "step": "world",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 536.4,
+   "provider": "anthropic",
+   "input": 725232,
+   "cached": 659903,
+   "cacheWrite": 65293,
+   "output": 56480,
+   "reasoning": 17095,
+   "searches": 5,
+   "cost": 1.63819,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 46912
+  },
+  {
+   "step": "music",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 49.5,
+   "provider": "anthropic",
+   "input": 6723,
+   "cached": 0,
+   "cacheWrite": 6719,
+   "output": 5278,
+   "reasoning": 3841,
+   "searches": 0,
+   "cost": 0.139171,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 2233
+  },
+  {
+   "step": "skin",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 54.5,
+   "provider": "anthropic",
+   "input": 21520,
+   "cached": 0,
+   "cacheWrite": 21516,
+   "output": 5245,
+   "reasoning": 3021,
+   "searches": 0,
+   "cost": 0.212496,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 4778
+  },
+  {
+   "step": "skin",
+   "attempt": 1,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 3.9,
+   "provider": "anthropic",
+   "input": 23711,
+   "cached": 21516,
+   "cacheWrite": 0,
+   "output": 313,
+   "reasoning": 0,
+   "searches": 0,
+   "cost": 0.019343,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 650
+  },
+  {
+   "step": "rules-a",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 94.8,
+   "provider": "anthropic",
+   "input": 29162,
+   "cached": 29064,
+   "cacheWrite": 0,
+   "output": 10899,
+   "reasoning": 4960,
+   "searches": 0,
+   "cost": 0.224185,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 12718
+  },
+  {
+   "step": "sit-b1",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 152.1,
+   "provider": "anthropic",
+   "input": 30115,
+   "cached": 0,
+   "cacheWrite": 29064,
+   "output": 16734,
+   "reasoning": 11010,
+   "searches": 0,
+   "cost": 0.484204,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 13251
+  },
+  {
+   "step": "sit-b2",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 187.3,
+   "provider": "anthropic",
+   "input": 30493,
+   "cached": 29064,
+   "cacheWrite": 0,
+   "output": 20355,
+   "reasoning": 11749,
+   "searches": 0,
+   "cost": 0.418629,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 19994
+  },
+  {
+   "step": "sit-b2",
+   "attempt": 1,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 9.1,
+   "provider": "anthropic",
+   "input": 39267,
+   "cached": 29064,
+   "cacheWrite": 0,
+   "output": 938,
+   "reasoning": 56,
+   "searches": 0,
+   "cost": 0.065385,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 2042
+  },
+  {
+   "step": "rules-b",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 252.6,
+   "provider": "anthropic",
+   "input": 29155,
+   "cached": 29064,
+   "cacheWrite": 0,
+   "output": 27935,
+   "reasoning": 16440,
+   "searches": 0,
+   "cost": 0.564877,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 26398
+  },
+  {
+   "step": "rules-b",
+   "attempt": 1,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 13,
+   "provider": "anthropic",
+   "input": 40800,
+   "cached": 29064,
+   "cacheWrite": 0,
+   "output": 1156,
+   "reasoning": 266,
+   "searches": 0,
+   "cost": 0.075877,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 2016
+  },
+  {
+   "step": "sit-b4",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 312.7,
+   "provider": "anthropic",
+   "input": 30433,
+   "cached": 29064,
+   "cacheWrite": 0,
+   "output": 33058,
+   "reasoning": 23598,
+   "searches": 0,
+   "cost": 0.672449,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 22096
+  },
+  {
+   "step": "rules-c",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 343,
+   "provider": "anthropic",
+   "input": 29203,
+   "cached": 29064,
+   "cacheWrite": 0,
+   "output": 37684,
+   "reasoning": 25312,
+   "searches": 0,
+   "cost": 0.760049,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 28883
+  },
+  {
+   "step": "sit-b3",
+   "attempt": 0,
+   "model": "anthropic/claude-opus-5.5",
+   "effort": "medium",
+   "seconds": 354.6,
+   "provider": "anthropic",
+   "input": 30648,
+   "cached": 29064,
+   "cacheWrite": 0,
+   "output": 38637,
+   "reasoning": 28194,
+   "searches": 0,
+   "cost": 0.784889,
+   "finish": "stop",
+   "citations": [],
+   "continues": 0,
+   "chars": 24386
+  }
+ ]
+}

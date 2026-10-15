@@ -1,5 +1,8 @@
 node_modules
 client/public/hall/s
+client/public/hall/hall.wav
 dist
 .wrangler
 .dev.vars
+build/out
+e2e/out

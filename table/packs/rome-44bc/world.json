@@ -1,0 +1,1453 @@
+{
+ "id": "rome-44bc",
+ "title": "After the Ides",
+ "voice": "The voice of Roman public life, cut in bronze and shouted from the Rostra: Senate decrees in long balanced sentences, Cicero's attacks, the soldier's short oath and the chants of the Forum crowd.",
+ "polity": "The Roman Republic (Senatus Populusque Romanus)",
+ "office": {
+  "title": "Consul of the Roman Republic",
+  "holder": "Marcus Antonius",
+  "oath": "I swear by Jupiter Best and Greatest and by the Penates of the Roman people that I will do what the laws of the Roman people require, that I will not knowingly act against them, that I will guard the commonwealth entrusted to me by the Senate and People, and that if I break this oath, may the gods strike me and mine.",
+  "oathSource": "The magistrate's oath to the laws (iusiurandum in leges), sworn before the Temple of Saturn within five days of entering office."
+ },
+ "date": "-0044-03",
+ "months": 13,
+ "reckoning": {
+  "date": "-0043-04",
+  "name": "The War of Mutina",
+  "meaning": "Whether the consul who inherited Caesar's papers keeps his legions, his province and his life when the Senate, Caesar's heir and the consuls of 43 BC march on him at Mutina."
+ },
+ "ideologies": [
+  {
+   "id": "lib",
+   "name": "Libertas",
+   "stands": "Rule by one man is tyranny, and killing a tyrant is lawful and glorious. The free Republic of yearly magistrates, free votes and free speech in the Senate must be restored, whatever Caesar's acts promised.",
+   "base": "The conspirators and their families (Junii, Cassii, Servilii), young nobles schooled in Stoic and Academic philosophy, Pompeian survivors pardoned by Caesar, and provincial governors who were among the conspirators.",
+   "culture": "Philosophy in villas at Lanuvium, Antium and Tusculum, letters copied and passed hand to hand, Greek tutors, the memory of Lucius Junius Brutus who drove out the kings, the cry 'Libertas!' raised over Caesar's body, praise of Cato, a plain toga without show.",
+   "symbols": "The pileus, the felt cap of the freed slave; two daggers; the head of Libertas (not drawn); the ancestor Lucius Junius Brutus (not drawn); the inscription EID MAR.",
+   "roots": "Republican denarii struck by moneyers of the old houses, ancestral portrait masks in the atrium, Greek philosophers' portrait busts.",
+   "mood": "austere, defiant, aristocratic, philosophical, doomed",
+   "emblems": [
+    "cap",
+    "sword",
+    "scales"
+   ],
+   "ruler": "Republican",
+   "sound": "Silence and the speech: a lone tibia at the theatre of the Ludi Apollinares, Accius's tragic verse in iambic senarii and the theatre crowd's applause for lines on liberty."
+  },
+  {
+   "id": "opt",
+   "name": "Optimatism",
+   "stands": "The Senate's authority (auctoritas patrum), the mos maiorum and the rule of the 'good men' (boni) must govern. Property and the courts must be safe, armies must obey the Senate, and tribunes and mobs must be checked.",
+   "base": "Consulars and the senatorial nobility, Italian landowners of the municipalities, propertied equites who fear debt cancellation, the old priesthoods.",
+   "culture": "Senate sessions in the Curia and temples, courtroom oratory in the basilicas, the dawn salutatio when clients crowd a patron's door, the toga praetexta and senatorial red shoes, funerals with ancestral masks, the slogans 'concordia ordinum' (harmony of the orders) and 'cum dignitate otium'.",
+   "symbols": "SPQR, the fasces, the curule chair, the laurel wreath, the toga praetexta with its purple border, the Temple of Concord.",
+   "roots": "Republican temples of tufa and travertine with Tuscan and Ionic columns, the Curia, laws inscribed in bronze, engraved portraits on moneyers' denarii.",
+   "mood": "dignified, ancestral, legalistic, cautious, proud",
+   "emblems": [
+    "laurel",
+    "column",
+    "scales"
+   ],
+   "ruler": "Senatorial",
+   "sound": "The tubicen's call opening the assemblies, the tibicen playing at sacrifice so no ill-omened word is heard, the long balanced cadence of the orator."
+  },
+  {
+   "id": "cae",
+   "name": "Caesarism",
+   "stands": "One victorious general, descended from Venus, must hold power for life to give Rome order, clemency, land for veterans and conquest abroad. Caesar's acts are law, his murder is a crime to be avenged, and he must be worshipped as a god.",
+   "base": "Caesar's officers and legates, his freedmen and agents, the veterans of the Gallic and civil wars and the colonists settled on their land, the Transpadane Gauls he enfranchised, provincials given citizenship, client kings.",
+   "culture": "Camps and veteran colonies, the Forum Iulium and the Temple of Venus Genetrix, Caesar's games and gladiatorial shows, soldiers' songs at triumphs, the cult at the pyre site, the oath to protect Caesar's person, the cry of vengeance for Caesar.",
+   "symbols": "The star of Caesar (sidus Iulium); the laurel wreath; the elephant (not drawn); the augur's lituus and the pontifex's ladle; Venus Genetrix (not drawn); the golden chair.",
+   "roots": "Caesar's denarii with his portrait and the title DICT PERPETVO, the marble Forum Iulium, triumph paintings and trophies of captured arms.",
+   "mood": "martial, magnetic, generous, vengeful, regal",
+   "emblems": [
+    "star",
+    "laurel",
+    "crown"
+   ],
+   "ruler": "Caesarian",
+   "sound": "Tuba, cornu and lituus in the legion's camp, soldiers chanting bawdy triumph verses ('Io triumphe!'), the dirge of the tibicines at Caesar's funeral."
+  },
+  {
+   "id": "pop",
+   "name": "Popularism",
+   "stands": "The sovereign Roman people decide in their assemblies. The plebs must have cheap or free grain, land, debt relief, the right of appeal, and tribunes who answer to them rather than to the Senate.",
+   "base": "The urban plebs of the Subura and the Aventine, the craft and neighbourhood guilds (collegia), freedmen, shopkeepers, the poor citizens on the grain lists, tribunes of the plebs, landless Italians.",
+   "culture": "Public meetings (contiones) at the Rostra, the street altars of the crossroads cult, guild banquets, the games in the Circus, graffiti on walls, the memory of the Gracchi, Saturninus and Clodius, the crowd that burned the Curia for Clodius in 52 BC and now built Caesar's pyre.",
+   "symbols": "Ears of wheat; the voting tablet and cista (ballot urn); the tribune's bench; the pileus of the freed; Ceres (not drawn).",
+   "roots": "Painted walls and graffiti of the city, the crossroads shrines, coin types of the grain distributions, terracotta and plaster of the tenement districts.",
+   "mood": "loud, hungry, fickle, fierce, festive",
+   "emblems": [
+    "wheat",
+    "scales",
+    "cap"
+   ],
+   "ruler": "Popular",
+   "sound": "Street mime songs to clappers and the scabellum foot-clapper, crowd chants at the contio, the wailing praeficae and the clashing cymbals of the Circus."
+  }
+ ],
+ "compass": [
+  "lib",
+  "opt",
+  "cae",
+  "pop"
+ ],
+ "marker": [
+  [
+   "cae",
+   0.7
+  ],
+  [
+   "pop",
+   0.3
+  ]
+ ],
+ "grip": 45,
+ "factions": [
+  {
+   "id": "lbr",
+   "name": "Liberatores",
+   "short": "Liberatores",
+   "who": "The conspirators who killed Caesar in the Curia of Pompey: some sixty senators led by the praetors Brutus and Cassius, with Decimus Brutus, Trebonius and Cimber holding provinces.",
+   "leader": {
+    "name": "Marcus Junius Brutus",
+    "role": "Praetor urbanus"
+   },
+   "mix": [
+    [
+     "lib",
+     0.75
+    ],
+    [
+     "opt",
+     0.25
+    ]
+   ],
+   "support": 22,
+   "power": 2,
+   "produces": "trust",
+   "persona": "They want the amnesty honoured, their provinces and praetorships kept, and Caesar's memory left uncelebrated. They fear the veterans and the plebs, who would tear them apart. Their red line is any honour to Caesar as a god or any trial for the murder. An open consul who keeps them safe wins grudging respect; an iron one who guards the city with veterans proves to them he is the next tyrant.",
+   "act": {
+    "text": "Brutus and Cassius leave Italy for the East and begin taking the provinces, treasuries and legions of Macedonia and Syria for the Republic.",
+    "res": {
+     "trust": -2,
+     "money": -1
+    },
+    "sup": {
+     "sen": -4,
+     "par": 3
+    }
+   },
+   "fall": "Brutus and Cassius raise the eastern legions and the tribute of Asia, and the Senate names them commanders against the consul as an enemy of the state.",
+   "fates": {
+    "hi": "The Liberators return to Rome under the amnesty, honoured as men who freed the Republic, and sit beside the consul in the Senate.",
+    "lo": "The Liberators are condemned by law as murderers and hunted in the East, and their names head the lists of the outlawed."
+   },
+   "insignia": "The pileus between two daggers; EID MAR; the head of Libertas (not drawn)."
+  },
+  {
+   "id": "sen",
+   "name": "The Senate (the consulars and the boni)",
+   "short": "The Senate",
+   "who": "The council of some 900 senators, swollen by Caesar's appointments and led in debate by the consulars. It passes decrees, allots provinces and declares enemies of the state.",
+   "leader": {
+    "name": "Marcus Tullius Cicero",
+    "role": "Consular (consul 63 BC), leading speaker of the Senate"
+   },
+   "mix": [
+    [
+     "opt",
+     0.65
+    ],
+    [
+     "lib",
+     0.35
+    ]
+   ],
+   "support": 40,
+   "power": 3,
+   "produces": "trust",
+   "persona": "The Senate wants its authority back: its decrees obeyed, provinces allotted by lot, no armed men around its meetings and no more forged acts of Caesar. It fears another dictator more than another civil war. Its red line is a consul who keeps an army in Italy against its decree. An open consul who consults it gains its votes; an iron one is answered with the senatus consultum ultimum.",
+   "act": {
+    "text": "The Senate leaves the city in protest, refuses to meet when the consul summons it, and sends its leading men to Caesar's heir and to the consuls-designate.",
+    "res": {
+     "trust": -2,
+     "voice": -1
+    },
+    "sup": {
+     "oct": 4,
+     "eqt": -3
+    }
+   },
+   "fall": "The Senate passes the senatus consultum ultimum, declares a tumultus and names the ruler a public enemy (hostis), arming the consuls and Caesar's heir against him.",
+   "fates": {
+    "hi": "The Senate stands as the consul's partner, confirming his acts and his province and sharing the glory of a restored concord.",
+    "lo": "The Senate is cowed and purged; its consulars flee to the East or wait for the proscription lists."
+   },
+   "insignia": "SPQR, the fasces, the curule chair, the senator's broad purple stripe."
+  },
+  {
+   "id": "cpt",
+   "name": "The Caesarian party",
+   "short": "Caesarians",
+   "who": "Caesar's lieutenants, legates and governors who command the armies of the West, with the one legion on the Tiber Island that Lepidus marched into the Forum on 16 March.",
+   "leader": {
+    "name": "Marcus Aemilius Lepidus",
+    "role": "Magister equitum (Master of the Horse)"
+   },
+   "mix": [
+    [
+     "cae",
+     0.75
+    ],
+    [
+     "pop",
+     0.25
+    ]
+   ],
+   "support": 64,
+   "power": 3,
+   "produces": "force",
+   "persona": "The Caesarians want Caesar avenged, his acts upheld, their provinces and priesthoods secured and their share of power protected. They fear a restored Senate that would strip them, and a rival Caesarian who takes the veterans. Their red line is any declaration that Caesar was a tyrant. An iron ruler who punishes the assassins pleases them; an open one who embraces Brutus loses them.",
+   "act": {
+    "text": "Lepidus and the western governors stop answering the consul's letters and open talks with the Senate and with Caesar's heir.",
+    "res": {
+     "force": -2
+    },
+    "sup": {
+     "oct": 4,
+     "plb": -3
+    }
+   },
+   "fall": "The governors of Gaul and Spain march their legions to the Senate's side and leave the ruler trapped between their armies and the consuls'.",
+   "fates": {
+    "hi": "Lepidus and the Caesarian generals share rule with the consul, dividing the provinces and the legions among themselves.",
+    "lo": "The Caesarian generals go over to the Senate and Caesar's heir, keeping their armies and leaving the consul to his fate."
+   },
+   "insignia": "Legion eagles and standards (not drawn); the star of Caesar; the laurel wreath."
+  },
+  {
+   "id": "oct",
+   "name": "Caesar's heir and his partisans",
+   "short": "Octavian",
+   "who": "Gaius Octavius, Caesar's eighteen-year-old great-nephew, adopted in his will as son and heir, with Caesar's agents and friends and the veterans who will follow the name of Caesar.",
+   "leader": {
+    "name": "Gaius Octavius (Gaius Julius Caesar Octavianus)",
+    "role": "Caesar's adopted son and principal heir"
+   },
+   "mix": [
+    [
+     "cae",
+     0.8
+    ],
+    [
+     "pop",
+     0.2
+    ]
+   ],
+   "support": 48,
+   "power": 2,
+   "produces": "force",
+   "persona": "The heir wants Caesar's name, money and veterans, the bequest paid to the people, honours for his father and vengeance on the assassins. He fears the consul who holds Caesar's papers and treasure will brush him aside as a boy. His red line is the consul keeping Caesar's money or blocking his adoption. He courts the Senate against an iron consul and the veterans against an open one.",
+   "act": {
+    "text": "The heir raises Caesar's veterans in Campania with his own silver and offers the Senate an army against the consul.",
+    "res": {
+     "force": -2,
+     "voice": -1
+    },
+    "sup": {
+     "sen": 4,
+     "plb": -3
+    }
+   },
+   "fall": "The heir's legions, joined by the Martia and the Fourth that came over to him, march with the year's consuls to relieve Mutina and break the ruler's army.",
+   "fates": {
+    "hi": "The heir stands at the consul's side as a junior Caesar, his adoption confirmed and his veterans paid, sharing vengeance and power.",
+    "lo": "The heir rises against the consul as the Senate's champion and the veterans' Caesar, and in their eyes takes the consul's place."
+   },
+   "insignia": "The name CAESAR; the star of Caesar; Caesar's golden chair and diadem (not drawn)."
+  },
+  {
+   "id": "plb",
+   "name": "The urban plebs and the collegia",
+   "short": "Plebs & Collegia",
+   "who": "The citizen poor of Rome, organised through their neighbourhood and craft guilds and their tribunes: the crowd that votes in the tribal assembly and fills the Forum at the contio.",
+   "leader": {
+    "name": "Lucius Antonius",
+    "role": "Tribune of the plebs"
+   },
+   "mix": [
+    [
+     "pop",
+     0.75
+    ],
+    [
+     "cae",
+     0.25
+    ]
+   ],
+   "support": 54,
+   "power": 2,
+   "produces": "voice",
+   "persona": "The plebs want grain, Caesar's bequest of 300 sesterces a head, his gardens, the games and vengeance on his murderers. They fear famine and a Senate that would undo Caesar's gifts. Their red line is a consul who protects the assassins or lets the grain fail. They cheer a hard hand against the Liberators but riot when soldiers are turned on them.",
+   "act": {
+    "text": "The crowd burns and stones in the Forum, raises altars to Caesar, and drives the consul's speakers from the Rostra.",
+    "res": {
+     "voice": -2,
+     "trust": -1
+    },
+    "sup": {
+     "oct": 3,
+     "eqt": -3
+    }
+   },
+   "fall": "The tribes vote down the consul's laws and the plebs hail Caesar's heir in the Forum, leaving the consul without a city to return to.",
+   "fates": {
+    "hi": "The plebs hail the consul as Caesar's avenger and the giver of grain and land, and vote whatever he asks.",
+    "lo": "The plebs turn to Caesar's heir and their own tribunes, and the consul's name is jeered in the Circus."
+   },
+   "insignia": "Ears of wheat; the tribune's bench; the crossroads altar of the Lares (not drawn)."
+  },
+  {
+   "id": "eqt",
+   "name": "The equites and the publicani",
+   "short": "Equites",
+   "who": "The equestrian order: financiers, tax-farming companies (publicani), bankers and Italian landed men who lend to senators and collect the taxes of the provinces.",
+   "leader": {
+    "name": "Titus Pomponius Atticus",
+    "role": "Eques, banker and friend of both camps"
+   },
+   "mix": [
+    [
+     "opt",
+     0.6
+    ],
+    [
+     "cae",
+     0.4
+    ]
+   ],
+   "support": 34,
+   "power": 1,
+   "produces": "money",
+   "persona": "The equites want peace, safe property, loans repaid and the tax contracts of Asia left alone. They fear debt cancellation, confiscations and a war that stops the tribute from the East. Their red line is the seizure of private fortunes or a new proscription. They lend to whoever looks likely to win and shun an iron ruler who taxes them.",
+   "act": {
+    "text": "The bankers call in their loans and hide their silver, and the companies stop advancing the taxes of the provinces.",
+    "res": {
+     "money": -3
+    },
+    "sup": {
+     "sen": 2,
+     "lbr": 2
+    }
+   },
+   "fall": "The money stops entirely: the legions go unpaid and their tribunes listen to silver offered by the heir and the Senate.",
+   "fates": {
+    "hi": "The equites finance the consul's order and are rewarded with tax contracts and seats on the juries.",
+    "lo": "The equites fund the consul's enemies and in time see their own estates entered on the confiscation lists."
+   },
+   "insignia": "The gold ring and narrow purple stripe of the equestrian order; the scales of the money-changers."
+  }
+ ],
+ "patrons": [
+  {
+   "id": "egy",
+   "name": "Ptolemaic Egypt",
+   "short": "Ptolemaic Egypt",
+   "who": "The Hellenistic kingdom of the Ptolemies, Rome's richest client. On the Ides its queen was in Rome at Caesar's villa across the Tiber with her son by him.",
+   "leader": {
+    "name": "Cleopatra VII Philopator",
+    "role": "Queen of Egypt"
+   },
+   "mix": [
+    [
+     "cae",
+     1
+    ]
+   ],
+   "support": 60,
+   "grip": 75,
+   "produces": "money",
+   "persona": "Cleopatra wants Caesarion recognised as Caesar's son and her throne secured by Rome, with Egypt's grain and gold reaching Roman hands only as gifts. She fears the Liberators in the East and a Senate that would annex Egypt. Her red line is any support for the assassins; she prefers a strong Caesarian hand.",
+   "act": {
+    "text": "The queen sails home, holds back the Alexandrian grain and lets the legions stationed in Egypt answer to whoever pays them.",
+    "res": {
+     "money": -2
+    },
+    "sup": {
+     "plb": -3,
+     "lbr": 2
+    }
+   },
+   "fall": "Egypt's fleet and the four legions left there go over to Dolabella or Cassius, and the eastern grain and silver feed the ruler's enemies.",
+   "fates": {
+    "hi": "Egypt is the consul's treasury and granary in the East, and its queen is his ally.",
+    "lo": "Egypt bows to whoever rules the East and pays the consul's enemies to keep its throne."
+   },
+   "insignia": "The Ptolemaic eagle on a thunderbolt (not drawn); the vulture crown and uraeus (not drawn)."
+  },
+  {
+   "id": "par",
+   "name": "The Parthian Empire",
+   "short": "Parthia",
+   "who": "The Arsacid empire beyond the Euphrates, which destroyed Crassus at Carrhae in 53 BC. Caesar had sixteen legions and 10,000 cavalry ready to march against it on 18 March.",
+   "leader": {
+    "name": "Orodes II",
+    "role": "King of Kings of Parthia"
+   },
+   "mix": [
+    [
+     "opt",
+     0.6
+    ],
+    [
+     "lib",
+     0.4
+    ]
+   ],
+   "support": 25,
+   "grip": 30,
+   "produces": "force",
+   "persona": "Orodes wants the Parthian war cancelled for good, Syria weak and Roman generals fighting each other. He fears a Caesarian avenger leading Caesar's planned campaign. He keeps ties with the Pompeians and the Liberators and backs Caecilius Bassus in Syria. An iron Caesarian at Rome alarms him; a divided and open Rome pleases him.",
+   "act": {
+    "text": "Parthian horsemen cross into Syria to aid Caecilius Bassus and the Liberators, tying down the eastern legions.",
+    "res": {
+     "force": -2
+    },
+    "sup": {
+     "lbr": 3,
+     "egy": -3
+    }
+   },
+   "fall": "Parthian cavalry and money stand behind Cassius in Syria, and the eastern provinces are lost to the ruler and to Rome alike.",
+   "fates": {
+    "hi": "Parthia keeps the peace on the Euphrates and trades envoys with the consul.",
+    "lo": "Parthia arms the consul's enemies and waits for its chance to break into Syria."
+   },
+   "insignia": "The Arsacid archer on the drachm (not drawn); the royal diadem."
+  },
+  {
+   "id": "gal",
+   "name": "The Kingdom of Galatia",
+   "short": "Galatia",
+   "who": "The Celtic kingdom of central Anatolia under its aged tetrarch-king, a Pompeian client stripped of lands by Caesar who now tries to buy them back at Rome.",
+   "leader": {
+    "name": "Deiotarus",
+    "role": "King of Galatia"
+   },
+   "mix": [
+    [
+     "opt",
+     0.6
+    ],
+    [
+     "cae",
+     0.4
+    ]
+   ],
+   "support": 45,
+   "grip": 55,
+   "produces": "money",
+   "persona": "Deiotarus wants Lesser Armenia and the other lands Caesar took restored, and will pay whoever signs the decree. He fears the Caesarians who judged him and any war that crosses Anatolia. He sides with whoever holds the East and prefers a firm hand that keeps the roads quiet.",
+   "act": {
+    "text": "The king withholds his promised silver and sends his Galatian legion to whichever Roman commander reaches Asia first.",
+    "res": {
+     "money": -1,
+     "force": -1
+    },
+    "sup": {
+     "lbr": 3,
+     "eqt": -2
+    }
+   },
+   "fall": "Galatia's troops and silver go to Brutus and Cassius, opening Anatolia to the Liberators' armies.",
+   "fates": {
+    "hi": "Galatia is a loyal client, its king restored by the consul's decree and paying for the favour.",
+    "lo": "Galatia serves the consul's enemies in the East, its king loyal only to the nearest Roman army."
+   },
+   "insignia": "The Galatian royal diadem; Celtic torques (not drawn)."
+  }
+ ],
+ "resources": {
+  "money": {
+   "name": "Aerarium",
+   "icon": "coin",
+   "unit": "thousand talents (about 24 million sesterces)",
+   "value": 28
+  },
+  "force": {
+   "name": "Legions",
+   "icon": "sword",
+   "value": 4
+  },
+  "voice": {
+   "name": "Rostra",
+   "icon": "crowd",
+   "value": 4
+  },
+  "trust": {
+   "name": "Fides",
+   "icon": "seal",
+   "value": 3
+  }
+ },
+ "balance": -1.5,
+ "balanceWhy": "Caesar's war chest of 700 million sesterces at the Temple of Ops drains away on legions, bounties, games and favours, while the Liberators and the disorder in the East cut off its tribute.",
+ "timeline": [
+  {
+   "date": "-0044-03-15",
+   "event": "Gaius Julius Caesar, dictator perpetuo, is stabbed 23 times at a Senate meeting in the Curia of Pompey by some 60 conspirators led by Marcus Brutus and Gaius Cassius; the consul Antonius, kept outside by Trebonius, flees home in disguise.",
+   "holders": [
+    "lbr",
+    "sen"
+   ]
+  },
+  {
+   "date": "-0044-03-16",
+   "event": "Lepidus marches his legion from the Tiber Island into the Forum while the conspirators hold the Capitol, guarded by gladiators.",
+   "holders": [
+    "cpt",
+    "lbr"
+   ]
+  },
+  {
+   "date": "-0044-03-17",
+   "event": "The Senate meets in the Temple of Tellus, ringed by veterans. On Cicero's plea for amnesty it grants the assassins impunity while confirming all Caesar's acts; hostages are exchanged and Brutus and Cassius dine with Lepidus and Antonius.",
+   "holders": [
+    "sen",
+    "lbr",
+    "cpt"
+   ]
+  },
+  {
+   "date": "-0044-03-19",
+   "event": "Caesar's will is read at the consul's house: Gaius Octavius is adopted and named heir to three-quarters of the estate, each citizen is left 300 sesterces, and Caesar's gardens across the Tiber go to the people.",
+   "holders": [
+    "oct",
+    "plb"
+   ]
+  },
+  {
+   "date": "-0044-03-20",
+   "event": "At Caesar's public funeral in the Forum the consul's oration and the bloodied toga rouse the crowd. It burns the body in the Forum, kills the tribune Helvius Cinna by mistake and attacks the conspirators' houses.",
+   "holders": [
+    "plb",
+    "lbr"
+   ]
+  },
+  {
+   "date": "-0044-04-13",
+   "event": "Brutus and Cassius, unsafe in the city, leave Rome for Lanuvium and the towns of Latium, though still praetors.",
+   "holders": [
+    "lbr"
+   ]
+  },
+  {
+   "date": "-0044-04-20",
+   "event": "Gaius Octavius, who landed in Italy from Apollonia in early April and now calls himself Caesar, meets Caesar's agent Balbus and the consuls-designate Hirtius and Pansa in Campania.",
+   "holders": [
+    "oct",
+    "cpt"
+   ]
+  },
+  {
+   "date": "-0044-06-02",
+   "event": "With the Senate cowed by veterans, the tribal assembly passes the lex de permutatione provinciarum, giving the consul Cisalpine and Transalpine Gaul for five years with the Macedonian army; Dolabella receives Syria on the same terms.",
+   "holders": [
+    "sen",
+    "lbr",
+    "cpt"
+   ]
+  },
+  {
+   "date": "-0044-06-05",
+   "event": "The Senate gives Brutus and Cassius the task of buying grain in Asia and Sicily, a commission both take as an insult and a dismissal from Italy.",
+   "holders": [
+    "lbr",
+    "sen"
+   ]
+  },
+  {
+   "date": "-0044-07-20",
+   "event": "Octavian stages the Ludi Victoriae Caesaris (20-30 July). A comet bright enough to see in daylight shines for seven days, and the people hail it as Caesar's soul received among the gods.",
+   "holders": [
+    "oct",
+    "plb"
+   ]
+  },
+  {
+   "date": "-0044-09-02",
+   "event": "Cicero delivers the First Philippic in the Senate, attacking the consul's use of Caesar's papers; on 19 September the consul answers with a furious invective.",
+   "holders": [
+    "sen"
+   ]
+  },
+  {
+   "date": "-0044-10-09",
+   "event": "The consul leaves for Brundisium to take over four legions shipped from Macedonia. He offers them 100 denarii each, is jeered, and executes centurions and soldiers named as ringleaders.",
+   "holders": [
+    "cpt",
+    "oct"
+   ]
+  },
+  {
+   "date": "-0044-11-10",
+   "event": "Octavian has raised about 3,000 of Caesar's veterans in Campania with a bounty of 500 denarii each. He occupies the Forum and denounces the consul, but many veterans refuse to fight a Caesarian consul and he withdraws to Arretium.",
+   "holders": [
+    "oct",
+    "plb"
+   ]
+  },
+  {
+   "date": "-0044-11-28",
+   "event": "After the Legio Martia and then the Fourth Legion go over to Octavian at Alba Fucens, the consul holds a night session of the Senate to allot provinces and leaves Rome for Cisalpine Gaul.",
+   "holders": [
+    "oct",
+    "sen",
+    "cpt"
+   ]
+  },
+  {
+   "date": "-0044-12-20",
+   "event": "On Cicero's motion (Third and Fourth Philippics) the Senate praises Decimus Brutus for refusing to hand over Cisalpine Gaul and commends the legions that changed sides; the consul's army closes in on Decimus at Mutina.",
+   "holders": [
+    "sen",
+    "lbr",
+    "oct"
+   ]
+  },
+  {
+   "date": "-0043-01-01",
+   "event": "Aulus Hirtius and Gaius Vibius Pansa take office as consuls. After a four-day debate the Senate gives Octavian a seat and propraetorian imperium, and sends three consulars to order the former consul out of Cisalpine Gaul.",
+   "holders": [
+    "sen",
+    "oct"
+   ]
+  },
+  {
+   "date": "-0043-02-02",
+   "event": "The embassy returns empty-handed and Servius Sulpicius has died on the road. The Senate declares a tumultus, citizens put on the military cloak, and the senatus consultum ultimum arms the consuls.",
+   "holders": [
+    "sen",
+    "oct",
+    "cpt"
+   ]
+  },
+  {
+   "date": "-0043-04-14",
+   "event": "At Forum Gallorum the consul's veterans rout Pansa's recruits and Pansa is mortally wounded, before Hirtius falls on the victors and drives them back.",
+   "holders": [
+    "oct",
+    "sen"
+   ]
+  },
+  {
+   "date": "-0043-04-21",
+   "event": "Before Mutina, Hirtius and Octavian storm the consul's camp. Hirtius is killed in the fighting, the siege is lifted, and the consul retreats west across the Alps toward Lepidus.",
+   "holders": [
+    "oct",
+    "sen",
+    "lbr",
+    "cpt"
+   ]
+  }
+ ],
+ "people": [
+  {
+   "name": "Marcus Junius Brutus",
+   "role": "Praetor urbanus, leader of the conspirators",
+   "holder": "lbr"
+  },
+  {
+   "name": "Gaius Cassius Longinus",
+   "role": "Praetor peregrinus, organiser of the conspiracy",
+   "holder": "lbr"
+  },
+  {
+   "name": "Decimus Junius Brutus Albinus",
+   "role": "Conspirator, governor-designate of Cisalpine Gaul",
+   "holder": "lbr"
+  },
+  {
+   "name": "Gaius Trebonius",
+   "role": "Conspirator, governor-designate of Asia",
+   "holder": "lbr"
+  },
+  {
+   "name": "Marcus Tullius Cicero",
+   "role": "Consular, leading speaker of the Senate",
+   "holder": "sen"
+  },
+  {
+   "name": "Lucius Calpurnius Piso Caesoninus",
+   "role": "Consular, Caesar's father-in-law and executor of the funeral",
+   "holder": "sen"
+  },
+  {
+   "name": "Quintus Fufius Calenus",
+   "role": "Consular, the consul's ally in the Senate",
+   "holder": "sen"
+  },
+  {
+   "name": "Servius Sulpicius Rufus",
+   "role": "Consular jurist",
+   "holder": "sen"
+  },
+  {
+   "name": "Marcus Aemilius Lepidus",
+   "role": "Magister equitum, pontifex maximus",
+   "holder": "cpt"
+  },
+  {
+   "name": "Publius Cornelius Dolabella",
+   "role": "Suffect consul, the consul's colleague",
+   "holder": "cpt"
+  },
+  {
+   "name": "Aulus Hirtius",
+   "role": "Consul-designate for 43 BC, Caesar's officer",
+   "holder": "cpt"
+  },
+  {
+   "name": "Gaius Vibius Pansa Caetronianus",
+   "role": "Consul-designate for 43 BC",
+   "holder": "cpt"
+  },
+  {
+   "name": "Gaius Octavius (Octavian)",
+   "role": "Caesar's adopted heir",
+   "holder": "oct"
+  },
+  {
+   "name": "Lucius Cornelius Balbus",
+   "role": "Caesar's agent and financier",
+   "holder": "oct"
+  },
+  {
+   "name": "Lucius Antonius",
+   "role": "Tribune of the plebs, the consul's brother",
+   "holder": "plb"
+  },
+  {
+   "name": "Titus Pomponius Atticus",
+   "role": "Eques and banker",
+   "holder": "eqt"
+  },
+  {
+   "name": "Fulvia",
+   "role": "The consul's wife",
+   "holder": null
+  },
+  {
+   "name": "Calpurnia",
+   "role": "Caesar's widow",
+   "holder": null
+  },
+  {
+   "name": "Cleopatra VII Philopator",
+   "role": "Queen of Egypt",
+   "holder": "egy"
+  },
+  {
+   "name": "Deiotarus",
+   "role": "King of Galatia",
+   "holder": "gal"
+  }
+ ],
+ "facts": {
+  "people": [
+   {
+    "name": "Marcus Antonius",
+    "role": "Consul",
+    "from": "-0044-03",
+    "to": "-0044-12"
+   },
+   {
+    "name": "Marcus Antonius",
+    "role": "Proconsul of Cisalpine and Transalpine Gaul under the lex de permutatione provinciarum",
+    "from": "-0044-12",
+    "to": null
+   },
+   {
+    "name": "Publius Cornelius Dolabella",
+    "role": "Suffect consul in Caesar's place",
+    "from": "-0044-03",
+    "to": "-0044-12"
+   },
+   {
+    "name": "Publius Cornelius Dolabella",
+    "role": "Proconsul of Syria",
+    "from": "-0044-12",
+    "to": null
+   },
+   {
+    "name": "Marcus Aemilius Lepidus",
+    "role": "Magister equitum",
+    "from": "-0044-03",
+    "to": "-0044-04"
+   },
+   {
+    "name": "Marcus Aemilius Lepidus",
+    "role": "Pontifex maximus",
+    "from": "-0044-03",
+    "to": null
+   },
+   {
+    "name": "Marcus Aemilius Lepidus",
+    "role": "Proconsul of Gallia Narbonensis and Hispania Citerior",
+    "from": "-0044-04",
+    "to": null
+   },
+   {
+    "name": "Marcus Junius Brutus",
+    "role": "Praetor urbanus",
+    "from": "-0044-03",
+    "to": "-0044-12"
+   },
+   {
+    "name": "Gaius Cassius Longinus",
+    "role": "Praetor peregrinus",
+    "from": "-0044-03",
+    "to": "-0044-12"
+   },
+   {
+    "name": "Decimus Junius Brutus Albinus",
+    "role": "Governor of Cisalpine Gaul",
+    "from": "-0044-04",
+    "to": null
+   },
+   {
+    "name": "Gaius Trebonius",
+    "role": "Proconsul of Asia",
+    "from": "-0044-05",
+    "to": "-0043-01"
+   },
+   {
+    "name": "Gaius Antonius",
+    "role": "Praetor, the consul's brother",
+    "from": "-0044-03",
+    "to": "-0044-12"
+   },
+   {
+    "name": "Lucius Antonius",
+    "role": "Tribune of the plebs",
+    "from": "-0044-03",
+    "to": "-0044-12"
+   },
+   {
+    "name": "Lucius Antonius",
+    "role": "Head of the board of seven (septemviri) for land distribution",
+    "from": "-0044-06",
+    "to": "-0044-12"
+   },
+   {
+    "name": "Aulus Hirtius",
+    "role": "Consul-designate",
+    "from": "-0044-03",
+    "to": "-0044-12"
+   },
+   {
+    "name": "Aulus Hirtius",
+    "role": "Consul",
+    "from": "-0043-01",
+    "to": "-0043-04"
+   },
+   {
+    "name": "Gaius Vibius Pansa Caetronianus",
+    "role": "Consul-designate",
+    "from": "-0044-03",
+    "to": "-0044-12"
+   },
+   {
+    "name": "Gaius Vibius Pansa Caetronianus",
+    "role": "Consul",
+    "from": "-0043-01",
+    "to": "-0043-04"
+   },
+   {
+    "name": "Gaius Julius Caesar Octavianus",
+    "role": "Caesar's adopted son and heir, a private citizen raising veterans",
+    "from": "-0044-03",
+    "to": "-0043-01"
+   },
+   {
+    "name": "Gaius Julius Caesar Octavianus",
+    "role": "Senator with propraetorian imperium",
+    "from": "-0043-01",
+    "to": null
+   },
+   {
+    "name": "Marcus Tullius Cicero",
+    "role": "Consular, leading speaker of the Senate, author of the Philippics",
+    "from": "-0044-03",
+    "to": null
+   },
+   {
+    "name": "Lucius Calpurnius Piso Caesoninus",
+    "role": "Consular, Caesar's father-in-law; Senate envoy to the former consul",
+    "from": "-0044-03",
+    "to": null
+   },
+   {
+    "name": "Servius Sulpicius Rufus",
+    "role": "Consular, Senate envoy, died on the embassy",
+    "from": "-0044-03",
+    "to": "-0043-01"
+   },
+   {
+    "name": "Lucius Munatius Plancus",
+    "role": "Governor of Gallia Comata",
+    "from": "-0044-04",
+    "to": null
+   },
+   {
+    "name": "Gaius Asinius Pollio",
+    "role": "Governor of Hispania Ulterior",
+    "from": "-0044-03",
+    "to": null
+   },
+   {
+    "name": "Sextus Pompeius",
+    "role": "Commander of Pompeian forces in Hispania, later prefect of the fleet",
+    "from": "-0044-03",
+    "to": null
+   },
+   {
+    "name": "Cleopatra VII Philopator",
+    "role": "Queen of Egypt",
+    "from": "-0044-03",
+    "to": null
+   },
+   {
+    "name": "Orodes II",
+    "role": "King of Kings of Parthia",
+    "from": "-0044-03",
+    "to": null
+   },
+   {
+    "name": "Deiotarus",
+    "role": "King of Galatia",
+    "from": "-0044-03",
+    "to": null
+   },
+   {
+    "name": "Publius Ventidius Bassus",
+    "role": "Caesarian officer raising veteran legions for the former consul",
+    "from": "-0044-11",
+    "to": null
+   }
+  ],
+  "documents": [
+   {
+    "name": "Senatus consultum of 17 March (Temple of Tellus)",
+    "date": "-0044-03-17",
+    "content": "Granted amnesty to Caesar's assassins without honouring them as tyrannicides, and confirmed all of Caesar's acts and appointments as law."
+   },
+   {
+    "name": "Senatus consultum on Caesar's funeral",
+    "date": "-0044-03-18",
+    "content": "On Piso's motion, recognised Caesar's will and granted him a public funeral in the Forum."
+   },
+   {
+    "name": "Will of Gaius Julius Caesar",
+    "date": "-0044-03-19",
+    "content": "Adopted Gaius Octavius as son and heir to three-quarters of the estate, and left 300 sesterces to every citizen of Rome and his gardens across the Tiber to the people."
+   },
+   {
+    "name": "Lex Antonia de dictatura in perpetuum tollenda",
+    "date": "-0044-04-01",
+    "content": "Abolished the office of dictator forever and forbade anyone to propose or accept it."
+   },
+   {
+    "name": "Lex de permutatione provinciarum",
+    "date": "-0044-06-02",
+    "content": "Gave the consul Cisalpine and Transalpine Gaul for five years in place of Macedonia, with the Macedonian legions, and extended Dolabella's Syrian command likewise."
+   },
+   {
+    "name": "Lex Antonia agraria",
+    "date": "-0044-06-04",
+    "content": "Ordered land distributions to veterans and the poor, run by a board of seven headed by Lucius Antonius."
+   },
+   {
+    "name": "Lex de actis Caesaris cognoscendis",
+    "date": "-0044-06-04",
+    "content": "Empowered the consuls to examine and decide which of Caesar's acts and memoranda were valid."
+   },
+   {
+    "name": "Senatus consultum of 5 June on the grain commissions",
+    "date": "-0044-06-05",
+    "content": "Charged Brutus and Cassius with buying grain in Asia and Sicily, taking them out of Italy."
+   },
+   {
+    "name": "First Philippic of Cicero",
+    "date": "-0044-09-02",
+    "content": "Criticised the consul's use of forged acts of Caesar while offering him reconciliation if he governed by the laws."
+   },
+   {
+    "name": "Senatus consultum of 20 December",
+    "date": "-0044-12-20",
+    "content": "On Cicero's motion, praised Decimus Brutus for holding Cisalpine Gaul for the Senate, kept all governors in their provinces, and commended Octavian and the legions that changed sides."
+   },
+   {
+    "name": "Senatus consultum of January 43 on Octavian and the embassy",
+    "date": "-0043-01-04",
+    "content": "Made Octavian a senator with propraetorian imperium and sent Piso, Philippus and Sulpicius to order the former consul out of Cisalpine Gaul."
+   },
+   {
+    "name": "Senatus consultum ultimum and declaration of tumultus",
+    "date": "-0043-02-02",
+    "content": "Declared a state of tumult, ordered citizens into military dress and charged the consuls and Octavian to see that the state came to no harm."
+   }
+  ],
+  "numbers": [
+   {
+    "name": "Caesar's treasury at the Temple of Ops",
+    "key": "Ops treasury",
+    "value": 700,
+    "unit": "million sesterces",
+    "floor": 0,
+    "change": "Falls with every legion paid and every bounty, game and favour drawn from it (a legion costs about 4.5 million a year); it rises only with new tribute, which the Liberators' hold on the East cuts off."
+   },
+   {
+    "name": "Caesar's private money taken from Calpurnia",
+    "key": "Caesar's chest",
+    "value": 4000,
+    "unit": "talents",
+    "floor": 0,
+    "change": "Held by the consul; falls as he spends it or pays it to the heir, and is never refilled."
+   },
+   {
+    "name": "Caesar's bequest per citizen",
+    "key": "bequest",
+    "value": 300,
+    "unit": "sesterces",
+    "change": "Fixed by the will; the heir owes it once to each citizen, and it stays unpaid until he obtains the estate or sells his own property."
+   },
+   {
+    "name": "Citizens on the free grain list",
+    "key": "grain list",
+    "value": 150000,
+    "unit": "recipients",
+    "ceiling": 150000,
+    "change": "Capped by Caesar's law; vacancies are filled by lot each year, and raising the cap needs a new law."
+   },
+   {
+    "name": "Legions in Macedonia for the Parthian war",
+    "key": "Macedonian legions",
+    "value": 6,
+    "unit": "legions",
+    "floor": 0,
+    "change": "Leave Macedonia only by order and transport; each one shipped to Italy arrives a month later, and each one that changes sides is lost at once."
+   },
+   {
+    "name": "Bounty offered by the consul at Brundisium",
+    "key": "donative",
+    "value": 100,
+    "unit": "denarii per soldier",
+    "change": "Set by the commander; the heir's rival offer of 500 denarii pulls legions away unless matched."
+   },
+   {
+    "name": "Months left in the consulship",
+    "key": "consulship",
+    "value": 9,
+    "unit": "months",
+    "floor": 0,
+    "change": "Falls by one each month; at 0, on 1 January 43 BC, the consul becomes a proconsul and loses the right to summon the Senate."
+   },
+   {
+    "name": "The consul's debts on the Ides",
+    "key": "debts",
+    "value": 40,
+    "unit": "million sesterces",
+    "floor": 0,
+    "change": "Paid off by the Kalends of April, according to Cicero; rises again with borrowing for games and troops."
+   }
+  ]
+ },
+ "era_brief": "Rome in 44 BC is a city of brick and tufa, home to some three-quarters of a million people, under a thin new skin of marble. The oldest layer is Etruscan and archaic Latin: terracotta-roofed temples on high podia, the Capitoline temple of Jupiter, and the cramped Forum with its Rostra, hung with ships' beaks since 338 BC. Over it lies the Hellenistic layer that conquest has brought home since the 2nd century BC: Greek marble statuary, Corinthian columns, porticoes, walls painted in the architectural Second Style, mosaic floors and portrait busts of hard Republican realism. Pompey's theatre and portico (55 BC) and Caesar's Forum Iulium with the Temple of Venus Genetrix (46 BC) announce the monuments of one man. Living crafts include bronze casting, die-cutting for denarii, gem engraving, fresco, stucco and wool weaving. Republicans keep to ancestral masks, the curule chair and plain moneyers' coins; Caesarians use the living ruler's portrait, Venus, the star and laurel; the plebs paint walls and crossroads shrines. Imperial forms are out of place: no emperors' arches, no Augustan classicism, no Colosseum, no large concrete domes.",
+ "traditions": [
+  "roman",
+  "hellenistic"
+ ],
+ "adoptions": [
+  {
+   "tag": "pharaonic",
+   "note": "The Egyptian cults of Isis and Serapis had shrines on the Capitol, demolished again and again by Senate decree between 58 and 48 BC; Cleopatra lived in Caesar's gardens across the Tiber in 46-44 BC, and her gilded statue stood in the Temple of Venus Genetrix."
+  }
+ ],
+ "music": {
+  "tradition": "Roman music of the late Republic is Greek in theory and Italian in use. The leading instrument is the tibia, a double reed pipe (the Greek aulos) played by the professional tibicen, with the lyra and cithara for song, the hydraulis water organ at shows, and the sistrum, cymbala and tympanum frame drum in the eastern cults. The army signals with the straight bronze tuba, the curved cornu, the hooked lituus and the buccina. Melody is built on Greek tetrachords spanning a fourth: diatonic (1, 2, 2 semitones ascending), chromatic (1, 1, 3) and enharmonic (0.5, 0.5, 4), stacked into the Dorian, Phrygian and Lydian modes. Rhythm follows the long and short syllables of verse: the dactylic hexameter (long-short-short) of epic, the iambic senarius (short-long) of comedy and tragedy, the Saturnian of old hymns, and the cretic and bacchiac of Plautine song. The beat is kept by the scabellum, a hinged wooden clapper under the tibicen's foot.",
+  "ceremony": "State ritual is the tibia over silence: the tibicen plays at every sacrifice to drown out ill-omened words, tubas open the assemblies, and the triumph moves to horns and the soldiers' 'Io triumphe!'. A great funeral is led by tibicines (the Twelve Tables allow no more than ten), hired mourning women (praeficae) singing the nenia, and actors wearing the ancestors' masks.",
+  "street": "The street sounds of mime and pantomime in the theatres, clapper and double pipe at the crossroads festivals, soldiers' ribald songs mocking their own general at triumphs, the Fescennine verses of weddings, rhythmic chanting and hissing at the contio and in the theatre, where a line about tyranny brings applause, and the hymns and laments raised around Caesar's pyre in the Forum.",
+  "ideologies": {
+   "lib": "Silence and the speech: a lone tibia at the theatre of the Ludi Apollinares, Accius's tragic verse in iambic senarii and the theatre crowd's applause for lines on liberty.",
+   "opt": "The tubicen's call opening the assemblies, the tibicen playing at sacrifice so no ill-omened word is heard, the long balanced cadence of the orator.",
+   "cae": "Tuba, cornu and lituus in the legion's camp, soldiers chanting bawdy triumph verses ('Io triumphe!'), the dirge of the tibicines at Caesar's funeral.",
+   "pop": "Street mime songs to clappers and the scabellum foot-clapper, crowd chants at the contio, the wailing praeficae and the clashing cymbals of the Circus."
+  }
+ },
+ "seeds": [
+  {
+   "id": "s01",
+   "months": [
+    1,
+    1
+   ],
+   "corner": "pop",
+   "line": "Calpurnius Piso and the tribunes ask the consul how Caesar's body is to be buried: a quiet rite at the family tomb, a public funeral with the consul's laudatio and the will read aloud, or the body shown to the crowd with its wounds."
+  },
+  {
+   "id": "s02",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "lib",
+   "line": "Brutus and Cassius, down from the Capitol now that the consul's and Lepidus's sons are held as hostages, ask for a guard and a safe home in Rome, while Lepidus urges arresting them before the veterans kill them.",
+   "arc": {
+    "id": "liberators",
+    "part": 1
+   }
+  },
+  {
+   "id": "s03",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "cae",
+   "line": "Caesar's secretary Faberius brings the consul the dead dictator's notebooks and Calpurnia's 4,000 talents: publish only what Caesar signed, or 'find' new decisions in his hand as friends and clients come asking.",
+   "arc": {
+    "id": "acta",
+    "part": 1
+   }
+  },
+  {
+   "id": "s04",
+   "months": [
+    1,
+    2
+   ],
+   "corner": "opt",
+   "line": "Dolabella, whom Caesar named to take over his consulship, takes up the fasces unbidden; the consul, who as augur had blocked his election, must accept him as colleague, renew the veto, or buy him."
+  },
+  {
+   "id": "s05",
+   "months": [
+    1,
+    3
+   ],
+   "corner": "cae",
+   "line": "Cleopatra, still at Caesar's villa across the Tiber with Caesarion, asks the consul to name the boy Caesar's son in the Senate and to give her a Roman escort home."
+  },
+  {
+   "id": "s06",
+   "months": [
+    2,
+    3
+   ],
+   "corner": "pop",
+   "line": "Herophilus, the horse-doctor who calls himself Amatius, grandson of Marius, raises an altar at the pyre site and leads crowds to burn the conspirators' houses: execute him without trial, try him, or let the cult grow."
+  },
+  {
+   "id": "s07",
+   "months": [
+    2,
+    3
+   ],
+   "corner": "opt",
+   "line": "Cicero and the consulars ask the consul to carry a law abolishing the dictatorship forever, a pledge that would end the office Caesar held and that some Caesarians want for themselves."
+  },
+  {
+   "id": "s08",
+   "months": [
+    2,
+    4
+   ],
+   "corner": "pop",
+   "line": "Caesar's veterans in Campania threaten the colonies at Casilinum and Calatia unless their allotments are surveyed now; the consul must tour the colonies, promise land elsewhere, or send them home with silver."
+  },
+  {
+   "id": "s09",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "cae",
+   "line": "Young Octavius, now calling himself Caesar, comes to the consul's gardens and demands Caesar's money to pay the people their 300-sesterce bequest, and a curiate law to confirm his adoption.",
+   "arc": {
+    "id": "heir",
+    "part": 1
+   }
+  },
+  {
+   "id": "s10",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "opt",
+   "line": "Deiotarus's envoys bring Fulvia a bond for 10 million sesterces in return for a decree, 'found in Caesar's papers', restoring Lesser Armenia to Galatia; the Senate grumbles at acts no one ever saw.",
+   "arc": {
+    "id": "acta",
+    "part": 2
+   }
+  },
+  {
+   "id": "s11",
+   "months": [
+    3,
+    4
+   ],
+   "corner": "lib",
+   "line": "Decimus Brutus holds Cisalpine Gaul with two legions by Caesar's own grant; the consul must decide whether to seek the province and the Macedonian army through the Senate, through the tribal assembly over the Senate's head, or leave Decimus there.",
+   "arc": {
+    "id": "gaul",
+    "part": 1
+   }
+  },
+  {
+   "id": "s12",
+   "months": [
+    4,
+    4
+   ],
+   "corner": "lib",
+   "line": "The consulars propose sending Brutus and Cassius out of Italy to buy grain in Asia and Sicily: an honourable exit, an insult that drives them to arms, or a chance to give them real provinces.",
+   "arc": {
+    "id": "liberators",
+    "part": 2
+   }
+  },
+  {
+   "id": "s13",
+   "months": [
+    4,
+    5
+   ],
+   "corner": "pop",
+   "line": "Lucius Antonius's board of seven must choose where the veterans' and plebs' allotments come from: public land in Campania, the drained Pontine marshes, or estates of the Pompeians and absent conspirators."
+  },
+  {
+   "id": "s14",
+   "months": [
+    4,
+    5
+   ],
+   "corner": "opt",
+   "line": "The equites protest the consul's plan for a third panel of jurors drawn from centurions and soldiers of the Alaudae legion, which would break their hold on the courts."
+  },
+  {
+   "id": "s15",
+   "months": [
+    5,
+    5
+   ],
+   "corner": "lib",
+   "line": "Brutus, absent from Rome, asks through his deputy that his Ludi Apollinares open with Accius's play on the expulsion of the kings, a sure call to the theatre crowd to cheer liberty."
+  },
+  {
+   "id": "s16",
+   "months": [
+    5,
+    6
+   ],
+   "corner": "cae",
+   "line": "At the Ludi Victoriae Caesaris, Octavian moves to set Caesar's golden chair and jewelled wreath in the theatre; tribunes threaten a veto, and the consul must rule while a comet blazes over the city.",
+   "arc": {
+    "id": "heir",
+    "part": 2
+   }
+  },
+  {
+   "id": "s17",
+   "months": [
+    5,
+    6
+   ],
+   "corner": "pop",
+   "line": "Grain ships from Sicily and Alexandria are late and the price at the Tiber wharves doubles; the aediles ask whether to buy grain from the treasury, open the 150,000-name list to more citizens, or punish hoarders."
+  },
+  {
+   "id": "s18",
+   "months": [
+    6,
+    7
+   ],
+   "corner": "opt",
+   "line": "Lucius Piso attacks the consul in the Senate on 1 August, and the consulars demand a commission to examine every act published from Caesar's papers since March.",
+   "arc": {
+    "id": "acta",
+    "part": 3
+   }
+  },
+  {
+   "id": "s19",
+   "months": [
+    6,
+    7
+   ],
+   "corner": "cae",
+   "line": "With Caesar's sixteen legions for the Parthian war standing down, Orodes's envoys and Caecilius Bassus's rebels in Syria test whether Rome will march east, buy peace on the Euphrates, or leave Syria to Dolabella."
+  },
+  {
+   "id": "s20",
+   "months": [
+    7,
+    7
+   ],
+   "corner": "opt",
+   "line": "After Cicero's First Philippic the consul's friends urge a reply: answer him in the Senate with invective, send men to his house, or offer him a share in the settlement."
+  },
+  {
+   "id": "s21",
+   "months": [
+    7,
+    8
+   ],
+   "corner": "lib",
+   "line": "Brutus and Cassius send the consul an edict protesting threats to their lives and announce they will leave Italy; reports say they mean to seize the treasuries and legions of Macedonia and Syria.",
+   "arc": {
+    "id": "liberators",
+    "part": 3
+   }
+  },
+  {
+   "id": "s22",
+   "months": [
+    7,
+    8
+   ],
+   "corner": "cae",
+   "line": "The Macedonian legions land at Brundisium and jeer the consul's offer of 100 denarii a man while Octavian's agents promise five times as much: pay more, decimate, or hand out land.",
+   "arc": {
+    "id": "legions",
+    "part": 1
+   }
+  },
+  {
+   "id": "s23",
+   "months": [
+    8,
+    9
+   ],
+   "corner": "cae",
+   "line": "Octavian is buying Caesar's veterans in Campania at 500 denarii each and marching on Rome to speak against the consul in the Forum: declare him a public enemy, outbid him, or treat with him as Caesar's heir.",
+   "arc": {
+    "id": "heir",
+    "part": 3
+   }
+  },
+  {
+   "id": "s24",
+   "months": [
+    8,
+    9
+   ],
+   "corner": "pop",
+   "line": "Veterans and the consul's armed guard in the Forum alarm the plebs and the tribunes: keep the soldiers in the city against custom, or disband them and trust the crowd."
+  },
+  {
+   "id": "s25",
+   "months": [
+    9,
+    9
+   ],
+   "corner": "cae",
+   "line": "The Legio Martia and then the Fourth Legion go over to Octavian at Alba Fucens; the consul must ride out to win them back with silver, march north with the loyal Second and Thirty-Fifth, or recall the Alaudae.",
+   "arc": {
+    "id": "legions",
+    "part": 2
+   }
+  },
+  {
+   "id": "s26",
+   "months": [
+    9,
+    10
+   ],
+   "corner": "opt",
+   "line": "On the night of 28 November, before leaving Rome, the consul must allot the praetorian provinces: give Macedonia to Gaius Antonius, reward friends with Africa and Crete, or leave the lot to the Senate."
+  },
+  {
+   "id": "s27",
+   "months": [
+    10,
+    10
+   ],
+   "corner": "lib",
+   "line": "Decimus Brutus publishes an edict that he will hold Cisalpine Gaul for the Senate and shuts himself in Mutina: storm the city, starve him out, or offer him a safe road to Macedonia.",
+   "arc": {
+    "id": "gaul",
+    "part": 2
+   }
+  },
+  {
+   "id": "s28",
+   "months": [
+    10,
+    11
+   ],
+   "corner": "pop",
+   "line": "Ventidius Bassus offers to raise two veteran legions in Picenum if the consul will pay them with the land and goods of towns that refuse him, while the region's equites watch."
+  },
+  {
+   "id": "s29",
+   "months": [
+    11,
+    11
+   ],
+   "corner": "lib",
+   "line": "Word comes that Dolabella has killed Trebonius, the proconsul of Asia, at Smyrna: disown the colleague the Senate will outlaw, or stand by him as master of the East."
+  },
+  {
+   "id": "s30",
+   "months": [
+    11,
+    12
+   ],
+   "corner": "opt",
+   "line": "The Senate's embassy of Piso, Philippus and Sulpicius orders the proconsul to quit Cisalpine Gaul and stay 200 miles from Rome: refuse, accept, or answer with counter-terms of his own.",
+   "arc": {
+    "id": "gaul",
+    "part": 3
+   }
+  },
+  {
+   "id": "s31",
+   "months": [
+    12,
+    13
+   ],
+   "corner": "cae",
+   "line": "Lepidus in Narbonensis, Plancus in Gallia Comata and Pollio in Spain hold seventeen legions between them and wait to see who wins; letters and promises must decide which way they turn."
+  },
+  {
+   "id": "s32",
+   "months": [
+    12,
+    13
+   ],
+   "corner": "opt",
+   "line": "With the senatus consultum ultimum passed, Fufius Calenus and the consul's friends in the Senate ask whether to stay and fight for peace terms in the Curia, walk out, or rouse the tribes against the decree."
+  },
+  {
+   "id": "s33",
+   "months": [
+    12,
+    13
+   ],
+   "corner": "lib",
+   "line": "The Senate names Sextus Pompeius commander of the fleet; his envoys ask what the proconsul will give for the Pompeian fleet to stay out of the war, or to sail against Octavian."
+  },
+  {
+   "id": "s34",
+   "months": [
+    13,
+    13
+   ],
+   "corner": "pop",
+   "line": "Mutina starves while Pansa's four legions of recruits march up the Via Aemilia; the consul's officers ask whether to strike Pansa on the road before he joins Hirtius and Octavian, or hold the siege lines."
+  }
+ ]
+}

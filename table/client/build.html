@@ -1,3 +1,29 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Siyasa</title></head>
-<body><p>Landing comes here.</p><a href="/play.html?w=egypt-2011">Play Egypt</a></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Siyasa: building your world</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&text=Siyasa&display=swap">
+<link rel="stylesheet" href="./src/shared/tokens.css">
+<link rel="stylesheet" href="./src/front/build.css">
+</head>
+<body data-noscroll>
+<div class="field" aria-hidden="true"></div>
+<header class="top">
+  <a class="mark" href="/"><span class="mk" aria-hidden="true"></span><span class="t2 wm">Siyasa</span></a>
+  <div class="status">
+    <p class="hint t1" id="hint" hidden>Press any key or click to hear the music.</p>
+    <button type="button" class="mute" id="mute" hidden aria-label="Play the music"><svg viewBox="0 0 20 20" aria-hidden="true"><path class="spk" d="M3.5 7.5h3l4-3.5v12l-4-3.5h-3z"/><path class="on" d="M13.5 7a4 4 0 0 1 0 6M15.6 4.8a7 7 0 0 1 0 10.4"/><path class="off" d="M13.5 7.5l5 5M18.5 7.5l-5 5"/></svg></button>
+    <p class="clock t1" id="clock"><span class="num" id="elapsed">0:00</span><span id="left"></span></p>
+  </div>
+</header>
+<main class="stage" id="stage"></main>
+<p class="sr" id="live" aria-live="polite"></p>
+<script type="module" src="./src/front/build.js"></script>
+</body>
+</html>

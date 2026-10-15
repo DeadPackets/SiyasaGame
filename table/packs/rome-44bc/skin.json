@@ -1,0 +1,255 @@
+{
+ "palette": {
+  "ground": "#15110e",
+  "panel": "#211b16",
+  "panel2": "#2c241d",
+  "ink": "#f1e7d6",
+  "ink2": "#c4b49c",
+  "line": "#4a3d30",
+  "accent": "#c99a3c",
+  "up": "#6fa86a",
+  "down": "#c4553f"
+ },
+ "fonts": {
+  "pair": "inscribed",
+  "display": "Cinzel",
+  "body": "Hanken Grotesk"
+ },
+ "finish": {
+  "type": "gold-leaf",
+  "foilSlot": "a",
+  "intensity": 0.5
+ },
+ "house": {
+  "families": [
+   "ancient",
+   "fret"
+  ],
+  "tradition": "roman",
+  "why": "Late Republican mosaic floors and painted walls: running spirals, lens-petal circle grids and meander borders in tesserae, the Hellenistic craft Rome brought home."
+ },
+ "ideologies": [
+  {
+   "id": "lib",
+   "name": "Libertas",
+   "a": "#4a7fc0",
+   "b": "#0d1624",
+   "c": "#b7cbe6",
+   "recipe": {
+    "layers": [
+     {
+      "family": "ancient",
+      "params": {
+       "motif": "spirals",
+       "scale": 2,
+       "turns": 1.5,
+       "stroke": 2.4,
+       "line": "a",
+       "dot": 1.6,
+       "dotSlot": "c"
+      }
+     }
+    ],
+    "seed": 11,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "cap"
+   },
+   "fit": {
+    "tradition": "hellenistic",
+    "variant": "A sparse line-only running spiral in Egyptian blue on near-black: the Greek philosophers' wave, austere and unbroken.",
+    "emblem": "The pileus, the freedman's cap of the EID MAR denarius."
+   },
+   "why": "Open single-line spiral for an austere, philosophical creed; the liberty cap as its emblem; cool blue for aristocratic restraint."
+  },
+  {
+   "id": "opt",
+   "name": "Optimatism",
+   "a": "#8e44a8",
+   "b": "#1b0d21",
+   "c": "#d9bfe3",
+   "recipe": {
+    "layers": [
+     {
+      "family": "ancient",
+      "params": {
+       "motif": "circles",
+       "lattice": "square",
+       "scale": 2,
+       "radius": 0.71,
+       "petal": "a",
+       "line": "c/0.6",
+       "stroke": 1.2,
+       "dot": 1.5
+      }
+     }
+    ],
+    "seed": 21,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "laurel",
+    "n": 6
+   },
+   "fit": {
+    "tradition": "roman",
+    "variant": "Ordered lens-petal circle grid of a Republican mosaic floor in toga-border purple: dignified, regular, ancestral.",
+    "emblem": "The laurel wreath of senatorial honour."
+   },
+   "why": "A stately, regular mosaic grid for the Senate's order; laurel for ancestral honour; the purple of the toga praetexta."
+  },
+  {
+   "id": "cae",
+   "name": "Caesarism",
+   "a": "#b8322a",
+   "b": "#230b09",
+   "c": "#e8b07a",
+   "recipe": {
+    "layers": [
+     {
+      "family": "fret",
+      "params": {
+       "motif": "meander",
+       "scale": 2,
+       "stroke": 0.9,
+       "line": "a",
+       "outline": 0.8,
+       "edge": "c/0.6"
+      }
+     }
+    ],
+    "seed": 31,
+    "cell": "square"
+   },
+   "emblem": {
+    "kind": "star",
+    "n": 8,
+    "inner": 0.45
+   },
+   "fit": {
+    "tradition": "roman",
+    "variant": "A bold, dense meander in triumphal red edged with gold: martial, angular, regular as a legion on the march.",
+    "emblem": "The sidus Iulium, the star of Caesar."
+   },
+   "why": "Hard angular meander for martial discipline; Caesar's star as emblem; the red of the general's cloak with gold."
+  },
+  {
+   "id": "pop",
+   "name": "Popularism",
+   "a": "#c8901e",
+   "b": "#1f160a",
+   "c": "#ead190",
+   "recipe": {
+    "layers": [
+     {
+      "family": "ancient",
+      "params": {
+       "motif": "circles",
+       "lattice": "hex",
+       "scale": 1,
+       "radius": 0.55,
+       "petal": "a",
+       "line": "c/0.5",
+       "stroke": 1.4,
+       "dot": 2
+      }
+     }
+    ],
+    "seed": 41,
+    "cell": "hex"
+   },
+   "emblem": {
+    "kind": "wheat",
+    "n": 3
+   },
+   "fit": {
+    "tradition": "roman",
+    "variant": "Large filled six-petal flowers of painted plaster in grain ochre: loud, warm and festive.",
+    "emblem": "Ears of wheat of the grain dole coin types."
+   },
+   "why": "Big bold petal rosettes like crossroads wall painting; wheat ears for the grain dole; ochre of the tenement walls."
+  }
+ ],
+ "factions": [
+  {
+   "id": "lbr",
+   "name": "Liberatores",
+   "emblem": {
+    "kind": "sword"
+   },
+   "why": "The daggers of the Ides from the EID MAR denarius."
+  },
+  {
+   "id": "sen",
+   "name": "The Senate (the consulars and the boni)",
+   "emblem": {
+    "kind": "column"
+   },
+   "accent": "#9a52b4",
+   "why": "A column of the Curia and Temple of Concord; the broad purple stripe as accent."
+  },
+  {
+   "id": "cpt",
+   "name": "The Caesarian party",
+   "emblem": {
+    "kind": "laurel"
+   },
+   "why": "The laurel wreath of Caesar's victories."
+  },
+  {
+   "id": "oct",
+   "name": "Caesar's heir and his partisans",
+   "emblem": {
+    "kind": "star",
+    "n": 8,
+    "inner": 0.45
+   },
+   "accent": "#d4a640",
+   "why": "The star of Caesar the heir claims, in Caesar's gold."
+  },
+  {
+   "id": "plb",
+   "name": "The urban plebs and the collegia",
+   "emblem": {
+    "kind": "wheat",
+    "n": 3
+   },
+   "why": "Ears of wheat from their own insignia."
+  },
+  {
+   "id": "eqt",
+   "name": "The equites and the publicani",
+   "emblem": {
+    "kind": "scales"
+   },
+   "why": "The scales of the money-changers."
+  }
+ ],
+ "patrons": [
+  {
+   "id": "egy",
+   "name": "Ptolemaic Egypt",
+   "emblem": {
+    "kind": "lotus"
+   },
+   "why": "A neutral Nile lotus in place of the undrawn crown and eagle."
+  },
+  {
+   "id": "par",
+   "name": "The Parthian Empire",
+   "emblem": {
+    "kind": "crown"
+   },
+   "why": "The Arsacid royal diadem."
+  },
+  {
+   "id": "gal",
+   "name": "The Kingdom of Galatia",
+   "emblem": {
+    "kind": "shield"
+   },
+   "why": "A plain Celtic warrior's shield for the tetrarch-king."
+  }
+ ]
+}
