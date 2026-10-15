@@ -70,3 +70,17 @@ The owner asked me to finish the game to v1.0 alone and log everything that need
 - The real build Workflow is wired but has not run end to end yet; the first production build will be its test (about 6 dollars).
 
 - Mars skin: the `tec` pattern is slightly faint at medallion size (1 pixel-check error left after 2 repairs). Kept for the library seed.
+
+## Owner rulings (2026-10-15 morning)
+
+| # | Ruling |
+|---|---|
+| O1 | Spend guard: set up Turnstile AND lower `DAILY_BUILD_CAP` to 10 until real traffic is seen. |
+| O2 | v4 data: delete now (D1 `usoj`, Vectorize `usoj-scenarios`, old DOs and Workflows), no backup. |
+| O3 | Merge `restart` into `main`. |
+| O4 | Rome: one repair pass only; the build check does not change. |
+| O5 | Build time: accept about 15 minutes; the 5-minute target is dropped. |
+| O6 | Fix all 4 leftovers: budget leak through `pause_turn`, BC dates rule, Turnstile-blocked message, per-preset play counts. |
+| O7 | N7 changed: remove the Jev daily call limit. |
+| O8 | N8 changed: a build starts only on a Jev answer. If Jev is down, builds are disabled. |
+| O9 | Other rulings: the owner is still deciding. |
