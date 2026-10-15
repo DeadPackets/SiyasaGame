@@ -134,7 +134,7 @@
    "id": "army",
    "name": "Egyptian Armed Forces high command",
    "short": "Armed Forces",
-   "who": "The officer corps and the service commanders seated on the Supreme Council of the Armed Forces, guardians of a vast military economy and of $1.3 billion a year in American aid.",
+   "who": "The generals who sit on the Supreme Council of the Armed Forces, the military council now ruling Egypt. They run a huge army-owned business empire. They also control $1.3 billion a year in American military aid.",
    "leader": {
     "name": "Lieutenant General Sami Anan",
     "role": "Chief of Staff of the Armed Forces"
@@ -154,7 +154,7 @@
    "produces": "force",
    "persona": "Wants the army's budget, businesses and command kept beyond civilian oversight and an orderly handover that leaves it the arbiter of the state. Fears a revolution that turns on the officers, trials of commanders and an Islamist president controlling promotions. Its red line is civilian scrutiny of the military budget; it tolerates an iron ruler gladly but turns on one who drags the army into daily street killing or humiliates it before the cameras.",
    "act": {
-    "text": "Senior commanders let it be known that the army will not fire on crowds for the Field Marshal and open talks with the Brotherhood behind his back.",
+    "text": "Senior commanders let it be known that the army will not fire on crowds for the Field Marshal. Behind his back, they open talks with the Brotherhood.",
     "res": {
      "force": -3,
      "trust": -1
@@ -164,10 +164,10 @@
      "moi": -4
     }
    },
-   "fall": "The Chief of Staff and the younger generals retire the Field Marshal in a council coup and announce a new chairman on state television.",
+   "fall": "The Chief of Staff and the younger generals push the Field Marshal into retirement. They name a new council chairman on state television.",
    "fates": {
-    "hi": "The army stands as the untouchable arbiter of the republic, its budget and businesses written beyond the reach of parliament.",
-    "lo": "The generals are retired and the high command reshuffled by the new civilian president, its autonomy cut back."
+    "hi": "The army stands above the republic as its final judge. Its budget and businesses are written into law, beyond parliament's reach.",
+    "lo": "The new civilian president retires the generals and reshuffles the high command. The army loses much of its freedom from civilian control."
    },
    "insignia": "The Eagle of Saladin (not drawn); crossed sabres and stars of rank; the red, white and black roundel."
   },
@@ -175,7 +175,7 @@
    "id": "mb",
    "name": "Society of the Muslim Brothers (Muslim Brotherhood) and its Freedom and Justice Party",
    "short": "Muslim Brotherhood",
-   "who": "Egypt's largest and best-organised movement, banned under Mubarak, which formed the Freedom and Justice Party in April 2011 to contest the elections.",
+   "who": "Egypt's largest and best-organised movement. It was banned under Mubarak. In April 2011 it formed the Freedom and Justice Party to run in elections.",
    "leader": {
     "name": "Mohamed Badie",
     "role": "General Guide of the Muslim Brotherhood"
@@ -199,7 +199,7 @@
    "produces": "voice",
    "persona": "Wants fast elections, a parliament it dominates, the right to form the government and write the constitution, and in the end the presidency. Fears a return to the prisons of 1954 and 1965 and a supra-constitutional charter that binds an elected parliament. Its red line is the dissolution of an elected parliament or the cancellation of a vote; it will deal with an iron ruler who keeps the electoral timetable but mobilises the street against one who postpones it.",
    "act": {
-    "text": "The Brotherhood fills Tahrir with hundreds of thousands under the banner of 'Handing over power' and its deputies denounce the Council in every mosque.",
+    "text": "The Brotherhood fills Tahrir Square, the heart of the uprising, with hundreds of thousands. Their banner reads 'Hand over power'. Its preachers attack the Council in every mosque.",
     "res": {
      "voice": -2,
      "trust": -2
@@ -209,10 +209,10 @@
      "rev": 3
     }
    },
-   "fall": "The Brotherhood and its allies join the revolutionaries in an open-ended sit-in that paralyses Cairo until the Council is forced to hand power to a civilian presidential council.",
+   "fall": "The Brotherhood and its allies join the revolutionaries in a sit-in with no end date. Cairo grinds to a halt. The Council must hand power to a civilian presidential council.",
    "fates": {
-    "hi": "The Brotherhood governs through parliament and the presidency, a junior partner the generals must bargain with.",
-    "lo": "The Brotherhood is shut out of power and drifts back toward confrontation, its gains stripped by court rulings."
+    "hi": "The Brotherhood governs through parliament and the presidency. The generals must still bargain with it as a junior partner.",
+    "lo": "The Brotherhood is shut out of power and drifts back toward confrontation. Court rulings strip away what it had won."
    },
    "insignia": "Crossed swords beneath a Quran (not drawn); the green and white of the Freedom and Justice Party."
   },
@@ -220,7 +220,7 @@
    "id": "salc",
    "name": "Salafist Call (al-Da'wa al-Salafiyya) and its Nour Party",
    "short": "Salafist Call",
-   "who": "The Alexandria-based Salafist preaching movement, apolitical under Mubarak, which founded the Nour Party in 2011 and became the second force in parliament.",
+   "who": "A strict Islamic preaching movement based in Alexandria. It stayed out of politics under Mubarak. In 2011 it founded the Nour Party, which became the second force in parliament.",
    "leader": {
     "name": "Yasser Borhami",
     "role": "Vice-President of the Salafist Call"
@@ -240,7 +240,7 @@
    "produces": "voice",
    "persona": "Wants Article 2 kept and strengthened, Sharia in the constitution and public morality enforced, and a share of power rivalling the Brotherhood. Fears secularists, the Copts' influence and the Brotherhood swallowing the Islamist vote. Its red line is any tampering with Article 2; it accepts a stern ruler who respects religion and turns against a liberalising one.",
    "act": {
-    "text": "Salafist preachers declare the Council's charter an assault on Islam and bus their followers into Tahrir for a mass Friday rally.",
+    "text": "Salafist preachers call the Council's charter an attack on Islam. They bus their followers into Tahrir Square for a huge Friday rally.",
     "res": {
      "voice": -2,
      "trust": -1
@@ -250,10 +250,10 @@
      "fel": 2
     }
    },
-   "fall": "The Salafist Call breaks with the transition and joins Hazem Salah Abu Ismail's followers in besieging the Defence Ministry until the Council's authority collapses.",
+   "fall": "The Salafist Call breaks with the transition. It joins the followers of preacher Hazem Salah Abu Ismail in besieging the Defence Ministry. The Council's authority collapses.",
    "fates": {
-    "hi": "The Nour Party sits as kingmaker of the Islamist camp, courted by the generals against the Brotherhood.",
-    "lo": "The Salafists are pushed to the margin of the new order, their candidates disqualified and their preachers watched."
+    "hi": "The Nour Party decides which way the Islamist camp leans. The generals court it as a counterweight to the Brotherhood.",
+    "lo": "The Salafists are pushed to the edge of the new order. Their candidates are disqualified and their preachers watched."
    },
    "insignia": "The Nour Party's name in calligraphy; the black banner of the shahada (not drawn)."
   },
@@ -261,7 +261,7 @@
    "id": "moi",
    "name": "Ministry of Interior, the Central Security Forces and State Security Investigations",
    "short": "Interior Ministry",
-   "who": "The police state of the Mubarak years, its 300,000-strong Central Security Forces routed on 28 January 2011, its State Security Investigations service renamed the National Security Sector in March 2011.",
+   "who": "Mubarak's police state. Its 300,000 riot police, the Central Security Forces, were beaten back on 28 January 2011. Its secret police were renamed the National Security Sector in March 2011.",
    "leader": {
     "name": "Mahmoud Wagdy",
     "role": "Minister of Interior"
@@ -281,7 +281,7 @@
    "produces": "force",
    "persona": "Wants its officers shielded from prosecution for the killing of protesters, its files and informers kept, and its authority on the street restored. Fears purges, the trial of Habib el-Adly reaching the ranks and the Brotherhood it once hunted taking the ministry. Its red line is a purge of officers; it loves an iron ruler and withdraws from the streets under an open one, leaving crime and chaos.",
    "act": {
-    "text": "Police stations empty and officers stay home, leaving the streets to thugs and the army to face the crowds alone.",
+    "text": "Police stations empty and officers stay home. Thugs take the streets, and the army must face the crowds alone.",
     "res": {
      "force": -2,
      "trust": -2
@@ -291,10 +291,10 @@
      "fel": -2
     }
    },
-   "fall": "The security apparatus lets the country slide into lawlessness and riot until the army demands a new ruler who can restore order.",
+   "fall": "The police let the country slide into crime and riots. In the end the army demands a new ruler who can restore order.",
    "fates": {
-    "hi": "The Interior Ministry returns to the streets intact, its officers unprosecuted and its old reach restored.",
-    "lo": "The ministry is purged and humiliated, its senior generals retired and its officers on trial."
+    "hi": "The Interior Ministry returns to the streets whole. No officer is prosecuted, and its old reach is back.",
+    "lo": "The ministry is purged and shamed. Its senior generals are retired and its officers put on trial."
    },
    "insignia": "The police eagle (not drawn); black Central Security uniforms and helmets."
   },
@@ -302,7 +302,7 @@
    "id": "fel",
    "name": "National Democratic Party networks and the Mubarak-era business elite (the feloul, 'remnants')",
    "short": "Feloul",
-   "who": "The provincial notables, NDP parliamentarians and tycoons of the Mubarak order who lost their party in April 2011 but kept their money, their families and their votes.",
+   "who": "Mubarak's old ruling class: provincial notables, former deputies of his National Democratic Party, and rich tycoons. Their party was dissolved in April 2011. They kept their money, their families and their votes.",
    "leader": {
     "name": "Ahmed Shafik",
     "role": "Prime Minister of Egypt"
@@ -322,7 +322,7 @@
    "produces": "money",
    "persona": "Wants its fortunes, land and contracts protected, its men kept out of prison and back into politics through new parties or a presidential candidate. Fears the political isolation law, confiscation and corruption trials. Its red line is barring former NDP members from office; it rallies to an iron ruler who promises order and funds the opposition to an open one.",
    "act": {
-    "text": "Mubarak-era tycoons move their money abroad and halt investment, and their clans withhold the provincial vote.",
+    "text": "Mubarak-era tycoons move their money abroad and stop investing. Their family clans in the provinces hold back their votes.",
     "res": {
      "money": -3
     },
@@ -331,10 +331,10 @@
      "salc": -1
     }
    },
-   "fall": "The remnants back a rival general and finance the strikes and disorder that make the Council's rule look impossible.",
+   "fall": "The remnants of the old regime back a rival general. They pay for strikes and unrest until the Council looks unable to rule.",
    "fates": {
-    "hi": "The old elite returns through the ballot box, its business empires intact and its candidate a power in the land.",
-    "lo": "The remnants are isolated by law, their tycoons in Tora prison and their assets frozen."
+    "hi": "The old elite returns through the ballot box. Its businesses survive, and its presidential candidate becomes a real power.",
+    "lo": "A new law bars the old elite from politics. Its tycoons sit in Tora prison and its assets are frozen."
    },
    "insignia": "The banners and portraits of the dissolved National Democratic Party (not drawn); the tricolour at clan rallies in the provinces."
   },
@@ -342,7 +342,7 @@
    "id": "rev",
    "name": "Revolution Youth Coalition and the April 6 Youth Movement",
    "short": "Revolutionary Youth",
-   "who": "The young organisers who called the 25 January uprising: the April 6 movement, the Revolution Youth Coalition, the Khaled Said page and the leftist and liberal youth who held Tahrir.",
+   "who": "The young organisers who called the uprising of 25 January. They include the April 6 movement, the Revolution Youth Coalition, and the left-wing and liberal youth who held Tahrir Square.",
    "leader": {
     "name": "Ahmed Maher",
     "role": "General Coordinator of the April 6 Youth Movement"
@@ -366,7 +366,7 @@
    "produces": "trust",
    "persona": "Wants a full purge of the old regime, trials of Mubarak and the killers of protesters, an end to military trials and the Emergency Law and the army out of politics. Fears that the generals and the Brotherhood will divide the revolution between them. Its red line is the killing of protesters; it answers an iron ruler with sit-ins and 'Down with military rule' and gives an open ruler grudging credit.",
    "act": {
-    "text": "The revolutionary youth retake Tahrir in an open-ended sit-in and the chant 'Down, down with military rule' spreads to Alexandria and Suez.",
+    "text": "The young revolutionaries retake Tahrir Square in a sit-in with no end date. The chant 'Down with military rule' spreads to Alexandria and Suez.",
     "res": {
      "trust": -2,
      "voice": -1
@@ -376,10 +376,10 @@
      "army": -3
     }
    },
-   "fall": "A second uprising fills the squares of every city and demands the Field Marshal's trial until the generals abandon him.",
+   "fall": "A second uprising fills the squares of every city. Crowds demand the Field Marshal be put on trial, until the generals drop him.",
    "fates": {
-    "hi": "The revolutionaries win a seat at the table, their demands for justice written into the new order.",
-    "lo": "The revolutionary youth are scattered, prosecuted and branded foreign agents, their movement broken."
+    "hi": "The revolutionaries win a seat at the table. Their demands for justice are written into the new order.",
+    "lo": "The young revolutionaries are scattered and prosecuted. They are branded foreign agents, and their movement is broken."
    },
    "insignia": "The April 6 clenched fist (not drawn); the tricolour with the date 25 January; stencilled martyrs' faces (not drawn)."
   }
@@ -389,7 +389,7 @@
    "id": "usa",
    "name": "United States of America",
    "short": "United States",
-   "who": "Egypt's chief strategic patron since 1979, paying $1.3 billion a year in military aid and pressing for a democratic transition and peace with Israel.",
+   "who": "Egypt's main foreign backer since the 1979 peace with Israel. It pays $1.3 billion a year in military aid. It presses for a move to democracy and for peace with Israel.",
    "leader": {
     "name": "Barack Obama",
     "role": "President of the United States"
@@ -405,7 +405,7 @@
    "produces": "money",
    "persona": "Wants the peace treaty with Israel kept, the Suez Canal open, a credible transition to elected civilian rule and its NGOs free to work. Fears an anti-Western Egypt and massacres on television that Congress cannot forgive. Its red line is the prosecution of American citizens and the killing of protesters; it rewards an open ruler and threatens aid to an iron one.",
    "act": {
-    "text": "Congress conditions the $1.3 billion in military aid and Washington freezes its support for an IMF loan.",
+    "text": "Congress puts conditions on the $1.3 billion in military aid. Washington stops backing Egypt's request for an IMF loan, a rescue loan from the world's lender of last resort.",
     "res": {
      "money": -2,
      "force": -1
@@ -415,10 +415,10 @@
      "army": -3
     }
    },
-   "fall": "Washington suspends military aid and spare parts and backs the generals who promise to replace the Field Marshal.",
+   "fall": "Washington suspends military aid and spare parts. It backs the generals who promise to replace the Field Marshal.",
    "fates": {
-    "hi": "Washington remains Egypt's paymaster and partner, its aid flowing and its treaty secure.",
-    "lo": "Relations sour into suspicion, aid frozen and the alliance of 1979 in question."
+    "hi": "Washington stays Egypt's paymaster and partner. Its aid keeps flowing and the peace treaty holds.",
+    "lo": "Relations turn suspicious. Aid is frozen and the 1979 alliance is in doubt."
    },
    "insignia": "The Stars and Stripes; the USAID clasped-hands shield (not drawn)."
   },
@@ -426,7 +426,7 @@
    "id": "ksa",
    "name": "Kingdom of Saudi Arabia",
    "short": "Saudi Arabia",
-   "who": "The Gulf monarchy that stood by Mubarak to the end and pledged $4 billion to the Military Council in May 2011 to keep Egypt stable and the Brotherhood out.",
+   "who": "The Gulf kingdom that stood by Mubarak to the end. In May 2011 it pledged $4 billion to the Military Council to keep Egypt stable and the Brotherhood out.",
    "leader": {
     "name": "King Abdullah bin Abdulaziz",
     "role": "King of Saudi Arabia"
@@ -446,7 +446,7 @@
    "produces": "money",
    "persona": "Wants order, a strong army, Mubarak spared humiliation and the Brotherhood kept from power. Fears revolution spreading to the Gulf and a Brotherhood-Qatar axis in Cairo. Its red line is Mubarak's execution or an Islamist republic allied to Qatar and Iran; it rewards an iron ruler and withholds deposits from an open one.",
    "act": {
-    "text": "Riyadh recalls its ambassador and delays its promised deposits to the Central Bank.",
+    "text": "Riyadh calls its ambassador home. It delays the money it promised to put in Egypt's Central Bank.",
     "res": {
      "money": -3
     },
@@ -455,10 +455,10 @@
      "fel": -2
     }
    },
-   "fall": "Riyadh cuts off money and oil and lets the Gulf press call for a new man in Cairo.",
+   "fall": "Riyadh cuts off money and oil. It lets the Gulf press call for a new man in Cairo.",
    "fates": {
-    "hi": "Saudi deposits prop up the pound and Riyadh stands as the Council's banker.",
-    "lo": "Riyadh turns cold and waits for a stronger general to emerge."
+    "hi": "Saudi money props up the Egyptian pound. Riyadh becomes the Council's banker.",
+    "lo": "Riyadh turns cold and waits for a stronger general to rise."
    },
    "insignia": "The green banner of the shahada (not drawn); crossed swords and palm (not drawn)."
   },
@@ -466,7 +466,7 @@
    "id": "qat",
    "name": "State of Qatar",
    "short": "Qatar",
-   "who": "The Gulf emirate whose Al Jazeera channel broadcast the revolution and whose emir backed the Muslim Brotherhood across the Arab Spring.",
+   "who": "A small, rich Gulf state. Its Al Jazeera channel broadcast the revolution live. Its ruler, the emir, backed the Muslim Brotherhood across the Arab uprisings.",
    "leader": {
     "name": "Sheikh Hamad bin Khalifa Al Thani",
     "role": "Emir of Qatar"
@@ -486,7 +486,7 @@
    "produces": "voice",
    "persona": "Wants the revolution carried through to elections the Brotherhood will win and Qatari influence in Cairo. Fears an army restoration under Saudi patronage. Its red line is a crackdown on the Brotherhood; it praises an open ruler on Al Jazeera and turns its cameras on an iron one.",
    "act": {
-    "text": "Al Jazeera Mubasher Misr broadcasts every clash live and Doha shelves its promised investments.",
+    "text": "Al Jazeera's Egyptian live channel broadcasts every clash. Doha shelves the investments it promised.",
     "res": {
      "voice": -2,
      "money": -1
@@ -496,10 +496,10 @@
      "rev": -1
     }
    },
-   "fall": "Doha's channels and money turn the Arab world against the Council and finance the Brotherhood's open revolt.",
+   "fall": "Qatar's channels and money turn the Arab world against the Council. They fund the Brotherhood's open revolt.",
    "fates": {
-    "hi": "Doha becomes a generous lender to a Brotherhood-led Cairo.",
-    "lo": "Qatar is cast as a meddler, Al Jazeera's Cairo office raided and its money refused."
+    "hi": "Qatar lends generously to a Cairo led by the Brotherhood.",
+    "lo": "Qatar is seen as a meddler. Al Jazeera's Cairo office is raided and its money refused."
    },
    "insignia": "The maroon and white serrated flag of Qatar; the Al Jazeera calligraphic logo."
   }
