@@ -1,6 +1,11 @@
 import { Hono } from "hono";
 import type { Env } from "./env";
 import { jev, underBudget } from "./jev";
+import { verifyId } from "./identity";
+import { onBuild, onPrompt } from "./prompt";
+
+export { GateDO } from "./gate";
+export { WorldBuild } from "./workflow";
 
 const app = new Hono<{ Bindings: Env }>();
 const ip = (req: Request) => req.headers.get("cf-connecting-ip") ?? "local";
@@ -82,5 +87,20 @@ app.post("/api/jev/plausibility", async (c) => {
     return c.json({ p: null });
   }
 });
+
+app.get("/api/config", (c) => c.json({ turnstile: c.env.TURNSTILE_SITE_KEY ?? null }));
+
+// your worlds: the ones this browser built (signed cookie), with any build still running
+app.get("/api/mine", async (c) => {
+  const raw = (c.req.header("cookie") ?? "").split(";").map((p) => p.trim()).find((p) => p.startsWith("siyasa_id="));
+  const id = raw ? await verifyId(c.env.IDENTITY_SECRET, raw.slice(10)) : null;
+  if (!id) return c.json({ worlds: [], builds: [] });
+  const worlds = await c.env.DB.prepare("SELECT id, title, polity, date, blurb, card FROM worlds WHERE owner = ? ORDER BY created DESC LIMIT 50").bind(id).all();
+  const builds = await c.env.DB.prepare("SELECT id, prompt, status, created FROM builds WHERE owner = ? AND status = 'running' ORDER BY created DESC LIMIT 5").bind(id).all();
+  return c.json({ worlds: worlds.results.map((r) => ({ ...r, card: JSON.parse(String(r.card)) })), builds: builds.results });
+});
+
+app.post("/api/prompt", (c) => onPrompt(c.env, c.req.raw, c.executionCtx as ExecutionContext));
+app.get("/api/builds/:id", (c) => onBuild(c.env, c.req.param("id")));
 
 export default app;

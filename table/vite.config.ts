@@ -3,7 +3,7 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 import { defineConfig } from "vite";
 
 const here = (...p: string[]) => resolve(import.meta.dirname, ...p);
-const pages = ["index", "play"];
+const pages = ["index", "build", "play"];
 
 export default defineConfig({
   root: "client",

@@ -1,0 +1,30 @@
+:root {
+  --ground: #0f0b0d; --panel: #1b1518; --panel2: #251d21; --ink: #f4ecdf; --ink2: #c4b7a6; --line: #3a2f33;
+  --up: #8fd6a8; --down: #f39582; --accent: #f0c674;
+  --display: "Reem Kufi"; --fd: var(--display); --fb: "Hanken Grotesk"; --fdw: 600; --r: 14px; --medr: 50%;
+  --t1: 1rem; --t2: 1.25rem; --t3: 2.25rem;
+  --gap: clamp(0.6rem, 1.5vh, 1.25rem);
+  --ease: cubic-bezier(.45, 0, .15, 1); /* settle */
+  --ease-swift: cubic-bezier(.4, 0, .2, 1);
+  --ease-soft: cubic-bezier(.37, 0, .63, 1);
+  --ease-sweep: cubic-bezier(.87, 0, .13, 1);
+  color-scheme: dark;
+  /* body 16 px at 1920, 14 px at 1440, 13.4 px at 1280 */
+  font-size: clamp(13px, calc(8px + 0.42vw), 16px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--ground); color: var(--ink); font: 400 var(--t1)/1.4 var(--fb), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; text-align: inherit; }
+button:disabled { cursor: default; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+kbd { font: 600 var(--t1)/1 var(--fb); padding: 2px 7px; border-radius: 5px; background: var(--panel2); color: var(--ink); }
+ul, ol { list-style: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.t1 { font-size: var(--t1); line-height: 1.4; }
+.t2 { font-size: var(--t2); line-height: 1.25; }
+.t3 { font-size: var(--t3); line-height: 1.1; }
+.disp { font-family: var(--display); font-weight: var(--fdw); }
+.soft { color: var(--ink2); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0s !important; animation: none !important; }
+}

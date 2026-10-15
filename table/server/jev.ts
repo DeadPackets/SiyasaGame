@@ -1,8 +1,8 @@
 import type { Env } from "./env";
 
 // Jev returns numbers only (owner rule): a noul is 0 to 1, a choice is a probability per option.
-type Noul = { type: "noul"; instructions: string };
-type Choice = { type: "choice"; instructions: string; options: string[] };
+type Noul = { type: "noul"; instructions: unknown };
+type Choice = { type: "choice"; instructions: unknown; options: string[] };
 export type Question = Noul | Choice;
 export type Answers = Record<string, { noul?: number; probabilities?: Record<string, number> }>;
 
