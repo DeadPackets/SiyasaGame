@@ -9,7 +9,7 @@
     "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "allowJs": false
+    "allowJs": true
   },
-  "include": ["engine", "bots", "server"]
+  "include": ["engine", "bots", "server", "build/*.ts"]
 }
