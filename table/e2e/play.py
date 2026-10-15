@@ -84,6 +84,8 @@ def play_term(pg, fails):
             else:
                 pg.click("#end"); pg.wait_for_timeout(250)
                 if pg.evaluate(PHASE) == "hand": pg.click("#end")  # End month asks once while a play is left
+        elif ph == "target" and pg.locator("#center .aopt").count():
+            pg.locator("#center .aopt").first.click(); pg.wait_for_timeout(300)  # a card that asks: take the first option
         elif ph == "target":
             low = pg.evaluate("(() => { const s = window.board.state(), f = window.board.pack.world.factions; return f.reduce((a, b) => (s.support[b.id] < s.support[a.id] ? b : a)).id })()")
             pg.click(f"#factions .fac.target[data-id='{low}']")
