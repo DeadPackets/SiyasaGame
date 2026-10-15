@@ -69,7 +69,8 @@ export async function onPrompt(env: Env, req: Request, ctx: ExecutionContext): P
 
   // a build starts only on Jev's answers (owner ruling O8): with Jev down, building is closed and costs nothing
   const down = Response.json({ state: "invalid", reason: "Building is paused for a moment. Try again in a few minutes, or play a world from the library." }, { status: 503 });
-  try {
+  // fake builds (dev and e2e) spend nothing, so they skip Jev
+  if (env.FAKE_BUILD !== "1") try {
     const a = await jev(env, { prompt }, { refuse: { type: "noul", instructions: `${CONTENT_RULE} Is this prompt asking for what that rule refuses, for content that harasses or mocks a real private person, or for sexual content?` } });
     if (typeof a.refuse?.noul !== "number") throw new Error("no safety answer");
     if (a.refuse.noul >= 0.5) return Response.json({ state: "refused", reason: "Siyasa does not build this world. Try a place and a time." });
