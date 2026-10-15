@@ -3,6 +3,7 @@
 import { gsap, RM } from "../shared/motion.js";
 import { applySkin } from "../shared/skin.js";
 import { monthName } from "../shared/dates.js";
+import { badges } from "../shared/badges.js";
 import { render, renderMedallion, colorize, dataURL } from "../patterns/engine.js";
 import emblem from "../patterns/emblem.js";
 import { PRESETS as RULESETS, TUNE } from "../../../engine/tune.ts";
@@ -151,6 +152,7 @@ ${css}</style><div class="wk"></div>`;
     ["actUnder", "A faction acts under", [[10, "10"], [15, "15"], [20, "20"]]],
     ["sanctions", "Patron sanctions", [[0.5, "half"], [1, "base"], [2, "double"]]],
   ];
+  const won = badges(B.pack.world.id);
   let diff = "standard", custom = { ...RULESETS.standard }, vision = null, rulesOpen = false;
   const diffLine = () => (diff === "custom" ? "Your own rules, set in the Custom column." : PRE[diff][2]);
   const markCol = (el) => $$("[data-col]", el).forEach((c) => c.classList.toggle("on", c.dataset.col === diff));
@@ -191,7 +193,7 @@ ${css}</style><div class="wk"></div>`;
     { name: "A Vision", spot: null,
       html: () => `${head("Choose a Vision", "A Vision is a set of aims, checked at the Reckoning. Or rule with a free hand.")}
         <fieldset class="vlist" data-in><legend class="sr">Vision</legend>${[...F.visions, null].map((v) => { const sk = v && F.ideos.find((x) => x.id === v.corner)?.sk;
-          return `<label class="vrow${v ? "" : " free"}"><input type="radio" name="vision" value="${v ? v.id : ""}"${(vision?.id ?? null) === (v?.id ?? null) ? " checked" : ""}><span class="vm${sk ? "" : v?.corner === "centre" ? " centre" : " plain"}"${sk ? ` style="background-image:${bg(med(sk))}"` : ""}></span><span class="vn t1">${v ? esc(v.name) : "Free hand"}</span><span class="vp t1">${v ? esc(phrase(v.line)) : "No Vision"}</span><span class="on-mark" aria-hidden="true"></span></label>`; }).join("")}</fieldset>
+          return `<label class="vrow${v ? "" : " free"}"><input type="radio" name="vision" value="${v ? v.id : ""}"${(vision?.id ?? null) === (v?.id ?? null) ? " checked" : ""}><span class="vm${sk ? "" : v?.corner === "centre" ? " centre" : " plain"}"${sk ? ` style="background-image:${bg(med(sk))}"` : ""}></span><span class="vn t1">${v ? esc(v.name) : "Free hand"}</span><span class="vp t1">${v ? esc(phrase(v.line)) : "No Vision"}${v && won[v.id] ? ` · Fulfilled on ${esc(won[v.id].map(cap).join(", "))}` : ""}</span><span class="on-mark" aria-hidden="true"></span></label>`; }).join("")}</fieldset>
         <p class="vline t1" id="vline" aria-live="polite" data-in>${esc(visionLine())}</p>` },
     { name: "The pledge", spot: null },
   ];

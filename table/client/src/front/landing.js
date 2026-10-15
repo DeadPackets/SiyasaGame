@@ -4,6 +4,7 @@ import { makeField } from "./bg.js";
 import { render, renderMedallion, colorize, dataURL } from "../patterns/engine.js";
 import emblem from "../patterns/emblem.js";
 import { TUNE } from "../../../engine/tune.ts";
+import { badges } from "../shared/badges.js";
 import { $, $$, esc, ARROW, MONTH, playURL, buildURL, pal, medal, medData, tileVars, face, json } from "./common.js";
 
 const SHOWN = 8;
@@ -332,13 +333,14 @@ function term(pack, ideo) {
 // ---------- world cards: each in its own skin ----------
 const FIN = import("../patterns/finish.js").then((m) => (m.start() ? m : null), () => null);
 function worldCard(w) {
-  const two = (w.card?.ideologies || []).slice(0, 2), li = document.createElement("li"), ideas = two.map((x) => x.name).join(" and ");
+  const two = (w.card?.ideologies || []).slice(0, 2), li = document.createElement("li"), ideas = two.map((x) => x.name).join(" and "), won = Object.keys(badges(w.id)).length;
   li.innerHTML = `<a class="wcard" href="${playURL(w.id)}" aria-label="Play ${esc(w.title)}. ${esc(MONTH(w.date))}. ${esc(ideas)}">
     <span class="band" aria-hidden="true"></span>
     <span class="meds" aria-hidden="true">${two.map((x) => `<span class="med" style='background-image:url("${medData(x)}")'></span>`).join("")}</span>
     <span class="wt t2 disp" title="${esc(w.title)}">${esc(w.title)}</span>
     <span class="wd t1">${esc(MONTH(w.date))}</span>
     <span class="wi t1">${esc(ideas)}</span>
+    ${won ? `<span class="wb t1">${won} ${won === 1 ? "Vision" : "Visions"} fulfilled</span>` : ""}
     <span class="play t1">Play${ARROW}</span>
   </a>`;
   const a = li.firstElementChild;

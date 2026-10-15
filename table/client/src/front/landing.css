@@ -210,3 +210,4 @@ main { background: var(--ground); }
 .wcard .pip { display: inline-block; width: .5rem; height: .5rem; margin-right: .5rem; border-radius: 50%; background: var(--accent); vertical-align: .1em; animation: breathe 1.6s var(--ease-soft) infinite alternate; }
 @keyframes breathe { from { opacity: .3; } to { opacity: 1; } }
 .mine { padding-bottom: 0; }
+.wcard .wb { color: var(--accent); font-weight: 600; }

@@ -4,6 +4,14 @@ import { buildDeckPart, buildMusic, buildSkin, buildWorld, deckPlan, finishDeck 
 import type { Env } from "./env";
 import { frameOf, indexWorld } from "./prompt";
 
+// World and deck text reaches the page as HTML, and a world built from a stranger's prompt is public: its text loses angle brackets and straight double quotes. Skin and music are checked structures (music uses < > in its rhythm notation).
+export function clean<X>(x: X): X {
+  if (typeof x === "string") return x.replace(/[<>]/g, "").replace(/"/g, "\u201d") as X;
+  if (Array.isArray(x)) return x.map(clean) as X;
+  if (x && typeof x === "object") return Object.fromEntries(Object.entries(x).map(([k, v]) => [k, clean(v)])) as X;
+  return x;
+}
+
 export type BuildParams = { build: string; prompt: string; owner: string; key: string };
 
 // Each step returns small JSON and keeps the big parts in R2, so a retry or a resume reads them back for free.
@@ -62,11 +70,11 @@ export class WorldBuild extends WorkflowEntrypoint<Env, BuildParams> {
 
       await step.do("list", async () => {
         const [deck, skin, music] = await Promise.all([get("deck.json"), get("skin.json"), get("music.json")]);
-        await env.PACKS.put(`packs/${slug}.json`, JSON.stringify({ world, deck, skin, music }));
+        await env.PACKS.put(`packs/${slug}.json`, JSON.stringify({ ...clean({ world, deck }), skin, music }));
         const card = { palette: skin.palette, fonts: skin.fonts, finish: skin.finish, ideologies: skin.ideologies.slice(0, 3) };
         const blurb = String(world.timeline?.[0]?.event ?? world.reckoning.meaning).split(/(?<=\.)\s/)[0];
         await env.DB.prepare("INSERT OR REPLACE INTO worlds (id, title, polity, date, blurb, prompt, card, created, owner) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")
-          .bind(slug, world.title, world.polity, world.date, blurb, prompt, JSON.stringify(card), Date.now(), owner).run();
+          .bind(slug, clean(world.title), clean(world.polity), world.date, clean(blurb), prompt, JSON.stringify(clean(card)), Date.now(), owner).run();
         await indexWorld(env, { id: slug, title: world.title, polity: world.polity, date: world.date, blurb }).catch((e: unknown) => console.warn("index", e));
         await env.DB.prepare("UPDATE builds SET status = 'done', world = ? WHERE id = ?").bind(slug, build).run();
       });

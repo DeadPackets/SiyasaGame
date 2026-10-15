@@ -1131,3 +1131,4 @@ body[data-moment="month"] #center .deck, body[data-moment="month"] #tableau, bod
 #hand.dense .art { width: 1.4rem; }
 #hand.dense .ti { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 #hand ul { overflow: clip; overflow-clip-margin: 8px; }
+.verdict .badge { color: var(--accent); font-weight: 600; margin: 0 0 .5rem; }

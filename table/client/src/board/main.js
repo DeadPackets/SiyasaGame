@@ -15,6 +15,7 @@ import { makeField, MOTION } from "./field.js";
 import { initSeat, compassSVG, gripSVG, sealSVG, moveMarker, moveGrip, refreshVision, restOf, inZone, nearest, needFor, band, monthsLeft, pillarsMet, standing, standBand, refreshStanding, coalitionHTML, vision } from "./seat.js";
 import * as jev from "./jev.js";
 import { startTutor, spotlight, dimBoard } from "./tutor.js";
+import { earn, presetOf } from "../shared/badges.js";
 
 // leaving elements ease out, never just vanish
 const fadeOut = (el, d = 0.16) => { if (!el || el.classList.contains("out")) return; el.classList.add("out"); el.style.pointerEvents = "none"; gsap.to(el, { opacity: 0, duration: d, ease: "soft", overwrite: true, onComplete: () => el.remove() }); };
@@ -1250,6 +1251,7 @@ async function reckoning() {
   renderTop(); renderSeat(); $("#date").textContent = fallen ? monthLabel(O.month) : reckDate();
   const score = r(E.standing(P, G)), V = visionOf(), met = V ? E.pillars(P, G, V.id) : [];
   const outcome = { fulfilled: "Vision fulfilled", survived: "Survived", swept: "Swept away", fallen: by ? `Fallen to ${by.short}` : "Fallen" }[O.kind];
+  const badge = O.kind === "fulfilled" && V && earn(WID, V.id, G.rules) ? `<p class="t1 badge">Badge earned: ${V.name}, ${presetOf(G.rules).replace(/^./, (c) => c.toUpperCase())}</p>` : "";
   const why = by ? by.fall : O.by === "debt" ? `${T.debtFall} month ends in a row in debt. The state cannot pay, and you fall.` : O.by === "election" ? `The vote went against you. Your standing was ${score}; you needed ${T.bar}.` : `Standing ${score}. Your order needs ${T.bar} to endure.`;
   const val = (p) => ({ stack: () => `${G.stacks[p.ideology]} filed`, zone: () => (E.zone(P, G) === p.zone ? "Inside" : "Outside"), grip: () => `Grip ${r(G.grip)}`, law: () => (G.laws.includes(p.id) ? "Enacted" : "Not enacted"), sup: () => `${r(G.support[p.holder])}`, res: () => amt(p.role, G.res[p.role]) })[p.kind]();
   const div = r(E.divergence(P, G) * 100);
@@ -1257,7 +1259,7 @@ async function reckoning() {
   const sameAs = (c) => G.hist[c.id]?.happened && G.hist[c.id].chose === c.historyAnswer;
   const when = (c) => (c.date ? dayLabel(c.date) : "");
   const pages = [
-    `<span class="t1 soft">${fallen ? `${monthLabel(O.month)} · month ${O.month} of ${W.months}` : `The Reckoning · ${reckDate()}`}</span><h2 class="vout disp">${outcome}</h2>
+    `<span class="t1 soft">${fallen ? `${monthLabel(O.month)} · month ${O.month} of ${W.months}` : `The Reckoning · ${reckDate()}`}</span><h2 class="vout disp">${outcome}</h2>${badge}
       <p class="t2 disp vrule">${ruleName()}</p><p class="t1 soft vwhy">${why}</p>
       <h3 class="t1 vh">${V ? `Vision: ${V.name}` : "Free hand"}</h3>
       ${V ? `<ul class="vpl t1">${V.pillars.map((p, k) => `<li class="${met[k] ? "met" : "miss"}"><span class="vm" aria-hidden="true">${met[k] ? "✓" : "✕"}</span><span>${p.text}<span class="sr"> ${met[k] ? "met" : "missed"}</span></span><b class="num">${val(p)}</b></li>`).join("")}</ul>` : `<p class="t1 soft">You chose no Vision. Only your standing counted.</p>`}
@@ -1469,13 +1471,15 @@ function tutor() {
 // the walkthrough starts a term without a reload: rules is a preset name or a Rules object, vision an id or null (Free hand)
 function newTerm(o = {}) {
   if (!P) throw new Error("the world is not loaded yet");
-  G = freshState({ rules: o.rules, vision: o.vision ?? null, seed: o.seed }); save();
+  G = freshState({ rules: o.rules, vision: o.vision ?? null, seed: o.seed }); save(); played();
   st.phase = "rest"; syncView(); renderAll();
   $("#stage").inert = false; dimBoard(false);
   if (firstTerm()) tutor();
   resume();
 }
 
+// the library's "most played" counts terms started, not page loads
+const played = () => fetch(`/api/worlds/${encodeURIComponent(WID)}/play`, { method: "POST" }).catch(() => {});
 async function boot() {
   try { const res = await fetch(`/api/worlds/${encodeURIComponent(WID)}`); if (!res.ok) throw new Error(res.status); PACK = await res.json(); }
   catch { $("#center").innerHTML = `<div class="plate"><p class="t2 disp">This world did not load.</p><p class="t1">Reload the page to try again, or go back to the world list.</p></div>`; return; }
@@ -1499,6 +1503,7 @@ async function boot() {
   if (WALK && saved) { WALK = false; history.replaceState(null, "", location.pathname + location.search.replace(/[?&]walk=1/, "").replace(/^&/, "?")); } // a term in progress opens where it stands; the briefing waits for the next one
   if (forced) store.del(SAVE);
   G = WALK ? freshState() : (!forced && saved) || freshState();
+  if (!WALK && (forced || !saved)) played();
   st = { phase: WALK ? "idle" : "rest" }; syncView();
   window.board = { pack: PACK, walking: () => WALK, newTerm, spot: spotlight, dim: dimBoard, phase: () => st.phase, playsLeft, state: () => G };
   initSeatState();
