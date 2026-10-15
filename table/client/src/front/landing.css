@@ -61,10 +61,14 @@ html.wait .hero > :not(canvas), html.wait main, html.wait .end { opacity: 0; }
 .rule[hidden] { display: none; }
 .rule:hover { border-color: var(--ink); background: var(--panel); }
 
-.foot { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .4rem 1.5rem; }
+.foot { display: flex; flex-direction: column; align-items: center; gap: .9rem; text-align: center; }
 .gist { color: var(--ink2); }
-.cue { display: inline-flex; align-items: center; gap: .45rem; border-radius: 6px; transition: color .18s var(--ease-swift); }
-.cue:hover { color: var(--ink); }
+/* the way down: it must read as "more below" at a glance, and it leaves once you scroll */
+.cue { display: inline-flex; flex-direction: column; align-items: center; gap: .5rem; border-radius: 10px; color: var(--ink); font-weight: 600; transition: opacity .3s var(--ease-soft); }
+.cue .chev { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid color-mix(in oklab, var(--ink) 35%, var(--line)); background: color-mix(in oklab, var(--ground) 70%, transparent); animation: nudge 1.4s var(--ease-soft) infinite alternate; transition: border-color .2s var(--ease-swift), background-color .2s var(--ease-swift); }
+.cue .chev svg { width: 1.15rem; height: 1.15rem; }
+.cue:hover .chev { border-color: var(--ink); background: var(--panel); }
+@keyframes nudge { from { transform: translateY(-2px); } to { transform: translateY(5px); } }
 .sash { position: absolute !important; left: 0; right: 0; bottom: 0; height: 4px; display: flex; }
 .sash i { height: 100%; }
 

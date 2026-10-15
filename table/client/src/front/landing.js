@@ -36,7 +36,9 @@ async function main() {
     ruleTo(today.world, ideos[0]);
     await hero(ideos, field);
     examplesRow(shuffle(LIST.filter((w) => w.id !== today.world.id && w.title.length <= 44)).slice(0, 3));
-  } else $(".cue").hidden = true;
+  } else { $(".cue").href = "#library"; $("#cue-l").textContent = "The library"; }
+  const cue = $(".cue"), fadeCue = () => { const o = Math.max(0, 1 - scrollY / (innerHeight * 0.2)); cue.style.opacity = o; cue.style.visibility = o ? "" : "hidden"; };
+  addEventListener("scroll", fadeCue, { passive: true });
   wireForm(field, first);
   entrance();
   if (today) try { term(today, first); } catch (e) { console.warn("example unavailable", e); }
