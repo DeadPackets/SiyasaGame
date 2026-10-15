@@ -115,6 +115,8 @@ describe("the month's card", () => {
   });
   test("a lost election brings you down", () => {
     const e = egypt.deck.elections[0], s = newGame(egypt, { seed: 1 });
+    s.month = e.months[0];
+    s.grip = 30;
     for (const f of egypt.world.factions) s.support[f.id] = 20;
     draw(egypt, s, e.id);
     choose(egypt, s, e.answers.findIndex((a) => a.holdsElection));
@@ -213,8 +215,9 @@ describe("month end", () => {
     pass(s);
     s.support.rev = 10;
     s.support.fel = 10;
-    endMonth(egypt, s);
+    const last = endMonth(egypt, s);
     expect(s.over).toEqual({ kind: "fallen", by: "rev", month: 2 });
+    expect(last).toContainEqual({ t: "act", holder: "fel" });
   });
   test("debt costs every faction 5, and 2 month ends in debt bring you down", () => {
     const s = playing();
@@ -280,5 +283,23 @@ describe("rules lines", () => {
       expect(s.length).toBeGreaterThan(5);
       expect(s.split(/\s+/).length).toBeLessThanOrEqual(25);
     }
+  });
+});
+
+describe("review fixes", () => {
+  test("draw refuses a card that is unknown, seen or outside its window", () => {
+    const s = newGame(egypt, { seed: 1 });
+    expect(() => draw(egypt, s, "nope")).toThrow("cannot be drawn");
+    expect(() => draw(egypt, s, egypt.deck.history[5].id)).toThrow("cannot be drawn");
+    draw(egypt, s, "h01", 1);
+    choose(egypt, s, 0);
+    endMonth(egypt, s);
+    expect(() => draw(egypt, s, "h01")).toThrow("cannot be drawn");
+  });
+  test("a month-end trigger that fills a stack unlocks its power card that month end", () => {
+    const s = playing();
+    s.stacks.nat = 2;
+    s.mods.push({ op: "trigger", when: { if: "monthEnd" }, effects: [{ op: "file", ideology: "nat", n: 1 }] });
+    expect(endMonth(egypt, s)).toContainEqual({ t: "unlock", id: "p-nat" });
   });
 });

@@ -26,6 +26,7 @@ export function shortlist(p: Pack, s: State): string[] {
 
 export function draw(p: Pack, s: State, id: string, plausibility = TUNE.plausibility): Ev[] {
   if (s.phase !== "draw") throw new Error(`draw in phase ${s.phase}`);
+  if (!s.queue.includes(id) && !eligible(p, s).some((c) => c.id === id)) throw new Error(`${id} cannot be drawn now`);
   s.queue = s.queue.filter((x) => x !== id);
   if (kindOf(p, id) === "history" && rand(s) > plausibility) {
     s.seen.push(id);
@@ -64,7 +65,8 @@ export function end(s: State, outcome: Outcome, ev: Ev[]): Ev[] {
   return ev;
 }
 
-export function progress(p: Pack, s: State, ev: Ev[]) {
+// month end passes offers = false: an offer waits for the next answer or play
+export function progress(p: Pack, s: State, ev: Ev[], offers = true) {
   for (const id of p.world.compass) {
     const x = p.deck.ideologies[id];
     for (const [n, c] of [[TUNE.stack.power, x.power], [TUNE.stack.major, x.law]] as const)
@@ -73,7 +75,7 @@ export function progress(p: Pack, s: State, ev: Ev[]) {
         ev.push({ t: "unlock", id: c.id });
       }
   }
-  while (!s.offer && s.phase !== "over") {
+  while (offers && !s.offer && s.phase !== "over") {
     const z = zone(p, s);
     const key = [
       ...p.world.compass.filter((id) => s.stacks[id] >= TUNE.stack.pick).map((id) => `stack:${id}`),
@@ -237,13 +239,14 @@ export function endMonth(p: Pack, s: State): Ev[] {
   const ev: Ev[] = [], w = p.world, R = s.rules, H = [...w.factions, ...w.patrons];
   const under = H.filter((h) => s.support[h.id] < R.actUnder);
   const fall = under.find((h) => s.plotting.includes(h.id));
-  if (fall) return end(s, { kind: "fallen", by: fall.id, month: s.month }, ev);
   for (const h of under) {
+    if (h === fall) continue;
     ev.push({ t: "act", holder: h.id });
     for (const [k, v] of Object.entries(h.act.res ?? {})) addRes(s, k as Role, v as number, ev);
     for (const [id, v] of Object.entries(h.act.sup ?? {})) moveBy(s, id, v, ev, "act");
     ev.push({ t: "plot", holder: h.id });
   }
+  if (fall) return end(s, { kind: "fallen", by: fall.id, month: s.month }, ev);
   s.plotting = under.map((h) => h.id);
   for (const h of H) moveBy(s, h.id, (resting(p, s, h.id) - s.support[h.id]) * R.drift * driftMult(p, s, h.id), ev, "drift");
 
@@ -271,6 +274,7 @@ export function endMonth(p: Pack, s: State): Ev[] {
   if (b === "iron") for (const f of w.factions) if (s.support[f.id] < TUNE.ironSqueeze.under) moveBy(s, f.id, -TUNE.ironSqueeze.loss, ev, "band");
   s.holds = s.holds.map((h) => ({ ...h, months: h.months - 1 })).filter((h) => h.months > 0);
   runTriggers(p, s, ev, true);
+  progress(p, s, ev, false);
 
   for (const h of [...H].sort((a, c) => s.support[a.id] - s.support[c.id])) {
     const c = p.deck.intents[h.id];

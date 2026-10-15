@@ -125,7 +125,13 @@ export function randomBot(seed: number): Bot {
   });
 }
 
-export const greedyBot = (vision: string | null): Bot => asBot(`greedy:${vision ?? "free"}`, () => vision, (p, s) => best(p, s, s.vision));
+// prefer: card or pick ids taken whenever offered or playable (the combo measurement)
+export const greedyBot = (vision: string | null, prefer: string[] = []): Bot =>
+  asBot(`greedy:${vision ?? "free"}`, () => vision, (p, s) => {
+    const want = s.phase === "pick" ? s.offer?.ids.find((id) => prefer.includes(id)) : s.phase === "play" ? hand(p, s).find((c) => c.ok && !c.target && prefer.includes(c.id))?.id : undefined;
+    if (want) return s.phase === "pick" ? { kind: "pick", id: want } : { kind: "play", id: want };
+    return best(p, s, s.vision);
+  });
 
 // 2-month lookahead on answers and picks; switches Vision once when another is clearly closer
 export function adaptiveBot(): Bot {

@@ -39,7 +39,7 @@ for (const name of worlds) {
     const n = Math.max(50, Math.round(N / 4));
     const lift = Math.max(
       ...p.deck.visions.map(
-        (v) => rate(runs((seed) => runTerm(p, greedyBot(v.id), seed), n), ["fulfilled"]) - rate(runs((seed) => runTerm(p, greedyBot(v.id), seed, { banned: c.parts }), n), ["fulfilled"]),
+        (v) => rate(runs((seed) => runTerm(p, greedyBot(v.id, c.parts), seed), n), ["fulfilled"]) - rate(runs((seed) => runTerm(p, greedyBot(v.id), seed, { banned: c.parts }), n), ["fulfilled"]),
       ),
     );
     return { name: c.name, lift };
@@ -53,7 +53,7 @@ for (const name of worlds) {
     ["every kind is spent in 15% or more of actions", Object.values(spent).every((v) => v >= 0.15), Object.entries(spent).map(([k, v]) => `${k} ${pct(v)}`).join(", ")],
     ["no kind sits at its cap more than 30% of months", Object.values(capped).every((v) => v <= 0.3), Object.entries(capped).map(([k, v]) => `${k} ${pct(v)}`).join(", ")],
     ["answers cause 50% or more of support change", answerShare >= 0.5, pct(answerShare)],
-    ...combos.map((c) => [`combo "${c.name}" lifts a Vision by 10 points`, c.lift >= 0.1, pct(c.lift)] as [string, boolean, string]),
+    ...combos.map((c) => [`combo "${c.name}" lifts a Vision by 10 points (taken vs banned)`, c.lift >= 0.1, pct(c.lift)] as [string, boolean, string]),
   ];
   const greedyFalls = fallers(Object.values(greedy).flat());
   out[name] = { fulfil, adaptiveRate, random: rate(random, ["fallen"]), spent, capped, answerShare, combos, greedyFalls, seconds: (performance.now() - t0) / 1000 };

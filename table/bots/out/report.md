@@ -13,11 +13,11 @@
 | every kind is spent in 15% or more of actions | **no** | money 12%, force 5%, voice 15%, trust 25% |
 | no kind sits at its cap more than 30% of months | **no** | force 62%, voice 15%, trust 1% |
 | answers cause 50% or more of support change | yes | 64% |
-| combo "The Timetable Bargain" lifts a Vision by 10 points | **no** | 2% |
-| combo "Ganzouri's Payroll" lifts a Vision by 10 points | **no** | 7% |
-| combo "Sermon and Communiqué" lifts a Vision by 10 points | **no** | 2% |
+| combo "The Timetable Bargain" lifts a Vision by 10 points (taken vs banned) | **no** | -1% |
+| combo "Ganzouri's Payroll" lifts a Vision by 10 points (taken vs banned) | yes | 23% |
+| combo "Sermon and Communiqué" lifts a Vision by 10 points (taken vs banned) | **no** | 2% |
 
-Greedy bots fall to: usa 0%, debt 0%, qat 0%, ksa 0%. Run time 65 s.
+Greedy bots fall to: usa 0%, debt 0%, qat 0%, ksa 0%. Run time 61 s.
 
 ## Ares Landing: The Margin Years
 
@@ -30,8 +30,8 @@ Greedy bots fall to: usa 0%, debt 0%, qat 0%, ksa 0%. Run time 65 s.
 | every kind is spent in 15% or more of actions | **no** | money 12%, force 5%, voice 18%, trust 25% |
 | no kind sits at its cap more than 30% of months | **no** | force 44%, voice 17%, trust 16% |
 | answers cause 50% or more of support change | yes | 66% |
-| combo "Ice for Air" lifts a Vision by 10 points | **no** | 0% |
-| combo "Tube and Union" lifts a Vision by 10 points | **no** | 0% |
-| combo "Charter Lockdown" lifts a Vision by 10 points | **no** | 2% |
+| combo "Ice for Air" lifts a Vision by 10 points (taken vs banned) | **no** | 0% |
+| combo "Tube and Union" lifts a Vision by 10 points (taken vs banned) | **no** | 0% |
+| combo "Charter Lockdown" lifts a Vision by 10 points (taken vs banned) | **no** | 2% |
 
 Greedy bots fall to: debt 1%, mca 0%, upa 0%. Run time 71 s.
