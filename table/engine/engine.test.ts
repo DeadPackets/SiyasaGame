@@ -197,3 +197,68 @@ describe("the hand", () => {
     expect([t.res.voice, t.res.trust]).toEqual([2, 0]);
   });
 });
+
+import { endMonth, pillars, switchVision } from "./turn";
+
+describe("month end", () => {
+  test("a holder under the act line acts before drift; still under next month, it brings you down", () => {
+    const s = playing();
+    s.support.rev = 10;
+    const ev = endMonth(egypt, s);
+    const act = ev.findIndex((e) => e.t === "act" && e.holder === "rev");
+    const drift = ev.findIndex((e) => e.t === "move" && e.src === "drift");
+    expect(act).toBeGreaterThanOrEqual(0);
+    expect(act).toBeLessThan(drift);
+    expect(s.plotting).toContain("rev");
+    pass(s);
+    s.support.rev = 10;
+    s.support.fel = 10;
+    endMonth(egypt, s);
+    expect(s.over).toEqual({ kind: "fallen", by: "rev", month: 2 });
+  });
+  test("debt costs every faction 5, and 2 month ends in debt bring you down", () => {
+    const s = playing();
+    s.res.money = -10;
+    const ev = endMonth(egypt, s);
+    expect(ev.filter((e) => e.t === "move" && e.src === "debt")).toHaveLength(egypt.world.factions.length);
+    expect(s.debt).toBe(1);
+    pass(s);
+    endMonth(egypt, s);
+    expect(s.over).toMatchObject({ kind: "fallen", by: "debt" });
+  });
+  test("a faction under the intent line brings its intent next month, once", () => {
+    const s = playing();
+    s.support.fel = 18;
+    endMonth(egypt, s);
+    expect(shortlist(egypt, s)).toEqual([egypt.deck.intents.fel.id]);
+    draw(egypt, s, egypt.deck.intents.fel.id);
+    choose(egypt, s, 0);
+    s.support.fel = 18;
+    endMonth(egypt, s);
+    expect(s.queue).not.toContain(egypt.deck.intents.fel.id);
+  });
+  test.each([
+    ["swept", 20, false],
+    ["survived", 90, false],
+    ["fulfilled", 90, true],
+  ] as const)("the Reckoning: %s", (kind, sup, meet) => {
+    const s = playing();
+    s.vision = "v1";
+    s.month = egypt.world.months;
+    for (const f of egypt.world.factions) s.support[f.id] = sup;
+    if (meet) {
+      s.stacks.nat = 5;
+      s.laws.push("l-nat");
+      s.grip = 65;
+    }
+    endMonth(egypt, s);
+    expect(s.over?.kind).toBe(kind);
+    if (meet) expect(pillars(egypt, s, "v1").every(Boolean)).toBe(true);
+  });
+  test("you switch Vision once, and it costs 1 Force, 1 Voice and 1 Trust", () => {
+    const s = playing();
+    switchVision(egypt, s, "v2");
+    expect([s.vision, s.res.force, s.res.voice, s.res.trust]).toEqual(["v2", 4, 3, 4]);
+    expect(() => switchVision(egypt, s, "v3")).toThrow();
+  });
+});

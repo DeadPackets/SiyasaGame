@@ -1,6 +1,6 @@
-import { band, clamp, standing, zone } from "./geo";
+import { band, clamp, resting, standing, zone } from "./geo";
 import { type Card, type Pack, type Res, type Role, type Size, card, handDef, kindOf } from "./pack";
-import { addRes, apply, costOf, fileTo, gripBy, hash01, modsOf, moveBy, pay, plan, runTriggers, sizeNum } from "./rules";
+import { addRes, apply, costOf, fileTo, gripBy, hash01, holdsCond, modsOf, moveBy, pay, plan, runTriggers, sizeNum, targets } from "./rules";
 import { type Ev, type Outcome, type State, rand } from "./state";
 import { TUNE } from "./tune";
 
@@ -194,4 +194,115 @@ export function play(p: Pack, s: State, id: string, target?: string): Ev[] {
   }
   after(p, s, ev);
   return ev;
+}
+
+export function pillars(p: Pack, s: State, id: string): boolean[] {
+  const v = p.deck.visions.find((x) => x.id === id);
+  if (!v) return [];
+  const z = zone(p, s);
+  return v.pillars.map((q) => {
+    switch (q.kind) {
+      case "stack": return s.stacks[q.ideology] >= q.min;
+      case "zone": return z === q.zone;
+      case "grip": return (q.min == null || s.grip >= q.min) && (q.max == null || s.grip <= q.max);
+      case "law": return s.laws.includes(q.id);
+      case "sup": return s.support[q.holder] >= q.min;
+      case "res": return s.res[q.role] >= q.min;
+    }
+  });
+}
+
+export function switchVision(p: Pack, s: State, id: string): Ev[] {
+  if (s.switched || s.phase === "over" || !p.deck.visions.some((v) => v.id === id)) throw new Error(`cannot switch to ${id}`);
+  const ev: Ev[] = [];
+  pay(s, TUNE.visionSwitch, ev);
+  s.vision = id;
+  s.switched = true;
+  return ev;
+}
+
+export function divergence(p: Pack, s: State): number {
+  const H = p.deck.history;
+  return H.filter((c) => {
+    const h = s.hist[c.id];
+    return !h?.happened || h.chose !== c.historyAnswer;
+  }).length / H.length;
+}
+
+const driftMult = (p: Pack, s: State, id: string) =>
+  modsOf(s, "drift").filter((m) => targets(p, s, m.target).includes(id)).reduce((a, m) => a * m.multiplier, 1);
+
+export function endMonth(p: Pack, s: State): Ev[] {
+  if (s.phase !== "play") throw new Error(`endMonth in phase ${s.phase}`);
+  const ev: Ev[] = [], w = p.world, R = s.rules, H = [...w.factions, ...w.patrons];
+  const under = H.filter((h) => s.support[h.id] < R.actUnder);
+  const fall = under.find((h) => s.plotting.includes(h.id));
+  if (fall) return end(s, { kind: "fallen", by: fall.id, month: s.month }, ev);
+  for (const h of under) {
+    ev.push({ t: "act", holder: h.id });
+    for (const [k, v] of Object.entries(h.act.res ?? {})) addRes(s, k as Role, v as number, ev);
+    for (const [id, v] of Object.entries(h.act.sup ?? {})) moveBy(s, id, v, ev, "act");
+    ev.push({ t: "plot", holder: h.id });
+  }
+  s.plotting = under.map((h) => h.id);
+  for (const h of H) moveBy(s, h.id, (resting(p, s, h.id) - s.support[h.id]) * R.drift * driftMult(p, s, h.id), ev, "drift");
+
+  const b = band(s.grip), inc: Partial<Record<Role, number>> = {};
+  const add = (k: Role, n: number) => {
+    inc[k] = (inc[k] ?? 0) + n;
+  };
+  for (const h of H) if (s.support[h.id] >= TUNE.produceAt) add(h.produces, 1);
+  if (b === "iron") add("force", 1);
+  if (b === "open") add("voice", 1);
+  add("money", w.balance);
+  if (s.elected) {
+    add("voice", s.elected * TUNE.electionBonus.voice);
+    add("trust", s.elected * TUNE.electionBonus.trust);
+  }
+  for (const m of modsOf(s, "income")) if (!m.when || m.when.if === "monthEnd" || holdsCond(p, s, m.when)) add(m.kind, m.n);
+  for (const [k, n] of Object.entries(inc)) addRes(s, k as Role, n as number, ev);
+
+  if (s.res.money < 0) {
+    s.debt++;
+    ev.push({ t: "debt", months: s.debt });
+    if (s.debt >= TUNE.debtFall) return end(s, { kind: "fallen", by: "debt", month: s.month }, ev);
+    for (const f of w.factions) moveBy(s, f.id, -TUNE.debtFactionLoss, ev, "debt");
+  } else s.debt = 0;
+  if (b === "iron") for (const f of w.factions) if (s.support[f.id] < TUNE.ironSqueeze.under) moveBy(s, f.id, -TUNE.ironSqueeze.loss, ev, "band");
+  s.holds = s.holds.map((h) => ({ ...h, months: h.months - 1 })).filter((h) => h.months > 0);
+  runTriggers(p, s, ev, true);
+
+  for (const h of [...H].sort((a, c) => s.support[a.id] - s.support[c.id])) {
+    const c = p.deck.intents[h.id];
+    if (c && s.support[h.id] < R.intentUnder && !s.seen.includes(c.id) && !s.queue.includes(c.id)) {
+      s.queue.push(c.id);
+      ev.push({ t: "intent", holder: h.id, card: c.id });
+    }
+  }
+
+  if (s.month >= w.months) {
+    const st = standing(p, s);
+    const kind = st < TUNE.bar ? "swept" : s.vision && pillars(p, s, s.vision).every(Boolean) ? "fulfilled" : "survived";
+    return end(s, { kind, standing: st }, ev);
+  }
+  s.month++;
+  s.phase = "draw";
+  s.card = null;
+  s.plays = TUNE.plays + modsOf(s, "extraPlay").filter((m) => s.month % m.everyNMonths === 0).length;
+  ev.push({ t: "month", month: s.month });
+  return ev;
+}
+
+// ported from the approved board (docs/mocks/v28/board/hallsfx.js:67-78)
+export function levers(p: Pack, s: State): Record<string, number> {
+  const home = p.world.factions.map((f) => s.support[f.id]);
+  const avg = home.reduce((a, b) => a + b, 0) / home.length, low = Math.min(...home);
+  const total = Object.values(s.stacks).reduce((a, b) => a + b, 0), c = (v: number) => clamp(v, 0, 1);
+  return {
+    grip: s.grip / 100,
+    tension: c((45 - avg) / 15),
+    crisis: c((18 - low) / 8),
+    growth: c((0.5 * (s.month - 1)) / Math.max(1, p.world.months - 1) + 0.3 * Math.min(1, total / 12) + (0.2 * avg) / 100),
+    ...Object.fromEntries(p.world.compass.map((id) => [id, c(s.stacks[id] / 5)])),
+  };
 }
