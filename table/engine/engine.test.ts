@@ -82,6 +82,7 @@ describe("the month's card", () => {
     p.deck.history[0].answers[1].res = {};
     const s = at(p, "h01");
     s.res.trust = 1;
+    s.res.money = 0;
     expect(options(p, s).map((o) => o.ok).slice(0, 2)).toEqual([false, true]);
     expect(() => choose(p, s, 0)).toThrow();
   });
@@ -187,13 +188,19 @@ describe("the hand", () => {
     expect(slot(egypt, s, "l-nat")).toBeUndefined();
     expect(s.mods).toContainEqual(egypt.deck.ideologies.nat.law.effects.find((e) => e.op === "income") as Effect);
   });
-  test("a cost modifier changes a price; an exchange covers a shortfall", () => {
+  test("a cost modifier changes a price; an exchange, else Money on hand, covers a shortfall", () => {
     const s = playing();
     s.mods.push({ op: "cost", family: "talk", kind: "trust", delta: -1 });
     expect(slot(egypt, s, "talk")?.cost).toEqual({});
     const t = playing();
     t.res.trust = 0;
+    t.res.money = TUNE.buy - 1;
     expect(slot(egypt, t, "talk")?.why).toBe("cost");
+    const u = playing();
+    u.res.trust = 0;
+    u.res.money = TUNE.buy;
+    play(egypt, u, "talk", "rev");
+    expect([u.res.money, u.res.trust]).toEqual([0, 0]);
     t.mods.push({ op: "exchange", from: "voice", to: "trust", rate: 0.5 });
     play(egypt, t, "talk", "rev");
     expect([t.res.voice, t.res.trust]).toEqual([2, 0]);

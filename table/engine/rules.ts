@@ -70,7 +70,7 @@ export function costOf(s: State, family: Family, base: Res): Res {
   return out;
 }
 
-// What a price really takes, with an exchange covering a shortfall; null when it cannot be paid. Money may go into debt.
+// What a price really takes: an exchange, else Money on hand, covers a shortfall; null when it cannot be paid. Money may go into debt.
 export function plan(s: State, price: Res): Res | null {
   const out: Res = { ...price };
   for (const k of ROLES) {
@@ -78,7 +78,13 @@ export function plan(s: State, price: Res): Res | null {
     const miss = (out[k] ?? 0) - s.res[k];
     if (miss <= 0) continue;
     const m = modsOf(s, "exchange").find((x) => x.to === k && (x.from === "money" || s.res[x.from] - (out[x.from] ?? 0) >= Math.ceil(miss / x.rate)));
-    if (!m) return null;
+    if (!m) {
+      const buy = miss * TUNE.buy;
+      if (s.res.money - (out.money ?? 0) < buy) return null;
+      out[k] = s.res[k];
+      out.money = (out.money ?? 0) + buy;
+      continue;
+    }
     out[k] = s.res[k];
     out[m.from] = (out[m.from] ?? 0) + Math.ceil(miss / m.rate);
   }

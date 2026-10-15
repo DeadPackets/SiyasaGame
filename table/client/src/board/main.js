@@ -139,7 +139,7 @@ const rchip = (k, v, { sign = false, name = false, short = false } = {}) =>
 // Money can go into debt, so only Force, Voice and Trust can block a card
 const lacks = (cost) => RK.filter((k) => k !== "money" && (cost[k] || 0) > G.res[k]);
 const afford = (cost) => plan(G, cost) !== null;
-const costChips = (cost) => { const miss = afford(cost) ? [] : lacks(cost); return RK.filter((k) => cost[k]).map((k) => rchip(k, cost[k], { short: miss.includes(k) })).join(""); };
+const costChips = (cost0) => { const cost = plan(G, cost0) ?? cost0, miss = afford(cost0) ? [] : lacks(cost0); return RK.filter((k) => cost[k]).map((k) => rchip(k, cost[k], { short: miss.includes(k) })).join(""); }; // shows what paying really takes, with Money covering a gap
 const needText = (cost) => { const miss = lacks(cost); return miss.length ? `Needs ${miss.map((k) => `${cost[k]} ${RES[k].name}, you have ${G.res[k]}`).join("; ")}` : ""; };
 // distance on the compass, said as answers to file; one answer is filed a month
 const closer = (id) => { const n = needFor(id), nm = IDEO[id].name; return n === 0 ? `You stand inside the ${nm} zone.` : n == null || n > monthsLeft() + 1 ? `Out of reach this term: the ${nm} zone is too far for the months left.` : `File ${n} more ${nm} answer${n > 1 ? "s" : ""} to stand inside its zone.`; };
@@ -779,7 +779,7 @@ function fitCard(card) {
 }
 // an answer shows what it pays and costs before you choose; one you cannot pay for is greyed with its price
 function ansHTML(a, i, o) {
-  const gain = Object.fromEntries(Object.entries(a.res ?? {}).filter(([, v]) => v > 0)), price = o.price, miss = o.ok ? [] : lacks(price);
+  const gain = Object.fromEntries(Object.entries(a.res ?? {}).filter(([, v]) => v > 0)), price = (o.ok && plan(G, o.price)) || o.price, miss = o.ok ? [] : lacks(price);
   const chips = RK.filter((k) => price[k] || gain[k]).map((k) => rchip(k, (gain[k] ?? 0) - (price[k] ?? 0), { sign: true, name: true, short: miss.includes(k) })).join("");
   const sel = st.sel === i && o.ok;
   return `<button class="ans ${o.ok ? "" : "short"} ${sel ? "sel" : ""}" data-i="${i}" aria-pressed="${sel}" ${o.ok ? "" : "disabled"}><span class="t t2"><kbd class="ak" aria-hidden="true">${i + 1}</kbd>${a.text}</span><span class="s t1 soft">${a.sub}</span><span class="pay">${chips}${o.ok ? "" : `<span class="need t1">${needText(price)}</span>`}<span class="dec t1" aria-hidden="true">Decide</span></span></button>`;

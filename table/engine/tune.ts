@@ -21,6 +21,7 @@ export const TUNE = {
   patronPenalty: { per: 20, loss: 10 },
   debtFactionLoss: 5,
   debtFall: 2,
+  buy: 3, // Money for each missing Force, Voice or Trust (owner ruling: Money is the flexible resource)
   talk: { cost: { trust: 1 }, up: 5 },
   address: { cost: { voice: 1 } },
   electionBonus: { voice: 1, trust: 1 },
