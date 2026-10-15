@@ -54,3 +54,77 @@ describe("new game", () => {
     expect(resting(egypt, s, "army")).toBeGreaterThan(resting(egypt, s, "rev"));
   });
 });
+
+import { card } from "./pack";
+import { choose, draw, eligible, options, pass, shortlist } from "./turn";
+
+const at = (p: Pack, id: string) => { const s = newGame(p, { seed: 1 }); draw(p, s, id, 1); return s; };
+
+describe("the month's card", () => {
+  test("an answer moves holders by size plus a clamped nudge, moves grip and files the card", () => {
+    const s = at(egypt, "h01"), a = card(egypt, "h01").answers[0];
+    const ev = choose(egypt, s, 0, { army: 9 });
+    expect(s.support.army).toBe(78 + 8 + 3);
+    expect(s.grip).toBe(65 + 5);
+    expect(s.stacks.nat).toBe(1);
+    expect(s.phase).toBe("play");
+    expect(ev).toContainEqual({ t: "move", holder: "army", delta: 11, src: "answer", reason: a.reasons.army });
+  });
+  test("Address the nation doubles the next answer and files 2", () => {
+    const s = at(egypt, "h01");
+    s.doubleNext = true;
+    choose(egypt, s, 0);
+    expect([s.support.army, s.grip, s.stacks.nat, s.doubleNext]).toEqual([78 + 16, 75, 2, false]);
+  });
+  test("an answer you cannot pay for is refused while another is open", () => {
+    const p = structuredClone(egypt);
+    p.deck.history[0].answers[0].res = { trust: -2 };
+    p.deck.history[0].answers[1].res = {};
+    const s = at(p, "h01");
+    s.res.trust = 1;
+    expect(options(p, s).map((o) => o.ok).slice(0, 2)).toEqual([false, true]);
+    expect(() => choose(p, s, 0)).toThrow();
+  });
+  test("when no answer can be paid, every answer opens and takes what you have", () => {
+    const p = structuredClone(egypt);
+    for (const a of p.deck.history[0].answers) a.res = { trust: -2 };
+    const s = at(p, "h01");
+    s.res.trust = 1;
+    choose(p, s, 0);
+    expect(s.res.trust).toBe(0);
+  });
+  test("a history card that does not happen is set aside", () => {
+    const s = newGame(egypt, { seed: 1 });
+    expect(draw(egypt, s, "h01", 0)).toEqual([{ t: "history", card: "h01", happened: false }]);
+    expect(s.phase).toBe("draw");
+    expect(shortlist(egypt, s)).not.toContain("h01");
+  });
+  test("the shortlist holds at most 5 cards, all inside their month window", () => {
+    const s = newGame(egypt, { seed: 3 });
+    const ids = shortlist(egypt, s);
+    expect(ids.length).toBeGreaterThan(0);
+    expect(ids.length).toBeLessThanOrEqual(5);
+    for (const id of ids) expect(card(egypt, id).months[0]).toBeLessThanOrEqual(1);
+  });
+  test("a callback waits for its flag", () => {
+    const c = egypt.deck.callbacks[0], s = newGame(egypt, { seed: 1 });
+    s.month = c.months[0];
+    expect(eligible(egypt, s).map((x) => x.id)).not.toContain(c.id);
+    s.flags.push(...(c.requires ?? []));
+    expect(eligible(egypt, s).map((x) => x.id)).toContain(c.id);
+  });
+  test("a lost election brings you down", () => {
+    const e = egypt.deck.elections[0], s = newGame(egypt, { seed: 1 });
+    for (const f of egypt.world.factions) s.support[f.id] = 20;
+    draw(egypt, s, e.id);
+    choose(egypt, s, e.answers.findIndex((a) => a.holdsElection));
+    expect(s.over).toMatchObject({ kind: "fallen", by: "election" });
+  });
+  test("a month with no card left goes straight to plays", () => {
+    const s = newGame(egypt, { seed: 1 });
+    s.seen = [...egypt.deck.situations, ...egypt.deck.history, ...egypt.deck.callbacks, ...egypt.deck.elections].map((c) => c.id);
+    expect(shortlist(egypt, s)).toEqual([]);
+    pass(s);
+    expect(s.phase).toBe("play");
+  });
+});
