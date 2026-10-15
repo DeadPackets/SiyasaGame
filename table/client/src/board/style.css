@@ -208,6 +208,13 @@ ul, ol { list-style: none; }
 #hand .hc.spent .art { filter: grayscale(1); }
 #hand li.hot > .hc.spent { box-shadow: inset 0 0 0 1px var(--line); }
 #hand:has(.hc.spent) #plays { color: var(--ink); font-weight: 600; }
+/* a card that asks: its options on the stage */
+.askopts { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
+.aopt { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem .9rem; border-radius: 10px; background: var(--panel2); font-weight: 600; transition: box-shadow .2s var(--ease-soft); }
+.aopt:hover, .aopt:focus-visible { box-shadow: inset 0 0 0 2px var(--accent); }
+.aopt .ri { width: 1.2rem; height: 1.2rem; }
+.aopt .sw { width: 1.2rem; height: 1.2rem; border-radius: 50%; background: var(--t) center / .9rem; box-shadow: 0 0 0 2px var(--ia); }
+.askres { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem; min-height: 1.6em; }
 /* the full card: the pop-out and the card in flight */
 .pop { position: absolute; width: clamp(15rem, 19vw, 21rem); --ah: clamp(5rem, 15vh, 10rem); box-shadow: 0 0 0 2px var(--ia, var(--accent)), 0 30px 50px -20px rgb(0 0 0 / .8); }
 .pop .txt { gap: 6px; padding: .8rem 1rem 1rem; }
@@ -920,8 +927,8 @@ body:has(#fx .pop.mid:not(.out)) #center .rest { filter: opacity(0); }
 .callh .slots i { width: clamp(5rem, 6.5vw, 7.5rem); aspect-ratio: 5 / 7; border-radius: calc(var(--r) * .7); border: 2px dashed color-mix(in oklab, var(--ink2) 40%, transparent); background: color-mix(in oklab, var(--panel) 55%, transparent); }
 .callh p { display: inline-flex; align-items: center; gap: .55rem; margin: 0; }
 .callh .arrow { width: 1.3em; height: 1.3em; fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.callh .quiet { color: var(--ink2); text-decoration: underline; text-underline-offset: 3px; padding: .35rem .7rem; border-radius: 6px; transition: color .18s var(--ease-soft); }
-.callh .quiet:hover { color: var(--ink); }
+.callh .quiet, .plate .askno { color: var(--ink2); text-decoration: underline; text-underline-offset: 3px; padding: .35rem .7rem; border-radius: 6px; transition: color .18s var(--ease-soft); }
+.callh .quiet:hover, .plate .askno:hover { color: var(--ink); }
 .rc { min-height: 32px; }
 .prod[data-tip] { cursor: help; }
 .recap .soft b { color: var(--ink); }

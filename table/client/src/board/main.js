@@ -1021,7 +1021,7 @@ function toHand() {
 }
 
 // Telegraph: the engine plays the card on a copy; ghost values show on the rows it would move, and its stack lights.
-function trial(c, target) { const s = structuredClone(G); try { E.play(P, s, c.id, target); return s; } catch { return null; } }
+function trial(c, target, ch) { const s = structuredClone(G); try { E.play(P, s, c.id, target, ch); return s; } catch { return null; } }
 function preview(c, on) {
   const prev = new Map($$(".fac").map((li) => [li, $(".badge", li).textContent]));
   flipBars($$(".fac"), () => previewMarks(c, on));
@@ -1033,7 +1033,7 @@ function previewMarks(c, on) {
   if (!on || !c) return;
   const ghost = (id, v, cls) => { const li = $(`.fac[data-id="${id}"]`); if (!li) return; const b = $(".badge", li); b.textContent = `→ ${r(v)}`; b.className = `badge t1 ghostv ${cls}`; li.classList.add("cares"); };
   if (c.target) for (const h of W.factions) { const s = trial(c, h.id); if (s) ghost(h.id, s.support[h.id], "neutral"); }
-  else { const s = trial(c); if (s) for (const h of PEOPLE) if (r(s.support[h.id]) !== r(G.support[h.id])) ghost(h.id, s.support[h.id], s.support[h.id] > G.support[h.id] ? "up" : "down"); }
+  else { const s = trial(c, undefined, c.ch); if (s) for (const h of PEOPLE) if (r(s.support[h.id]) !== r(G.support[h.id])) ghost(h.id, s.support[h.id], s.support[h.id] > G.support[h.id] ? "up" : "down"); }
   const s = IDS.includes(c.source) && $(`.stack[data-id="${c.source}"]`);
   if (s) { s.classList.add("ghost"); $$(".track i.on", s).at(-1)?.classList.add("gp"); }
 }
@@ -1086,12 +1086,39 @@ function play(i) {
     live("Choose a faction to talk to.");
     return;
   }
+  if (c.asks?.length) return askFor(i, c, 0, {});
   resolvePlay(i);
 }
-function clearTarget() { preview(null, false); $$("#factions .fac").forEach((li) => { if (li.dataset.tipOff) { li.dataset.tip = li.dataset.tipOff; delete li.dataset.tipOff; } li.classList.remove("target"); li.removeAttribute("role"); li.removeAttribute("aria-pressed"); li.onclick = li.onkeydown = null; }); rove($("#factions ul")); }
+// A card that asks for a choice: one picker per ask, the hovered option previewed on the rows and in the plate; Esc cancels.
+const ASKQ = { holder: ["Which holder?", "Choose a faction or a foreign backer on the left."], kind: ["Which resource?", "Choose one."], dir: ["Which way does your grip move?", "Choose one."], ideology: ["Which ideology?", "Choose one."] };
+const resultHTML = (s) => !s ? "" : [...RK.filter((k) => s.res[k] !== G.res[k]).map((k) => rchip(k, Math.round((s.res[k] - G.res[k]) * 10) / 10, { sign: true, name: true })),
+  r(s.grip) !== r(G.grip) ? `<span class="chip t1">Grip ${signed(r(s.grip) - r(G.grip))}</span>` : "", ...IDS.filter((id) => s.stacks[id] !== G.stacks[id]).map((id) => `<span class="chip t1">${IDEO[id].name} ${signed(s.stacks[id] - G.stacks[id])}</span>`)].join("");
+function askFor(i, c, k, ch) {
+  if (k >= c.asks.length) return resolvePlay(i, undefined, ch);
+  const a = c.asks[k], last = k === c.asks.length - 1, opts = E.askOptions(P, a), [q, how] = ASKQ[a];
+  clearTarget(); st.phase = "target"; moment("target");
+  const pick = (v) => askFor(i, c, k + 1, { ...ch, [a]: v });
+  const show = (v) => { const full = { ...ch, [a]: v }, res = $("#center .askres"); preview({ ...c, ch: full }, last); if (res) res.innerHTML = last ? resultHTML(trial(c, undefined, full)) : ""; };
+  const label = (v) => (a === "kind" ? `${ico(v)}<span>${RES[v].name}</span>` : a === "dir" ? `<span>${band(v === "iron" ? 100 : 0)}</span>` : `<i class="sw" style="${vars(v)}"></i><span>${IDEO[v].name}</span>`);
+  plateNote(`<p class="t1 soft">${c.title}${c.asks.length > 1 ? ` · ${k + 1} of ${c.asks.length}` : ""}</p><p class="t2 disp">${q}</p>${a === "holder" ? "" : `<div class="askopts" data-rove=".aopt">${opts.map((v) => `<button class="aopt t1" data-v="${v}" ${a === "kind" ? `data-role="${v}"` : ""}>${label(v)}</button>`).join("")}</div>`}
+    <p class="askres t1" aria-live="polite"></p><p class="t1">${how} <kbd>Esc</kbd> cancels.</p><button class="quiet t1 askno">Cancel</button>`);
+  $("#center .askno").onclick = cancelTarget;
+  if (a === "holder") {
+    $$("#left .fac").forEach((li) => { li.dataset.tipOff = li.dataset.tip; delete li.dataset.tip; li.classList.add("target"); li.setAttribute("role", "button"); li.tabIndex = 0;
+      li.onpointerenter = li.onfocus = () => show(li.dataset.id);
+      li.onclick = li.onkeydown = (e) => { if (e.type === "click" || e.key === "Enter" || e.key === " ") { e.preventDefault?.(); e.stopPropagation?.(); pick(li.dataset.id); } }; });
+    $("#factions .fac")?.focus({ preventScroll: true });
+  } else {
+    const bs = $$("#center .aopt"); rove($("#center .askopts"));
+    bs.forEach((b) => { b.onpointerenter = b.onfocus = () => show(b.dataset.v); b.onclick = () => pick(b.dataset.v); });
+    bs[0]?.focus({ preventScroll: true });
+  }
+  live(`${c.title}: ${q} ${how}`);
+}
+function clearTarget() { preview(null, false); $$("#left .fac").forEach((li) => { li.onpointerenter = li.onfocus = null; if (li.dataset.tipOff) { li.dataset.tip = li.dataset.tipOff; delete li.dataset.tipOff; } li.classList.remove("target"); li.removeAttribute("role"); li.removeAttribute("aria-pressed"); li.onclick = li.onkeydown = null; }); rove($("#factions ul")); rove($("#patrons ul")); }
 function cancelTarget() { if (st.phase !== "target") return; clearTarget(); fadeOut($("#center .plate")); toHand(); }
 // A played card flies to the centre, stamps, dissolves into its effect, and the effect travels to the rows.
-async function resolvePlay(i, target) {
+async function resolvePlay(i, target, ch) {
   if (!["hand", "target"].includes(st.phase)) return;
   const c = st.hand[i];
   emit("played");
@@ -1100,7 +1127,7 @@ async function resolvePlay(i, target) {
   const slip = $(`#hand .hc[data-i="${i}"]`), src = $(`#fx .pop[data-i="${i}"]`) || slip, s = sp(src), w0 = src.offsetWidth, h0 = src.offsetHeight;
   $("#hand").focus({ preventScroll: true });
   sfx.play();
-  const ev = E.play(P, G, c.id, target); save();
+  const ev = E.play(P, G, c.id, target, ch); save();
   const { mv, res } = tally(ev);
   const ghost = src.cloneNode(true); ghost.classList.add("fly"); ghost.removeAttribute("data-tip");
   popout(null); $$("#hand li.hot").forEach((l) => l.classList.remove("hot"));
