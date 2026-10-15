@@ -1,7 +1,58 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Siyasa</title></head>
-<body><pre id="out">loading</pre><script type="module">
-const r = await fetch("/api/worlds"); const list = await r.json();
-const p = await (await fetch(`/api/worlds/${list[0].id}`)).json();
-document.getElementById("out").textContent = `${list.length} world(s); ${p.world.title}; ${p.deck.situations.length} situations`;
-</script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siyasa</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body data-noscroll data-pv="a" data-rv="a" data-xv="c">
+<a class="skiplink" href="#center">Skip to this month's card</a>
+<canvas id="field" aria-hidden="true"></canvas>
+<main id="stage">
+  <header id="top" class="surf">
+    <div class="where">
+      <h1 id="polity" class="t3 disp"></h1>
+      <span id="date" class="t1 strong" data-tip="date"></span>
+      <ol id="months" data-tip="date" aria-label="Months of the term"></ol>
+    </div>
+    <div class="res" id="res" role="group" aria-label="Resources" data-rove=".rc"></div>
+    <button class="keys" popovertarget="settings" aria-label="Settings" title="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="17" r="2"/></svg></button>
+    <div id="settings" popover aria-labelledby="settings-h">
+      <h2 class="t2 disp" id="settings-h">Settings</h2>
+      <label class="srow t1"><span>Music</span><input type="range" id="vol-music" min="0" max="1" step="0.01" value="1"></label>
+      <label class="srow t1"><span>Effects</span><input type="range" id="vol-sfx" min="0" max="1" step="0.01" value="1"></label>
+      <label class="srow t1"><span>Mute all <kbd>M</kbd></span><input type="checkbox" id="mute"></label>
+      <div class="srow t1"><span id="speed-l">Ceremonies</span><span class="seg" role="group" aria-labelledby="speed-l"><button id="speed-full" aria-pressed="true">Full</button><button id="speed-quick" aria-pressed="false">Quick</button></span></div>
+      <h3 class="t1 soft">This term</h3>
+      <p class="t1 soft snote">Your term saves after every action. Quit now and you come back to this month.</p>
+      <div class="sact"><button class="sbtn" id="quit">Quit to world list</button><button class="sbtn" id="newterm">New term</button><button class="sbtn warn" id="abandon">Abandon term</button></div>
+      <div class="sconfirm" role="alert" hidden><p class="t1"></p><div class="sact"><button class="sbtn warn" id="confirm-yes"></button><button class="sbtn" id="confirm-no">Keep playing</button></div></div>
+      <p class="t1 sstatus" role="status"></p>
+      <details class="t1"><summary>Keyboard keys</summary><div id="keylist"><p><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> choose an answer</p><p><kbd>Enter</kbd> decide, or the main action of the moment</p><p><kbd>Space</kbd> skip a ceremony</p><p><kbd>←</kbd> <kbd>→</kbd> move inside a list or your hand</p><p><kbd>C</kbd> open your seat on the compass</p><p><kbd>O</kbd> open settings · <kbd>M</kbd> mute</p><p><kbd>Esc</kbd> close, clear a choice, or cancel a target</p></div></details>
+      <button class="sbtn t1" id="replay-tour">Replay the tutorial</button>
+    </div>
+  </header>
+  <aside id="left" aria-label="Who holds power">
+    <section id="factions" class="surf col" aria-label="Factions"><h2 class="zl t1" data-tip="legend">At home</h2><ul data-rove=".fac"></ul></section>
+    <section id="patrons" class="surf col" aria-label="Patrons"><h2 class="zl t1" data-tip="legend-abroad">Abroad</h2><ul data-rove=".fac"></ul></section>
+  </aside>
+  <section id="center" aria-labelledby="center-h"></section>
+  <section id="tableau" aria-label="Your record" data-rove=".stack"></section>
+  <aside id="right" aria-label="Your hand">
+    <section id="hand" aria-label="Hand" tabindex="-1" data-tip-left><div class="hh"><h2 class="zl t1">Hand</h2><span id="plays" class="t1 soft" data-tip="plays"></span></div><ul></ul></section>
+    <button id="end" class="primary" data-tip="end" disabled><span class="t2 disp">End month</span></button>
+  </aside>
+</main>
+<div id="kin" aria-hidden="true"></div>
+<div id="fx" aria-hidden="true"></div>
+<div id="tips"></div>
+<div id="live" class="sr" aria-live="polite"></div>
+<dialog id="seatbig" aria-label="Your seat"></dialog>
+<script src="/hall/tone.js"></script>
+<script type="module" src="/src/board/main.js"></script>
+<script type="module" src="/src/walk/walk.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ import { expand } from "./expand.js";
 const WORLD = { "egypt-2011": "egypt", "kepler-1ae": "mars", "usa-2022": "egypt" };
 const TIER = { big: .7, feedback: .35, ui: .09 };
 const MUSIC = .5; // -6 dB: the music bus sits near -22 LUFS so effects have room above it
-const E = window.EGYPT, clamp = (x) => Math.max(0, Math.min(1, x));
+const clamp = (x) => Math.max(0, Math.min(1, x));
 // the board's Settings sliders (same origin), so every page plays at the level the player chose
 const saved = (k) => { try { const v = localStorage.getItem(`vol-${k}`); return v == null ? 1 : +v; } catch { return 1; } };
 let musicVol = saved("music") ** 2, sfxVol = saved("sfx") ** 2, ac, out, musicGain, dip, tiers, hall, score, brief, worldId, muted = false, start = null, fadeIn = false, sfxDb = 0, lastBeat = 0, lastBeatAt = 0, beat = 0, poll;
@@ -87,15 +87,14 @@ const ENTRY = 8; // beats: two bars
 const family = (ly) => (ly.hit ? 3 : ly.deg != null ? 1 : (ly.atk ?? 0) >= .5 ? 0 : 2); // 0 bed and drones, 1 tunes, 2 harmony and pulses, 3 drums
 const stage = () => (beat < 0 ? 1 : Math.min(4, 2 + Math.floor(beat / ENTRY)));
 
-// The board drives the music: held cards -> ideology levers; the month, the record and support -> growth; low support -> tension and crisis.
+// The board drives the music: it hands in the engine's levers (grip, growth, tension, crisis, one per ideology); before that, the world's start state.
+let source = null;
+export const leversFrom = (fn) => { source = fn; };
 function levers() {
-  const st = window.__game, ids = score?.levers ?? [];
+  const ids = score?.levers ?? [];
   const lv = { tension: 0, crisis: 0, grip: .5, growth: .4, ...Object.fromEntries(ids.map((k) => [k, .2])) };
-  if (!st) return { ...(start ? { ...lv, ...Object.fromEntries(ids.map((k) => [k, 0])), ...mood(start.factions.map((f) => f.support), start.grip, 1, start.months, 0) } : lv), intro: stage() }; // nothing filed yet
-  const total = Object.values(st.held).reduce((a, b) => a + b, 0);
-  Object.assign(lv, mood(E.factions.map((f) => st.sup[f.id]), st.grip, st.month, E.world.months, total));
-  ids.forEach((k, i) => (lv[k] = clamp((st.held[k] ?? st.held[E.ideologies[i]?.id] ?? 0) / 5)));
-  return lv;
+  if (source) return { ...lv, ...source(), intro: stage() };
+  return { ...(start ? { ...lv, ...Object.fromEntries(ids.map((k) => [k, 0])), ...mood(start.factions.map((f) => f.support), start.grip, 1, start.months, 0) } : lv), intro: stage() }; // nothing filed yet
 }
 function mood(home, grip, month, months, total) {
   const low = Math.min(...home), avg = home.reduce((a, b) => a + b, 0) / home.length;
@@ -124,7 +123,7 @@ function hiss({ at = 0, dur = .4, f0 = 600, f1 = 3000, q = 1.2, gain = .5 } = {}
 }
 const lead = () => brief.ensemble.lead, leadOct = () => lead().oct ?? 0;
 const drum = () => brief.rhythm.crisis.hit.split(/[\s\[\]<>*!@\d]+/).find((x) => x && x !== "x" && x !== "~") ?? brief.rhythm.village.sound;
-const voiceOf = (id) => { const i = brief.ideologies[id] ?? Object.values(brief.ideologies)[E.ideologies.findIndex((x) => x.id === id)] ?? {}; const t = i.tune?.[0]; return t ? [t.sound, t.oct ?? 1] : [i.colour?.[0]?.sound ?? lead().sound, leadOct() + 1]; };
+const voiceOf = (id) => { const i = brief.ideologies?.[id] ?? {}; const t = i.tune?.[0]; return t ? [t.sound, t.oct ?? 1] : [i.colour?.[0]?.sound ?? lead().sound, leadOct() + 1]; };
 let motifCache;
 const motif = () => motifCache?.[0] === score ? motifCache[1] : (motifCache = [score, expand({ ...score, layers: [{ id: "m", deg: score.brief.theme, sound: "x" }] }).m.filter((e) => e.t < 1).slice(0, 3).map((e) => e.deg)])[1];
 const fifth = (r) => score.harmony.fifthOf(r) ?? r + score.brief.scale.length;
