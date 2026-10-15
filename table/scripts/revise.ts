@@ -1,8 +1,8 @@
 // Revise a library pack after the owner's first playtest (O12, O14, O16, O4): plain-words text, power cards with a player choice,
 // no card carriers; optionally a new music brief and one Vision spread repair. Numbers and effects of other cards never change.
-//   bun scripts/revise.ts <slug> [--music] [--spread] [--budget 4]
+//   bun scripts/revise.ts <slug> [--music] [--spread] [--budget 4]   (a rerun reuses chunks that passed, from build/out/revise/<slug>/)
 // biome-ignore-all lint/suspicious/noExplicitAny: model JSON
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { checkPack, type Pack } from "../engine";
 import { checkDeck, LIMITS } from "../build/check.mjs";
 import { init, step } from "../build/llm";
@@ -16,7 +16,16 @@ const music = flag("--music"), spread = flag("--spread"), bi = args.indexOf("--b
 const slug = args[0], PACK = `${new URL("..", import.meta.url).pathname}packs/${slug}/`;
 const read = (f: string) => JSON.parse(readFileSync(PACK + f, "utf8")), write = (f: string, x: unknown) => writeFileSync(PACK + f, JSON.stringify(x, null, 1));
 const world = read("world.json"), deck = read("deck.json");
-const ctx = init({ apiKey: apiKey(), budget, log: (m) => console.log(m) });
+const OUT = `${new URL("..", import.meta.url).pathname}build/out/revise/${slug}/`;
+mkdirSync(OUT, { recursive: true });
+const ctx = init({ apiKey: apiKey(), budget, log: (m) => console.log(m), save: (n, x) => writeFileSync(OUT + n, typeof x === "string" ? x : JSON.stringify(x, null, 1)) });
+const run: typeof step = async (c, name, cfg, system, user, check, o) => {
+  if (existsSync(OUT + o.file)) {
+    const x = JSON.parse(readFileSync(OUT + o.file, "utf8"));
+    if (!(await check(x)).length) return (ctx.steps[name] = { pass: true } as any), x;
+  }
+  return step(c, name, cfg, system, user, check, o);
+};
 const sys = `${DECK}\n\nWorld:\n${JSON.stringify(world, null, 1)}`;
 const wc = (s: unknown) => (typeof s === "string" ? s.trim().split(/\s+/).filter(Boolean).length : 0);
 
@@ -31,8 +40,9 @@ const textCheck = (src: Record<string, any>) => (out: any) => {
   for (const [id, c] of Object.entries(src)) {
     const o = out?.[id];
     if (!o) { e.push(`${id}: missing`); continue; }
-    for (const k of Object.keys(c)) if (k !== "answers" && k !== "reasons" && typeof o[k] !== "string") e.push(`${id}.${k}: missing`);
+    for (const k of Object.keys(c)) if (k !== "answers" && k !== "reasons" && k !== "pillars" && typeof o[k] !== "string") e.push(`${id}.${k}: missing`);
     for (const k of ["title", "question", "body", "history", "flavour"]) if (c[k] != null && wc(o[k]) > (LIMITS as any)[k]) e.push(`${id}.${k}: ${wc(o[k])} words; at most ${(LIMITS as any)[k]}`);
+    if (c.pillars && (o.pillars?.length !== c.pillars.length || o.pillars.some((x: unknown) => typeof x !== "string"))) e.push(`${id}.pillars: needs ${c.pillars.length} strings`);
     if (c.question != null && !/\byour?s?\b/i.test(o.question ?? "")) e.push(`${id}.question: ask what YOU will do`);
     if (c.answers) {
       if (o.answers?.length !== c.answers.length) { e.push(`${id}: needs ${c.answers.length} answers`); continue; }
@@ -60,9 +70,9 @@ const powerCheck = (out: any) => {
 };
 
 const jobs: Promise<any>[] = [
-  step(ctx, "powers", CONFIG.deck, sys, POWER_ASK, powerCheck, { maxTokens: 8000, file: "powers.json" }),
-  step(ctx, "world-text", CONFIG.deck, sys, `${TEXT_ASK}\n\n${JSON.stringify(worldText, null, 1)}`, textCheck(worldText), { maxTokens: 12000, file: "world-text.json" }),
-  ...chunks.map((ch, k) => step(ctx, `text-${k}`, CONFIG.deck, sys, `${TEXT_ASK}\n\n${JSON.stringify(ch, null, 1)}`, textCheck(ch), { maxTokens: 24000, file: `text-${k}.json` })),
+  run(ctx, "powers", CONFIG.deck, sys, POWER_ASK, powerCheck, { maxTokens: 8000, file: "powers.json" }),
+  run(ctx, "world-text", CONFIG.deck, sys, `${TEXT_ASK}\n\n${JSON.stringify(worldText, null, 1)}`, textCheck(worldText), { maxTokens: 12000, file: "world-text.json" }),
+  ...chunks.map((ch, k) => run(ctx, `text-${k}`, CONFIG.deck, sys, `${TEXT_ASK}\n\n${JSON.stringify(ch, null, 1)}`, textCheck(ch), { maxTokens: 32000, file: `text-${k}.json` })),
   music ? buildMusic(ctx, world) : Promise.resolve(null),
 ];
 const [powers, wtext, ...rest] = await Promise.all(jobs.map((j) => j.catch((x) => (console.error(String(x)), null))));

@@ -134,7 +134,7 @@
    "id": "aco",
    "name": "Arcadia Constabulary",
    "short": "Constabulary",
-   "who": "The colony's armed police and lock-security service, about 600 officers who answer to the governor under the Charter and hold the armouries, the airlock codes of public spaces and the Pad Field gates.",
+   "who": "The colony's armed police and airlock guards, about 600 officers. They answer to the governor under the Charter, the colony's founding law from Earth. They hold the weapons stores, the codes to public airlocks and the gates of the Pad Field, the landing field.",
    "leader": {
     "name": "Rafael Osei-Brandt",
     "role": "Commandant of the Arcadia Constabulary"
@@ -154,7 +154,7 @@
    "produces": "force",
    "persona": "It wants order in the tube, a clear chain of command up to Geneva and its own budget line. It fears being outgunned by Areanist youth or replaced by the Charter Marines. Its red line is any amnesty for attacks on Constabulary officers or locks. It respects an iron governor and grows insubordinate under one it sees as soft on the Free Arcadia Movement.",
    "act": {
-    "text": "The Constabulary pulls its officers off the Erebus Tube posts, and Commandant Osei-Brandt cables the Charter Authority directly, going over the governor's head.",
+    "text": "The Constabulary pulls its officers out of the Erebus Tube, the lava-tube district. Commandant Osei-Brandt goes over the governor's head and messages the Charter Authority in Geneva directly.",
     "res": {
      "force": -2,
      "trust": -1
@@ -164,10 +164,10 @@
      "fam": 3
     }
    },
-   "fall": "Commandant Osei-Brandt seals Dome 1, takes the Control Ring under the Charter's emergency clause and declares the governorship vacant until Geneva names a successor.",
+   "fall": "Commandant Osei-Brandt seals Dome 1. He seizes the Control Ring, the room that runs the colony's systems, under the Charter's emergency clause. He declares the governor's post empty until Geneva names someone new.",
    "fates": {
-    "hi": "The Constabulary stands as the colony's loyal armed service under the renewed order, and its Commandant sits on the governor's council.",
-    "lo": "The Constabulary is purged and folded under new commanders, with half its officers sent home on the Window Fleet's return leg."
+    "hi": "The Constabulary stays the colony's loyal armed force under the renewed order. Its Commandant sits on the governor's council.",
+    "lo": "The Constabulary is purged and put under new commanders. Half its officers are sent back to Earth when the Window Fleet flies home."
    },
    "insignia": "The Charter's twelve stars over a closed lock wheel on a blue shield, and silver cuff bars."
   },
@@ -175,7 +175,7 @@
    "id": "hsd",
    "name": "Habitat Systems Directorate",
    "short": "Systems Directorate",
-   "who": "The engineering bureau that ran Ares Landing for thirty years before the governorship. It runs the reactors, electrolysis and Sabatier trains, water plants and the margin boards, and certifies every reserve figure.",
+   "who": "The engineering office that ran Ares Landing for thirty years before there was a governor. It runs the reactors and the plants that make air and water. It keeps the reserve boards and signs off on every reserve figure.",
    "leader": {
     "name": "Noor Haddad-Lindqvist",
     "role": "Chief Systems Engineer of the Habitat Systems Directorate"
@@ -195,7 +195,7 @@
    "produces": "money",
    "persona": "It wants the margins kept above the Charter floor and the final word on power and air. It fears politicians cooking reserve figures and strikes in the plants. Its red line is any order to falsify a margin report. It works with an iron governor who protects the plants, and it resents one who opens margin decisions to the Assembly or the street.",
    "act": {
-    "text": "The Directorate puts the colony on certified-minimum operation, cuts every non-life-support load and publishes its own margin log without the governor's sign-off.",
+    "text": "The Directorate puts the colony on bare-minimum running. It cuts all power not needed to keep people alive. It publishes its own reserve figures without the governor's approval.",
     "res": {
      "money": -2,
      "trust": -1
@@ -205,10 +205,10 @@
      "cas": -3
     }
    },
-   "fall": "Dr. Haddad-Lindqvist declares a Margin Emergency under Charter Article 31, takes the allocation of power and air and invites the Charter Authority to remove a governor it calls unsafe.",
+   "fall": "Dr. Haddad-Lindqvist declares a Margin Emergency under Charter Article 31. The Directorate takes control of who gets power and air. It asks the Charter Authority to remove a governor it calls unsafe.",
    "fates": {
-    "hi": "The Directorate runs the plants as the order's trusted technical arm, and its margin board binds every decree.",
-    "lo": "The Directorate is broken up, its controllers answer to elected or Earth commissioners, and its certifications lose their force."
+    "hi": "The Directorate runs the plants as the order's trusted engineers. Every decree must respect its reserve figures.",
+    "lo": "The Directorate is broken up. Its controllers answer to elected or Earth officials, and its sign-offs no longer count."
    },
    "insignia": "A green margin line across a reserve gauge dial, and grey certification bars."
   },
@@ -216,7 +216,7 @@
    "id": "lme",
    "name": "Landing Merchants' Exchange",
    "short": "Merchants' Exchange",
-   "who": "The chartered association of merchant families, pad and fabrication concessionaires and air-credit brokers who run the colony's private trade from the Exchange arcade.",
+   "who": "The trade association of the merchant families, licensed under the Charter. Its members hold the rights to run landing pads and workshops, and they trade air credits, the colony's resold air rations. They run private trade from the Exchange arcade.",
    "leader": {
     "name": "Priya Castellanos-Abe",
     "role": "Chair of the Landing Merchants' Exchange"
@@ -236,7 +236,7 @@
    "produces": "money",
    "persona": "It wants concessions, low levies, private greenhouse and pad rights and a Window Fleet manifest with room for paying cargo. It fears both Directorate requisitions and union councils. Its red line is confiscation of private decks or stock. It welcomes an open governor who trades, and it tolerates an iron one only if markets are left alone.",
    "act": {
-    "text": "The Exchange hoards spares and sealant stock, suspends credit to the colony treasury and moves its accounts onto Helion-Ares books on Earth.",
+    "text": "The Exchange hoards spare parts and sealant. It stops lending to the colony treasury. It moves its accounts onto Helion-Ares books on Earth.",
     "res": {
      "money": -3
     },
@@ -245,10 +245,10 @@
      "riw": 2
     }
    },
-   "fall": "The Exchange and its bondholder friends halt the arcade, stop paying levies and back a petition to Geneva to put the colony under a corporate receiver.",
+   "fall": "The Exchange and its Earth lenders shut the arcade and stop paying the local tax. They petition Geneva to hand the colony to a company administrator.",
    "fates": {
-    "hi": "The Exchange families hold the concessions and seats of the new order and grow rich on ice exports.",
-    "lo": "The Exchange's decks and stocks are requisitioned, and its families either leave on the return leg or trade under licence."
+    "hi": "The Exchange families hold the trading rights and the seats of the new order. They grow rich selling ice.",
+    "lo": "The Exchange's private greenhouse decks and stocks are seized. Its families go back to Earth on the fleet or trade only under licence."
    },
    "insignia": "Stacked-tower logo over a Charter credit coin, and gold suit-liner piping."
   },
@@ -256,7 +256,7 @@
    "id": "cas",
    "name": "Colonial Assembly",
    "short": "Colonial Assembly",
-   "who": "The 50-seat elected Assembly of Ares Landing. Under the Charter it advises the governor and votes the local levy, and it is now split between a Charter bench, an Exchange bench and a growing Areanist-leaning self-government bloc.",
+   "who": "The elected 50-seat Assembly of Ares Landing. Under the Charter it advises the governor and votes the local tax, the levy. It is split three ways: a pro-Charter bench, a merchants' bench and a growing bloc that wants self-government.",
    "leader": {
     "name": "Tomasz Ferreira-Oyelaran",
     "role": "Speaker of the Colonial Assembly"
@@ -280,7 +280,7 @@
    "produces": "trust",
    "persona": "It wants real powers: control of the levy, a say over margins and a self-government bill on the table. It fears dissolution by Charter decree and being outflanked by the Free Arcadia Movement in the tube. Its red line is suspension of its sittings. It rallies to an open governor who shares power and turns into a hostile chamber under an iron one.",
    "act": {
-    "text": "The Assembly refuses to vote the levy, passes a motion of no confidence in the governor and sends a delegation to plead its case on the Geneva link.",
+    "text": "The Assembly refuses to vote the levy. It passes a vote of no confidence in the governor. It sends members to argue its case to Geneva over the Earth link.",
     "res": {
      "trust": -2,
      "money": -1
@@ -290,10 +290,10 @@
      "mca": -3
     }
    },
-   "fall": "The Assembly votes the governor unfit, declares itself the provisional authority of Ares Landing and calls the settlers to obey it rather than Dome 1.",
+   "fall": "The Assembly votes the governor unfit. It declares itself the colony's temporary government and tells settlers to obey it, not Dome 1.",
    "fates": {
-    "hi": "The Assembly becomes the colony's legislature with the levy, the budget and a voice in the margins.",
-    "lo": "The Assembly is suspended or reduced to a rubber stamp, and its Speaker is in exile or under house rules."
+    "hi": "The Assembly becomes the colony's parliament. It controls the levy and the budget and has a say over the reserves.",
+    "lo": "The Assembly is suspended or turned into a rubber stamp. Its Speaker is exiled or confined to quarters."
    },
    "insignia": "Fifty small stars arranged in a ring around an open book, on a white field."
   },
@@ -301,7 +301,7 @@
    "id": "riw",
    "name": "Regolith and Ice Workers' Union",
    "short": "Ice Workers' Union",
-   "who": "The RIWU, the colony's one great union, organising about 2,900 Ice Field crews and the operators of the electrolysis halls, Sabatier trains and hydroponics decks.",
+   "who": "The RIWU, the Regolith and Ice Workers' Union, the colony's one big union. It has about 2,900 members: ice miners and the workers who run the air plants, water plants and greenhouse decks.",
    "leader": {
     "name": "Dolores Kamau-Quispe",
     "role": "General Secretary of the Regolith and Ice Workers' Union"
@@ -321,7 +321,7 @@
    "produces": "money",
    "persona": "It wants lower quotas, union medical inspection of perchlorate dust cases, a seat on the allocation board and common ownership of the ice plants. It fears Helion-Ares export deals that sell its ice abroad and Constabulary breaking of pickets. Its red line is armed police in the halls. It bargains with an open governor and strikes against an iron one.",
    "act": {
-    "text": "The RIWU stops the ice tankers at Ice Field 7 and puts the electrolysis halls on work-to-rule, and the water and oxygen lines start to drop.",
+    "text": "The RIWU stops the ice tankers at Ice Field 7. Air-plant workers slow down by sticking strictly to the rulebook. Water and oxygen supplies start to fall.",
     "res": {
      "money": -2,
      "trust": -1
@@ -331,10 +331,10 @@
      "fam": 3
     }
    },
-   "fall": "The RIWU calls a general strike, occupies the electrolysis hall and the ice fields and offers to run the colony's air under workers' councils without the governor.",
+   "fall": "The RIWU calls a general strike and occupies the main air plant and the ice fields. It offers to run the colony's air through workers' councils, without the governor.",
    "fates": {
-    "hi": "The union holds a guaranteed seat on the allocation board, and its councils run the ice and the decks.",
-    "lo": "The union is broken into licensed crews under Directorate or concession managers, and its leaders are barred from the halls."
+    "hi": "The union holds a guaranteed seat on the board that shares out air, water and food. Its councils run the ice fields and greenhouses.",
+    "lo": "The union is broken into licensed work crews under Directorate or company managers. Its leaders are banned from the plants."
    },
    "insignia": "A meshed gear around an ice-core cylinder, over a raised glove, on safety orange."
   },
@@ -342,7 +342,7 @@
    "id": "fam",
    "name": "Free Arcadia Movement",
    "short": "Free Arcadia",
-   "who": "The Areanist independence movement of the Mars-born. It organises through tube block committees and the pirate Dustline channel, and it has a militant fringe, the Pressure Cells.",
+   "who": "The independence movement of the Mars-born, who call themselves Arcadians. It organises through block committees in the lava tube and the pirate radio channel Dustline. Its militant fringe is the Pressure Cells.",
    "leader": {
     "name": "Ezra Valdivia",
     "role": "Founder and spokesman of the Free Arcadia Movement"
@@ -362,7 +362,7 @@
    "produces": "voice",
    "persona": "It wants self-government, recognition of the Mars-born as Arcadians and the ice held by the colony. It fears the Charter Marines and the new settler roll. Its red lines are the citizenship oath and extradition of its leaders to Earth. An open governor gets its rallies and petitions, and an iron one drives its youth into the Pressure Cells.",
    "act": {
-    "text": "Free Arcadia fills the Erebus concourse, takes over the Habitat Channel relay for a night and calls the Mars-born to refuse every Charter roll and ration card.",
+    "text": "Free Arcadia packs the main hall of the Erebus Tube. It seizes the Habitat Channel, the colony's broadcast service, for a night. It tells the Mars-born to refuse every Charter register and ration card.",
     "res": {
      "voice": -2,
      "trust": -1
@@ -372,10 +372,10 @@
      "cas": 3
     }
    },
-   "fall": "Free Arcadia proclaims an Arcadian Congress in the tube, shuts the inner locks against Dome 1 and declares the governor's writ void below the basalt line.",
+   "fall": "Free Arcadia proclaims an Arcadian Congress in the tube. It shuts the inner airlocks against Dome 1. It declares the governor's authority void in the underground districts.",
    "fates": {
-    "hi": "Free Arcadia's leaders sit in the new order as the voice of the Mars-born, and its banner flies beside or above the Charter's.",
-    "lo": "Free Arcadia is banned, its committees are broken up and its leaders are jailed or shipped Earthward."
+    "hi": "Free Arcadia's leaders sit in the new order as the voice of the Mars-born. Its banner flies beside or above the Charter flag.",
+    "lo": "Free Arcadia is banned and its committees broken up. Its leaders are jailed or shipped to Earth."
    },
    "insignia": "A rust-red disc with two small moon circles, a closed lock wheel and carved basalt spirals."
   }
@@ -385,7 +385,7 @@
    "id": "mca",
    "name": "Mars Charter Authority",
    "short": "Charter Authority",
-   "who": "The Earth Concord's office in Geneva that holds the Arcadia Charter, appoints the governor, pays the life-support subsidy and controls rescue and return passage.",
+   "who": "The Earth Concord's office in Geneva that holds the Arcadia Charter. It appoints the governor and pays the subsidy that keeps life support running. It controls rescue and passage home to Earth.",
    "leader": {
     "name": "Jean-Baptiste Mwangi-Rousseau",
     "role": "Charter Commissioner for Mars"
@@ -401,7 +401,7 @@
    "produces": "trust",
    "persona": "It wants the Charter renewed, the Mars-born registered as Earth citizens and no precedent for secession anywhere in the system. It fears a declaration of independence on its watch and a Utopian foothold. Its red line is recognition of any authority other than the Charter. It backs a firm governor and recalls a weak one.",
    "act": {
-    "text": "The Charter Authority freezes the monthly subsidy and suspends the governor's emergency powers, pending a Geneva inquiry.",
+    "text": "The Charter Authority freezes the monthly subsidy. It suspends the governor's emergency powers while Geneva investigates.",
     "res": {
      "money": -3,
      "trust": -1
@@ -411,10 +411,10 @@
      "fam": 2
     }
    },
-   "fall": "The Commissioner revokes the governor's appointment and names the Window Fleet's Marine commander acting governor on arrival.",
+   "fall": "The Charter Commissioner fires the governor. He names the commander of the Marines on the Window Fleet acting governor when the fleet arrives.",
    "fates": {
-    "hi": "The Charter is renewed, and Geneva's writ, subsidy and rescue guarantee run in Arcadia for another decade.",
-    "lo": "Geneva keeps only a nominal tie or a treaty mission, and the Charter is dead in all but name."
+    "hi": "The Charter is renewed. Geneva's law, money and promise of rescue hold in Arcadia for another ten years.",
+    "lo": "Geneva keeps only a token tie or an embassy. The Charter is dead in all but name."
    },
    "insignia": "The Concord globe ringed by an orbit line inside twelve white stars, on Charter blue."
   },
@@ -422,7 +422,7 @@
    "id": "hac",
    "name": "Helion-Ares Consortium",
    "short": "Helion-Ares",
-   "who": "The Earth industrial consortium that built the First Landing modules and holds the colony's development bonds, ice-export contracts and most of the Window Fleet's cargo slots.",
+   "who": "The Earth industrial company that built the first colony modules. It holds the colony's development loans and the ice export contracts. It owns most cargo space on the Window Fleet, the supply ships from Earth.",
    "leader": {
     "name": "Katharina Sørlie-Tan",
     "role": "Chief Executive of the Helion-Ares Consortium"
@@ -442,7 +442,7 @@
    "produces": "money",
    "persona": "It wants its bonds serviced, exclusive export rights to Arcadian ice and a seat at the margin board. It fears union councils and Areanist repudiation of colonial debt. Its red line is confiscation of its ice plant. It prefers a firm governor who keeps the fields working and keeps the Assembly away from the bonds.",
    "act": {
-    "text": "Helion-Ares calls in the bond tranche in an Earth court and pulls the colony's spares off the Window Fleet manifest.",
+    "text": "Helion-Ares demands the next loan payment in an Earth court. It pulls the colony's spare parts off the Window Fleet's cargo list.",
     "res": {
      "money": -3
     },
@@ -451,10 +451,10 @@
      "hsd": -2
     }
    },
-   "fall": "The Consortium files for receivership of the colony's assets, and Geneva puts Ares Landing's plants under a corporate trustee who answers to the bondholders.",
+   "fall": "The company sues to take over the colony's assets for unpaid debt. Geneva puts the plants under a company manager who answers to the lenders.",
    "fates": {
-    "hi": "Helion-Ares holds the ice exports and the bonds of the new order, and its managers sit beside the Directorate.",
-    "lo": "The Consortium's assets are seized or bought out, and it sues from Earth over debt it will never collect."
+    "hi": "Helion-Ares holds the ice exports and the loans of the new order. Its managers sit beside the Directorate.",
+    "lo": "The company's assets here are seized or bought out. It sues from Earth for debts it will never collect."
    },
    "insignia": "The Helion-Ares sunburst wordmark in white on graphite grey."
   },
@@ -462,7 +462,7 @@
    "id": "upa",
    "name": "Utopia Planitia Administration",
    "short": "Utopia Planitia",
-   "who": "The state-run China-led settlement of about 12,000 people at Utopia Planitia, 3,800 km west. It is a rival and neighbour that sells machinery and rescue and wants Arcadian ice and influence.",
+   "who": "The state-run, China-led settlement of about 12,000 people at Utopia Planitia, 3,800 km west. It is a rival neighbour that sells machinery and rescue. It wants Arcadian ice and influence.",
    "leader": {
     "name": "Wen Zhaolin",
     "role": "Director of the Utopia Planitia Administration"
@@ -482,7 +482,7 @@
    "produces": "force",
    "persona": "It wants ice leases, a liaison office in the Domes and an Ares Landing that leans on Utopia rather than Geneva. It fears the Charter Marines and Helion-Ares export monopolies. Its red line is any Marine base pointed west. It prefers an iron, orderly governor, but it will flirt with Areanists if that loosens Geneva's hold.",
    "act": {
-    "text": "Utopia Planitia recalls its technicians, stops the overland spares convoys and offers Free Arcadia a back channel.",
+    "text": "Utopia Planitia calls its technicians home and stops the overland convoys of spare parts. It offers Free Arcadia a secret line of contact.",
     "res": {
      "force": -2,
      "money": -1
@@ -492,10 +492,10 @@
      "hsd": -3
     }
    },
-   "fall": "Utopia Planitia recognises an Arcadian authority in the tube and sends rovers and technicians to keep it breathing, so the governor's rule becomes a rump in Dome 1.",
+   "fall": "Utopia Planitia recognises an Arcadian government in the tube. It sends rovers and technicians to keep it breathing. The governor is left ruling only Dome 1.",
    "fates": {
-    "hi": "Utopia Planitia becomes Ares Landing's partner in ice, rescue and machinery, with a permanent liaison in the Domes.",
-    "lo": "Utopia Planitia is shut out of Arcadia and watches from the west as a hostile neighbour."
+    "hi": "Utopia Planitia becomes Ares Landing's partner in ice, rescue and machinery. It keeps a permanent office in the Domes.",
+    "lo": "Utopia Planitia is shut out of Arcadia. It watches from the west as a hostile neighbour."
    },
    "insignia": "A five-pointed gold star over a stylised plain line, on red."
   }

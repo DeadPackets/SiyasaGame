@@ -1,29 +1,27 @@
 {
  "title": "Pressure Holds",
- "bpm": 92,
+ "bpm": 84,
  "bars": 24,
  "tonic": 50,
  "scale": [
   0,
-  1,
-  3,
+  2,
   5,
   7,
-  8,
-  11
+  9
  ],
- "chords": "<0 5 3 0 0 5 3 0 0 1 0 6 0 5 5 3 5 0 5 3 1 0 1 0>",
- "theme": "<[0 2 3 4] [5 4 3 2] [3 4 5 4] [2 1 0@2] [0 2 3 4] [5 4 3 2] [3 4 5 6] [7@3 ~] ~ ~ ~ ~ [0 2 3 4] [5 4 3 2] [4 5 6 7] [6@2 5 4] [4 5 6 7] [8 7 6 7] [8 9 8 7] [9@2 8 7] [6 7 8 7] [6 5 4@2] [3 2 1 2] [0@4]>",
- "solo": "<~!8 [7 6 5 4] [5 4 3 2] [3 4 2 1] [1 0 -1@2] ~!12>",
- "sighs": "<[1@3 0] [5@3 4] [1@3 0] [8@3 7]>",
+ "chords": "<0!2 3 2 0!2 3 4 2!2 0 3 0 2 3 0 2 3 4 3 2 3 0!2>",
+ "theme": "<[0 1 2 3] [2@3 1] [3 2 3 4] [2@3 ~] [0 1 2 3] [2@3 1] [3 4 5 4] [4@3 ~] [2 3 4 3] [2 1 0 1] [0 1 2 3] [2@3 1] ~ ~ ~ ~ [3 4 5 6] [5 6 7@2] [6 5 4 5] [6@2 7@2] [5 4 3 2] [3 2 1 2] [1 0 1 0] [0@4]>",
+ "solo": "<~!12 [5 4 3 4] [2@2 3 2] [3 4 5@2] [3 2 1 0] ~!8>",
+ "sighs": "<[4@3 3] [1@3 0] [6@3 5] [3@3 2]>",
  "form": {
   "climb": [
    17,
-   22
+   20
   ],
   "solo": [
-   9,
-   12
+   13,
+   16
   ]
  },
  "ensemble": {
@@ -43,39 +41,39 @@
    "horn",
    "trombone"
   ],
-  "soloist": "accordion",
-  "figure": "[0 2 3 2]",
+  "soloist": "syn_glass",
+  "figure": "[0 ~ 3 2]",
   "cymbal": "cymbal"
  },
  "rhythm": {
   "village": {
-   "sound": "dum",
+   "sound": "bassdrum",
    "hit": "x ~ ~ x ~ ~ x ~ ~ x ~ ~ ~",
-   "vel": "[1 .8 .9 .7]"
+   "vel": "[1 .5 .5 .8 .5 .5 .8 .5 .5 .9 .5 .5 .5]"
   },
   "fills": {
-   "sound": "tek",
-   "hit": "~ ~ ~ [x x x x]",
-   "vel": "[.5 .6 .7 .9]"
+   "sound": "woodblock",
+   "hit": "~ ~ ~ [x x]",
+   "vel": "[.6 .8]"
   },
   "shaker": {
    "sound": "shaker",
-   "hit": "[~ x]*4",
-   "vel": "[.4 .6]"
+   "hit": "~ x ~ x ~ x ~ x",
+   "vel": "[.5 .7]"
   },
   "city": {
-   "hit": "bassdrum ~ snare ~ bassdrum bassdrum snare ~"
+   "hit": "bassdrum shaker snare shaker bassdrum bassdrum snare shaker"
   },
   "strict": {
-   "hit": "snare snare snare [snare snare]"
+   "hit": "bassdrum woodblock bassdrum woodblock"
   },
   "tension": {
    "sound": "bassdrum",
-   "hit": "<[x ~ ~ ~] [x ~ ~ ~] [x ~ ~ ~] [x ~ x x]>"
+   "hit": "<[x ~ ~ ~ x ~ ~ ~] [x ~ ~ ~ x ~ ~ ~] [x ~ ~ ~ x ~ ~ ~] [x ~ x ~ x x x x]>"
   },
   "crisis": {
-   "hit": "[bassdrum ~ tek ~] [snare tek bassdrum ~] [bassdrum ~ tek ~] [snare snare snare snare]",
-   "accents": "x ~ x x"
+   "hit": "[bassdrum snare] [bassdrum snare] [bassdrum snare] [bassdrum [snare snare]]",
+   "accents": "x ~ x ~ x ~ x x"
   }
  },
  "moods": {
@@ -83,8 +81,8 @@
    "tune": "synth_strings_1",
    "ostinato": "syn_bass",
    "tremolo": "syn_glass",
-   "cry": "accordion",
-   "heartbeat": "dum",
+   "cry": "choir_aahs",
+   "heartbeat": "bassdrum",
    "roll": "timpani_roll"
   },
   "crisis": {
@@ -94,56 +92,45 @@
    ],
    "drive": [
     "syn_pluck",
-    "violins_spic"
+    "syn_bass"
    ],
    "stab": [
     "horn_stac",
     "trumpet_stac"
    ],
-   "low": "syn_bass",
+   "low": "syn_sub",
    "timp": "timpani"
-  }
- },
- "fills": [
-  {
-   "sound": "gong",
-   "vel": 0.8
   },
-  {
-   "sound": "timpani_roll",
-   "vel": 0.9
-  }
- ],
+  "fills": [
+   {
+    "sound": "gong",
+    "vel": 0.7
+   },
+   {
+    "sound": "cymbal",
+    "vel": 0.8
+   }
+  ]
+ },
  "ideologies": {
   "chr": {
    "name": "Charter Unionism",
    "tune": [
     {
-     "sound": "choir_aahs",
-     "oct": 1
-    },
-    {
      "sound": "violins",
      "oct": 1,
      "climb": true
-    }
-   ],
-   "share": 0.8,
-   "colour": [
+    },
     {
-     "type": "drone",
-     "sound": "church_organ",
-     "degrees": [
-      0,
-      4
-     ],
-     "oct": -1
+     "sound": "horn",
+     "oct": 0
     }
    ],
+   "share": 0.7,
    "thins": {
-    "lead": 0,
+    "lead": 0.2,
     "ornaments": 0.3,
-    "drums": 0.3
+    "drums": 0
    }
   },
   "cor": {
@@ -158,11 +145,6 @@
    "share": 0.6,
    "colour": [
     {
-     "type": "pulse",
-     "sound": "electric_guitar_clean",
-     "rhythm": "~ x ~ x"
-    },
-    {
      "type": "calls",
      "sound": "syn_bell"
     }
@@ -173,12 +155,27 @@
    "colour": [
     {
      "type": "drums",
-     "hit": "dum ~ tek dum ~ tek dum ~ tek dum ~ tek tek",
-     "vel": "[1 .5 .6 .9 .5 .6 .9 .5 .6 .9 .5 .6 .7]"
+     "hit": "bassdrum ~ woodblock bassdrum ~ woodblock bassdrum ~ woodblock bassdrum ~ woodblock woodblock",
+     "vel": "[1 .5 .6 .9 .5 .6 .9 .5 .6 1 .5 .6 .7]"
     },
     {
      "type": "calls",
-     "sound": "trombone"
+     "sound": "choir_aahs"
+    }
+   ]
+  },
+  "lab": {
+   "name": "Habitat Syndicalism",
+   "colour": [
+    {
+     "type": "pulse",
+     "sound": "electric_guitar_clean",
+     "rhythm": "x ~ x ~ x ~ x ~"
+    },
+    {
+     "type": "drums",
+     "hit": "bassdrum shaker bassdrum shaker",
+     "vel": "[1 .6]"
     }
    ],
    "thins": {
@@ -187,28 +184,6 @@
     "drums": 0
    }
   },
-  "lab": {
-   "name": "Habitat Syndicalism",
-   "tune": [
-    {
-     "sound": "koto",
-     "oct": 1
-    }
-   ],
-   "share": 0.7,
-   "colour": [
-    {
-     "type": "drums",
-     "hit": "dum tek dum tek",
-     "vel": "[1 .6]"
-    },
-    {
-     "type": "pulse",
-     "sound": "shamisen",
-     "rhythm": "x ~ x ~"
-    }
-   ]
-  },
   "tec": {
    "name": "Margin Technocracy",
    "colour": [
@@ -216,18 +191,19 @@
      "type": "drone",
      "sound": "syn_sub",
      "degrees": [
-      0
+      0,
+      3
      ],
      "oct": -1
     },
     {
      "type": "pulse",
-     "sound": "syn_glass",
+     "sound": "syn_bell",
      "rhythm": "x ~ ~ ~"
     }
    ],
    "thins": {
-    "lead": 0.2,
+    "lead": 0.1,
     "ornaments": 0.6,
     "drums": 0.5
    }

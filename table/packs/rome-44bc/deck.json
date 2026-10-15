@@ -4,7 +4,7 @@
    "power": {
     "id": "p-lib",
     "title": "Letters from Lanuvium",
-    "flavour": "Your letters reach Brutus at his villa, sealed, copied and passed hand to hand.",
+    "flavour": "Sealed letters, copied and passed hand to hand, win over any house you name.",
     "cost": {
      "trust": 1,
      "voice": 1
@@ -12,7 +12,7 @@
     "effects": [
      {
       "op": "move",
-      "target": "lbr",
+      "target": "choose",
       "dir": "+",
       "size": "m"
      },
@@ -31,8 +31,8 @@
    },
    "law": {
     "id": "l-lib",
-    "title": "The Dictatorship Abolished Forever",
-    "flavour": "No man shall propose the dictatorship, and no man shall accept it.",
+    "title": "Dictatorship Abolished Forever",
+    "flavour": "No man may ever propose the office of dictator, or accept it.",
     "cost": {
      "trust": 2,
      "voice": 2
@@ -71,8 +71,8 @@
    "picks": [
     {
      "id": "m-lib-1",
-     "title": "The Cry of Libertas",
-     "flavour": "The cry raised over Caesar's body still carries in the Forum.",
+     "title": "The Cry of Liberty",
+     "flavour": "The cry of 'Liberty!' raised over Caesar's body still rings in the Forum.",
      "effects": [
       {
        "op": "sizeUp",
@@ -82,8 +82,8 @@
     },
     {
      "id": "m-lib-2",
-     "title": "Philosophy at Tusculum",
-     "flavour": "Where the Liberators are calm, the consulars follow them into the Curia.",
+     "title": "Calm Talk in the Villas",
+     "flavour": "When the Liberators are calm, the former consuls follow them into the Senate.",
      "effects": [
       {
        "op": "trigger",
@@ -106,7 +106,7 @@
     {
      "id": "m-lib-3",
      "title": "The Cap of Liberty",
-     "flavour": "The felt cap of the freed slave, raised on a spear at the theatre.",
+     "flavour": "The felt cap of a freed slave, raised on a spear in the theatre.",
      "effects": [
       {
        "op": "income",
@@ -126,7 +126,7 @@
    "power": {
     "id": "p-opt",
     "title": "Consult the Fathers",
-    "flavour": "The tubicen calls, the curule chairs are set, and the consulars speak in order.",
+    "flavour": "The trumpet calls the Senate, and the senior senators rise to back your motion.",
     "cost": {
      "trust": 1,
      "force": 1
@@ -134,15 +134,9 @@
     "effects": [
      {
       "op": "move",
-      "target": "sen",
+      "target": "choose",
       "dir": "+",
       "size": "m"
-     },
-     {
-      "op": "move",
-      "target": "eqt",
-      "dir": "+",
-      "size": "s"
      },
      {
       "op": "boostNext",
@@ -153,8 +147,8 @@
    },
    "law": {
     "id": "l-opt",
-    "title": "Provinces by the Lot",
-    "flavour": "Provinces shall be allotted by lot, as our ancestors allotted them.",
+    "title": "Provinces Given by Lot",
+    "flavour": "Provinces go out by drawing lots, as the ancestors did it.",
     "cost": {
      "trust": 2,
      "force": 1,
@@ -194,8 +188,8 @@
    "picks": [
     {
      "id": "m-opt-1",
-     "title": "Auctoritas Patrum",
-     "flavour": "What the Fathers advise, the magistrates carry out.",
+     "title": "The Senate's Authority",
+     "flavour": "What the senators advise, the officials carry out.",
      "effects": [
       {
        "op": "sizeUp",
@@ -206,8 +200,8 @@
     },
     {
      "id": "m-opt-2",
-     "title": "The Dawn Salutatio",
-     "flavour": "Clients crowd your door at first light, and their patrons take note.",
+     "title": "Morning Callers at Your Door",
+     "flavour": "Clients crowd your door at dawn, and their great patrons notice.",
      "effects": [
       {
        "op": "income",
@@ -223,8 +217,8 @@
     },
     {
      "id": "m-opt-3",
-     "title": "Concordia Ordinum",
-     "flavour": "Senators and equites, bound by loans and dinners, keep each other's word.",
+     "title": "Senators and Bankers United",
+     "flavour": "Senators and rich equites, tied by loans and dinners, keep their word.",
      "effects": [
       {
        "op": "exchange",
@@ -240,7 +234,7 @@
    "power": {
     "id": "p-cae",
     "title": "The Veterans' Oath",
-    "flavour": "The men who swore to guard Caesar's person now swear to avenge him.",
+    "flavour": "Caesar's old soldiers swear to stand behind whoever you point them toward.",
     "cost": {
      "force": 1,
      "money": 1
@@ -248,7 +242,7 @@
     "effects": [
      {
       "op": "move",
-      "target": "cpt",
+      "target": "choose",
       "dir": "+",
       "size": "m"
      },
@@ -268,7 +262,7 @@
    "law": {
     "id": "l-cae",
     "title": "The Exchange of Provinces",
-    "flavour": "Both Gauls for five years, and the Macedonian legions with them.",
+    "flavour": "Both Gauls are yours for five years, with the legions from Macedonia.",
     "cost": {
      "voice": 2,
      "force": 1,
@@ -309,7 +303,7 @@
     {
      "id": "m-cae-1",
      "title": "The Star of Caesar",
-     "flavour": "Seven nights the comet burned, and the camps called it Caesar's soul.",
+     "flavour": "A comet burned seven nights, and the soldiers called it Caesar's soul.",
      "effects": [
       {
        "op": "sizeUp",
@@ -320,7 +314,7 @@
     {
      "id": "m-cae-2",
      "title": "Caesar's Chest",
-     "flavour": "Calpurnia's 4,000 talents sit in your house, and they buy swords.",
+     "flavour": "Caesar's 4,000 talents, taken from his widow, sit in your house. They buy swords.",
      "effects": [
       {
        "op": "cost",
@@ -333,8 +327,8 @@
     },
     {
      "id": "m-cae-3",
-     "title": "Oath to Caesar's Person",
-     "flavour": "When the generals waver, the old oath calls them back to the standards.",
+     "title": "The Oath to Caesar",
+     "flavour": "When the generals waver, their old oath to Caesar calls them back.",
      "effects": [
       {
        "op": "trigger",
@@ -359,8 +353,8 @@
   "pop": {
    "power": {
     "id": "p-pop",
-    "title": "Contio at the Rostra",
-    "flavour": "From the ships' beaks you speak, and the Subura answers with one shout.",
+    "title": "Speech at the Rostra",
+    "flavour": "You speak from the speakers' platform, and the crowd cheers whatever cause you name.",
     "cost": {
      "voice": 2,
      "money": 1
@@ -374,7 +368,7 @@
      },
      {
       "op": "boostNext",
-      "ideology": "pop",
+      "ideology": "choose",
       "steps": 1
      }
     ]
@@ -382,7 +376,7 @@
    "law": {
     "id": "l-pop",
     "title": "The Antonian Land Law",
-    "flavour": "Land for veterans and the poor, measured out by a board of seven.",
+    "flavour": "Land for veterans and the poor, shared out by a board of seven.",
     "cost": {
      "money": 3,
      "voice": 1
@@ -422,7 +416,7 @@
     {
      "id": "m-pop-1",
      "title": "Voice of the Tribes",
-     "flavour": "Thirty-five tribes vote, and the Senate's decree weighs less than their tablets.",
+     "flavour": "The 35 voting tribes outweigh any decree of the Senate.",
      "effects": [
       {
        "op": "sizeUp",
@@ -432,8 +426,8 @@
     },
     {
      "id": "m-pop-2",
-     "title": "Crossroads Collegia",
-     "flavour": "The guild banquets and street altars turn out a crowd at your word.",
+     "title": "The Street Clubs",
+     "flavour": "Club dinners and street shrines bring out a crowd when you ask.",
      "effects": [
       {
        "op": "income",
@@ -450,7 +444,7 @@
     {
      "id": "m-pop-3",
      "title": "Bread and Games",
-     "flavour": "Silver spent in the Circus comes back as cheers at the Rostra.",
+     "flavour": "Silver spent at the chariot races comes back as cheers for your speeches.",
      "effects": [
       {
        "op": "exchange",
@@ -466,8 +460,8 @@
  "centreLaws": [
   {
    "id": "l-centre1",
-   "title": "Amnesty and the Acts",
-   "flavour": "The murderers go unpunished, and every act of Caesar stands as law.",
+   "title": "Amnesty and Caesar's Acts",
+   "flavour": "The killers go unpunished, and every decision of Caesar stays law.",
    "cost": {
     "trust": 2,
     "voice": 1,
@@ -508,7 +502,7 @@
   {
    "id": "l-centre2",
    "title": "Harmony of the Orders",
-   "flavour": "Senate, equites and plebs each get their share, and the legions their pay.",
+   "flavour": "Senate, equites and poor each get a share; the legions get paid.",
    "cost": {
     "trust": 2,
     "money": 2,
@@ -550,8 +544,8 @@
   "iron": [
    {
     "id": "m-iron-1",
-    "title": "The Ituraean Archers",
-    "flavour": "Eastern bowmen stand at the Curia doors while the Fathers vote.",
+    "title": "The Eastern Archers",
+    "flavour": "Archers from the East guard the Senate's doors while the senators vote.",
     "effects": [
      {
       "op": "income",
@@ -566,8 +560,8 @@
    },
    {
     "id": "m-iron-2",
-    "title": "Decimation at Brundisium",
-    "flavour": "The ringleaders die before the ranks, and the rest learn obedience.",
+    "title": "Executions at Brundisium",
+    "flavour": "The ringleaders die in front of the ranks. The rest learn to obey.",
     "effects": [
      {
       "op": "cost",
@@ -580,7 +574,7 @@
    },
    {
     "id": "m-iron-3",
-    "title": "The Cowed Curia",
+    "title": "The Frightened Senate",
     "flavour": "With veterans at the doors, the Senate's anger rises slowly.",
     "effects": [
      {
@@ -595,7 +589,7 @@
    {
     "id": "m-open-1",
     "title": "Free Votes in the Tribes",
-    "flavour": "The ballot urns stand open, and the vote is counted honestly.",
+    "flavour": "The ballot boxes stand open, and every vote is counted honestly.",
     "effects": [
      {
       "op": "income",
@@ -612,7 +606,7 @@
    {
     "id": "m-open-2",
     "title": "The Right of Appeal",
-    "flavour": "No citizen is beaten or killed without appeal to the people.",
+    "flavour": "No citizen is beaten or killed until the people hear his appeal.",
     "effects": [
      {
       "op": "trigger",
@@ -634,7 +628,7 @@
    {
     "id": "m-open-3",
     "title": "The Tribunes' Bench",
-    "flavour": "Tribunes sit at the Curia door and carry your measures in.",
+    "flavour": "The tribunes, the people's officers, sit at the Senate door and push your measures.",
     "effects": [
      {
       "op": "extraPlay",
@@ -646,8 +640,8 @@
   "centre": [
    {
     "id": "m-centre-1",
-    "title": "The Tellus Compromise",
-    "flavour": "Hostages exchanged, Brutus dining with Lepidus: the middle way holds.",
+    "title": "The Temple of Tellus Deal",
+    "flavour": "Sons swapped as hostages, Brutus dining with Lepidus: the middle way holds.",
     "effects": [
      {
       "op": "drift",
@@ -659,7 +653,7 @@
    {
     "id": "m-centre-2",
     "title": "Friend of Both Camps",
-    "flavour": "Like Atticus, you lend to every side and are trusted by all.",
+    "flavour": "Like the banker Atticus, you lend to every side, and all trust you.",
     "effects": [
      {
       "op": "exchange",
@@ -671,8 +665,8 @@
    },
    {
     "id": "m-centre-3",
-    "title": "Hostages on the Capitol",
-    "flavour": "Each side holds the other's sons, and laws pass more easily.",
+    "title": "Sons Held as Hostages",
+    "flavour": "Each side holds the other's sons, so laws pass more easily.",
     "effects": [
      {
       "op": "cost",
@@ -689,7 +683,7 @@
    {
     "id": "g-iron-1",
     "title": "Veterans Ring the Temple",
-    "flavour": "Armed veterans stand around the Temple of Tellus while the Senate meets.",
+    "flavour": "Armed veterans surround the temple while the Senate meets inside.",
     "cost": {
      "force": 2
     },
@@ -717,7 +711,7 @@
    {
     "id": "g-iron-2",
     "title": "The Ringleaders Executed",
-    "flavour": "Centurions named by their men die before the assembled legion.",
+    "flavour": "Officers named by their own men die before the whole legion.",
     "cost": {
      "force": 1,
      "trust": 1
@@ -746,8 +740,8 @@
   "open": [
    {
     "id": "g-open-1",
-    "title": "Free Speech in the Curia",
-    "flavour": "Any senator may rise and speak, even against the consul.",
+    "title": "Free Speech in the Senate",
+    "flavour": "Any senator may stand and speak, even against you.",
     "cost": {
      "voice": 1
     },
@@ -774,7 +768,7 @@
    {
     "id": "g-open-2",
     "title": "Pardon and Recall",
-    "flavour": "Exiles come home, and the angriest men are given a hearing.",
+    "flavour": "Exiles come home, and the angriest men get a hearing.",
     "cost": {
      "trust": 1,
      "voice": 1
@@ -798,8 +792,8 @@
  "patronCards": {
   "egy": {
    "id": "pc-egy",
-   "title": "Alexandrian Grain",
-   "flavour": "The queen's grain ships reach the Tiber wharves as a gift.",
+   "title": "Grain from Alexandria",
+   "flavour": "The queen's grain ships reach Rome's river docks as a gift.",
    "cost": {
     "trust": 1,
     "voice": 1
@@ -827,7 +821,7 @@
   "par": {
    "id": "pc-par",
    "title": "Peace on the Euphrates",
-   "flavour": "Orodes's envoys swear peace, and the eastern legions can turn west.",
+   "flavour": "The Parthian king's envoys swear peace, so the eastern legions can turn west.",
    "cost": {
     "trust": 1,
     "money": 1
@@ -855,7 +849,7 @@
   "gal": {
    "id": "pc-gal",
    "title": "The Galatian Legion",
-   "flavour": "Deiotarus sends silver and his legion drilled in the Roman manner.",
+   "flavour": "King Deiotarus sends silver, and his legion trained the Roman way.",
    "cost": {
     "trust": 2
    },
@@ -883,7 +877,7 @@
   {
    "id": "v1",
    "name": "Avenger of Caesar",
-   "line": "Hold Caesar's legions and provinces, and rule as his true successor.",
+   "line": "Hold Caesar's legions and provinces, and rule as his true heir.",
    "corner": "cae",
    "pillars": [
     {
@@ -892,28 +886,29 @@
      "text": "Stand in the Caesarian zone."
     },
     {
-     "kind": "law",
-     "id": "l-cae",
-     "text": "Carry the Exchange of Provinces."
+     "kind": "stack",
+     "ideology": "cae",
+     "min": 5,
+     "text": "File 5 Caesarian answers."
     },
     {
      "kind": "sup",
      "holder": "cpt",
-     "min": 60,
-     "text": "Keep the Caesarians at 60 or more."
+     "min": 58,
+     "text": "Keep the Caesarians at 58 or more."
     },
     {
      "kind": "res",
      "role": "force",
-     "min": 5,
-     "text": "Command 5 Legions or more."
+     "min": 4,
+     "text": "Have 4 Legions or more."
     }
    ]
   },
   {
    "id": "v2",
-   "name": "Concord after the Ides",
-   "line": "Keep the amnesty and Caesar's acts together, and stand between the camps.",
+   "name": "Peace after the Ides",
+   "line": "Keep both the pardon for the killers and Caesar's laws, and stand between the camps.",
    "corner": "centre",
    "pillars": [
     {
@@ -922,60 +917,10 @@
      "text": "Stand in the centre zone."
     },
     {
-     "kind": "law",
-     "id": "l-centre1",
-     "text": "Enact Amnesty and the Acts."
-    },
-    {
-     "kind": "sup",
-     "holder": "sen",
-     "min": 55,
-     "text": "Raise the Senate to 55 or more."
-    },
-    {
-     "kind": "sup",
-     "holder": "lbr",
-     "min": 30,
-     "text": "Bring the Liberatores up to 30 or more."
-    }
-   ]
-  },
-  {
-   "id": "v3",
-   "name": "The Republic Restored",
-   "line": "Bring the Liberators home and give the city back free votes.",
-   "corner": "lib",
-   "pillars": [
-    {
-     "kind": "stack",
-     "ideology": "lib",
-     "min": 4,
-     "text": "File 4 Libertas answers."
-    },
-    {
-     "kind": "sup",
-     "holder": "lbr",
-     "min": 45,
-     "text": "Raise the Liberatores to 45 or more."
-    },
-    {
-     "kind": "grip",
-     "max": 40,
-     "text": "Keep grip at 40 or less."
-    }
-   ]
-  },
-  {
-   "id": "v4",
-   "name": "First Man of the Senate",
-   "line": "Govern with the Fathers, and let their decrees carry your name.",
-   "corner": "opt",
-   "pillars": [
-    {
      "kind": "stack",
      "ideology": "opt",
-     "min": 4,
-     "text": "File 4 Optimate answers."
+     "min": 3,
+     "text": "File 3 Optimate answers."
     },
     {
      "kind": "sup",
@@ -984,17 +929,68 @@
      "text": "Raise the Senate to 60 or more."
     },
     {
+     "kind": "sup",
+     "holder": "lbr",
+     "min": 38,
+     "text": "Bring the Liberatores up to 38 or more."
+    }
+   ]
+  },
+  {
+   "id": "v3",
+   "name": "The Republic Restored",
+   "line": "Bring Caesar's killers home in peace, and give the city free votes again.",
+   "corner": "lib",
+   "pillars": [
+    {
+     "kind": "stack",
+     "ideology": "lib",
+     "min": 6,
+     "text": "File 6 Libertas answers."
+    },
+    {
+     "kind": "sup",
+     "holder": "lbr",
+     "min": 47,
+     "text": "Raise the Liberatores to 47 or more."
+    },
+    {
+     "kind": "grip",
+     "max": 35,
+     "text": "Keep grip at 35 or less, an open hand."
+    }
+   ]
+  },
+  {
+   "id": "v4",
+   "name": "First Man of the Senate",
+   "line": "Govern with the senators, and let their decrees carry your name.",
+   "corner": "opt",
+   "pillars": [
+    {
+     "kind": "stack",
+     "ideology": "opt",
+     "min": 6,
+     "text": "File 6 Optimate answers."
+    },
+    {
+     "kind": "sup",
+     "holder": "sen",
+     "min": 65,
+     "text": "Raise the Senate to 65 or more."
+    },
+    {
      "kind": "res",
      "role": "trust",
-     "min": 4,
-     "text": "Hold 4 Fides or more."
+     "min": 5,
+     "text": "Hold 5 Fides (trust) or more."
     }
    ]
   },
   {
    "id": "v5",
    "name": "The People's Consul",
-   "line": "Give the plebs land and grain, and rule through the tribes.",
+   "line": "Give the poor land and grain, and rule through the people's assemblies.",
    "corner": "pop",
    "pillars": [
     {
@@ -1004,15 +1000,16 @@
      "text": "File 5 Popular answers."
     },
     {
-     "kind": "law",
-     "id": "l-pop",
-     "text": "Carry the Antonian Land Law."
+     "kind": "res",
+     "role": "voice",
+     "min": 5,
+     "text": "Hold 5 Rostra (voice) or more."
     },
     {
      "kind": "sup",
      "holder": "plb",
-     "min": 70,
-     "text": "Raise the Plebs & Collegia to 70 or more."
+     "min": 65,
+     "text": "Raise the Plebs & Collegia to 65 or more."
     },
     {
      "kind": "grip",
@@ -1057,11 +1054,6 @@
     1,
     13
    ],
-   "carrier": {
-    "name": "Aulus Licinius Nerva",
-    "role": "Letter-bearer from Lanuvium",
-    "real": false
-   },
    "question": "Consul, will you keep the amnesty, or must Brutus and Cassius flee?",
    "body": "A letter comes from Lanuvium under the seals of Brutus and Cassius. They are still praetors, yet cannot enter Rome. Veterans chalk their names on the walls of the Subura. They ask that the amnesty of 17 March be kept, a guard, and no altar raised to Caesar.",
    "answers": [
@@ -1148,11 +1140,6 @@
     1,
     13
    ],
-   "carrier": {
-    "name": "Gaius Herennius Rufus",
-    "role": "Scriba of the Senate",
-    "real": false
-   },
    "question": "Consul, will you send the veterans away before the Senate meets?",
    "body": "You summon the Senate and the benches stand half empty. The consulars have gone to their villas. Cicero writes from Tusculum that no free vote is possible while armed veterans ring the temple steps. Without a quorum no province can be allotted and no act confirmed.",
    "answers": [
@@ -1244,11 +1231,6 @@
     1,
     13
    ],
-   "carrier": {
-    "name": "Titus Vettius Sabinus",
-    "role": "Military tribune of Lepidus",
-    "real": false
-   },
    "question": "Consul, will you avenge Caesar, or must his generals look elsewhere?",
    "body": "Lepidus, pontifex maximus, holds the legions of Narbonensis and Nearer Spain. His letters grow shorter. Plancus and Pollio ask the same questions: who confirms Caesar's grants, who punishes the Ides. A military tribune says Caesar's men will follow whoever answers first.",
    "answers": [
@@ -1336,11 +1318,6 @@
     1,
     13
    ],
-   "carrier": {
-    "name": "Gaius Caecina Largus",
-    "role": "Agent of the heir in Campania",
-    "real": false
-   },
    "question": "Consul, will you hand over Caesar's money and let the adoption pass?",
    "body": "Caesar's heir is selling his own estates to pay the 300-sesterce bequest. He says the consul holds Caesar's chest of 4,000 talents and blocks the curiate law on his adoption. His agents tour Campania. Veterans there drink to the name Caesar, not to yours.",
    "answers": [
@@ -1426,11 +1403,6 @@
     1,
     13
    ],
-   "carrier": {
-    "name": "Publius Fannius Mus",
-    "role": "Magister of a Subura collegium",
-    "real": false
-   },
    "question": "Consul, will you feed the city and punish Caesar's killers?",
    "body": "Bread costs twice what it did at the Ides. The guilds of the Subura have built altars at the pyre site and stoned your speakers from the Rostra. Lucius Antonius can no longer hold the tribes. The crowd chants for grain, for games, and for the blood of the Ides.",
    "answers": [
@@ -1517,11 +1489,6 @@
     1,
     13
    ],
-   "carrier": {
-    "name": "Decimus Vettienus Rufus",
-    "role": "Agent of the Asian tax company",
-    "real": false
-   },
    "question": "Consul, will you guarantee the contracts, or let the banks shut?",
    "body": "In the basilicas the money-changers have closed their tables. Loans to senators are called in. The Asian company has stopped advancing the tribute. Atticus's friends hear talk of new tables, the cancellation of debts, and of estates of absent Pompeians put up for sale.",
    "answers": [
@@ -1601,11 +1568,6 @@
     1,
     13
    ],
-   "carrier": {
-    "name": "Apollonios",
-    "role": "Steward of the queen's household",
-    "real": false
-   },
    "question": "Consul, will you name Caesarion Caesar's son before the queen sails?",
    "body": "At Caesar's villa across the Tiber the queen's household packs; her ships wait at Ostia. Her steward says she leaves this month. She asks one thing: that the Senate hear the consul name Caesarion son of Caesar. Egypt's grain, treasury and the legions in Alexandria wait on the answer.",
    "answers": [
@@ -1684,11 +1646,6 @@
     1,
     13
    ],
-   "carrier": {
-    "name": "Mithrenes",
-    "role": "Envoy of the King of Kings",
-    "real": false
-   },
    "question": "Consul, will you call off Caesar's Parthian war for good?",
    "body": "An envoy of Orodes comes by way of Syria, where Caecilius Bassus holds out at Apamea with Parthian horse beside him. Six legions still wait in Macedonia for Caesar's war. The King of Kings offers peace on the river, if no Roman avenger crosses it.",
    "answers": [
@@ -1768,17 +1725,12 @@
     1,
     13
    ],
-   "carrier": {
-    "name": "Toutobocio",
-    "role": "Envoy of the King of Galatia",
-    "real": false
-   },
    "question": "Consul, will you sign the Armenian decree, or lose the king's legion?",
-   "body": "Envoys from Galatia remind you of the bond for 10 million sesterces that Fulvia accepted. Lesser Armenia is still not returned to Deiotarus. The old king keeps a legion drilled in the Roman fashion, and the Roman commanders in Asia would gladly take it.",
+   "body": "Envoys from Galatia remind you of King Deiotarus's bond. Fulvia, your wife, accepted his promise of 10 million sesterces. In return he wants Lesser Armenia, land Caesar took from him. He still waits. He keeps a legion trained the Roman way. Roman commanders in Asia would gladly take it.",
    "answers": [
     {
-     "text": "Publish the decree as found in Caesar's papers",
-     "sub": "Caesar's 'own' act restores Lesser Armenia; the bond is paid.",
+     "text": "Publish the decree as if found in Caesar's papers",
+     "sub": "Caesar's 'own' order returns Lesser Armenia. The king pays.",
      "ideology": "cae",
      "res": {
       "money": 1
@@ -1791,14 +1743,14 @@
       "lbr": "-m"
      },
      "reasons": {
-      "gal": "Lesser Armenia returned, the bond honoured: the king is yours.",
-      "cpt": "A client king bound to Caesar's acts.",
-      "eqt": "The bond paid, the roads of Anatolia quiet.",
-      "sen": "Another act of Caesar no one ever saw.",
-      "lbr": "Forged acts of the tyrant, sold for silver."
+      "gal": "My land returned and my silver paid: I stand with you.",
+      "cpt": "A client king now bound to Caesar's acts. Good.",
+      "eqt": "The bond is paid and the roads of Anatolia stay quiet.",
+      "sen": "Another act of Caesar that no one ever saw.",
+      "lbr": "The tyrant's forged orders, sold for silver."
      },
      "grip": "+s",
-     "gripWhy": "Law made by your seal alone, from a dead man's notes.",
+     "gripWhy": "Your seal alone makes law, from a dead man's notes.",
      "effects": [
       {
        "op": "cancelIntent",
@@ -1808,7 +1760,7 @@
     },
     {
      "text": "Put the king's claim before the Senate",
-     "sub": "The consulars weigh it; the king waits months.",
+     "sub": "The senior senators debate it. The king waits for months.",
      "ideology": "opt",
      "moves": {
       "gal": "-m",
@@ -1817,15 +1769,15 @@
       "cpt": "-s"
      },
      "reasons": {
-      "gal": "Months of debate while Roman generals court my legion.",
-      "sen": "A client's claim heard in the proper house.",
-      "eqt": "A lawful decree is a safer contract.",
-      "cpt": "Caesar's judgement on Deiotarus reopened by the boni."
+      "gal": "Months of talk while Roman generals try to win my legion.",
+      "sen": "A client king's claim, heard in the proper place.",
+      "eqt": "A lawful decree makes a safer contract.",
+      "cpt": "The old Senate men reopen Caesar's ruling on Deiotarus."
      }
     },
     {
-     "text": "Return the bond: no law is sold for silver",
-     "sub": "Fulvia returns the 10 million; Armenia stays as Caesar left it.",
+     "text": "Return the money: no law is sold for silver",
+     "sub": "Fulvia returns the 10 million. Caesar's ruling on Armenia stands.",
      "ideology": "lib",
      "res": {
       "money": -1
@@ -1838,9 +1790,9 @@
       "cpt": "-s"
      },
      "reasons": {
-      "gal": "Silver returned, land refused: the king is insulted.",
+      "gal": "You return my silver and refuse my land: an insult.",
       "lbr": "A consul who will not sell the Republic's laws.",
-      "sen": "Clean hands, at last, on Caesar's papers.",
+      "sen": "Clean hands on Caesar's papers, at last.",
       "eqt": "A broken bargain worries every lender in Rome.",
       "cpt": "Caesar's ruling stands, but the party loses the silver."
      }
@@ -1857,11 +1809,6 @@
     6
    ],
    "band": "open",
-   "carrier": {
-    "name": "Quintus Atius Varus",
-    "role": "Rogator at the Saepta",
-    "real": false
-   },
    "question": "Consul, will you let the tribes elect a tribune freely?",
    "body": "Helvius Cinna, torn apart by the funeral crowd, leaves a tribune's seat empty. The tribes gather at the Saepta to fill it. Caesar's heir backs a candidate of his own, and the plebs cheer the name. As augur, you may watch the sky and see bad omens.",
    "answers": [
@@ -1945,11 +1892,6 @@
     10
    ],
    "band": "open",
-   "carrier": {
-    "name": "Lucius Sergius Bucco",
-    "role": "Herald of the centuries",
-    "real": false
-   },
    "question": "Consul, will you let the centuries choose next year's magistrates?",
    "body": "Caesar named the magistrates for two years ahead before he died. Now the Campus Martius waits for the centuries to vote the praetors and aediles of 43. Candidates crowd the consul's door at dawn. A free vote would return names the dictator never chose.",
    "answers": [
@@ -2030,11 +1972,6 @@
     5
    ],
    "band": "open",
-   "carrier": {
-    "name": "Marcus Volusius Ruga",
-    "role": "Clerk of the tribal assembly",
-    "real": false
-   },
    "question": "Consul, will you put your provinces law before the tribes?",
    "body": "Your bill gives you Cisalpine and Transalpine Gaul for five years with the Macedonian legions. Decimus Brutus holds Cisalpine Gaul now by Caesar's grant. The Senate refuses to decree it. The tribes can pass it, if the bill stands three market days before them.",
    "answers": [
@@ -2118,11 +2055,6 @@
     1,
     1
    ],
-   "carrier": {
-    "name": "Marcus Aemilius Lepidus",
-    "role": "Magister equitum",
-    "real": true
-   },
    "question": "Consul, my legion holds the Forum. Will you let me storm the Capitol?",
    "body": "Dawn, 16 March. Lepidus has marched his legion from the Tiber Island into the Forum. Brutus, Cassius and their friends hold the Capitol behind Decimus Brutus's gladiators. Veterans shout for vengeance at the foot of the hill. Senators bar their doors.",
    "answers": [
@@ -2214,11 +2146,6 @@
     1,
     1
    ],
-   "carrier": {
-    "name": "Publius Aufidius",
-    "role": "Scribe of the Senate",
-    "real": false
-   },
    "question": "Consul, the fathers await your motion. What will you propose on the assassins?",
    "body": "17 March, Temple of Tellus. Veterans crowd the steps and shout for the assassins' heads. Cicero pleads for an amnesty, as Athens once forgave its citizens. Some senators move honours for the tyrannicides. Caesar's officers fear losing their posts if Caesar was a tyrant.",
    "answers": [
@@ -2315,11 +2242,6 @@
     1,
     1
    ],
-   "carrier": {
-    "name": "Marcus Volteius",
-    "role": "Officer of a crossroads college",
-    "real": false
-   },
    "question": "The crowd carries torches to the assassins' houses. Will you stop them?",
    "body": "20 March. After your laudatio and the bloodied toga, the crowd burned Caesar's body in the Forum on benches and magistrates' chairs. A mob killed a tribune, mistaking him for a conspirator. Torches now move toward the assassins' houses.",
    "answers": [
@@ -2390,11 +2312,6 @@
     2,
     2
    ],
-   "carrier": {
-    "name": "Aulus Fannius",
-    "role": "Clerk of the urban praetor",
-    "real": false
-   },
    "question": "The urban praetor asks leave to be absent. Will you grant it?",
    "body": "April. Brutus and Cassius, unsafe in a city where veterans roam, have gone to Lanuvium. They are still praetors. The law lets the urban praetor leave Rome for only ten days. Brutus asks you for a dispensation from the Senate.",
    "answers": [
@@ -2468,11 +2385,6 @@
     2,
     3
    ],
-   "carrier": {
-    "name": "Gnaeus Lollius",
-    "role": "Freedman courier from Puteoli",
-    "real": false
-   },
    "question": "The boy dines with Balbus and the consuls-designate. What will you do about him?",
    "body": "April. Gaius Octavius landed from Apollonia and now calls himself Caesar. Near Puteoli he has met Balbus, Caesar's agent, and Hirtius and Pansa, consuls for next year. Cicero dined with him too. The veterans in Campania already say his name.",
    "answers": [
@@ -2541,11 +2453,6 @@
     4,
     4
    ],
-   "carrier": {
-    "name": "Publius Tettius",
-    "role": "Attendant of the augurs",
-    "real": false
-   },
    "question": "Consulars report ill omens to void the vote. Will you hold it?",
    "body": "2 June. Your law to take both Gauls for five years, with the Macedonian army, goes to the tribes. Veterans fill the Forum. The Senate stays away. Consulars send word they have watched the sky and seen ill omens. You are an augur yourself.",
    "answers": [
@@ -2635,11 +2542,6 @@
     5,
     5
    ],
-   "carrier": {
-    "name": "Gaius Turranius",
-    "role": "Officer of a crossroads college",
-    "real": false
-   },
    "question": "The people call the comet Caesar's soul. Will you proclaim him a god?",
    "body": "Late July. At Octavian's games for Caesar's victories a comet blazes for seven days, bright even at the eleventh hour. The crowd calls it Caesar's soul among the gods. Octavian has set a star on his father's statue. The priests await your word.",
    "answers": [
@@ -2726,11 +2628,6 @@
     7,
     7
    ],
-   "carrier": {
-    "name": "Lucius Aurelius Philo",
-    "role": "Bookseller in the Argiletum",
-    "real": false
-   },
    "question": "Copies of Cicero's speech sell in the Argiletum. Will you stop them?",
    "body": "2 September. Cicero spoke against your use of Caesar's papers, offering friendship if you govern by the laws. Copyists are already at work. Booksellers in the Argiletum sell the speech by the roll. Senators read it aloud at dinner.",
    "answers": [
@@ -2826,11 +2723,6 @@
     8,
     8
    ],
-   "carrier": {
-    "name": "Marcus Lartius",
-    "role": "Military tribune",
-    "real": false
-   },
    "question": "Four Macedonian legions land at Brundisium. Will you go to them yourself?",
    "body": "9 October. Four legions from Macedonia are landing at Brundisium. Octavian's agents are already among them with silver. Leaving now means leaving Rome to the heir and to Cicero. Fulvia offers to come with you.",
    "answers": [
@@ -2924,11 +2816,6 @@
     9,
     9
    ],
-   "carrier": {
-    "name": "Lucius Petronius",
-    "role": "Veteran centurion of the Seventh",
-    "real": false
-   },
    "question": "Caesar's heir speaks against you from the Rostra. How will you answer?",
    "body": "November. Octavian has bought some 3,000 of Caesar's veterans at 500 denarii a head. He holds the Forum and a tribune has given him the Rostra. He swears to win his father's honours, pointing at Caesar's statue. Many veterans murmur they will not fight a Caesarian consul.",
    "answers": [
@@ -3017,11 +2904,6 @@
     10,
     10
    ],
-   "carrier": {
-    "name": "Servius Marcius",
-    "role": "Courier from the city",
-    "real": false
-   },
    "question": "The Senate praises Decimus and your deserters. How will you answer?",
    "body": "20 December. On Cicero's motion the Senate has praised Decimus Brutus for holding Cisalpine Gaul against you. It commends the Martia, the Fourth and Octavian. Your consulship ends in eleven days. Your lines close on Mutina in the snow.",
    "answers": [
@@ -3093,11 +2975,6 @@
     11,
     11
    ],
-   "carrier": {
-    "name": "Publius Saufeius",
-    "role": "Freedman of your house",
-    "real": false
-   },
    "question": "The new consuls open the war debate. How will you meet it?",
    "body": "1 January 43. Hirtius and Pansa take the fasces. You are proconsul now, and cannot summon the Senate. Cicero moves war and honours for Octavian. Fufius Calenus can stretch the debate for days. Piso offers to carry terms.",
    "answers": [
@@ -3196,17 +3073,12 @@
     1,
     1
    ],
-   "carrier": {
-    "name": "Gnaeus Plautius",
-    "role": "Scribe to Lucius Piso",
-    "real": false
-   },
-   "question": "Consul, how will you have Caesar carried to his pyre?",
-   "body": "Caesar lies at his house on the Sacred Way. Piso holds the will and the Senate's grant of a public funeral. The tribunes say the Forum is filling. Veterans stand armed in the crowd. The Liberators watch from behind barred doors.",
+   "question": "Consul, how will you bury Caesar?",
+   "body": "Caesar lies at his house on the Sacred Way. Piso, his father-in-law, holds the will. The Senate has granted a public funeral. The tribunes say the Forum is filling. Armed veterans stand in the crowd. The Liberators, Caesar's killers, watch from behind barred doors.",
    "answers": [
     {
-     "text": "A quiet rite at the Julian tomb.",
-     "sub": "Family mourners, ten tibicines, no speech, the Forum kept calm.",
+     "text": "A quiet rite at the family tomb.",
+     "sub": "Family mourners, a few pipers, no speech, a calm Forum.",
      "ideology": "opt",
      "res": {
       "voice": -1
@@ -3221,16 +3093,16 @@
      },
      "reasons": {
       "sen": "A quiet burial keeps the Forum calm and the Senate safe.",
-      "lbr": "No crowd, no speech: the Ides may yet be forgiven.",
-      "eqt": "Peace in the streets keeps the banks open.",
-      "plb": "The people are denied Caesar's farewell and his will.",
-      "cpt": "Caesar buried like a private man is an insult.",
-      "oct": "His father hidden away, his inheritance unread."
+      "lbr": "No crowd, no speech: the killing may yet be forgiven.",
+      "eqt": "Calm streets keep the banks open.",
+      "plb": "The people lose their farewell to Caesar, and his will.",
+      "cpt": "Burying Caesar like a private man is an insult.",
+      "oct": "His father hidden away, his inheritance never read out."
      }
     },
     {
-     "text": "Give the laudatio yourself and read the will.",
-     "sub": "The 300 sesterces and the gardens announced from the Rostra.",
+     "text": "Give the funeral speech yourself and read the will.",
+     "sub": "The 300 sesterces and gardens announced from the speakers' platform.",
      "ideology": "cae",
      "res": {
       "voice": 1
@@ -3245,16 +3117,16 @@
      },
      "reasons": {
       "cpt": "The consul speaks for Caesar; his acts and men stand.",
-      "plb": "Three hundred sesterces each and Caesar's gardens are ours.",
-      "oct": "The will read aloud names him heir before all Rome.",
-      "lbr": "Every line of praise is a charge against the Ides.",
-      "sen": "A consul's laudatio stirs a crowd the Senate cannot rule.",
-      "eqt": "A roused Forum is bad for credit."
+      "plb": "Three hundred sesterces each, and Caesar's gardens are ours.",
+      "oct": "The will, read aloud, names him heir before all Rome.",
+      "lbr": "Every word of praise accuses the men who killed Caesar.",
+      "sen": "A consul's funeral speech stirs a crowd the Senate can't control.",
+      "eqt": "An angry Forum is bad for lending."
      }
     },
     {
-     "text": "Raise the wax image with its 23 wounds.",
-     "sub": "The bloodied toga on a spear; the crowd decides the rest.",
+     "text": "Show his wax image with its 23 wounds.",
+     "sub": "His bloody toga raised on a spear; the crowd decides.",
      "ideology": "pop",
      "res": {
       "voice": 1,
@@ -3269,10 +3141,10 @@
      },
      "reasons": {
       "plb": "They see his wounds and know who made them.",
-      "cpt": "The veterans' fury serves the cause of vengeance.",
+      "cpt": "The veterans' rage serves the cause of revenge.",
       "lbr": "The crowd will come to their doors with torches.",
-      "sen": "A mob shown a corpse is a mob unleashed.",
-      "eqt": "Burning houses mean burned contracts and fled debtors."
+      "sen": "A mob shown a corpse is a mob let loose.",
+      "eqt": "Burning houses mean lost contracts and runaway debtors."
      }
     }
    ]
@@ -3284,17 +3156,12 @@
     1,
     2
    ],
-   "carrier": {
-    "name": "Titus Marcius Siculus",
-    "role": "Lictor of the consul",
-    "real": false
-   },
    "question": "Consul, will you guard the men who killed Caesar, or arrest them?",
-   "body": "The amnesty holds. Your son and Lepidus's son sit on the Capitol as hostages. Brutus and Cassius have come down and ask for a guard and a safe house in Rome. Lepidus says the veterans will kill them first. He offers his legion for the arrest.",
+   "body": "The amnesty, the Senate's pardon for the killers, holds. Your son and Lepidus's son are hostages on the Capitol. Brutus and Cassius have come down. They ask for guards and a safe home in Rome. Lepidus says veterans will kill them first. He offers his legion for the arrest.",
    "answers": [
     {
-     "text": "Give them lictors and the amnesty's protection.",
-     "sub": "Praetors keep their offices; your guards stand at their doors.",
+     "text": "Give them guards and the amnesty's protection.",
+     "sub": "They stay praetors; your attendants stand at their doors.",
      "ideology": "lib",
      "res": {
       "force": -1
@@ -3308,19 +3175,19 @@
       "oct": "-s"
      },
      "reasons": {
-      "lbr": "Lictors at the door and offices kept: the amnesty is real.",
+      "lbr": "Guards at the door and offices kept: the amnesty is real.",
       "sen": "The Senate's decree of 17 March is obeyed.",
-      "eqt": "Order kept, and no new confiscations begun.",
+      "eqt": "Order kept, and no new seizures of property.",
       "cpt": "Guarding Caesar's killers shames every man who served him.",
-      "plb": "Their consul protects the murderers of their Caesar.",
-      "oct": "His father's killers walk Rome under a guard of honour."
+      "plb": "Their consul protects the men who murdered their Caesar.",
+      "oct": "His father's killers walk Rome under an honour guard."
      },
      "grip": "-s",
-     "gripWhy": "The amnesty is honoured; no one is seized for the Ides."
+     "gripWhy": "The amnesty is kept; no one is seized for the killing."
     },
     {
      "text": "Let Lepidus's legion arrest them for trial.",
-     "sub": "Brutus and Cassius held under guard; the amnesty broken.",
+     "sub": "Brutus and Cassius under guard; the amnesty broken.",
      "ideology": "cae",
      "res": {
       "trust": -1
@@ -3336,13 +3203,13 @@
      "reasons": {
       "cpt": "Lepidus's legion acts at last; Caesar's blood is answered.",
       "plb": "The murderers in chains, as the Forum demands.",
-      "oct": "Vengeance begun, though by another man's hand.",
+      "oct": "Revenge has begun, though by another man's hand.",
       "lbr": "The amnesty was a trap; arrest means death.",
       "sen": "A legion seizes praetors against the Senate's decree.",
       "eqt": "Civil war in the city stops every payment."
      },
      "grip": "+m",
-     "gripWhy": "Praetors in chains by a legion's hand, against the decree."
+     "gripWhy": "Praetors, senior judges, chained by soldiers against the decree."
     }
    ]
   },
@@ -3353,17 +3220,12 @@
     1,
     2
    ],
-   "carrier": {
-    "name": "Philargyrus",
-    "role": "Freedman clerk in Caesar's secretariat",
-    "real": false
-   },
    "question": "Consul, will you publish only what Caesar signed, or what you find?",
-   "body": "Caesar's notebooks lie in your house, with 4,000 talents Calpurnia sent by night. The Senate confirmed his acts, signed and planned. Clients queue at your door: a city wants its tribute lifted, an exile his return. Caesar's secretary holds the pen and knows his hand.",
+   "body": "Caesar's notebooks lie in your house. So do 4,000 talents his widow Calpurnia sent by night. The Senate confirmed all his acts, signed and planned. Clients queue at your door. A city wants its tribute lifted; an exile wants to come home. Caesar's secretary knows his handwriting.",
    "answers": [
     {
      "text": "Publish only the acts Caesar signed and sealed.",
-     "sub": "No dead man legislates; unsigned memoranda are sealed away.",
+     "sub": "A dead man makes no new laws; unsigned notes stay sealed.",
      "ideology": "lib",
      "moves": {
       "lbr": "+m",
@@ -3374,7 +3236,7 @@
      },
      "reasons": {
       "lbr": "The tyrant's will ends with his death.",
-      "sen": "No forged acts; the Senate's confirmation means what it says.",
+      "sen": "No forged acts; the Senate's vote means what it says.",
       "eqt": "Known laws, known taxes, safe contracts.",
       "cpt": "Caesar's unfinished plans for his friends are thrown away.",
       "gal": "Deiotarus's lands stay lost without a new decree."
@@ -3398,11 +3260,11 @@
      },
      "reasons": {
       "cpt": "Caesar's friends receive what he would have given.",
-      "gal": "A decree in Caesar's hand can return Armenia.",
+      "gal": "A decree in Caesar's hand can give back Armenia.",
       "egy": "Caesar's hand still writes, and it favours his friends.",
-      "sen": "Laws no one saw, issued by one man's pen.",
+      "sen": "Laws no one saw, made by one man's pen.",
       "lbr": "The dead tyrant rules through his consul's forgeries.",
-      "eqt": "Tax exemptions bought at your door cut the companies' revenues."
+      "eqt": "Tax breaks sold at your door cut the companies' takings."
      },
      "flags": [
       "b1_forged_acta"
@@ -3412,22 +3274,17 @@
   },
   {
    "id": "s04",
-   "title": "Dolabella Takes the Fasces",
+   "title": "Dolabella Claims the Consulship",
    "months": [
     1,
     2
    ],
-   "carrier": {
-    "name": "Decimus Laetorius",
-    "role": "Calator, attendant of the augurs",
-    "real": false
-   },
-   "question": "Consul, will you accept Dolabella as your colleague, or veto him again?",
-   "body": "Dolabella has put on the purple border and taken Caesar's fasces. Caesar named him consul for the months of the Parthian war. As augur, you declared the omens against his election. The people cheer him. The consulars count on you to keep the bar.",
+   "question": "Consul, will you accept Dolabella as your colleague, or block him again?",
+   "body": "Dolabella has taken a consul's purple toga and the fasces, the rods of office. Caesar named him consul during his planned Parthian war. As augur, a reader of omens, you declared the signs against his election. The people cheer him. The senior senators expect you to block him.",
    "answers": [
     {
-     "text": "Accept him; the people elected him to the post.",
-     "sub": "Dolabella sits beside you; the tribes' choice stands.",
+     "text": "Accept him; the people elected him.",
+     "sub": "Dolabella sits beside you; the voters' choice stands.",
      "ideology": "pop",
      "moves": {
       "plb": "+m",
@@ -3438,10 +3295,10 @@
       "oct": "-s"
      },
      "reasons": {
-      "plb": "The man who stood for debt relief takes the fasces.",
+      "plb": "The man who stood for debt relief takes office.",
       "cpt": "Caesar named him; Caesar's choice is honoured.",
-      "lbr": "Dolabella spoke kindly of the Ides; a friend in office.",
-      "sen": "An augur's verdict thrown aside is the mos maiorum broken.",
+      "lbr": "Dolabella spoke kindly of the killing; a friend in office.",
+      "sen": "Throwing aside an augur's ruling breaks the ancestral custom.",
       "eqt": "The tribune who tried to cancel debts in 47 is consul.",
       "oct": "Another Caesarian claims a share of the inheritance."
      },
@@ -3449,7 +3306,7 @@
      "gripWhy": "The people's vote stands over the augur's objection."
     },
     {
-     "text": "Renew your augural veto: the omens forbid him.",
+     "text": "Renew your veto as augur: the omens forbid him.",
      "sub": "Dolabella is no consul; you rule without a colleague.",
      "ideology": "opt",
      "res": {
@@ -3464,9 +3321,9 @@
      },
      "reasons": {
       "sen": "The augurs' law stands above a dead man's wish.",
-      "eqt": "No debt-canceller holds the fasces.",
+      "eqt": "No debt-canceller holds the consulship.",
       "plb": "The consul blocks the people's man with a bird omen.",
-      "cpt": "Caesar's appointment is refused by his own lieutenant.",
+      "cpt": "Caesar's choice is refused by his own lieutenant.",
       "lbr": "A lone consul ruling by omens looks like a tyrant."
      },
      "grip": "+s",
@@ -3481,16 +3338,11 @@
     1,
     3
    ],
-   "carrier": {
-    "name": "Ammonios",
-    "role": "Steward of the queen's household",
-    "real": false
-   },
    "question": "Consul, will you name Caesarion Caesar's son before the Senate?",
-   "body": "Queen Cleopatra keeps Caesar's villa across the Tiber with her son Ptolemy Caesar, three years old. The will does not name him. Crowds jeer her litter. She asks you to declare him Caesar's son in the Curia and to send a Roman escort with her ships.",
+   "body": "Queen Cleopatra stays at Caesar's villa across the Tiber. With her is her son Ptolemy Caesar, called Caesarion, aged three. The will does not name him. Crowds jeer her. She asks you to declare him Caesar's son in the Senate house. She wants Roman guards for her voyage.",
    "answers": [
     {
-     "text": "Name him Caesar's son; give her a cohort.",
+     "text": "Name him Caesar's son; give her an escort.",
      "sub": "Egypt bound to you; the Senate hears a king's son named.",
      "ideology": "cae",
      "res": {
@@ -3506,17 +3358,17 @@
       "plb": "-s"
      },
      "reasons": {
-      "egy": "Caesarion named Caesar's son: the queen's throne is secured.",
-      "cpt": "Caesar's blood honoured, Egypt's gold on their side.",
+      "egy": "Caesarion named Caesar's son: the queen's throne is secure.",
+      "cpt": "Caesar's blood honoured, and Egypt's gold on their side.",
       "oct": "A second son of Caesar threatens his name and inheritance.",
-      "sen": "A foreign queen's child named in the Curia, a king's claim.",
+      "sen": "A foreign queen's child named in the Senate: a king's claim.",
       "lbr": "A royal heir to the tyrant, proclaimed in the Senate.",
       "plb": "The crowd hates the Egyptian queen and her son."
      }
     },
     {
-     "text": "No son of Caesar named; let her sail.",
-     "sub": "No escort, no decree; Rome owes no dynasty to anyone.",
+     "text": "Name no son of Caesar; let her sail.",
+     "sub": "No escort, no decree; Rome owes no royal family anything.",
      "ideology": "lib",
      "moves": {
       "lbr": "+m",
@@ -3527,10 +3379,10 @@
       "par": "+s"
      },
      "reasons": {
-      "lbr": "No dynasty of Caesar, Roman or Egyptian.",
-      "sen": "No foreign king's claim enters the Senate's acts.",
+      "lbr": "No royal line of Caesar, Roman or Egyptian.",
+      "sen": "No foreign king's claim enters the Senate's records.",
       "oct": "Only one son of Caesar is named: himself.",
-      "egy": "Her son disowned, her voyage unguarded through Pompeian seas.",
+      "egy": "Her son disowned; she sails unguarded past Pompeian ships.",
       "cpt": "Caesar's queen and son cast off like strangers.",
       "par": "Egypt left alone weakens the Caesarians in the East."
      }
@@ -3544,17 +3396,12 @@
     2,
     3
    ],
-   "carrier": {
-    "name": "Marcus Lucilius Hilarus",
-    "role": "Vicomagister of the Subura",
-    "real": false
-   },
    "question": "Consul, what will you do with the man who calls himself Marius's grandson?",
-   "body": "A horse-doctor named Herophilus calls himself Amatius, grandson of Gaius Marius. He has raised an altar where Caesar burned. Each night his crowds carry torches to the conspirators' houses. The Senate wants him gone. The Subura calls him Caesar's kinsman.",
+   "body": "A horse-doctor named Herophilus calls himself Amatius, grandson of the popular general Gaius Marius. He has raised an altar where Caesar was burned. Each night his crowds carry torches to the killers' houses. The Senate wants him gone. The Subura, Rome's poor quarter, calls him Caesar's kinsman.",
    "answers": [
     {
      "text": "Seize him and put him to death without trial.",
-     "sub": "His altar torn down; the Senate thanks you in a decree.",
+     "sub": "His altar torn down; the Senate thanks you by decree.",
      "ideology": "opt",
      "res": {
       "voice": -1
@@ -3570,17 +3417,17 @@
      "reasons": {
       "sen": "The agitator dies and the altar falls; order returns.",
       "lbr": "Their houses are safe from the torch at last.",
-      "eqt": "Riot ends; property is protected by a hard hand.",
+      "eqt": "The riots end; a hard hand protects property.",
       "plb": "A man of the people killed with no trial or appeal.",
-      "cpt": "Caesar's cult is struck down by a Caesarian.",
-      "oct": "His father's altar is torn down by the consul."
+      "cpt": "Caesar's cult struck down by a Caesarian.",
+      "oct": "His father's altar torn down by the consul."
      },
      "grip": "+m",
      "gripWhy": "A citizen executed on a consul's order, with no trial."
     },
     {
-     "text": "Try him before a praetor's court like any citizen.",
-     "sub": "Charges of arson and riot; the crowd waits on the verdict.",
+     "text": "Try him in a praetor's court like any citizen.",
+     "sub": "Charged with arson and riot; the crowd awaits the verdict.",
      "ideology": "lib",
      "res": {
       "force": -1
@@ -3593,9 +3440,9 @@
       "cpt": "-s"
      },
      "reasons": {
-      "lbr": "Even a rioter has the law; so do they.",
-      "sen": "Courts, not crowds, decide; the Senate approves the form.",
-      "eqt": "A trial ends the riots without new bloodshed.",
+      "lbr": "Even a rioter gets the law; so do they.",
+      "sen": "Courts, not crowds, decide; the Senate likes the form.",
+      "eqt": "A trial ends the riots without more bloodshed.",
       "plb": "Their champion stands in the dock while murderers walk free.",
       "cpt": "Treating Caesar's mourners as criminals insults his memory."
      },
@@ -3604,7 +3451,7 @@
     },
     {
      "text": "Leave his altar standing; it is the people's grief.",
-     "sub": "The cult grows; the conspirators' houses stay under siege.",
+     "sub": "The cult grows; the killers' houses stay under siege.",
      "ideology": "pop",
      "res": {
       "voice": 1
@@ -3618,7 +3465,7 @@
       "eqt": "-m"
      },
      "reasons": {
-      "plb": "Caesar's altar stands, and their kinsman of Marius with it.",
+      "plb": "Caesar's altar stands, and Marius's grandson with it.",
       "oct": "His father becomes a god of the streets.",
       "cpt": "The cult keeps Caesar's cause alive in Rome.",
       "lbr": "Each night the torches come closer to their doors.",
@@ -3635,16 +3482,11 @@
     2,
     3
    ],
-   "carrier": {
-    "name": "Sextus Fadius",
-    "role": "Scriba of the Senate",
-    "real": false
-   },
-   "question": "Consul, will you carry the law ending the dictatorship forever?",
-   "body": "Cicero and the consulars ask for a law that no man may propose or accept the dictatorship. Caesar held it for life. Some of his officers want it next. The Forum still smells of the pyre.",
+   "question": "Consul, will you pass a law ending the dictatorship forever?",
+   "body": "Cicero and the senior senators ask for a law: no man may ever propose or accept the dictatorship. Caesar held that supreme office for life. Some of his officers want it next. The Forum still smells of his funeral fire.",
    "answers": [
     {
-     "text": "Carry the law with the Senate's consent",
+     "text": "Pass the law with the Senate's consent.",
      "sub": "The office dies; the Senate shares the credit with you.",
      "ideology": "opt",
      "moves": {
@@ -3655,8 +3497,8 @@
       "par": "+s"
      },
      "reasons": {
-      "sen": "The boni see a consul who fears kings as they do.",
-      "eqt": "No dictator means no new proscription lists.",
+      "sen": "The Senate sees a consul who fears kings as it does.",
+      "eqt": "No dictator means no new lists of the condemned.",
       "cpt": "Lepidus loses an office he hoped to hold.",
       "oct": "Caesar's own title buried by the man holding his papers.",
       "par": "A Rome without a dictator plans no Parthian war."
@@ -3668,8 +3510,8 @@
      ]
     },
     {
-     "text": "Abolish it and curse whoever seeks a crown",
-     "sub": "A sacred law: any would-be king may be killed unpunished.",
+     "text": "Abolish it and curse anyone who seeks a crown.",
+     "sub": "A sacred law: anyone may kill a would-be king unpunished.",
      "ideology": "lib",
      "moves": {
       "lbr": "+l",
@@ -3679,18 +3521,18 @@
       "plb": "-m"
      },
      "reasons": {
-      "lbr": "The law calls what they did on the Ides lawful.",
-      "sen": "Cicero likes the curse, though not who it honours.",
+      "lbr": "The law calls their killing of Caesar lawful.",
+      "sen": "Cicero likes the curse, though not the men it honours.",
       "cpt": "It names Caesar a tyrant in all but words.",
-      "oct": "His father's murderers are blessed by statute.",
+      "oct": "His father's murderers are blessed by law.",
       "plb": "The crowd hears Brutus praised over Caesar's ashes."
      },
      "grip": "-m",
      "gripWhy": "Any citizen may now strike down a would-be king."
     },
     {
-     "text": "Refuse; Rome may need a dictator again",
-     "sub": "The office stays open for a victorious Caesarian.",
+     "text": "Refuse; Rome may need a dictator again.",
+     "sub": "The office stays open for a winning Caesarian.",
      "ideology": "cae",
      "moves": {
       "cpt": "+m",
@@ -3703,8 +3545,8 @@
       "cpt": "Lepidus keeps the road to supreme command open.",
       "oct": "His father's office is not erased.",
       "sen": "A consul who keeps the dictatorship is the next tyrant.",
-      "lbr": "Proof they killed one tyrant to get another.",
-      "eqt": "Bankers smell confiscations under a future dictator."
+      "lbr": "Proof they killed one tyrant only to get another.",
+      "eqt": "Bankers fear seizures under a future dictator."
      },
      "grip": "+s",
      "gripWhy": "You keep the door open to rule by one man."
@@ -3718,16 +3560,11 @@
     2,
     4
    ],
-   "carrier": {
-    "name": "Titus Rufrenus",
-    "role": "Veteran centurion of the Seventh, colonists' spokesman",
-    "real": false
-   },
    "question": "Consul, will you survey the veterans' land before Casilinum burns?",
-   "body": "Caesar promised land to the Seventh and Eighth. At Casilinum and Calatia the old colonists still hold it. Veterans with swords gather at the boundary stones. No surveyor has come since the Ides.",
+   "body": "Caesar promised land to his Seventh and Eighth legions. But at Casilinum and Calatia, towns in Campania, earlier settlers still hold it. Armed veterans gather at the boundary stones. No surveyor has come since Caesar died.",
    "answers": [
     {
-     "text": "Tour the colonies yourself and survey now",
+     "text": "Tour the colonies yourself and survey now.",
      "sub": "You ride south with surveyors; Rome waits a month.",
      "ideology": "pop",
      "res": {
@@ -3742,10 +3579,10 @@
       "oct": "-s"
      },
      "reasons": {
-      "plb": "Land for the poor, staked out by the consul himself.",
+      "plb": "Land for the poor, marked out by the consul himself.",
       "cpt": "Caesar's soldiers settled by Caesar's consul.",
       "sen": "The consul leaves the city to court armed men.",
-      "eqt": "Old colonists' titles, pledged for loans, are cut.",
+      "eqt": "The old settlers' titles, pledged for loans, are cut.",
       "oct": "The veterans thank you, not Caesar's son."
      },
      "flags": [
@@ -3753,8 +3590,8 @@
      ]
     },
     {
-     "text": "Promise them land elsewhere under Caesar's acts",
-     "sub": "New allotments from Caesar's papers; old colonists keep theirs.",
+     "text": "Promise them land elsewhere under Caesar's acts.",
+     "sub": "New plots from Caesar's papers; old settlers keep theirs.",
      "ideology": "cae",
      "moves": {
       "cpt": "+m",
@@ -3772,8 +3609,8 @@
      }
     },
     {
-     "text": "Pay them off in silver and send them home",
-     "sub": "A cash bounty from the Ops treasury; no land seized.",
+     "text": "Pay them off in silver and send them home.",
+     "sub": "A cash bonus from Caesar's treasury; no land seized.",
      "ideology": "opt",
      "res": {
       "money": -2
@@ -3786,11 +3623,11 @@
       "plb": "-s"
      },
      "reasons": {
-      "eqt": "Property stands untouched and silver flows to the shops.",
+      "eqt": "Property untouched, and silver flows into the shops.",
       "sen": "Order kept without new colonies or tribunes' laws.",
       "cpt": "Silver is not the land Caesar swore to them.",
       "oct": "Men who wanted land will remember his offers.",
-      "plb": "Coin for soldiers, nothing for the Subura."
+      "plb": "Coin for soldiers, nothing for the city's poor."
      }
     }
    ]
@@ -3802,16 +3639,11 @@
     3,
     4
    ],
-   "carrier": {
-    "name": "Quintus Salvius",
-    "role": "Companion of young Caesar",
-    "real": false
-   },
    "question": "Will you hand over Caesar's money and back his adoption law?",
-   "body": "The boy is eighteen and calls himself Caesar. He waits in the gardens of Pompey's old house, where you live. He wants the money you took from Calpurnia to pay 300 sesterces to every citizen. He wants a curiate law confirming his adoption.",
+   "body": "Caesar's heir is eighteen and calls himself Caesar. He waits in the gardens of Pompey's old house, where you live. He wants the money you took from Calpurnia, to pay 300 sesterces to every citizen. He wants a vote of the people confirming his adoption.",
    "answers": [
     {
-     "text": "Pay him Caesar's money and pass his adoption",
+     "text": "Pay him Caesar's money and pass his adoption.",
      "sub": "Caesar's heir is funded and confirmed by your hand.",
      "ideology": "cae",
      "res": {
@@ -3827,14 +3659,14 @@
      "reasons": {
       "oct": "His name, his father, his silver: all granted.",
       "plb": "The bequest will be paid in the Forum.",
-      "egy": "A rival heir is crowned; Caesarion fades.",
+      "egy": "A rival heir is raised up; Caesarion fades.",
       "cpt": "A boy now carries Caesar's name over his officers.",
-      "lbr": "Caesar's son, paid and confirmed, swears vengeance."
+      "lbr": "Caesar's son, paid and confirmed, swears revenge."
      }
     },
     {
-     "text": "Refuse: Caesar's money belongs to the treasury",
-     "sub": "The chest pays state debts; his adoption waits on law.",
+     "text": "Refuse: Caesar's money belongs to the treasury.",
+     "sub": "The chest pays state debts; his adoption waits.",
      "ideology": "opt",
      "res": {
       "money": 1
@@ -3850,15 +3682,15 @@
       "sen": "Public money stays public, out of a boy's hands.",
       "eqt": "The treasury pays its creditors first.",
       "oct": "His father's money kept by the man who failed him.",
-      "plb": "No 300 sesterces; the crowd blames you.",
-      "lbr": "Caesar's heir starved of silver is no avenger."
+      "plb": "No 300 sesterces, and the crowd blames you.",
+      "lbr": "An heir without silver is no avenger."
      },
      "flags": [
       "b2_refused_heir"
      ]
     },
     {
-     "text": "Pay the bequest yourself, in your own name",
+     "text": "Pay the bequest yourself, in your own name.",
      "sub": "The people get 300 sesterces from the consul's hand.",
      "ideology": "pop",
      "res": {
@@ -3889,16 +3721,11 @@
     3,
     4
    ],
-   "carrier": {
-    "name": "Castor of Ancyra",
-    "role": "Envoy of King Deiotarus",
-    "real": false
-   },
-   "question": "Will you find this decree in Caesar's papers for ten million sesterces?",
-   "body": "Deiotarus's envoys brought Fulvia a bond for 10 million sesterces. In return they want a decree, said to be in Caesar's hand, restoring Lesser Armenia to Galatia. Caesar despised the old king. The Senate mutters at acts no one ever saw.",
+   "question": "Will you 'find' this decree in Caesar's papers for ten million sesterces?",
+   "body": "Envoys of Deiotarus, king of Galatia, brought your wife Fulvia a bond for 10 million sesterces. In return they want a decree, said to be in Caesar's hand, giving Lesser Armenia back to Galatia. Caesar despised the old king. The Senate mutters at acts no one ever saw.",
    "answers": [
     {
-     "text": "Publish the decree from Caesar's papers",
+     "text": "Publish the decree from Caesar's papers.",
      "sub": "The bond is yours; Galatia gets Lesser Armenia.",
      "ideology": "cae",
      "res": {
@@ -3913,9 +3740,9 @@
      },
      "reasons": {
       "gal": "The king's lands return; he pays as promised.",
-      "eqt": "A paying client king keeps Asian revenues flowing.",
-      "sen": "Another forged act, sold over the consul's table.",
-      "lbr": "Caesar's tyranny now sold by his executor.",
+      "eqt": "A paying client king keeps Asia's taxes flowing.",
+      "sen": "Another forged act, sold across the consul's table.",
+      "lbr": "Caesar's tyranny, now sold by the man handling his estate.",
       "cpt": "Caesar judged Deiotarus; you overrule the dead man."
      },
      "grip": "+s",
@@ -3925,7 +3752,7 @@
      ]
     },
     {
-     "text": "Return the bond and let the Senate debate",
+     "text": "Return the bond and let the Senate debate.",
      "sub": "No secret acts; senators speak freely on the king's claim.",
      "ideology": "lib",
      "moves": {
@@ -3936,7 +3763,7 @@
       "cpt": "-s"
      },
      "reasons": {
-      "sen": "Caesar's papers answer to free debate, not your house.",
+      "sen": "Caesar's papers answer to open debate, not your house.",
       "lbr": "No man rules Rome from a dead man's notebook.",
       "gal": "No lands, and the king's silver stays home.",
       "eqt": "A rich client loses the hearing he paid for.",
@@ -3954,17 +3781,12 @@
     3,
     4
    ],
-   "carrier": {
-    "name": "Aulus Verrius",
-    "role": "Clerk to the consul's quaestor",
-    "real": false
-   },
    "question": "Will you take Cisalpine Gaul from Decimus, and by which road?",
-   "body": "Decimus Brutus, one of the assassins, holds Cisalpine Gaul with two legions by Caesar's grant. From there an army reaches Rome in days. Six legions wait in Macedonia for a Parthian war that will not come.",
+   "body": "Decimus Brutus, one of Caesar's killers, holds Cisalpine Gaul, northern Italy, with two legions. Caesar himself gave him the post. From there an army reaches Rome in days. Six legions wait in Macedonia for a Parthian war that will not come.",
    "answers": [
     {
-     "text": "Ask the Senate to reallot the provinces",
-     "sub": "A decree for Gaul and the legions, if the consulars agree.",
+     "text": "Ask the Senate to reassign the provinces.",
+     "sub": "A decree for Gaul and the legions, if senators agree.",
      "ideology": "opt",
      "res": {
       "trust": -1
@@ -3977,16 +3799,16 @@
       "par": "-s"
      },
      "reasons": {
-      "sen": "The Senate allots provinces, as the ancestors did.",
+      "sen": "The Senate assigns provinces, as the ancestors did.",
       "eqt": "Lawful change by decree keeps the markets calm.",
       "lbr": "The Senate leans on Decimus to give up his post.",
-      "cpt": "Waiting on Cicero's vote while assassins hold armies.",
-      "par": "A consul with Macedonian legions can still march east."
+      "cpt": "Waiting on Cicero's vote while killers hold armies.",
+      "par": "A consul with the Macedonian legions can still march east."
      }
     },
     {
-     "text": "Take Gaul through the tribal assembly",
-     "sub": "The tribes vote you Gaul and the legions over the Senate.",
+     "text": "Take Gaul by a vote of the people.",
+     "sub": "The people's assembly votes you Gaul and legions over the Senate.",
      "ideology": "pop",
      "res": {
       "voice": -1
@@ -3999,20 +3821,20 @@
       "eqt": "-s"
      },
      "reasons": {
-      "plb": "The tribes decide, not the consulars.",
-      "cpt": "Caesar's consul takes the army back from an assassin.",
+      "plb": "The people decide, not the senior senators.",
+      "cpt": "Caesar's consul takes the army back from a killer.",
       "sen": "Provinces seized by vote over the Senate's head.",
       "lbr": "Decimus will be ordered out by the crowd's law.",
-      "eqt": "A province taken by vote means war loans."
+      "eqt": "A province taken by vote means loans for war."
      },
      "grip": "+s",
-     "gripWhy": "You pass the Senate by with a packed assembly.",
+     "gripWhy": "You go around the Senate with a packed assembly.",
      "flags": [
       "b2_gaul_by_tribes"
      ]
     },
     {
-     "text": "Leave Decimus in his lawful province",
+     "text": "Leave Decimus in his lawful province.",
      "sub": "Caesar's grant stands; the amnesty is kept to the letter.",
      "ideology": "lib",
      "moves": {
@@ -4025,9 +3847,9 @@
      "reasons": {
       "lbr": "Their man keeps his legions and his safety.",
       "sen": "Lawful grants respected; no armed consul in the north.",
-      "cpt": "An assassin left with an army on Italy's border.",
+      "cpt": "A killer left with an army on Italy's border.",
       "oct": "The murderers keep Caesar's gift of Gaul.",
-      "par": "Romans holding legions against each other suit Orodes."
+      "par": "Roman armies facing each other suit King Orodes."
      },
      "grip": "-s",
      "gripWhy": "You hold back from force against a governor."
@@ -4041,17 +3863,12 @@
     4,
     4
    ],
-   "carrier": {
-    "name": "Marcus Titinius",
-    "role": "Scribe of the Senate",
-    "real": false
-   },
    "question": "Will you send Brutus and Cassius to buy grain abroad?",
-   "body": "Brutus and Cassius wait at Lanuvium. They are still praetors but cannot safely enter Rome. The consulars propose a commission to buy grain in Asia and Sicily. It would take them out of Italy. Their friends call it a task for freedmen.",
+   "body": "Brutus and Cassius wait at Lanuvium, near Rome. They are still praetors but cannot safely enter the city. The senior senators propose sending them to buy grain in Asia and Sicily. It would take them out of Italy. Their friends call it a job for freed slaves.",
    "answers": [
     {
-     "text": "Give them the grain commission, with honour",
-     "sub": "A senatorial charge sends them abroad; Italy calms.",
+     "text": "Give them the grain task, with honour.",
+     "sub": "A Senate task sends them abroad; Italy calms.",
      "ideology": "opt",
      "moves": {
       "sen": "+m",
@@ -4062,17 +3879,17 @@
       "gal": "+s"
      },
      "reasons": {
-      "sen": "The consulars' compromise passes; the city stays quiet.",
+      "sen": "The senators' compromise passes; the city stays quiet.",
       "eqt": "Grain bought in Asia keeps the price down.",
       "lbr": "A clerk's errand for the men who freed Rome.",
-      "plb": "Grain coming, and the assassins gone.",
+      "plb": "Grain is coming, and the killers are gone.",
       "cpt": "They leave alive and unpunished.",
       "gal": "Roman grain buyers in Asia pay well for harvests."
      }
     },
     {
-     "text": "Order them out with no office at all",
-     "sub": "No commission, no province; their praetorships run out empty.",
+     "text": "Order them out with no office at all.",
+     "sub": "No task, no province; their year in office ends empty.",
      "ideology": "cae",
      "moves": {
       "cpt": "+m",
@@ -4085,19 +3902,19 @@
      "reasons": {
       "cpt": "Caesar's killers stripped bare.",
       "oct": "No reward for his father's murderers.",
-      "plb": "The crowd cheers them hounded from Italy.",
+      "plb": "The crowd cheers them driven from Italy.",
       "lbr": "Driven out with nothing, they must take armies themselves.",
       "sen": "The amnesty broken in all but name.",
       "par": "Desperate Liberators in the East mean Roman war."
      },
      "grip": "+m",
-     "gripWhy": "You break the amnesty's spirit by force of office.",
+     "gripWhy": "You break the amnesty's spirit with the power of office.",
      "flags": [
       "b2_stripped_liberators"
      ]
     },
     {
-     "text": "Give them real provinces: Crete and Cyrene",
+     "text": "Give them real provinces: Crete and Cyrene.",
      "sub": "Governors with rank, far away, and honoured for it.",
      "ideology": "lib",
      "moves": {
@@ -4114,7 +3931,7 @@
       "cpt": "Caesar's murderers rewarded with governorships.",
       "plb": "The killers sent off in purple as governors.",
       "egy": "Liberators in Cyrene sit on Egypt's border.",
-      "par": "Friends of Parthia gain seats nearer Syria."
+      "par": "Friends of Parthia gain posts nearer Syria."
      }
     }
    ]
@@ -4126,17 +3943,12 @@
     4,
     5
    ],
-   "carrier": {
-    "name": "Lucius Antonius",
-    "role": "Head of the board of seven for land distribution",
-    "real": true
-   },
-   "question": "Brother, which land will you give the veterans and the poor?",
-   "body": "Your agrarian law gives the board of seven land for veterans and the poor. The public land of Campania pays rents to the treasury. The Pontine marshes are not yet drained. Estates of Pompeians and absent conspirators lie empty.",
+   "question": "Consul, which land will you give the veterans and the poor?",
+   "body": "Your land law set up a board of seven, led by your brother Lucius, to give land to veterans and the poor. Campania's public land pays rent to the treasury. The Pontine marshes are not yet drained. Estates of Pompey's old followers and absent killers lie empty.",
    "answers": [
     {
-     "text": "Divide the Campanian public land now",
-     "sub": "Allotments this summer; the treasury loses Campania's rents.",
+     "text": "Divide Campania's public land now.",
+     "sub": "Plots this summer; the treasury loses Campania's rents.",
      "ideology": "pop",
      "res": {
       "money": -1
@@ -4157,8 +3969,8 @@
      }
     },
     {
-     "text": "Take the estates of Pompeians and absent assassins",
-     "sub": "Confiscation, as Caesar's victory allowed; colonists move in now.",
+     "text": "Take the estates of Pompeians and absent killers.",
+     "sub": "Seized, as Caesar's victory allowed; settlers move in now.",
      "ideology": "cae",
      "moves": {
       "cpt": "+l",
@@ -4180,8 +3992,8 @@
      "gripWhy": "Seizing estates puts soldiers at the gates."
     },
     {
-     "text": "Drain the Pontine marshes first",
-     "sub": "No one's land is taken; allotments wait two years.",
+     "text": "Drain the Pontine marshes first.",
+     "sub": "No one's land is taken; plots wait two years.",
      "ideology": "opt",
      "res": {
       "money": -2
@@ -4195,7 +4007,7 @@
      },
      "reasons": {
       "eqt": "Drainage contracts for the companies, no estate touched.",
-      "sen": "Public works, not confiscations, settle the soldiers.",
+      "sen": "Public works, not seizures, settle the soldiers.",
       "plb": "Two years of waiting for marsh mud.",
       "cpt": "Veterans promised land now get ditches.",
       "oct": "Restless veterans will hear his offers sooner."
@@ -4205,21 +4017,16 @@
   },
   {
    "id": "s14",
-   "title": "Centurions on the Benches",
+   "title": "Soldiers on the Juries",
    "months": [
     4,
     5
    ],
-   "carrier": {
-    "name": "Publius Aufidius",
-    "role": "Spokesman of the Asian tax companies",
-    "real": false
-   },
-   "question": "Will you put centurions of the Alaudae on the jury panels?",
-   "body": "Your bill adds a third panel of jurors: centurions and soldiers of the Alaudae, the legion raised from Gauls. Senators and equites now share the courts. The companies of Asia say no contract or debt case will be safe.",
+   "question": "Will you put centurions of the Alaudae on the juries?",
+   "body": "Your bill adds a third group of jurors: centurions, the army's veteran officers, and soldiers of the Alaudae, the legion raised from Gauls. Now senators and equites, the rich business order, share the courts. Asia's tax companies say no contract or debt case is safe.",
    "answers": [
     {
-     "text": "Pass it: Caesar's soldiers sit in judgment",
+     "text": "Pass it: Caesar's soldiers sit in judgment.",
      "sub": "Alaudae men judge cases; the courts lean your way.",
      "ideology": "cae",
      "moves": {
@@ -4231,17 +4038,17 @@
      },
      "reasons": {
       "cpt": "Caesar's men judge, not the men who hated him.",
-      "plb": "Common men on the benches at last.",
+      "plb": "Common men on the jury benches at last.",
       "eqt": "Their hold on the courts broken by soldiers.",
-      "sen": "Gallic legionaries sitting in judgment on senators.",
+      "sen": "Gallic soldiers sitting in judgment on senators.",
       "lbr": "Any charge against them now meets Caesar's soldiers."
      },
      "grip": "+m",
-     "gripWhy": "Soldiers in the courts make the law yours."
+     "gripWhy": "Soldiers on the juries make the law yours."
     },
     {
-     "text": "Withdraw the bill; senators and equites judge",
-     "sub": "The courts stay with the propertied orders.",
+     "text": "Withdraw the bill; senators and equites judge.",
+     "sub": "The courts stay with the men of property.",
      "ideology": "opt",
      "res": {
       "trust": 1
@@ -4256,29 +4063,24 @@
       "eqt": "Their courts and contracts stay safe.",
       "sen": "Judgment stays with the orders that own Rome.",
       "cpt": "The veterans shut out of the courts again.",
-      "plb": "The benches stay with the rich."
+      "plb": "The juries stay with the rich."
      }
     }
    ]
   },
   {
    "id": "s15",
-   "title": "Accius at the Games",
+   "title": "The Play About Kings",
    "months": [
     5,
     5
    ],
-   "carrier": {
-    "name": "Lucius Saufeius",
-    "role": "Freedman steward of Brutus's games",
-    "real": false
-   },
-   "question": "Will you let the theatre open with Accius's play on the kings?",
-   "body": "The Ludi Apollinares belong to Brutus as urban praetor, but he dares not enter Rome. Your brother Gaius presides in his place. Brutus asks that the games open with Accius's play on the driving out of the kings.",
+   "question": "Will you let the games open with Accius's play on the kings?",
+   "body": "The Games of Apollo are Brutus's to run as city praetor, but he dares not enter Rome. Your brother Gaius presides in his place. Brutus asks that the games open with Accius's old play about Rome driving out its kings.",
    "answers": [
     {
-     "text": "Let the play run as Brutus asks",
-     "sub": "The crowd hears liberty; Brutus's name is cheered.",
+     "text": "Let the play run as Brutus asks.",
+     "sub": "The crowd hears lines on liberty; Brutus's name is cheered.",
      "ideology": "lib",
      "moves": {
       "lbr": "+l",
@@ -4292,16 +4094,16 @@
       "sen": "A praetor's games run as custom demands.",
       "cpt": "Caesar's killers applauded under your eyes.",
       "oct": "The theatre cheers his father's murderers.",
-      "plb": "The Subura came for mimes, not lectures on kings."
+      "plb": "The Subura came for comic shows, not lectures on kings."
      },
      "grip": "-m",
-     "gripWhy": "Free speech on the stage, unpoliced.",
+     "gripWhy": "Free speech on the stage, with no one stopping it.",
      "flags": [
       "b2_brutus_play"
      ]
     },
     {
-     "text": "Stage another play, with mimes and free seats",
+     "text": "Stage another play, with comic shows and free seats.",
      "sub": "Bread and shows; Brutus's lines are never heard.",
      "ideology": "pop",
      "res": {
@@ -4315,9 +4117,9 @@
      },
      "reasons": {
       "plb": "Free shows and food at the games.",
-      "cpt": "No praise of assassins on a Roman stage.",
+      "cpt": "No praise of killers on a Roman stage.",
       "lbr": "Even their own games are taken from them.",
-      "sen": "A praetor's rights overridden by the consul."
+      "sen": "The consul overrides a praetor's rights."
      },
      "grip": "+s",
      "gripWhy": "You censor the praetor's own games."
@@ -4331,13 +4133,8 @@
     5,
     6
    ],
-   "carrier": {
-    "name": "Lucius Varenus",
-    "role": "Attendant (viator) of a tribune of the plebs",
-    "real": false
-   },
    "question": "The heir wants Caesar's chair in the theatre. Will you allow it?",
-   "body": "Ludi Victoriae Caesaris, July. Octavian orders Caesar's golden chair and jewelled wreath set among the seats, as the Senate once decreed. Two tribunes threaten their veto. Above the city a comet burns for the seventh night. The crowd calls it Caesar's soul among the gods.",
+   "body": "July, at the games for Caesar's victory. Octavian orders Caesar's golden chair and jewelled wreath set among the seats, as the Senate once decreed. Two tribunes threaten their veto. A comet burns over the city for the seventh night. The crowd calls it Caesar's soul among the gods.",
    "answers": [
     {
      "text": "Set the chair; Caesar sits among the gods.",
@@ -4358,12 +4155,12 @@
       "plb": "The star is Caesar's soul; the crowd cheers his chair.",
       "cpt": "Caesar honoured, his acts safe; the veterans see it.",
       "lbr": "A god's throne for the tyrant we struck down.",
-      "sen": "Honours of a king again, in a free theatre."
+      "sen": "Honours fit for a king again, in a free theatre."
      }
     },
     {
      "text": "Forbid it: Rome honours no kings, living or dead.",
-     "sub": "No divine honours; the dictator's regalia stay locked away.",
+     "sub": "No god-like honours; Caesar's royal trappings stay locked away.",
      "ideology": "lib",
      "moves": {
       "lbr": "+m",
@@ -4374,7 +4171,7 @@
      },
      "reasons": {
       "lbr": "No god's honours for the tyrant: our deed stands.",
-      "sen": "A consul refusing regal show steadies the Republic.",
+      "sen": "A consul refusing royal show steadies the Republic.",
       "oct": "You insult my father before the people; I won't forget.",
       "plb": "Caesar's star burns and you hide his chair?",
       "cpt": "Caesar's men see his honours refused by his own consul."
@@ -4382,7 +4179,7 @@
     },
     {
      "text": "Let the tribunes' veto stand, by law.",
-     "sub": "The college of tribunes decides; you keep clear of it.",
+     "sub": "The tribunes decide; you keep out of it.",
      "ideology": "opt",
      "moves": {
       "sen": "+m",
@@ -4410,11 +4207,6 @@
     5,
     6
    ],
-   "carrier": {
-    "name": "Sextus Clodius Naso",
-    "role": "Scriba of the aediles",
-    "real": false
-   },
    "question": "The price of grain has doubled. How will you feed Rome?",
    "body": "The Sicilian and Alexandrian ships are three weeks late. At the Tiber wharves a modius sells at twice the spring price. The 150,000 names on the free list are full by Caesar's law. Crowds gather at the Porticus Minucia. Granaries on the Aventine are said to be locked.",
    "answers": [
@@ -4490,11 +4282,6 @@
     6,
     7
    ],
-   "carrier": {
-    "name": "Gnaeus Plaetorius",
-    "role": "Scriba of the Treasury",
-    "real": false
-   },
    "question": "Piso demands a commission on Caesar's papers. Will you submit to it?",
    "body": "Kalends of August. Lucius Piso, Caesar's own father-in-law, rose in the Senate and attacked your conduct. Hundreds of acts have been posted from the notebooks since March. The consulars want a commission to examine each one. Under the June law, that power is yours.",
    "answers": [
@@ -4571,11 +4358,6 @@
     6,
     7
    ],
-   "carrier": {
-    "name": "Titus Annaeus Celer",
-    "role": "Junior military tribune back from Syria",
-    "real": false
-   },
    "question": "Parthia's envoys wait. Will you march east, buy peace, or leave Syria?",
    "body": "Caesar's sixteen legions and 10,000 horse for the Parthian war are standing down. Six legions wait in Macedonia. In Syria, Pompeian rebels hold Apamea, and Parthian riders have been seen with them. Orodes's envoys ask whether Rome still means war. Dolabella wants Syria for himself.",
    "answers": [
@@ -4666,11 +4448,6 @@
     7,
     7
    ],
-   "carrier": {
-    "name": "Antonius Philemon",
-    "role": "Freedman of your household",
-    "real": false
-   },
    "question": "Cicero has spoken against you. How will you answer him?",
    "body": "Second of September. Cicero, returned to Rome, stood in the Senate and attacked your use of Caesar's papers. He offered you friendship if you govern by the laws. You were at Tibur. The speech is already copied and passed hand to hand.",
    "answers": [
@@ -4749,11 +4526,6 @@
     7,
     8
    ],
-   "carrier": {
-    "name": "Quintus Pedanius Alba",
-    "role": "Courier from the Bay of Naples",
-    "real": false
-   },
    "question": "Brutus and Cassius say they will leave Italy. Will you let them go?",
    "body": "Brutus and Cassius have sent you an edict. They protest threats to their lives and say they will leave Italy rather than cause a war. Merchants from Brundisium report ships hired. Your agents say they mean Macedonia and Syria, with their treasuries and legions.",
    "answers": [
@@ -4811,11 +4583,6 @@
     7,
     8
    ],
-   "carrier": {
-    "name": "Sextus Fadius",
-    "role": "Centurion of the Second Legion",
-    "real": false
-   },
    "question": "The legions jeer your hundred denarii. What will you do with them?",
    "body": "Four Macedonian legions have landed at Brundisium. You offered 100 denarii a man; they laughed on parade. Octavian's agents move through the camp promising 500 and the name of Caesar. Pamphlets are found in the tents. The Martia's centurions will not meet your eye.",
    "answers": [
@@ -4897,11 +4664,6 @@
     8,
     9
    ],
-   "carrier": {
-    "name": "Gaius Vettius Rufus",
-    "role": "Scout from Casilinum",
-    "real": false
-   },
    "question": "Octavian marches on Rome with paid veterans. What will you do about him?",
    "body": "Octavian has bought some 3,000 of Caesar's veterans in Campania at 500 denarii a man. He marches up the Via Appia to speak against you in the Forum. He is nineteen and holds no office. A tribune has promised him the Rostra.",
    "answers": [
@@ -4986,11 +4748,6 @@
     8,
     9
    ],
-   "carrier": {
-    "name": "Publius Numitorius",
-    "role": "Attendant of a tribune of the plebs",
-    "real": false
-   },
    "question": "The tribunes protest your armed guard. Will you keep the soldiers in the city?",
    "body": "Six thousand veterans camp around your house and line the Forum on Senate days. Ituraean archers stand on the Capitol steps. The tribunes say no armed men may stand inside the pomerium. Shopkeepers in the Argiletum close early. The crowd is quiet, and watching.",
    "answers": [
@@ -5054,11 +4811,6 @@
     9,
     9
    ],
-   "carrier": {
-    "name": "Lucius Petronius Mela",
-    "role": "Centurion of the Thirty-Fifth Legion",
-    "real": false
-   },
    "question": "Two legions have gone to Octavian. How will you hold the rest?",
    "body": "The Legio Martia marched to Alba Fucens and shut its gates on you. The Fourth followed under its quaestor. Octavian promised them 500 denarii and Caesar's name. The Second and the Thirty-Fifth still hold. The Alaudae are within call.",
    "answers": [
@@ -5141,11 +4893,6 @@
     9,
     10
    ],
-   "carrier": {
-    "name": "Aulus Terentius Rufio",
-    "role": "Scribe to the consul",
-    "real": false
-   },
    "question": "Consul, the Senate sits by lamplight. How will you hand out the provinces?",
    "body": "It is the night of 28 November. The Martia and the Fourth have gone to Octavian. You ride for Gaul at dawn. Macedonia, Africa and Crete wait for praetors. Your brother Gaius is praetor this year. The senators sit few and frightened.",
    "answers": [
@@ -5228,11 +4975,6 @@
     10,
     10
    ],
-   "carrier": {
-    "name": "Lucius Seius Pudens",
-    "role": "Senior centurion of the Second Legion",
-    "real": false
-   },
    "question": "Decimus holds Mutina against you. Will you storm it, starve it, or bargain?",
    "body": "Decimus Brutus has posted his edict: he holds Cisalpine Gaul for the Senate, not for you. He has shut his legions inside Mutina with salted cattle and grain. Your law gave you this province. The walls are strong; winter has come to the Po.",
    "answers": [
@@ -5317,11 +5059,6 @@
     10,
     11
    ],
-   "carrier": {
-    "name": "Publius Ventidius Bassus",
-    "role": "Caesarian officer raising veteran legions",
-    "real": true
-   },
    "question": "Ventidius can raise two legions. Will you pay them with Picene land?",
    "body": "Ventidius, once a mule-dealer, now a Caesarian general, stands ready in Picenum. Caesar's veterans there will answer his call. They want land, not promises. Some Picene towns have shut their gates to your agents. Their equites watch from their farms.",
    "answers": [
@@ -5384,11 +5121,6 @@
     11,
     11
    ],
-   "carrier": {
-    "name": "Philotas",
-    "role": "Freedman courier of the Asian tax companies",
-    "real": false
-   },
    "question": "Dolabella has killed Trebonius. Will you disown him or stand by him?",
    "body": "Dolabella entered Smyrna by night and seized Trebonius, proconsul of Asia. He put him to death after two days of questioning. Trebonius kept you talking outside the Curia on the Ides. The Senate is moving to name Dolabella a public enemy. He marches for Syria.",
    "answers": [
@@ -5444,11 +5176,6 @@
     11,
     11
    ],
-   "carrier": {
-    "name": "Gnaeus Plotius Faber",
-    "role": "Lictor attending the Senate's embassy",
-    "real": false
-   },
    "question": "The consulars order you out of Gaul. Will you obey, refuse, or bargain?",
    "body": "Piso and Servius Sulpicius reach your camp before Mutina. The old jurist is sick from the winter road. The Senate's decree is plain: lift the siege, quit Cisalpine Gaul, stay 200 miles from Rome. Octavian now sits in the Senate with imperium.",
    "answers": [
@@ -5531,11 +5258,6 @@
     12,
     13
    ],
-   "carrier": {
-    "name": "Marcus Silius Nerva",
-    "role": "Courier between the western camps",
-    "real": false
-   },
    "question": "Lepidus, Plancus and Pollio wait. What will you write to win them?",
    "body": "Lepidus holds Narbonensis and Nearer Spain. Plancus holds Gallia Comata. Pollio holds Further Spain. Between them stand seventeen legions. Each writes to Cicero of his love for the Republic. Each writes to you of old friendship. None has yet moved.",
    "answers": [
@@ -5613,11 +5335,6 @@
     12,
     13
    ],
-   "carrier": {
-    "name": "Gaius Petronius Sura",
-    "role": "Secretary to your friends in the Senate",
-    "real": false
-   },
    "question": "Your enemies passed the ultimate decree. Will you fight it, quit, or rouse Rome?",
    "body": "On 2 February the Senate declared a tumultus. Citizens wear the military cloak in the streets. The ultimate decree charges Hirtius, Pansa and Octavian to see the state come to no harm. Your friends still hold seats in the Curia. They wait for your word.",
    "answers": [
@@ -5699,11 +5416,6 @@
     12,
     13
    ],
-   "carrier": {
-    "name": "Aulus Plaetorius Rufus",
-    "role": "Envoy of Sextus Pompeius",
-    "real": false
-   },
    "question": "Sextus Pompeius commands the Senate's fleet. What will you give him?",
    "body": "The Senate has made Pompey's son prefect of the fleet and the sea coasts. His ships came out of Spain with Pompeian exiles aboard. His envoy names a price: his father's house on the Carinae and his estates. You live in that house now.",
    "answers": [
@@ -5762,11 +5474,6 @@
     13,
     13
    ],
-   "carrier": {
-    "name": "Lucius Arrius Priscus",
-    "role": "Prefect of your cavalry",
-    "real": false
-   },
    "question": "Pansa's recruits march up the Via Aemilia. Will you strike them or hold?",
    "body": "Pansa leads four legions of new recruits from Rome. Hirtius and Octavian wait near Forum Cornelii. Inside Mutina, Decimus's men eat their horses. Your veterans of the Second and Thirty-Fifth know the road at Forum Gallorum. The marshes there hide an army.",
    "answers": [
@@ -5852,11 +5559,6 @@
    "requires": [
     "b1_forged_acta"
    ],
-   "carrier": {
-    "name": "Aulus Fannius Celer",
-    "role": "Clerk at the Temple of Saturn treasury",
-    "real": false
-   },
    "question": "Consul, will you let the Senate judge the acts you found, or the tribes?",
    "body": "In March you drew new decrees from Caesar's notebooks. Bronze tablets on the Capitol now free whole cities from tribute and restore exiles. Senators say no one saw Caesar sign them. Atticus reports the publicani losing the revenues of Crete and Sicily.",
    "answers": [
@@ -5918,11 +5620,6 @@
    "requires": [
     "b2_refused_heir"
    ],
-   "carrier": {
-    "name": "Gnaeus Vettius",
-    "role": "Crier at the Rostra",
-    "real": false
-   },
    "question": "Octavian sells his farms to pay the bequest. What will you do?",
    "body": "You refused Caesar's money to the heir. Now he auctions his own estates to pay 300 sesterces a head. The crowd at the Rostra cheers his name. Your refusal is the talk of the Subura.",
    "answers": [
@@ -5978,11 +5675,6 @@
    "requires": [
     "b2_brutus_play"
    ],
-   "carrier": {
-    "name": "Publius Sestullius",
-    "role": "Junior clerk of the urban praetor",
-    "real": false
-   },
    "question": "The theatre cheered Brutus. Will you let him come home to Rome?",
    "body": "You let Accius's play open Brutus's games. The theatre roared at every line against kings. Now Brutus's friends ask safe conduct for him to return as praetor. Veterans in the Forum say they will meet him at the gate.",
    "answers": [
@@ -6042,11 +5734,6 @@
    "requires": [
     "b3_decimation"
    ],
-   "carrier": {
-    "name": "Quintus Tullius Crispus",
-    "role": "Clerk to a tribune of the plebs",
-    "real": false
-   },
    "question": "The dead centurions' comrades ask justice. What will you give them?",
    "body": "At Brundisium you had the named ringleaders executed before the ranks. Their comrades still talk of it at the campfires. Cicero says your wife's dress was spattered with blood. A tribune proposes that soldiers keep the citizen's right of appeal.",
    "answers": [
@@ -6103,11 +5790,6 @@
    "requires": [
     "b3_guard_disbanded"
    ],
-   "carrier": {
-    "name": "Marcus Volusius",
-    "role": "Attendant of a tribune of the plebs",
-    "real": false
-   },
    "question": "With no soldiers in Rome, how will you answer the city?",
    "body": "You sent your guard out of the city and kept the pomerium free of arms. Now Cicero speaks against you in every session, and no one stops him. The tribunes call daily meetings at the Rostra. Your friends in Rome ask for a voice.",
    "answers": [
@@ -6169,11 +5851,6 @@
    "requires": [
     "b4_macedonia_gaius"
    ],
-   "carrier": {
-    "name": "Sextus Atilius Serranus",
-    "role": "Courier from Dyrrachium",
-    "real": false
-   },
    "question": "Brutus has your brother trapped at Apollonia. What will you do for him?",
    "body": "You gave Macedonia to your brother Gaius on the night of the allotment. Brutus reached it first. The Macedonian legions went over to him. Gaius is shut up in Apollonia with a handful of cohorts. The Senate has confirmed Brutus as governor.",
    "answers": [
@@ -6232,11 +5909,6 @@
    "requires": [
     "b4_picenum_levy"
    ],
-   "carrier": {
-    "name": "Titus Vettius Sabinus",
-    "role": "Town councillor of Asculum",
-    "real": false
-   },
    "question": "Your soldiers took Picene land and goods. Will you give anything back?",
    "body": "Ventidius's two legions were paid with the farms and stores of towns that shut their gates. Now their councillors stand before the Senate in mourning dress. The equites of Picenum have stopped lending. The Senate cites their case in every speech against you.",
    "answers": [

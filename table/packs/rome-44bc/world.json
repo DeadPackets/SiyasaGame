@@ -108,7 +108,7 @@
    "id": "lbr",
    "name": "Liberatores",
    "short": "Liberatores",
-   "who": "The conspirators who killed Caesar in the Curia of Pompey: some sixty senators led by the praetors Brutus and Cassius, with Decimus Brutus, Trebonius and Cimber holding provinces.",
+   "who": "The men who stabbed Caesar in the Senate house: about sixty senators. They are led by Brutus and Cassius, two senior judges (praetors). Decimus Brutus, Trebonius and Cimber are about to govern provinces.",
    "leader": {
     "name": "Marcus Junius Brutus",
     "role": "Praetor urbanus"
@@ -128,7 +128,7 @@
    "produces": "trust",
    "persona": "They want the amnesty honoured, their provinces and praetorships kept, and Caesar's memory left uncelebrated. They fear the veterans and the plebs, who would tear them apart. Their red line is any honour to Caesar as a god or any trial for the murder. An open consul who keeps them safe wins grudging respect; an iron one who guards the city with veterans proves to them he is the next tyrant.",
    "act": {
-    "text": "Brutus and Cassius leave Italy for the East and begin taking the provinces, treasuries and legions of Macedonia and Syria for the Republic.",
+    "text": "Brutus and Cassius leave Italy for the East. They start seizing the provinces, treasuries and legions of Macedonia and Syria in the Republic's name.",
     "res": {
      "trust": -2,
      "money": -1
@@ -138,10 +138,10 @@
      "par": 3
     }
    },
-   "fall": "Brutus and Cassius raise the eastern legions and the tribute of Asia, and the Senate names them commanders against the consul as an enemy of the state.",
+   "fall": "Brutus and Cassius raise the eastern legions and the taxes of Asia. The Senate makes them its generals against you and calls you an enemy of the state.",
    "fates": {
-    "hi": "The Liberators return to Rome under the amnesty, honoured as men who freed the Republic, and sit beside the consul in the Senate.",
-    "lo": "The Liberators are condemned by law as murderers and hunted in the East, and their names head the lists of the outlawed."
+    "hi": "The Liberators come home under the pardon. They are honoured for freeing the Republic and sit beside you in the Senate.",
+    "lo": "The Liberators are condemned by law as murderers and hunted across the East. Their names top the lists of outlaws."
    },
    "insignia": "The pileus between two daggers; EID MAR; the head of Libertas (not drawn)."
   },
@@ -149,7 +149,7 @@
    "id": "sen",
    "name": "The Senate (the consulars and the boni)",
    "short": "The Senate",
-   "who": "The council of some 900 senators, swollen by Caesar's appointments and led in debate by the consulars. It passes decrees, allots provinces and declares enemies of the state.",
+   "who": "Rome's council of about 900 senators, many added by Caesar. Former consuls lead its debates. It passes decrees, hands out provinces and can declare a man an enemy of the state.",
    "leader": {
     "name": "Marcus Tullius Cicero",
     "role": "Consular (consul 63 BC), leading speaker of the Senate"
@@ -169,7 +169,7 @@
    "produces": "trust",
    "persona": "The Senate wants its authority back: its decrees obeyed, provinces allotted by lot, no armed men around its meetings and no more forged acts of Caesar. It fears another dictator more than another civil war. Its red line is a consul who keeps an army in Italy against its decree. An open consul who consults it gains its votes; an iron one is answered with the senatus consultum ultimum.",
    "act": {
-    "text": "The Senate leaves the city in protest, refuses to meet when the consul summons it, and sends its leading men to Caesar's heir and to the consuls-designate.",
+    "text": "The Senate leaves the city in protest and ignores your summons. Its leading men go to Caesar's heir and to next year's consuls.",
     "res": {
      "trust": -2,
      "voice": -1
@@ -179,10 +179,10 @@
      "eqt": -3
     }
    },
-   "fall": "The Senate passes the senatus consultum ultimum, declares a tumultus and names the ruler a public enemy (hostis), arming the consuls and Caesar's heir against him.",
+   "fall": "The Senate passes its emergency decree and declares a state of emergency. It names you a public enemy and arms the consuls and Caesar's heir against you.",
    "fates": {
-    "hi": "The Senate stands as the consul's partner, confirming his acts and his province and sharing the glory of a restored concord.",
-    "lo": "The Senate is cowed and purged; its consulars flee to the East or wait for the proscription lists."
+    "hi": "The Senate works as your partner. It confirms your acts and your province, and shares the credit for peace between the orders.",
+    "lo": "The Senate is frightened into silence and purged. Its former consuls flee East or wait for their names on the death lists."
    },
    "insignia": "SPQR, the fasces, the curule chair, the senator's broad purple stripe."
   },
@@ -190,7 +190,7 @@
    "id": "cpt",
    "name": "The Caesarian party",
    "short": "Caesarians",
-   "who": "Caesar's lieutenants, legates and governors who command the armies of the West, with the one legion on the Tiber Island that Lepidus marched into the Forum on 16 March.",
+   "who": "Caesar's officers and governors, who command the armies of the West. They also hold the one legion Lepidus marched into the Forum on 16 March.",
    "leader": {
     "name": "Marcus Aemilius Lepidus",
     "role": "Magister equitum (Master of the Horse)"
@@ -210,7 +210,7 @@
    "produces": "force",
    "persona": "The Caesarians want Caesar avenged, his acts upheld, their provinces and priesthoods secured and their share of power protected. They fear a restored Senate that would strip them, and a rival Caesarian who takes the veterans. Their red line is any declaration that Caesar was a tyrant. An iron ruler who punishes the assassins pleases them; an open one who embraces Brutus loses them.",
    "act": {
-    "text": "Lepidus and the western governors stop answering the consul's letters and open talks with the Senate and with Caesar's heir.",
+    "text": "Lepidus and the western governors stop answering your letters. They open talks with the Senate and with Caesar's heir.",
     "res": {
      "force": -2
     },
@@ -219,10 +219,10 @@
      "plb": -3
     }
    },
-   "fall": "The governors of Gaul and Spain march their legions to the Senate's side and leave the ruler trapped between their armies and the consuls'.",
+   "fall": "The governors of Gaul and Spain take their legions over to the Senate. You are trapped between their armies and the consuls'.",
    "fates": {
-    "hi": "Lepidus and the Caesarian generals share rule with the consul, dividing the provinces and the legions among themselves.",
-    "lo": "The Caesarian generals go over to the Senate and Caesar's heir, keeping their armies and leaving the consul to his fate."
+    "hi": "Lepidus and Caesar's generals share power with you. Together you divide the provinces and the legions.",
+    "lo": "Caesar's generals go over to the Senate and Caesar's heir. They keep their armies and leave you to your fate."
    },
    "insignia": "Legion eagles and standards (not drawn); the star of Caesar; the laurel wreath."
   },
@@ -230,7 +230,7 @@
    "id": "oct",
    "name": "Caesar's heir and his partisans",
    "short": "Octavian",
-   "who": "Gaius Octavius, Caesar's eighteen-year-old great-nephew, adopted in his will as son and heir, with Caesar's agents and friends and the veterans who will follow the name of Caesar.",
+   "who": "Gaius Octavius, Caesar's 18-year-old great-nephew, adopted in the will as son and heir. With him stand Caesar's agents and friends, and veterans loyal to Caesar's name.",
    "leader": {
     "name": "Gaius Octavius (Gaius Julius Caesar Octavianus)",
     "role": "Caesar's adopted son and principal heir"
@@ -250,7 +250,7 @@
    "produces": "force",
    "persona": "The heir wants Caesar's name, money and veterans, the bequest paid to the people, honours for his father and vengeance on the assassins. He fears the consul who holds Caesar's papers and treasure will brush him aside as a boy. His red line is the consul keeping Caesar's money or blocking his adoption. He courts the Senate against an iron consul and the veterans against an open one.",
    "act": {
-    "text": "The heir raises Caesar's veterans in Campania with his own silver and offers the Senate an army against the consul.",
+    "text": "The heir pays Caesar's veterans in Campania from his own silver. He offers the Senate this army against you.",
     "res": {
      "force": -2,
      "voice": -1
@@ -260,10 +260,10 @@
      "plb": -3
     }
    },
-   "fall": "The heir's legions, joined by the Martia and the Fourth that came over to him, march with the year's consuls to relieve Mutina and break the ruler's army.",
+   "fall": "The heir's legions, joined by the Martia and the Fourth, which deserted you, march with the new consuls. They relieve Mutina and break your army.",
    "fates": {
-    "hi": "The heir stands at the consul's side as a junior Caesar, his adoption confirmed and his veterans paid, sharing vengeance and power.",
-    "lo": "The heir rises against the consul as the Senate's champion and the veterans' Caesar, and in their eyes takes the consul's place."
+    "hi": "The heir stands at your side as a junior Caesar. His adoption is confirmed, his veterans are paid, and he shares vengeance and power.",
+    "lo": "The heir rises against you as the Senate's champion and the veterans' Caesar. In their eyes, he takes your place."
    },
    "insignia": "The name CAESAR; the star of Caesar; Caesar's golden chair and diadem (not drawn)."
   },
@@ -271,7 +271,7 @@
    "id": "plb",
    "name": "The urban plebs and the collegia",
    "short": "Plebs & Collegia",
-   "who": "The citizen poor of Rome, organised through their neighbourhood and craft guilds and their tribunes: the crowd that votes in the tribal assembly and fills the Forum at the contio.",
+   "who": "Rome's poor citizens, organised in neighbourhood and trade clubs and led by their tribunes. They vote in the people's assembly and pack the Forum at public meetings.",
    "leader": {
     "name": "Lucius Antonius",
     "role": "Tribune of the plebs"
@@ -291,7 +291,7 @@
    "produces": "voice",
    "persona": "The plebs want grain, Caesar's bequest of 300 sesterces a head, his gardens, the games and vengeance on his murderers. They fear famine and a Senate that would undo Caesar's gifts. Their red line is a consul who protects the assassins or lets the grain fail. They cheer a hard hand against the Liberators but riot when soldiers are turned on them.",
    "act": {
-    "text": "The crowd burns and stones in the Forum, raises altars to Caesar, and drives the consul's speakers from the Rostra.",
+    "text": "The crowd burns and throws stones in the Forum. It raises altars to Caesar and drives your speakers off the speakers' platform.",
     "res": {
      "voice": -2,
      "trust": -1
@@ -301,10 +301,10 @@
      "eqt": -3
     }
    },
-   "fall": "The tribes vote down the consul's laws and the plebs hail Caesar's heir in the Forum, leaving the consul without a city to return to.",
+   "fall": "The people's assembly votes down your laws. The crowd cheers Caesar's heir in the Forum, and Rome is closed to you.",
    "fates": {
-    "hi": "The plebs hail the consul as Caesar's avenger and the giver of grain and land, and vote whatever he asks.",
-    "lo": "The plebs turn to Caesar's heir and their own tribunes, and the consul's name is jeered in the Circus."
+    "hi": "The people cheer you as Caesar's avenger and the giver of grain and land. They vote for whatever you ask.",
+    "lo": "The people turn to Caesar's heir and their own tribunes. Your name is booed at the chariot races."
    },
    "insignia": "Ears of wheat; the tribune's bench; the crossroads altar of the Lares (not drawn)."
   },
@@ -312,7 +312,7 @@
    "id": "eqt",
    "name": "The equites and the publicani",
    "short": "Equites",
-   "who": "The equestrian order: financiers, tax-farming companies (publicani), bankers and Italian landed men who lend to senators and collect the taxes of the provinces.",
+   "who": "The equites, Rome's rich class below the senators: bankers, landowners and the companies that collect provincial taxes for profit. They lend money to senators.",
    "leader": {
     "name": "Titus Pomponius Atticus",
     "role": "Eques, banker and friend of both camps"
@@ -332,7 +332,7 @@
    "produces": "money",
    "persona": "The equites want peace, safe property, loans repaid and the tax contracts of Asia left alone. They fear debt cancellation, confiscations and a war that stops the tribute from the East. Their red line is the seizure of private fortunes or a new proscription. They lend to whoever looks likely to win and shun an iron ruler who taxes them.",
    "act": {
-    "text": "The bankers call in their loans and hide their silver, and the companies stop advancing the taxes of the provinces.",
+    "text": "The bankers call in their loans and hide their silver. The tax companies stop paying the provinces' taxes in advance.",
     "res": {
      "money": -3
     },
@@ -341,10 +341,10 @@
      "lbr": 2
     }
    },
-   "fall": "The money stops entirely: the legions go unpaid and their tribunes listen to silver offered by the heir and the Senate.",
+   "fall": "The money stops entirely. The legions go unpaid, and their officers listen to silver offered by the heir and the Senate.",
    "fates": {
-    "hi": "The equites finance the consul's order and are rewarded with tax contracts and seats on the juries.",
-    "lo": "The equites fund the consul's enemies and in time see their own estates entered on the confiscation lists."
+    "hi": "The equites fund your rule. You reward them with tax contracts and seats on the juries.",
+    "lo": "The equites fund your enemies. In time, their own estates are listed for seizure."
    },
    "insignia": "The gold ring and narrow purple stripe of the equestrian order; the scales of the money-changers."
   }
@@ -354,7 +354,7 @@
    "id": "egy",
    "name": "Ptolemaic Egypt",
    "short": "Ptolemaic Egypt",
-   "who": "The Hellenistic kingdom of the Ptolemies, Rome's richest client. On the Ides its queen was in Rome at Caesar's villa across the Tiber with her son by him.",
+   "who": "The Greek-ruled kingdom of Egypt, Rome's richest ally. On the day Caesar died, its queen was in Rome at his villa, with her son by him.",
    "leader": {
     "name": "Cleopatra VII Philopator",
     "role": "Queen of Egypt"
@@ -370,7 +370,7 @@
    "produces": "money",
    "persona": "Cleopatra wants Caesarion recognised as Caesar's son and her throne secured by Rome, with Egypt's grain and gold reaching Roman hands only as gifts. She fears the Liberators in the East and a Senate that would annex Egypt. Her red line is any support for the assassins; she prefers a strong Caesarian hand.",
    "act": {
-    "text": "The queen sails home, holds back the Alexandrian grain and lets the legions stationed in Egypt answer to whoever pays them.",
+    "text": "The queen sails home and holds back Egypt's grain. The Roman legions in Egypt now serve whoever pays them.",
     "res": {
      "money": -2
     },
@@ -379,10 +379,10 @@
      "lbr": 2
     }
    },
-   "fall": "Egypt's fleet and the four legions left there go over to Dolabella or Cassius, and the eastern grain and silver feed the ruler's enemies.",
+   "fall": "Egypt's fleet and the four legions there go over to Dolabella or Cassius. Eastern grain and silver now feed your enemies.",
    "fates": {
-    "hi": "Egypt is the consul's treasury and granary in the East, and its queen is his ally.",
-    "lo": "Egypt bows to whoever rules the East and pays the consul's enemies to keep its throne."
+    "hi": "Egypt is your treasury and granary in the East, and its queen is your ally.",
+    "lo": "Egypt bows to whoever rules the East. It pays your enemies to keep its throne."
    },
    "insignia": "The Ptolemaic eagle on a thunderbolt (not drawn); the vulture crown and uraeus (not drawn)."
   },
@@ -390,7 +390,7 @@
    "id": "par",
    "name": "The Parthian Empire",
    "short": "Parthia",
-   "who": "The Arsacid empire beyond the Euphrates, which destroyed Crassus at Carrhae in 53 BC. Caesar had sixteen legions and 10,000 cavalry ready to march against it on 18 March.",
+   "who": "The great empire beyond the Euphrates river. It destroyed Crassus's army at Carrhae in 53 BC. Caesar had sixteen legions and 10,000 horsemen ready to invade it on 18 March.",
    "leader": {
     "name": "Orodes II",
     "role": "King of Kings of Parthia"
@@ -410,7 +410,7 @@
    "produces": "force",
    "persona": "Orodes wants the Parthian war cancelled for good, Syria weak and Roman generals fighting each other. He fears a Caesarian avenger leading Caesar's planned campaign. He keeps ties with the Pompeians and the Liberators and backs Caecilius Bassus in Syria. An iron Caesarian at Rome alarms him; a divided and open Rome pleases him.",
    "act": {
-    "text": "Parthian horsemen cross into Syria to aid Caecilius Bassus and the Liberators, tying down the eastern legions.",
+    "text": "Parthian horsemen ride into Syria to help the rebel Caecilius Bassus and the Liberators. Rome's eastern legions are pinned down.",
     "res": {
      "force": -2
     },
@@ -419,10 +419,10 @@
      "egy": -3
     }
    },
-   "fall": "Parthian cavalry and money stand behind Cassius in Syria, and the eastern provinces are lost to the ruler and to Rome alike.",
+   "fall": "Parthian horsemen and money back Cassius in Syria. The eastern provinces are lost to you and to Rome.",
    "fates": {
-    "hi": "Parthia keeps the peace on the Euphrates and trades envoys with the consul.",
-    "lo": "Parthia arms the consul's enemies and waits for its chance to break into Syria."
+    "hi": "Parthia keeps the peace on the Euphrates and exchanges envoys with you.",
+    "lo": "Parthia arms your enemies and waits for its chance to break into Syria."
    },
    "insignia": "The Arsacid archer on the drachm (not drawn); the royal diadem."
   },
@@ -430,7 +430,7 @@
    "id": "gal",
    "name": "The Kingdom of Galatia",
    "short": "Galatia",
-   "who": "The Celtic kingdom of central Anatolia under its aged tetrarch-king, a Pompeian client stripped of lands by Caesar who now tries to buy them back at Rome.",
+   "who": "A Celtic kingdom in central Turkey, ruled by an old king. He backed Pompey, lost lands to Caesar, and now tries to buy them back in Rome.",
    "leader": {
     "name": "Deiotarus",
     "role": "King of Galatia"
@@ -450,7 +450,7 @@
    "produces": "money",
    "persona": "Deiotarus wants Lesser Armenia and the other lands Caesar took restored, and will pay whoever signs the decree. He fears the Caesarians who judged him and any war that crosses Anatolia. He sides with whoever holds the East and prefers a firm hand that keeps the roads quiet.",
    "act": {
-    "text": "The king withholds his promised silver and sends his Galatian legion to whichever Roman commander reaches Asia first.",
+    "text": "The king holds back the silver he promised. He sends his legion to whichever Roman general reaches Asia first.",
     "res": {
      "money": -1,
      "force": -1
@@ -460,10 +460,10 @@
      "eqt": -2
     }
    },
-   "fall": "Galatia's troops and silver go to Brutus and Cassius, opening Anatolia to the Liberators' armies.",
+   "fall": "Galatia's troops and silver go to Brutus and Cassius. Central Turkey lies open to the Liberators' armies.",
    "fates": {
-    "hi": "Galatia is a loyal client, its king restored by the consul's decree and paying for the favour.",
-    "lo": "Galatia serves the consul's enemies in the East, its king loyal only to the nearest Roman army."
+    "hi": "Galatia is a loyal ally. You restore its king's lands by decree, and he pays for the favour.",
+    "lo": "Galatia serves your enemies in the East. Its king is loyal only to the nearest Roman army."
    },
    "insignia": "The Galatian royal diadem; Celtic torques (not drawn)."
   }
