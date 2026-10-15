@@ -1,12 +1,12 @@
-"""Front door E2E: the landing and the build screen against the dev server (cd table && bunx vite --port 5183).
+"""Front door E2E: the landing and the build screen against the dev server (cd table && bunx vite --port 5183; BASE=http://localhost:<port> for another port).
 Run: uv run --with playwright python table/e2e/front.py
 Order matters: the local gate allows 1 build a day per address, so the build runs first and the second prompt must be spaced.
 To run again: stop the dev server, delete table/.wrangler/state/v3/do, start the server. Out: table/e2e/out/front/ (shots, result.json)."""
-import functools, json, sys, time
+import functools, json, os, sys, time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-BASE = "http://localhost:5183"
+BASE = os.environ.get("BASE", "http://localhost:5183")
 HERE = Path(__file__).parent
 OUT = HERE / "out" / "front"
 JEV = "OPENROUTER_API_KEY=" in ((HERE.parent / ".dev.vars").read_text() if (HERE.parent / ".dev.vars").exists() else "")
@@ -49,6 +49,34 @@ def run():
             check(wide(pg) <= 0, f"landing {tag}: no horizontal scroll ({wide(pg)} px)")
             n = pg.evaluate("document.querySelectorAll('#grid a.wcard').length")
             check(n >= 1, f"landing {tag}: library shows {n} world(s)")
+            ctx.close()
+
+        # 1b. the library page: every world, search and filters narrow it, URL-synced, a miss becomes a prompt
+        for w, h in [(1280, 800), (390, 844)]:
+            ctx, pg = page(b, w, h)
+            pg.goto(BASE + "/worlds")
+            pg.wait_for_function("document.querySelector('#count')?.textContent", timeout=15000)
+            pg.wait_for_timeout(1200)
+            ws = pg.evaluate("fetch('/api/worlds').then((r) => r.json())")
+            count = lambda: pg.evaluate("document.querySelectorAll('#grid a.wcard').length")
+            check(count() == len(ws), f"library {w}: shows all {len(ws)} worlds ({count()})")
+            check(wide(pg) <= 0, f"library {w}: no horizontal scroll ({wide(pg)} px)")
+            pg.screenshot(path=str(OUT / f"library-{w}.png"), full_page=True)
+            if w == 1280 and ws:
+                pg.fill("#q", ws[0]["title"])
+                pg.wait_for_timeout(300)
+                check(1 <= count() <= len(ws) and "q=" in pg.url, f"library: search narrows to {count()} and sits in the URL")
+                pg.fill("#q", "")
+                pg.click("#eras button[data-v]:not([data-v=''])")
+                pg.wait_for_timeout(300)
+                n = int(pg.evaluate("document.querySelector('#eras [aria-pressed=true] .n').textContent"))
+                check(count() == n and "era=" in pg.url, f"library: an era filter shows its {n} world(s)")
+                pg.goto(BASE + "/worlds?q=zzqx%20nowhere")
+                pg.wait_for_selector("#none:not([hidden]) a.go", timeout=10000)
+                pg.click("#none a.go")
+                pg.wait_for_function("document.querySelector('#prompt')?.value", timeout=10000)
+                check(pg.input_value("#prompt") == "zzqx nowhere", "library: Build it instead fills the landing prompt")
+            check(not pg.errors, f"library {w}: 0 console errors {pg.errors[:3]}")
             ctx.close()
 
         # 0. refused, first: once this address has built today, the gate answers before the safety check (only when Jev can answer)
@@ -127,6 +155,19 @@ def run():
         stubs = [("exists", {"state": "exists", "world": pick(ws[0])}, ".wc .pl", "Play this world"),
                  ("similar", {"state": "similar", "worlds": [pick(w) for w in ws[:3]]}, ".picks .anyway", "Build mine anyway"),
                  ("capped", {"state": "capped", "opensAt": time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime(time.time() + 3 * 3600 + 900))}, ".capline", "New worlds open at 00:00 UTC")]
+        # the bot check script blocked while a site key is set: the submit error names it
+        pg.route("**/api/config", lambda route: route.fulfill(json={"turnstile": "1x00000000000000000000AA"}))
+        pg.route("https://challenges.cloudflare.com/**", lambda route: route.abort())
+        landing(pg, "blocked")
+        pg.keyboard.type("Egypt after the revolution")
+        pg.keyboard.press("Enter")
+        try:
+            pg.wait_for_selector("#err.on", timeout=5000)
+            check("bot check could not load" in pg.inner_text("#err"), f"turnstile blocked: {pg.inner_text('#err').strip(' !\n')}")
+        except Exception:
+            check(False, "turnstile blocked: no error shown")
+        pg.unroute("**/api/config"); pg.unroute("https://challenges.cloudflare.com/**")
+        pg.errors.clear()  # the blocked script logs its own load error
         for name, body, sel, text in stubs:
             pg.unroute("**/api/prompt")
             pg.route("**/api/prompt", functools.partial(lambda body, route: route.fulfill(json=body), body))
