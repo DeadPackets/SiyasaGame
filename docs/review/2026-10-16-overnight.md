@@ -91,3 +91,16 @@ The owner asked me to finish the game to v1.0 alone and log everything that need
 | O14 | Wording: plain-language rule in the world and deck prompts, and the 3 library packs get a text rewrite (numbers unchanged). |
 | O15 | Library: "Browse all worlds" in the landing hero, an obvious scroll cue, and a dedicated library page with search and filters. |
 | O16 | Mars music sounded Arabic: its brief uses darbuka dum/tek, accordion and a hijaz-like scale. Fix the music prompt for invented and future worlds and rebuild the Mars brief. |
+
+## After the rulings (2026-10-15 day)
+
+- **Shipped** (version f1a51d17, `main` = `restart` = 905cf95): O1, O3, O6, O7, O8, O10, O11, O12, O14, O15, O16, the card carrier removal, and the O13 game logs (D1 `games`, `world_plays` per preset; migration 0004 applied).
+- **Turnstile is live.** I created the widget through the Cloudflare API, not the dashboard. Production answers 403 to a build request with no token or a fake one. `DAILY_BUILD_CAP` is 10.
+- **O2:** D1 `usoj`, Vectorize `usoj-scenarios` and the v4 Workers were already gone. The R2 bucket `usoj-art` still exists; it was not on the approved list, so it waits for you.
+- **Pack rewrites (O14, O12, O16):** all 3 packs pass checkPack. Vision reach for the focused bot: Mars 22.5% to 100% (v5 is over the 85% ceiling), Rome 55% to 95%, Egypt 10% to 65% (the new powers made Egypt v5 unreachable; one spread repair fixed it).
+- The first Egypt run hung for 3.5 hours inside one model call and its output was lost; `revise.ts` now saves every chunk and a rerun reuses the ones that pass.
+- E2E: front 34 checks pass (the refusal step is skipped under fake builds, which skip Jev), play passes, walk passes, prod 4 of 4.
+
+| When | What | Cost |
+|---|---|---|
+| 2026-10-15 | Pack rewrites, 3 packs with reruns and spread repairs, including 3.38 lost in the hang | about 14.9 dollars |
