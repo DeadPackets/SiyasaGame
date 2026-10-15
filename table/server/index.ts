@@ -8,6 +8,13 @@ export { GateDO } from "./gate";
 export { WorldBuild } from "./workflow";
 
 const app = new Hono<{ Bindings: Env }>();
+
+// the old name points at the new one (platform spec, launch day)
+app.use("*", async (c, next) => {
+  const url = new URL(c.req.url);
+  if (url.hostname === "unitedstatesofjev.deadpackets.pw") return c.redirect(`https://siyasa.deadpackets.pw${url.pathname}${url.search}`, 301);
+  await next();
+});
 const ip = (req: Request) => req.headers.get("cf-connecting-ip") ?? "local";
 const str = (x: unknown, max: number) => (typeof x === "string" ? x.slice(0, max) : "");
 
@@ -110,5 +117,7 @@ app.post("/api/admin/reindex", async (c) => {
 
 app.post("/api/prompt", (c) => onPrompt(c.env, c.req.raw, c.executionCtx as ExecutionContext));
 app.get("/api/builds/:id", (c) => onBuild(c.env, c.req.param("id")));
+
+app.all("*", (c) => c.env.ASSETS.fetch(c.req.raw));
 
 export default app;
