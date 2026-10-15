@@ -182,6 +182,7 @@ function wireForm(field, first) {
     if (busy || $("#state").dataset.kind === "closed") return;
     ta.value = ta.value.replace(/\s+/g, " ").trim();
     if (ta.value.length < MIN) return bad("Name a place, a time, or both.");
+    if (blocked) return bad(BLOCKED);
     ask(false);
   });
 }
@@ -250,11 +251,14 @@ function closed(kind, opensAt) {
 }
 
 // ---------- Turnstile: managed mode, shown only when Cloudflare asks ----------
-let TS = null, token = "", waiting = null;
+let TS = null, token = "", waiting = null, blocked = false;
+const BLOCKED = "The bot check could not load. Allow challenges.cloudflare.com or try another browser.";
 async function guard() {
   const cfg = await json("/api/config");
   if (!cfg?.turnstile) return;
-  await new Promise((ok, no) => { const s = document.createElement("script"); s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"; s.onload = ok; s.onerror = no; document.head.append(s); });
+  // an extension or network that blocks the script must be named, not left to fail as "Try again"
+  try { await new Promise((ok, no) => { const s = document.createElement("script"); s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"; s.onload = () => (window.turnstile ? ok() : no()); s.onerror = no; setTimeout(no, 15000); document.head.append(s); }); }
+  catch { blocked = true; return; }
   TS = window.turnstile.render("#ts", {
     sitekey: cfg.turnstile, appearance: "interaction-only",
     callback: (t) => { token = t; waiting?.(t); waiting = null; },
