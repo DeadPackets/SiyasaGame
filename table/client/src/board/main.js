@@ -87,8 +87,19 @@ const pickedOn = (id) => G.picked.map((x) => E.handDef(P, x)).find((d) => P.deck
 const playsLeft = () => (["hand", "target", "playing"].includes(st.phase) ? G.plays : 0);
 
 /* ---------- save ---------- */
-const save = () => (G.over ? store.del(SAVE) : store.set(SAVE, JSON.stringify({ w: WID, s: G })));
-function loadSave() { try { const x = JSON.parse(store.get(SAVE)); return x?.w === WID && x.s && !x.s.over ? x.s : null; } catch { return null; } }
+let TERM = null; // this term's log id and preset, kept with the save
+const save = () => (G.over ? store.del(SAVE) : store.set(SAVE, JSON.stringify({ w: WID, s: G, term: TERM })));
+function loadSave() {
+  try { const x = JSON.parse(store.get(SAVE)); if (x?.w !== WID || !x.s || x.s.over) return null; TERM = x.term ?? { id: crypto.randomUUID(), preset: presetOf(x.s.rules) }; return x.s; } catch { return null; }
+}
+// every term is logged for analysis: after each month end, at the end, and on leaving if it changed since; failures are ignored
+let sent = "";
+function logGame() {
+  if (!G || !TERM) return;
+  const body = JSON.stringify({ id: TERM.id, world: WID, preset: TERM.preset, state: G }); if (body === sent) return; sent = body;
+  try { fetch("/api/games", { method: "POST", headers: { "content-type": "application/json" }, body, keepalive: body.length < 60000 }).catch(() => {}); } catch {} // keepalive bodies cap at 64 KB
+}
+addEventListener("pagehide", logGame);
 function defaultVision() { // the Vision of the corner the world starts nearest
   const m = E.point(P, W.marker), C = E.corners(P), id = IDS.reduce((a, b) => (Math.hypot(m[0] - C[b][0], m[1] - C[b][1]) < Math.hypot(m[0] - C[a][0], m[1] - C[a][1]) ? b : a));
   return P.deck.visions.find((v) => v.corner === id)?.id ?? null;
@@ -97,6 +108,7 @@ function freshState(o = {}) {
   const preset = E.PRESETS[Q.get("preset")] ? Q.get("preset") : "standard", vq = Q.get("vision");
   const vis = "vision" in o ? o.vision : vq === "free" ? null : P.deck.visions.some((v) => v.id === vq) ? vq : defaultVision();
   const seed = o.seed ?? (Q.has("seed") ? +Q.get("seed") : Math.floor(Math.random() * 2 ** 31));
+  TERM = { id: crypto.randomUUID(), preset: presetOf(o.rules ?? preset) };
   return E.newGame(P, { seed, rules: o.rules ?? preset, vision: vis });
 }
 
@@ -1155,7 +1167,7 @@ async function endMonth() {
   const end = $("#end"); end.disabled = true;
   sfx.endMonth();
   const sup0 = { ...st.sup }, res0 = { ...st.res }, stand0 = standing(), m0 = G.month;
-  const ev = E.endMonth(P, G); save();
+  const ev = E.endMonth(P, G); save(); logGame();
   fresh = new Set();
   showRest("filed"); document.body.classList.add("quiet");
   const acted = ev.filter((e) => e.t === "act").map((e) => person(e.holder)), intents = ev.filter((e) => e.t === "intent").map((e) => person(e.holder)), debt = ev.find((e) => e.t === "debt");
@@ -1268,7 +1280,7 @@ function ruleName() { // "<polity> under an iron <ruler>": your zone (or the nea
 }
 async function reckoning() {
   if (st.kin || st.phase === "over") return;
-  audio();
+  logGame(); audio();
   ceremony(); st.phase = "over"; moment("rest"); pulse(null); tips.closeAll(); popout(null); hideTour(false);
   const O = G.over, fallen = O.kind === "fallen", by = fallen && !["election", "debt"].includes(O.by) ? person(O.by) : null, lead = E.zone(P, G) in IDEO ? E.zone(P, G) : IDS.reduce((a, b) => (G.stacks[b] > G.stacks[a] ? b : a));
   sfx.endMonth();
@@ -1505,7 +1517,7 @@ function newTerm(o = {}) {
 }
 
 // the library's "most played" counts terms started, not page loads
-const played = () => { markPlayed(WID); fetch(`/api/worlds/${encodeURIComponent(WID)}/play`, { method: "POST" }).catch(() => {}); };
+const played = () => { markPlayed(WID); fetch(`/api/worlds/${encodeURIComponent(WID)}/play`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ preset: TERM.preset }) }).catch(() => {}); };
 async function boot() {
   try { const res = await fetch(`/api/worlds/${encodeURIComponent(WID)}`); if (!res.ok) throw new Error(res.status); PACK = await res.json(); }
   catch { $("#center").innerHTML = `<div class="plate"><p class="t2 disp">This world did not load.</p><p class="t1">Reload the page to try again, or go back to the world list.</p></div>`; return; }
