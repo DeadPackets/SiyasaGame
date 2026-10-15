@@ -28,7 +28,8 @@ export function progressOf(p: Pack, s: State, id: string): number {
       case "grip": return 1 - Math.min(1, Math.max(q.min != null ? q.min - s.grip : 0, q.max != null ? s.grip - q.max : 0) / 50);
       case "law": {
         const i = lawIdeo(q.id);
-        return s.unlocked.includes(q.id) ? 0.6 : i ? (0.5 * s.stacks[i]) / 5 : 0.3;
+        const near = 1 - Math.min(1, dist(m, i ? C[i] : [0, 0]) / 1.5);
+        return (s.unlocked.includes(q.id) || !i ? 0.4 : (0.4 * s.stacks[i]) / 5) + 0.5 * near;
       }
       case "sup": return Math.min(1, s.support[q.holder] / q.min);
       case "res": return clamp(s.res[q.role] / Math.max(1, q.min), 0, 1);
@@ -40,7 +41,7 @@ export function progressOf(p: Pack, s: State, id: string): number {
 function value(p: Pack, s: State, vision: string | null): number {
   if (s.over?.kind === "fallen") return -1000;
   if (s.over?.kind === "swept") return -500;
-  const low = Math.min(...p.world.factions.map((f) => s.support[f.id]));
+  const low = Math.min(...[...p.world.factions, ...p.world.patrons].map((h) => s.support[h.id]));
   const st = clamp((standing(p, s) - 40) / 20, 0, 1);
   const safe = clamp((low - s.rules.actUnder) / 20, 0, 1) - (low < s.rules.actUnder ? 2 : 0);
   const purse = (s.res.force + s.res.voice + s.res.trust) / 30 - (s.res.money < 0 ? 1 : 0);

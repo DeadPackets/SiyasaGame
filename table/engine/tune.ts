@@ -5,14 +5,14 @@ export const TUNE = {
   gripSize: { s: 5, m: 10, l: 15 },
   nudgeMax: 3,
   startWeight: 4,
-  cornerZone: 0.6,
-  centreZone: 0.25,
+  cornerZone: 0.8,
+  centreZone: 0.15,
   stack: { pick: 2, power: 3, major: 5 },
   cap: 10,
   plays: 2,
   handCap: 8,
   bar: 50,
-  produceAt: 60,
+  produceAt: 65,
   ironAt: 60,
   openAt: 40,
   pickIron: 80,
@@ -21,7 +21,7 @@ export const TUNE = {
   patronPenalty: { per: 20, loss: 10 },
   debtFactionLoss: 5,
   debtFall: 2,
-  talk: { cost: { trust: 1 }, up: 8 },
+  talk: { cost: { trust: 1 }, up: 5 },
   address: { cost: { voice: 1 } },
   electionBonus: { voice: 1, trust: 1 },
   patronCardAt: 60,
@@ -34,9 +34,9 @@ export const TUNE = {
 export type Rules = { drift: number; intentUnder: number; actUnder: number; sanctions: number };
 
 export const PRESETS = {
-  story: { drift: 0.15, intentUnder: 25, actUnder: 10, sanctions: 0.5 },
-  standard: { drift: 0.2, intentUnder: 30, actUnder: 15, sanctions: 1 },
-  hard: { drift: 0.2, intentUnder: 35, actUnder: 15, sanctions: 1 },
+  story: { drift: 0.1, intentUnder: 25, actUnder: 10, sanctions: 0.5 },
+  standard: { drift: 0.15, intentUnder: 30, actUnder: 15, sanctions: 1 },
+  hard: { drift: 0.15, intentUnder: 35, actUnder: 15, sanctions: 1 },
   brutal: { drift: 0.25, intentUnder: 35, actUnder: 20, sanctions: 2 },
 } satisfies Record<string, Rules>;
 

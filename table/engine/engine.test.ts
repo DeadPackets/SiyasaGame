@@ -21,7 +21,7 @@ describe("pack check", () => {
 
 import { marker, resting, zone } from "./geo";
 import { newGame } from "./state";
-import { PRESETS, type Preset } from "./tune";
+import { PRESETS, type Preset, TUNE } from "./tune";
 
 describe("new game", () => {
   test("starts from the pack", () => {
@@ -135,10 +135,10 @@ const playing = (p: Pack = egypt) => { const s = newGame(p, { seed: 1 }); pass(s
 const slot = (p: Pack, s: ReturnType<typeof newGame>, id: string) => hand(p, s).find((c) => c.id === id);
 
 describe("the hand", () => {
-  test("Talk lifts one faction by 8 for 1 Trust and uses a play", () => {
+  test("Talk lifts one faction for 1 Trust and uses a play", () => {
     const s = playing();
     play(egypt, s, "talk", "rev");
-    expect([s.support.rev, s.res.trust, s.plays]).toEqual([44, 4, 1]);
+    expect([s.support.rev, s.res.trust, s.plays]).toEqual([36 + TUNE.talk.up, 4, 1]);
   });
   test("the hand waits for the month's card, and 2 plays is the limit", () => {
     const s = newGame(egypt, { seed: 1 });
