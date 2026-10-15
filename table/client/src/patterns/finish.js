@@ -233,7 +233,7 @@ const GUIL_N = `
 { float y = vRoughnessMapUv.y; vec2 gd = vec2(64., 0.8 * 6.2832 * 3. * cos(6.2832 * 3. * y) + 0.2 * 6.2832 * 7. * cos(6.2832 * 7. * y));
   normal = normalize(normal - (uT * gd.x + uB * gd.y) / length(gd) * cos(6.2832 * gPh) * 0.22 * gK); }`;
 
-let renderer = null, scene, camera, mesh, key, envTex;
+let renderer = null, scene, camera, meshes = [], key, envTex;
 const BAND_K = 0.75; // brightness of the soft vertical sheen band in the room
 const MAXPX = 2048;
 let RW = 256, RH = 256; // drawing buffer; grows to the largest surface drawn so far
@@ -261,8 +261,8 @@ function initGL() {
   key = new THREE.DirectionalLight(0xfff6ee, 1.1); scene.add(key, key.target); // far lamp: grazing enough that its mirror image never lands on a flat tile
   camera = new THREE.PerspectiveCamera(22, 1, 0.1, 50);
   camera.position.set(0, 0, 0.5 / Math.tan((11 * Math.PI) / 180));
-  mesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1)); scene.add(mesh);
 }
+const meshAt = (i) => meshes[i] ?? (meshes[i] = new THREE.Mesh(), scene.add(meshes[i]), meshes[i]);
 
 function inject(m, key, edit) {
   m.onBeforeCompile = (sh) => {
@@ -292,13 +292,16 @@ const SURF = [], MATS = new Map();
 let busy = false, sweep = 0;
 const io = typeof IntersectionObserver !== "undefined" ? new IntersectionObserver((es) => es.forEach((e) => { e.target.__s.visible = e.isIntersecting; e.target.__s.dirty = true; }), { rootMargin: "50% 0px" }) : null;
 export function surface(el) {
-  const s = { el, visible: !io, dirty: true, mat: null, cv: null, ctx: null, geo: null, key: "", spec: null };
+  const s = { el, visible: !io, dirty: true, mats: [], cv: null, ctx: null, geo: null, key: "", parts: [] };
   el.__s = s; SURF.push(s); io?.observe(el);
   return s;
 }
 // tile: engine render() or renderMedallion() output. The element's own CSS background is the flat fallback; its size and position set the repeat.
-export function assign(s, tile, pal, fin, foil = "a") {
-  s.spec = { tile, pal, fin, foil }; s.key = `${fin}|${foil}|${pal.a}${pal.b}${pal.c}|${tile.svg}`; s.geo = null; s.dirty = true;
+export function assign(s, tile, pal, fin, foil = "a") { strip(s, [{ el: s.el, tile, pal }], fin, foil); }
+// child elements side by side drawn as one surface: one canvas over s.el, one plane, one light; each part keeps its own pattern and colours
+export function strip(s, parts, fin, foil = "a") {
+  s.parts = parts.map(({ el, tile, pal }) => ({ el, spec: { tile, pal, fin, foil }, key: `${fin}|${foil}|${pal.a}${pal.b}${pal.c}|${tile.svg}` }));
+  s.key = s.parts.map((p) => p.key).join("+"); s.geo = null; s.dirty = true;
 }
 function ensureCanvas(s, w, h) {
   if (!s.cv) { s.cv = document.createElement("canvas"); s.cv.style.cssText = "position:absolute;inset:0;width:100%;height:100%;display:block"; s.ctx = s.cv.getContext("2d"); s.el.append(s.cv); }
@@ -306,12 +309,18 @@ function ensureCanvas(s, w, h) {
 }
 const OS = 1.08; // overscan so the tilt never shows a plane edge
 const len = (v, full, auto) => (v.endsWith("%") ? (parseFloat(v) / 100) * full : parseFloat(v) || auto);
+// one plane per part, abutting; only the outer edges overscan
 function geometry(s, cw, ch) {
-  const cs = getComputedStyle(s.el), t = s.spec.tile, [bw, bh = "auto"] = cs.backgroundSize.split(" "), [bx, by = "50%"] = cs.backgroundPosition.split(" ");
-  const tw = len(bw, cw, t.w), th = len(bh, ch, (tw * t.h) / t.w), px = len(bx, cw - tw, 0), py = len(by, ch - th, 0);
-  const g = new THREE.PlaneGeometry((cw / ch) * OS, OS), pos = g.attributes.position, uv = g.attributes.uv;
-  for (let i = 0; i < pos.count; i++) uv.setXY(i, (pos.getX(i) * ch + cw / 2 - px) / tw, 1 - (ch / 2 - pos.getY(i) * ch - py) / th);
-  return g;
+  const k = cw / (s.el.offsetWidth || cw), o = (cw * (OS - 1)) / 2, n = s.parts.length;
+  return s.parts.map((p, j) => {
+    const own = p.el === s.el, ox = own ? 0 : p.el.offsetLeft * k, oy = own ? 0 : p.el.offsetTop * k, pw = own ? cw : p.el.offsetWidth * k, ph = own ? ch : p.el.offsetHeight * k;
+    const cs = getComputedStyle(p.el), t = p.spec.tile, [bw, bh = "auto"] = cs.backgroundSize.split(" "), [bx, by = "50%"] = cs.backgroundPosition.split(" ");
+    const tw = len(bw, pw, t.w), th = len(bh, ph, (tw * t.h) / t.w), px = len(bx, pw - tw, 0), py = len(by, ph - th, 0);
+    const a = j ? ox : -o, e = j < n - 1 ? ox + pw : cw + o;
+    const g = new THREE.PlaneGeometry((e - a) / ch, OS).translate(((a + e) / 2 - cw / 2) / ch, 0, 0), pos = g.attributes.position, uv = g.attributes.uv;
+    for (let i = 0; i < pos.count; i++) uv.setXY(i, (pos.getX(i) * ch + cw / 2 - ox - px) / tw, 1 - (ch / 2 - pos.getY(i) * ch - oy - py) / th);
+    return g;
+  });
 }
 
 // ---------- pointer: damped spring, idle drift ----------
@@ -336,10 +345,10 @@ function frame(now) {
   const gx = P.x / innerWidth - 0.5, gy = P.y / innerHeight - 0.5;
   for (const s of SURF) {
     if (!s.visible || !s.key) continue;
-    const mat = MATS.get(s.key);
-    if (mat !== s.mat) { s.mat = mat; s.dirty = true; }
-    if (!mat) { want ||= s; continue; }
-    mat.userData.seen = now; vis++;
+    const mats = s.parts.map((p) => MATS.get(p.key)), miss = mats.indexOf(undefined);
+    if (miss >= 0) { want ||= s.parts[miss]; continue; }
+    if (mats.some((m, j) => m !== s.mats[j])) { s.mats = mats; s.dirty = true; }
+    for (const m of mats) m.userData.seen = now; vis++;
     if (!s.dirty) continue;
     const r = s.el.getBoundingClientRect(), dpr = Math.min(2, devicePixelRatio || 1), w = Math.min(MAXPX, Math.round(r.width * dpr)), h = Math.min(MAXPX, Math.round(r.height * dpr));
     if (!w || !h || r.bottom < 0 || r.top > innerHeight) { s.dirty = false; continue; }
@@ -350,11 +359,13 @@ function frame(now) {
     // the tile under the pointer feels it fully (band crosses the tile as the pointer does); every tile feels the page-wide position a little
     const u = (P.x - cx) / r.width, vy = (P.y - cy) / r.height;
     scene.environmentRotation.set(clamp(vy * 0.5, -0.35, 0.35) + 0.1 * gy, -(clamp(u * 0.85, -0.6, 0.6) + 0.12 * gx), 0);
-    mesh.geometry = s.geo; mesh.material = mat; mat.envMapRotation.copy(scene.environmentRotation);
     // a long strip turned about its short axis would swing its far end out of frame: scale that tilt by the aspect
-    mesh.rotation.set(REDUCED ? 0 : clamp((P.y - cy) / Math.max(r.height * 0.6, 300), -1, 1) * TILT * Math.min(1, w / h), REDUCED ? 0 : clamp((P.x - cx) / Math.max(r.width * 0.6, 300), -1, 1) * TILT * Math.min(1, h / w), 0);
+    const rx = REDUCED ? 0 : clamp((P.y - cy) / Math.max(r.height * 0.6, 300), -1, 1) * TILT * Math.min(1, w / h), ry = REDUCED ? 0 : clamp((P.x - cx) / Math.max(r.width * 0.6, 300), -1, 1) * TILT * Math.min(1, h / w);
+    s.geo.forEach((g, j) => { const m = meshAt(j); m.visible = true; m.geometry = g; m.material = mats[j]; mats[j].envMapRotation.copy(scene.environmentRotation); m.rotation.set(rx, ry, 0); m.updateMatrixWorld(); });
+    for (let j = s.geo.length; j < meshes.length; j++) meshes[j].visible = false;
+    const mesh = meshes[0];
     key.position.set(-0.45 + 1.3 * clamp(u, -0.6, 0.6) + 0.2 * gx, 0.7 - 0.3 * clamp(vy, -0.6, 0.6), 0.8); key.target.position.set(0, 0, 0); key.updateMatrixWorld(); key.target.updateMatrixWorld();
-    camera.aspect = w / h; camera.updateProjectionMatrix(); camera.updateMatrixWorld(); mesh.updateMatrixWorld();
+    camera.aspect = w / h; camera.updateProjectionMatrix(); camera.updateMatrixWorld();
     U.uT.value.set(1, 0, 0).applyQuaternion(mesh.quaternion); U.uB.value.set(0, 1, 0).applyQuaternion(mesh.quaternion);
     renderer.setViewport(0, 0, w, h); renderer.setScissor(0, 0, w, h); renderer.setScissorTest(true);
     renderer.render(scene, camera);

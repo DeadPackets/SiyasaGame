@@ -191,7 +191,7 @@ function kick(px = 4) {
 // One moment, one focus: the body says which moment it is; CSS steps the other areas back.
 function moment(m) { document.body.dataset.moment = m; hideTour(true); slot($("#plays"), handHint()); layoutHand(); }
 function handHint() {
-  if (["hand", "target", "playing"].includes(st.phase)) { const left = G.plays; return left ? `${left} play${left > 1 ? "s" : ""} left` : "No plays left"; }
+  if (["hand", "target", "playing"].includes(st.phase)) { const left = G.plays; return left ? `${left} play${left > 1 ? "s" : ""} left` : "No plays left: end the month"; }
   if (st.phase === "rest") return "Draw this month's card first";
   if (st.phase === "month-done" || st.phase === "month") return "Your plays return next month";
   if (st.phase === "over") return "The term is over";
@@ -311,7 +311,7 @@ function resolveTip(key) {
   if (kind === "oz") { const c = st.hand[+id]; return `${tipHead(c.title)}<p>You can enact this law only from inside the ${IDEO[c.source].name} zone. ${closer(c.source)}</p>`; }
   if (kind === "hist") { const c = E.card(P, id); return `${tipHead(c.title)}<p>${histText(c)}</p>`; }
   if (kind === "date") return `${tipHead(`Month ${st.month} of ${W.months}`)}<p>The ${kw("reckoning", "Reckoning")} comes in ${reckDate()}.</p>`;
-  if (kind === "deck") return `${tipHead("This month's card")}<p>Someone brings you a question. Each answer belongs to one of the era's ideologies; you learn which after you choose.</p>`;
+  if (kind === "deck") return `${tipHead("This month's card")}<p>Each month brings one question. Each answer belongs to one of the era's ideologies; you learn which after you choose.</p>`;
   if (kind === "end" && ($("#end").disabled || st.endArmed)) return "";
   if (kind === "end") return `${tipHead("End month")}<p>End month ${st.month} of ${W.months}. Unplayed cards stay in your hand.</p>`;
   if (kind === "compass") return KW.compass();
@@ -425,7 +425,7 @@ function handCards() {
 }
 const rank = (c) => (c.source === "always" ? -1 : IDS.includes(c.source) ? IDS.indexOf(c.source) * 2 + (c.major ? 1 : 0) : { law: 50, grip: 60, patron: 70 }[c.kind] ?? 80);
 const NEUTRAL = `<svg viewBox="-1.2 -1.2 2.4 2.4" aria-hidden="true"><circle r="1.04"/><circle class="in" r=".82"/><polygon points="0,-.6 .57,-.19 .35,.49 -.35,.49 -.57,-.19"/><circle class="dot" r=".09"/></svg>`;
-const whyNot = (c) => (c.why === "phase" ? handHint() + "." : c.why === "plays" ? "No plays left this month." : c.why === "zone" ? closer(c.source) : c.why === "cost" ? needText(c.cost) + "." : "");
+const whyNot = (c) => (c.why === "phase" ? handHint() + "." : c.why === "plays" ? "No plays left this month. End the month to get more." : c.why === "zone" ? closer(c.source) : c.why === "cost" ? needText(c.cost) + "." : "");
 const cardInner = (c, full) => `${IDS.includes(c.source) ? `<span class="art fin"></span>` : `<span class="art neutral">${NEUTRAL}</span>`}
   <span class="cost t1">${costChips(c.cost)}</span>
   <span class="txt"><span class="ti t2 disp">${c.title}</span><span class="ef t1 soft">${c.why === "zone" ? `Stand closer to ${IDEO[c.source].name}` : c.effect}</span>${full && c.why === "zone" ? `<span class="src t1">${closer(c.source)}</span>` : ""}${full && !afford(c.cost) ? `<span class="src t1 need">${needText(c.cost)}</span>` : ""}${full ? `<span class="src t1 soft">${c.from}</span>` : ""}</span>`;
@@ -441,7 +441,7 @@ function renderHand() {
   const was = new Map($$("#hand .hc").map((b) => [b.dataset.id, kind(b)]));
   $("#hand ul").innerHTML = order.map((i, k) => {
     const c = st.hand[i], gs = !k || st.hand[order[k - 1]].source !== c.source ? "gs" : "", sty = IDS.includes(c.source) ? vars(c.source) : "";
-    return `<li class="${gs}" data-i="${i}"><button class="hc ${c.fresh ? "new" : ""} ${c.why === "zone" ? "oz" : ""} ${afford(c.cost) ? "" : "broke"}" data-i="${i}" data-id="${c.id}" style="${sty}" aria-label="${cardName(c)}" ${canPlay(c) ? "" : "aria-disabled=true"}>${cardInner(c)}</button></li>`;
+    return `<li class="${gs}" data-i="${i}"><button class="hc ${c.why === "plays" && st.phase === "hand" ? "spent" : ""} ${c.fresh ? "new" : ""} ${c.why === "zone" ? "oz" : ""} ${afford(c.cost) || c.why === "plays" ? "" : "broke"}" data-i="${i}" data-id="${c.id}" style="${sty}" aria-label="${cardName(c)}" ${canPlay(c) ? "" : "aria-disabled=true"}>${cardInner(c)}</button></li>`;
   }).join("");
   if (!RM) for (const b of $$("#hand .hc")) {
     const w = was.get(b.dataset.id), k = kind(b);
@@ -477,10 +477,10 @@ function popout(li) {
   p.innerHTML = cardInner(c, true) + (mid ? `<span class="pophint t1">${canPlay(c) ? "Click it in your hand, or press Enter, to play it." : whyNot(c)}</span>` : "");
   $("#fx").append(p);
   const h = $("#hand").getBoundingClientRect(), b = li.getBoundingClientRect(), cr = $("#center").getBoundingClientRect(), ph = p.offsetHeight;
-  const x = mid ? cr.left + cr.width / 2 - p.offsetWidth / 2 : h.left - 14 - p.offsetWidth;
+  const x = mid ? cr.left + cr.width / 2 - p.offsetWidth / 2 : h.left - 14 - p.offsetWidth, fit = mid ? Math.min(1, (cr.height - 16) / ph) : 1; // a tall card scales down, never clips
   const y = mid ? cr.top + cr.height / 2 - ph / 2 : Math.max(cr.top, Math.min(cr.bottom - ph, innerHeight - 8 - ph, b.top + Math.min(b.height, 60) / 2 - ph / 2));
   gsap.set(p, { left: x, top: y });
-  gsap.fromTo(p, { scale: RM ? 1 : 0.92, x: RM || mid ? 0 : 16, y: RM || !mid ? 0 : 12, opacity: 0 }, { scale: 1, x: 0, y: 0, opacity: 1, duration: D(0.24), ease: "settle" });
+  gsap.fromTo(p, { scale: RM ? fit : 0.92 * fit, x: RM || mid ? 0 : 16, y: RM || !mid ? 0 : 12, opacity: 0 }, { scale: fit, x: 0, y: 0, opacity: 1, duration: D(0.24), ease: "settle" });
 }
 const restPop = () => { popout(st.phase === "hand" ? $("#hand li:hover") || $("#hand li:has(.hc:focus-visible)") : null); handCall(); };
 const ARROW = `<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>`;
@@ -556,7 +556,7 @@ function react(id, to, i = 0, why = "") {
         .add(() => settleCrack(id), "+=0.25");
     } else settleCrack(id);
   }
-  sfx.faction(delta, i);
+  if (!hush) sfx.faction(delta, i);
 }
 // Cause to effect: a chip carries the change from where it happened to the row it lands on.
 function chip(fromXY, id, to, why, i) {
@@ -580,6 +580,7 @@ function chip(fromXY, id, to, why, i) {
       .to(c, { keyframes: [{ y: Math.min(0, ty - fy) + lift, duration: 0.22, ease: "soft" }, { y: ty - fy, duration: 0.28, ease: "settle" }] }, "<");
   });
 }
+let hush = false; // month end plays one sound per beat, not one per row
 // whatever the engine changed that no ceremony showed yet lands now
 function reconcile() {
   let k = 0;
@@ -620,6 +621,7 @@ function kinetic(spec) {
     const [ox, oy] = spec.from || [innerWidth / 2, innerHeight / 2], [tx, ty] = spec.to || [innerWidth / 2, innerHeight / 2];
     const shapeIn = spec.id ? [`circle(0px at ${ox}px ${oy}px)`, `circle(${Math.hypot(innerWidth, innerHeight)}px at ${ox}px ${oy}px)`] : ["inset(0 0 0 100%)", "inset(0 0 0 0%)"];
     const shapeOut = spec.id ? `circle(0px at ${tx}px ${ty}px)` : "inset(0 100% 0 0)";
+    fitLines(L);
     gsap.set(L, { opacity: 0 }); if (kickEl) gsap.set(kickEl, { opacity: 0 }); if (sub) gsap.set(sub, { opacity: 0 });
     tl.fromTo(back, { clipPath: shapeIn[0] }, { clipPath: shapeIn[1], duration: 0.5, ease: "sweep" }, 0).add(() => sfx.hit(0.8), 0.32);
     if (kickEl) tl.fromTo(kickEl, { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.3, ease: "settle" }, 0.3);
@@ -627,11 +629,11 @@ function kinetic(spec) {
     L.forEach((l, i) => {
       const at = t0 + i * 0.16;
       if (spec.style === "stamp") {
-        const split = new SplitText(l, { type: "chars" });
+        const split = new SplitText(l, { type: "words,chars" });
         tl.set(l, { opacity: 1 }, at).fromTo(split.chars, { opacity: 0, scale: 2.6, yPercent: -20 }, { opacity: 1, scale: 1, yPercent: 0, duration: 0.22, ease: "swift", stagger: 0.035 }, at)
           .add(() => { sfx.hit(1); kick(4); }, at + 0.22 + split.chars.length * 0.0175);
       } else if (spec.style === "rise") {
-        const split = new SplitText(l, { type: "chars" });
+        const split = new SplitText(l, { type: "words,chars" });
         tl.set(l, { opacity: 1 }, at).from(split.chars, { yPercent: 110, opacity: 0, duration: 0.42, ease: "settle", stagger: 0.03 }, at).add(() => sfx.hit(0.9), at + 0.12);
       } else {
         tl.fromTo(l, { opacity: 1, xPercent: i % 2 ? 120 : -120 }, { xPercent: 0, duration: 0.3, ease: "settle" }, at).add(() => { sfx.hit(0.7); kick(3); }, at + 0.1);
@@ -642,6 +644,11 @@ function kinetic(spec) {
     tl.to([...L, kickEl, sub].filter(Boolean), { scaleY: 0, opacity: 0, duration: 0.2, ease: "swift", stagger: 0.03 }, end)
       .to(back, { clipPath: shapeOut, duration: 0.42, ease: "swift" }, end + 0.05);
   });
+}
+// a big line wraps (balanced in CSS) and steps down until it sits inside the screen
+function fitLines(L) {
+  const mh = (innerHeight * 0.62) / Math.max(1, L.length);
+  for (const l of L) for (let k = 0; k < 8 && (l.scrollWidth > l.clientWidth + 1 || l.offsetHeight > mh); k++) l.style.fontSize = `${parseFloat(getComputedStyle(l).fontSize) * 0.88}px`;
 }
 // a long title stamps as two lines
 const twoLines = (t) => { const w = t.split(" "), cut = Math.ceil(w.length / 2); return w.length > 3 ? [w.slice(0, cut).join(" "), w.slice(cut).join(" ")] : [t]; };
@@ -658,12 +665,13 @@ function tactile(el, src = el) {
 }
 
 /* ---------- the flow ---------- */
-const deckHTML = (live = true) => `<div class="deck" ${live ? `data-tip="deck"` : ""} aria-hidden="true">${IDS.map((id) => `<i class="fin" data-id="${id}" style="${vars(id)}"></i>`).join("")}</div>`;
-// the skin's finish (gold leaf, enamel and the rest) on the deck's tiles; flat SVG tiles when WebGL is missing
+const deckHTML = (live = true) => `<div class="deck" ${live ? `data-tip="deck"` : ""} aria-hidden="true"><div class="tiles">${IDS.map((id) => `<i class="fin" data-id="${id}" style="${vars(id)}"></i>`).join("")}</div></div>`;
+// gold leaf on the deck: the tiles are one surface under one light; flat SVG tiles when WebGL is missing
 const TILES = {};
 function finishDeck(deck) {
-  if (!glOn || !SK.finish) return;
-  for (const el of $$("i", deck)) { const id = el.dataset.id; TILES[id] ??= render(skI(id).recipe); el.classList.add("gl"); FIN.assign(FIN.surface(el), TILES[id], pal(id), SK.finish.type, SK.finish.foilSlot); }
+  if (!glOn) return;
+  const parts = $$("i", deck).map((el) => { const id = el.dataset.id; TILES[id] ??= render(skI(id).recipe); el.classList.add("gl"); return { el, tile: TILES[id], pal: pal(id) }; });
+  FIN.strip(FIN.surface($(".tiles", deck)), parts, "gold-leaf", SK.finish?.foilSlot ?? "a");
 }
 function showRest(after) {
   const c = $("#center");
@@ -736,20 +744,26 @@ function showCard(id, animate) {
   const card = document.createElement("article");
   card.className = "card"; card.setAttribute("aria-label", "This month's card");
   card.innerHTML = `<div class="front">
-      <div class="carrier t1"><b>${q.carrier.name}</b><span class="soft">${q.carrier.role}</span></div>
       <h3 class="t3 disp">${q.question}</h3><p class="body t1">${q.body}</p>
       <div class="answers">${q.answers.map((a, i) => ansHTML(a, i, opts[i])).join("")}</div>${opts.some((o) => o.forced) ? `<p class="t1 warn">You cannot pay for any answer in full. Each one takes what you have.</p>` : ""}</div>`;
-  leave(c); c.prepend(card); bindAnswers(card);
+  leave(c); c.prepend(card); fitCard(card); bindAnswers(card);
   if (animate) wait(0.85, calm); else calm();
   $(".ans:not(:disabled)", card)?.focus({ preventScroll: true }); setTimeout(() => coachMark("card"), RM ? 50 : 900);
   emit("answers");
-  live(`${q.carrier.name} asks: ${q.question}`);
+  live(q.question);
   if (!animate) return;
   if (RM) { gsap.from(card, { opacity: 0, duration: 0.3, clearProps: "opacity" }); return; }
   gsap.fromTo(card, { scaleX: 0, scaleY: 0.6, y: -20 }, { scaleX: 1, scaleY: 1, y: 0, duration: 0.65, ease: "settle" });
   const split = new SplitText($("h3", card), { type: "words" });
   gsap.from(split.words, { opacity: 0, y: 12, duration: 0.55, stagger: 0.035, delay: 0.15, ease: "settle", clearProps: "opacity,transform" });
-  gsap.from($$(".carrier, .body, .ans", card), { opacity: 0, y: 14, duration: 0.55, stagger: 0.07, delay: 0.25, ease: "settle", clearProps: "opacity,transform" });
+  gsap.from($$(".body, .ans", card), { opacity: 0, y: 14, duration: 0.55, stagger: 0.07, delay: 0.25, ease: "settle", clearProps: "opacity,transform" });
+}
+// a long card shrinks to the room the stage has; it never runs over the record below
+function fitCard(card) {
+  const f = card && $(".front", card); if (!f) return;
+  f.style.zoom = ""; card.classList.remove("tight"); const room = $("#center").clientHeight;
+  if (f.getBoundingClientRect().height > room) card.classList.add("tight"); // first it spends less on air, then the type steps down
+  for (let k = 0; k < 4; k++) { const h = f.getBoundingClientRect().height; if (h <= room + 0.5) break; f.style.zoom = ((parseFloat(f.style.zoom) || 1) * room) / h; }
 }
 // an answer shows what it pays and costs before you choose; one you cannot pay for is greyed with its price
 function ansHTML(a, i, o) {
@@ -845,7 +859,7 @@ async function answer(i) {
   const [cx, cy] = wc(card), pile = $(`.stack[data-id="${id}"] .pile`), [tx, ty] = wc(pile);
   const f = field.flood(id, cx, cy, { boost: 1.2 });
   sfx.stamp(id);
-  await kinetic({ id, style: "stamp", kicker: "Your answer belongs to", lines: [{ text: IDEO[id].name }], from: [cx, cy], to: [tx, ty] });
+  await kinetic({ id, style: "stamp", kicker: "Your answer belongs to", lines: [{ text: IDEO[id].name }], from: [cx, cy], to: [tx, ty], hold: 2.95 });
   field.recede(f, tx, ty); document.body.classList.add("quiet");
   stackPulse(id); bloom([reveal, $(`.stack[data-id="${id}"] .pc.fin`)]);
   const rows = $$(".rx li", sheet);
@@ -1071,22 +1085,23 @@ async function resolvePlay(i, target) {
   emit("played");
   clearTarget(); fadeOut($("#center .plate"));
   ceremony(); st.phase = "playing"; moment("playing"); pulse(null);
-  const slip = $(`#hand .hc[data-i="${i}"]`), src = $(`#fx .pop[data-i="${i}"]`) || slip, s = sp(src);
+  const slip = $(`#hand .hc[data-i="${i}"]`), src = $(`#fx .pop[data-i="${i}"]`) || slip, s = sp(src), w0 = src.offsetWidth, h0 = src.offsetHeight;
   $("#hand").focus({ preventScroll: true });
   sfx.play();
   const ev = E.play(P, G, c.id, target); save();
   const { mv, res } = tally(ev);
   const ghost = src.cloneNode(true); ghost.classList.add("fly"); ghost.removeAttribute("data-tip");
   popout(null); $$("#hand li.hot").forEach((l) => l.classList.remove("hot"));
-  Object.assign(ghost.style, { left: `${s.x}px`, top: `${s.y}px`, width: `${s.w}px`, height: `${s.h}px` });
-  gsap.set(ghost, { rotationX: 0, rotationY: 0, y: 0, scale: 1 });
+  Object.assign(ghost.style, { left: `${s.x + s.w / 2 - w0 / 2}px`, top: `${s.y + s.h / 2 - h0 / 2}px`, width: `${w0}px`, height: `${h0}px` }); // its own size, so a card caught mid-scale keeps all its text
+  gsap.set(ghost, { rotationX: 0, rotationY: 0, x: 0, y: 0, scale: s.w / w0 });
   $("#stage").append(ghost);
   slip.style.visibility = "hidden"; src.style.visibility = "hidden";
   for (const k of RK) if (res[k]) setRes(k, G.res[k], 0.5);
+  const cr = sp($("#center")), big = Math.min(1.35, (cr.h - 24) / h0, (cr.w - 24) / w0); // it grows only as far as the stage holds it whole
   if (!RM) await new Promise((res2) => gsap.timeline({ onComplete: res2 })
-    .to(ghost, { left: sp($("#center")).x + sp($("#center")).w / 2 - s.w / 2, top: sp($("#center")).y + sp($("#center")).h * 0.42 - s.h / 2, scale: 1.35, rotation: -3, duration: 0.45, ease: "settle" })
-    .to(ghost, { scale: 1.15, rotation: 0, duration: 0.12, ease: "swift", onComplete: () => { sfx.hit(0.9); kick(4); } })
-    .to(ghost, { scale: 1.6, opacity: 0, filter: "blur(6px)", duration: 0.4, ease: "swift" }, "+=0.15"));
+    .to(ghost, { left: cr.x + cr.w / 2 - w0 / 2, top: cr.y + cr.h / 2 - h0 / 2, scale: big, rotation: -3, duration: 0.45, ease: "settle" })
+    .to(ghost, { scale: big * 0.85, rotation: 0, duration: 0.12, ease: "swift", onComplete: () => { sfx.hit(0.9); kick(4); } })
+    .to(ghost, { scale: big * 1.2, opacity: 0, filter: "blur(6px)", duration: 0.4, ease: "swift" }, "+=0.15"));
   const [x, y] = wc(ghost); ghost.remove();
   if (IDS.includes(c.source)) { const f = field.flood(c.source, x, y, { speed: MOTION.floodSpeed * 0.9 }); field.recede(f, x, y, { delay: 0.5 }); }
   const why = `${c.title} played.`, lands = [];
@@ -1139,7 +1154,6 @@ async function endMonth() {
   ceremony(); moment("month"); pulse(null); tips.closeAll(); popout(null);
   const end = $("#end"); end.disabled = true;
   sfx.endMonth();
-  if (W.factions.some((h) => st.sup[h.id] < FALLS() + 5)) setTimeout(() => sfx.heartbeat(), 400);
   const sup0 = { ...st.sup }, res0 = { ...st.res }, stand0 = standing(), m0 = G.month;
   const ev = E.endMonth(P, G); save();
   fresh = new Set();
@@ -1157,21 +1171,32 @@ async function endMonth() {
   const lastOf = (list) => [...new Map(list).entries()]; // the last value per holder, in first-seen order
   await monthBand(over ? (over.kind === "fallen" ? "The end" : "The Reckoning") : next, over ? reckDate() : `Month ${G.month} of ${W.months} · Reckoning ${reckDate()}`, () => {
     st.month = G.month; renderTop(); renderSeat(); drainHourglass(); slot($("#date"), monthLabel(st.month));
-    clearMarks();
-    let res = { ...res0 };
-    for (const k of Object.keys(actRes)) setRes(k, (res[k] += actRes[k]), 0.8);
-    lastOf(beats.act).forEach(([h, to], j) => react(h, to, j, `${acted.map((x) => x.short).join(", ")} acted.`));
-    acted.forEach((h) => settleMood(h.id));
-    Object.keys(inc).forEach((k, j) => wait(0.35 + j * 0.1, () => setRes(k, G.res[k], 1.1)));
+    clearMarks(); hush = true;
+    // one beat at a time, each with at most one sound: acts, income, drift, then debt or the iron squeeze
+    const STEP = 0.6, drift = ev.reduce((a, e) => a + (e.t === "move" && e.src === "drift" ? e.delta : 0), 0);
+    let t = 0.5;
+    const beat = (fn, sound) => { wait(t, () => { fn(); if (sound) sound(); }); t += STEP; };
+    const act = lastOf(beats.act);
+    if (act.length || Object.keys(actRes).length) beat(() => {
+      let res = { ...res0 };
+      for (const k of Object.keys(actRes)) setRes(k, (res[k] += actRes[k]), 0.8);
+      act.forEach(([h, to], j) => react(h, to, j, `${acted.map((x) => x.short).join(", ")} acted.`));
+      acted.forEach((h) => settleMood(h.id));
+    }, () => { sfx.hit(1); kick(4); });
+    const ik = Object.keys(inc).filter((k) => inc[k]);
+    if (ik.length) beat(() => ik.forEach((k) => setRes(k, G.res[k], 1.1)), () => sfx.care(0));
     const order = $$(".fac").map((li) => li.dataset.id), dl = lastOf(beats.drift).sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]));
-    dl.forEach(([h, to], k) => wait(0.7 + k * 0.06, () => {
+    if (dl.length) beat(() => dl.forEach(([h, to], k) => wait(k * 0.06, () => {
       st.drift.add(h); react(h, to, k, "Drift toward its resting level.");
       const rst = $(`.fac[data-id="${h}"] .rst`);
       if (rst && !RM) gsap.fromTo(rst, { "--rk": 1 }, { "--rk": 1.7, duration: 0.25, yoyo: true, repeat: 1, ease: "settle" });
-    }));
-    lastOf(beats.other).forEach(([h, to], k) => wait(0.9 + dl.length * 0.06 + k * 0.06, () => react(h, to, k, debt ? "The state is in debt." : "Iron rule squeezes the weak.")));
-    return 0.95 + (dl.length + beats.other.length) * 0.06;
+    })), () => Math.abs(drift) >= 1 && sfx.faction(drift));
+    const other = lastOf(beats.other);
+    if (other.length) beat(() => other.forEach(([h, to], k) => wait(k * 0.06, () => react(h, to, k, debt ? "The state is in debt." : "Iron rule squeezes the weak."))), () => sfx.faction(-8));
+    wait(t, () => (hush = false));
+    return t + 0.35;
   }, actLine);
+  hush = false;
   reconcile();
   if (over) return reckoning();
   calm(); st.phase = "month-done"; moment("month-done"); renderHand();
@@ -1188,6 +1213,7 @@ async function endMonth() {
   st.recap = { next, inc: Object.entries(inc).filter(([, n]) => n), acted, warn, brief, sup0, res0, stand0, m0 };
   await window.tutorGate?.("recap");
   showRecap();
+  if (plotting.length || debt || low.length) wait(0.6, () => sfx.heartbeat()); // the warning's own sound, with the warning
   $("#again").focus({ preventScroll: true }); slot($("#plays"), handHint());
   live(`Month ended. ${next}. Standing ${standing()}.`);
   coachMark("standing");
@@ -1496,8 +1522,8 @@ async function boot() {
     root.style.setProperty(`--tile-${id}`, `url("${t.url}")`);
     root.style.setProperty(`--tm-${id}`, `url("${dataURL(colorize(motif(render(skI(id).recipe).svg), p))}")`);
   }
-  root.dataset.finish = SK.finish?.type ?? "ink"; root.style.setProperty("--fi", SK.finish?.type === "ink" ? 0 : SK.finish?.intensity ?? 0.5);
-  glOn = !RM && !!SK.finish && SK.finish.type !== "ink" && FIN.start();
+  root.dataset.finish = "gold-leaf"; root.style.setProperty("--fi", SK.finish?.intensity ?? 0.5);
+  glOn = !RM && FIN.start();
 
   const saved = loadSave(), forced = Q.get("tutor") === "1";
   if (WALK && saved) { WALK = false; history.replaceState(null, "", location.pathname + location.search.replace(/[?&]walk=1/, "").replace(/^&/, "?")); } // a term in progress opens where it stands; the briefing waits for the next one
@@ -1513,7 +1539,7 @@ async function boot() {
   renderAll();
   await document.fonts.ready; layoutHand();
   await field.init(st.held); field.start();
-  addEventListener("resize", () => { field.onResize(); layoutHand(); fitTop(); });
+  addEventListener("resize", () => { field.onResize(); layoutHand(); fitTop(); if (st.phase === "card") fitCard($(".card")); });
   wireKeys(); wireSettings();
   const ch = () => { if (!$("#center > h2.sr")) $("#center").insertAdjacentHTML("afterbegin", `<h2 class="sr" id="center-h">This month</h2>`); };
   new MutationObserver(ch).observe($("#center"), { childList: true }); ch();

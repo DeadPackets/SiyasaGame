@@ -109,8 +109,11 @@ ul, ol { list-style: none; }
 #center { grid-column: 2; grid-row: 2; position: relative; display: grid; place-items: center; min-height: 0; }
 .rest { display: flex; flex-direction: column; align-items: center; gap: calc(var(--gap) * 1.2); }
 .deck { width: min(48rem, 100%); aspect-ratio: 8 / 5; border-radius: var(--r); background: var(--panel2); padding: 8px;
-  display: grid; grid-template-columns: repeat(var(--n, 5), 1fr); gap: 5px; box-shadow: 0 24px 40px -18px rgb(0 0 0 / .7); }
-.deck i { border-radius: calc(var(--r) * .4); background: var(--t) center / var(--ts); --ts: 3.6rem; }
+  display: grid; box-shadow: 0 24px 40px -18px rgb(0 0 0 / .7); }
+/* one continuous surface: the panels touch, one light crosses them all */
+.deck .tiles { position: relative; display: grid; grid-template-columns: repeat(var(--n, 5), 1fr); border-radius: calc(var(--r) * .4); overflow: hidden; }
+.deck i { background: var(--t) center / var(--ts); --ts: 3.6rem; }
+.deck i.fin::before, .deck i.fin::after { background-attachment: fixed; }
 .rest { width: 100%; }
 .coach { background: var(--panel); padding: .3rem .9rem; border-radius: 8px; }
 /* month end and reckoning: the endcard sits on the dimmed face-down card */
@@ -126,11 +129,13 @@ ul, ol { list-style: none; }
 .card { position: relative; display: grid; width: min(48rem, 100%); max-height: 100%; border-radius: var(--r); background: var(--panel2); box-shadow: 0 30px 50px -24px rgb(0 0 0 / .75); }
 .card > * { grid-area: 1 / 1; }
 .front { padding: clamp(1.1rem, 3.2vh, 2.25rem) clamp(1.25rem, 2.5vw, 2.5rem); display: flex; flex-direction: column; gap: clamp(.7rem, 2vh, 1.25rem); }
-.carrier { display: flex; flex-direction: column; }
 .mono { width: 2.75rem; height: 2.75rem; border-radius: var(--medr); display: grid; place-items: center; box-shadow: inset 0 0 0 2px var(--accent); color: var(--accent); font-weight: 700; flex: none; }
-.carrier b { display: block; font-weight: 600; }
 .front h3 { text-wrap: balance; }
 .front .body { max-width: 62ch; text-wrap: pretty; }
+.card.tight .front { padding-block: clamp(.8rem, 2.2vh, 1.4rem); gap: clamp(.45rem, 1.2vh, .8rem); }
+.card.tight .front .body { max-width: none; }
+.card.tight .answers { gap: .5rem; }
+.card.tight .ans { padding-block: .55rem; }
 .answers { display: grid; gap: .75rem; }
 .ans { padding: .9rem 1.2rem; border-radius: var(--r); background: var(--panel); transition: box-shadow .2s var(--ease-soft), background-color .2s var(--ease-soft); display: grid; gap: 2px; }
 .ans .t { font-weight: 600; }
@@ -198,6 +203,11 @@ ul, ol { list-style: none; }
 .hc.new { box-shadow: 0 0 0 2px var(--ia), 0 10px 18px -12px rgb(0 0 0 / .7); }
 .hc.spent { opacity: .45; }
 .hc.spent .art { filter: grayscale(.8); }
+/* no plays left: the hand is off until the month ends */
+#hand .hc.spent { opacity: .4; outline: 0; cursor: not-allowed; box-shadow: none; }
+#hand .hc.spent .art { filter: grayscale(1); }
+#hand li.hot > .hc.spent { box-shadow: inset 0 0 0 1px var(--line); }
+#hand:has(.hc.spent) #plays { color: var(--ink); font-weight: 600; }
 /* the full card: the pop-out and the card in flight */
 .pop { position: absolute; width: clamp(15rem, 19vw, 21rem); --ah: clamp(5rem, 15vh, 10rem); box-shadow: 0 0 0 2px var(--ia, var(--accent)), 0 30px 50px -20px rgb(0 0 0 / .8); }
 .pop .txt { gap: 6px; padding: .8rem 1rem 1rem; }
@@ -292,7 +302,7 @@ body:not([data-moment="hand"]):not([data-moment="target"]):not([data-moment="pla
 #kin .wash { position: absolute; inset: 0; background: var(--kbg, var(--ground)); }
 #kin .lines { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: .5rem; }
 #kin .lines.left { align-items: flex-start; padding-left: 8vw; }
-#kin .k { font-family: var(--fd); font-weight: 700; text-transform: uppercase; line-height: .95; white-space: nowrap; padding: .26em .35em .3em; background: var(--ground); color: var(--ink);
+#kin .k { font-family: var(--fd); font-weight: 700; text-transform: uppercase; line-height: .95; text-wrap: balance; text-align: center; max-width: calc(100vw - 2rem); padding: .26em .35em .3em; background: var(--ground); color: var(--ink);
   font-size: clamp(3.5rem, 9.5vw, 11rem); letter-spacing: .01em; word-spacing: var(--fdws, 0); }
 #kin .k.alt { background: var(--ia, var(--accent)); color: var(--ground); }
 #kin .k.mid { font-size: clamp(2.6rem, 6.5vw, 7.5rem); }
