@@ -1,0 +1,5 @@
+node_modules
+client/public/hall/s
+dist
+.wrangler
+.dev.vars

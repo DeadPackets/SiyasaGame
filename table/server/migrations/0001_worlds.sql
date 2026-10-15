@@ -1,0 +1,12 @@
+CREATE TABLE worlds (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  polity TEXT NOT NULL,
+  date TEXT NOT NULL,
+  blurb TEXT NOT NULL,
+  prompt TEXT,
+  card TEXT NOT NULL,
+  plays INTEGER NOT NULL DEFAULT 0,
+  created INTEGER NOT NULL,
+  hidden INTEGER NOT NULL DEFAULT 0
+);

@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Siyasa</title></head>
+<body><pre id="out">loading</pre><script type="module">
+const r = await fetch("/api/worlds"); const list = await r.json();
+const p = await (await fetch(`/api/worlds/${list[0].id}`)).json();
+document.getElementById("out").textContent = `${list.length} world(s); ${p.world.title}; ${p.deck.situations.length} situations`;
+</script></body></html>

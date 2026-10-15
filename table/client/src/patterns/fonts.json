@@ -1,0 +1,20 @@
+[
+ {"id": "inscribed", "display": "Cinzel", "body": "Hanken Grotesk", "axis": "inscriptional caps + grotesk", "use": "antiquity, empires, senates, classical republics"},
+ {"id": "hellenic", "display": "Marcellus", "body": "Noto Sans", "axis": "flared serif + humanist sans", "use": "Greek and Hellenistic worlds, myth, bronze-age courts"},
+ {"id": "blackletter", "display": "Pirata One", "body": "Source Serif 4", "axis": "blackletter-adjacent display + text serif", "use": "medieval and feudal worlds, knights, crowns, dragons"},
+ {"id": "earlyprint", "display": "IM Fell English SC", "body": "Public Sans", "axis": "early-print small caps + neutral sans", "use": "1500-1750: early modern courts, sail, piracy, colonies"},
+ {"id": "didone", "display": "Bodoni Moda", "body": "Hanken Grotesk", "axis": "high-contrast didone + grotesk", "use": "1750-1900 courts, revolutions, Napoleonic and Victorian states"},
+ {"id": "victorian", "display": "Old Standard TT", "body": "Noto Sans", "axis": "19th-century modern serif + humanist sans; both Cyrillic", "use": "1850-1920 empires, industrial modernisation, Tsarist or late-Ottoman worlds"},
+ {"id": "poster", "display": "Oswald", "body": "PT Serif", "axis": "condensed sans + serif; both Cyrillic", "use": "20th-century mass politics, socialist states, Cyrillic worlds"},
+ {"id": "naskh", "display": "El Messiri", "body": "Source Serif 4", "axis": "Arabic-friendly rounded display + serif", "use": "Arab, Persian, Ottoman and Islamic worlds"},
+ {"id": "kufi", "display": "Reem Kufi", "body": "Hanken Grotesk", "axis": "geometric kufi display (Arabic) + grotesk", "use": "modern Arab and Iranian states, revolutions, Gulf modernity"},
+ {"id": "mincho", "display": "Shippori Mincho", "body": "Noto Sans JP", "axis": "Japanese mincho + Japanese gothic sans", "use": "Japanese worlds of any era"},
+ {"id": "hanzi", "display": "ZCOOL XiaoWei", "body": "Noto Sans SC", "axis": "Chinese display serif + Chinese sans", "use": "Chinese and East Asian worlds"},
+ {"id": "deco", "display": "Limelight", "body": "Hanken Grotesk", "axis": "Art Deco display + grotesk", "use": "1920-1945, jazz-age cities, interwar regimes"},
+ {"id": "civic", "display": "Public Sans", "body": "Source Serif 4", "axis": "civic sans display + text serif", "use": "modern democracies, parliaments, the present day"},
+ {"id": "severe", "display": "Anton", "body": "Source Serif 4", "axis": "heavy condensed display + serif", "use": "authoritarian, militarised or austere states"},
+ {"id": "techno", "display": "Chakra Petch", "body": "Noto Sans", "axis": "squared techno display + humanist sans", "use": "near-future, colonies, space stations, machines"},
+ {"id": "orbital", "display": "Michroma", "body": "IBM Plex Sans", "mono": "Share Tech Mono", "axis": "wide geometric display + grotesk (+ mono)", "use": "far future, galactic states, AI and post-human worlds"},
+ {"id": "typewriter", "display": "Special Elite", "body": "Hanken Grotesk", "axis": "typewriter display + grotesk", "use": "collapse, dystopia, survival, bureaucratic horror"},
+ {"id": "rounded", "display": "Fredoka", "body": "Noto Sans", "axis": "rounded geometric display + humanist sans", "use": "absurd, comic or toy worlds (talking objects, animals)"}
+]

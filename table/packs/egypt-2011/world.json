@@ -1,11 +1,13 @@
 {
- "id": "egypt-2011-v4",
+ "id": "egypt-2011",
  "title": "Egypt: The Military Council",
  "voice": "The clipped, paternal register of numbered communiqués read on state television, answered by Tahrir banners, Friday sermons and the furious columns of the independent dailies.",
  "polity": "Arab Republic of Egypt",
  "office": {
   "title": "Chairman of the Supreme Council of the Armed Forces",
-  "holder": "Field Marshal Mohamed Hussein Tantawi"
+  "holder": "Field Marshal Mohamed Hussein Tantawi",
+  "oath": "I swear by Almighty God to uphold the republican system faithfully, to respect the Constitution and the law, to look after the interests of the people fully, and to safeguard the independence and territorial integrity of the motherland.",
+  "oathSource": "Constitution of the Arab Republic of Egypt, 1971, Article 79"
  },
  "date": "2011-02",
  "months": 16,

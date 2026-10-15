@@ -1,0 +1,28 @@
+{
+  "name": "siyasa",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "dev": "vite",
+    "build": "vite build",
+    "test": "bun test engine bots server",
+    "typecheck": "tsc -p tsconfig.json",
+    "deploy": "vite build && wrangler deploy"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.134.0",
+    "gsap": "3.13.0",
+    "hono": "4",
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.64.0",
+    "@cloudflare/workers-types": "^5.20261015.1",
+    "@types/bun": "^1.4.3",
+    "@types/three": "^0.186.0",
+    "typescript": "5.9",
+    "vite": "7",
+    "wrangler": "4"
+  }
+}

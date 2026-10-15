@@ -1,0 +1,568 @@
+{
+ "tags": {
+  "fatimid": "Fatimid Egypt and Ifriqiya, 909-1171: carved wood and stucco, early star geometry",
+  "mamluk": "Mamluk Egypt and Syria, 1250-1517: Cairo's mosques, madrasas, sabils, metalwork and woodwork",
+  "ottoman-arab": "Ottoman Cairo, Damascus and Aleppo, 1517-1918: houses, mashrabiya, tile and stone",
+  "seljuk": "Seljuk Iran and Anatolia, 1040-1300: brick, stucco and stone geometry",
+  "timurid": "Timurid Iran and Central Asia, 1370-1507: glazed brick and tile",
+  "safavid": "Safavid Iran, 1501-1736: tile, carpets, silks",
+  "ottoman": "the Ottoman core, Anatolia and the Balkans, 1300-1922: Iznik tile, court silks",
+  "maghrebi": "Morocco, Algeria, Tunisia since 1000: zellij, carved plaster and wood",
+  "andalusi": "al-Andalus and Mudejar Spain, 711-1600",
+  "mughal": "Mughal India, 1526-1857: pierced stone, pietra dura, textiles",
+  "rajput": "Rajput courts of Rajasthan, 1500-1900: pierced stone screens",
+  "indian-textile": "Indian printed and painted cottons (chintz, sarasa), 1500-1800, exported east and west",
+  "central-asia": "Bukhara, Samarkand, Fergana, 1500-1900: ikat, suzani",
+  "arab-nationalist": "Egyptian and pan-Arab state modernism, 1952-1970: Nasser-era posters and emblems (stars, sun rays)",
+  "pharaonic": "Pharaonic Egypt, 3100-30 BC, and the modern Egyptian state's revival of it (monuments, banknotes, stamps)",
+  "coptic": "Coptic Egypt, 300-1000, and Coptic church art since",
+  "ethiopian": "Ethiopia, Aksum to the Solomonic church",
+  "mesopotamian": "Sumer to Assyria and Babylon, 3000-539 BC",
+  "indus": "the Indus valley, 3300-1300 BC",
+  "aegean": "Minoan and Mycenaean Greece, 2000-1100 BC",
+  "hellenistic": "Greece and the Hellenistic East, 800-30 BC",
+  "roman": "Rome and its provinces, 500 BC-AD 400",
+  "byzantine": "Byzantium and Orthodox lands, 330-1453",
+  "romanesque": "Latin Europe, 800-1150",
+  "gothic": "Gothic Europe, 1150-1550, the age of heraldry",
+  "gothic-revival": "the Gothic revival, 1830-1900",
+  "celtic-insular": "Insular Celtic and La Tene art, 400 BC-AD 900",
+  "norse": "Norse and Anglo-Saxon, 700-1100",
+  "renaissance": "Italy and Europe, 1400-1600",
+  "baroque": "European courts, 1600-1780",
+  "neoclassical": "Europe and the Americas, 1750-1850",
+  "victorian": "industrial Britain and its empire, 1837-1901",
+  "belle-epoque": "1870-1914 Europe and the European-built downtowns of Cairo, Alexandria, Bombay, Havana, Buenos Aires",
+  "art-nouveau": "Europe, 1890-1910",
+  "art-deco": "Europe, America and their colonial cities, 1920-1940",
+  "soviet-1920s-30s": "the Soviet avant-garde (constructivism), 1917-1935",
+  "mid-century": "international modernism, 1930-1975",
+  "brutalist": "concrete modernism, 1950-1980",
+  "corporate-modern": "corporate offices and brands, 1960-today",
+  "memphis": "Memphis group, Milan, 1981-1988",
+  "banknote": "engraved security printing on currency, bonds and certificates, 1800-today",
+  "japan-classical": "Japan, Heian to Momoyama, 794-1600",
+  "edo": "Japan under the Tokugawa, 1603-1868",
+  "china-ancient": "Shang to Han China, 1600 BC-AD 220: ritual bronzes",
+  "ming": "Ming China, 1368-1644",
+  "qing": "Qing China, 1644-1912",
+  "joseon": "Joseon Korea, 1392-1897",
+  "southeast-asia": "mainland and island Southeast Asia textiles, 1400-today",
+  "tibet": "Tibetan Buddhist art, 700-today",
+  "steppe": "Scythian to Kazakh and Kyrgyz nomads",
+  "west-africa": "Mali, Ghana, Nigeria and neighbours, textiles since 1600",
+  "southern-africa": "Ndebele, Zulu and Sotho lands, 1800-today",
+  "mesoamerica": "Aztec, Maya, Zapotec, before 1521",
+  "andes": "Inca and earlier Andean, before 1572",
+  "latin-america": "Latin America, 1850-1950: cement tiles and ironwork",
+  "pacific": "Polynesia, Melanesia, Micronesia",
+  "anglo-american-folk": "British and North American folk crafts, 1700-1950",
+  "scottish": "Scotland, 1700-today: tartan and tweed",
+  "maritime": "seafaring, ports and navies anywhere",
+  "domestic": "the ordinary modern home, 1950-today",
+  "nature": "plants and creatures, for nature and fantasy worlds",
+  "future": "invented futures",
+  "spaceflight": "rockets, spacecraft and space stations, 1957-today",
+  "electronics": "electronics, 1950-today",
+  "soviet-late": "the post-war Soviet Union and its allies, 1945-1991: star-wheat-and-gear state emblems, metro mosaics and stucco rosettes, pierced concrete screens, prefab modernism, space-age monuments",
+  "sasanian": "Sasanian Iran and Iraq, 224-651: carved stucco roundels and interlacing circles, pearl-roundel silks, winged palmettes",
+  "mongolia": "Mongolia from the empire to today: painted ger doors and felt, ulzii endless knots, alkhan hee hammer frets, ugalz horn scrolls",
+  "paleolithic": "Upper Palaeolithic Eurasia, 40,000-10,000 BC: engraved ivory and bone (meander bands, spiral pit patterns), shell beads, cave painting"
+ },
+ "homes": {
+  "girih:*": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "zellij:star": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "zellij:burst": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "zellij:chevron": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "zellij:circles": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "zellij:lattice": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "mashrabiya:turned": [
+   "mamluk",
+   "ottoman-arab"
+  ],
+  "japanese:asanoha": [
+   "japan-classical",
+   "edo"
+  ],
+  "japanese:seigaiha": [
+   "japan-classical",
+   "edo"
+  ],
+  "japanese:shippo": [
+   "japan-classical",
+   "edo"
+  ],
+  "japanese:kikko": [
+   "japan-classical",
+   "edo",
+   "joseon"
+  ],
+  "japanese:sayagata": [
+   "edo",
+   "ming"
+  ],
+  "japanese:kagome": [
+   "japan-classical",
+   "edo"
+  ],
+  "rosette:*": [
+   "mesopotamian",
+   "hellenistic",
+   "roman",
+   "byzantine",
+   "romanesque",
+   "gothic",
+   "seljuk",
+   "mamluk",
+   "ottoman",
+   "soviet-late",
+   "sasanian"
+  ],
+  "tech:traces": [
+   "electronics",
+   "future"
+  ],
+  "tech:circuit": [
+   "electronics",
+   "future"
+  ],
+  "tech:hexcells": [
+   "electronics",
+   "future"
+  ],
+  "tech:scan": [
+   "electronics",
+   "future",
+   "spaceflight"
+  ],
+  "tech:cubes": [
+   "roman",
+   "victorian",
+   "anglo-american-folk",
+   "mid-century"
+  ],
+  "deco:fan": [
+   "art-deco"
+  ],
+  "deco:arch": [
+   "art-deco"
+  ],
+  "deco:chevron": [
+   "art-deco"
+  ],
+  "deco:sunburst": [
+   "art-deco"
+  ],
+  "deco:ziggurat": [
+   "art-deco"
+  ],
+  "textile:quilt": [
+   "anglo-american-folk"
+  ],
+  "textile:weave": [
+   "scottish",
+   "anglo-american-folk",
+   "domestic"
+  ],
+  "textile:tartan": [
+   "scottish"
+  ],
+  "textile:ikat": [
+   "central-asia",
+   "southeast-asia",
+   "indian-textile",
+   "andes"
+  ],
+  "textile:kente": [
+   "west-africa"
+  ],
+  "textile:ticking": [
+   "domestic",
+   "anglo-american-folk",
+   "victorian"
+  ],
+  "fret:meander": [
+   "hellenistic",
+   "roman",
+   "neoclassical",
+   "mongolia",
+   "paleolithic"
+  ],
+  "fret:leiwen": [
+   "china-ancient",
+   "ming",
+   "qing",
+   "joseon",
+   "edo"
+  ],
+  "fret:knot": [
+   "celtic-insular",
+   "norse",
+   "coptic",
+   "ethiopian",
+   "tibet",
+   "steppe",
+   "mongolia",
+   "maritime"
+  ],
+  "organic:scroll": [
+   "hellenistic",
+   "roman",
+   "byzantine",
+   "seljuk",
+   "mamluk",
+   "ottoman",
+   "safavid",
+   "renaissance",
+   "baroque",
+   "sasanian"
+  ],
+  "organic:palmette": [
+   "pharaonic",
+   "mesopotamian",
+   "hellenistic",
+   "roman",
+   "neoclassical",
+   "soviet-late",
+   "sasanian"
+  ],
+  "organic:whiplash": [
+   "art-nouveau"
+  ],
+  "organic:leaftrellis": [
+   "nature",
+   "domestic"
+  ],
+  "heraldic:foil": [
+   "gothic",
+   "gothic-revival"
+  ],
+  "heraldic:tracery": [
+   "gothic",
+   "gothic-revival"
+  ],
+  "heraldic:scales": [
+   "hellenistic",
+   "roman",
+   "romanesque",
+   "japan-classical",
+   "edo",
+   "nature",
+   "indus",
+   "aegean"
+  ],
+  "heraldic:vair": [
+   "gothic",
+   "renaissance"
+  ],
+  "heraldic:seme": [
+   "gothic",
+   "renaissance"
+  ],
+  "ancient:circles": [
+   "indus",
+   "mesopotamian",
+   "roman",
+   "byzantine",
+   "fatimid",
+   "mamluk",
+   "sasanian"
+  ],
+  "ancient:stepfret": [
+   "mesoamerica",
+   "andes"
+  ],
+  "ancient:tocapu": [
+   "andes"
+  ],
+  "ancient:spirals": [
+   "aegean",
+   "hellenistic",
+   "celtic-insular",
+   "paleolithic"
+  ],
+  "scifi:hexarmour": [
+   "future",
+   "spaceflight"
+  ],
+  "scifi:isogrid": [
+   "spaceflight",
+   "future"
+  ],
+  "scifi:honeycomb": [
+   "spaceflight",
+   "future",
+   "nature"
+  ],
+  "scifi:rings": [
+   "future",
+   "spaceflight"
+  ],
+  "scifi:heatshield": [
+   "spaceflight",
+   "future"
+  ],
+  "scifi:solar": [
+   "spaceflight",
+   "future",
+   "electronics"
+  ],
+  "scifi:geodesic": [
+   "mid-century",
+   "spaceflight",
+   "future"
+  ],
+  "scifi:orbit": [
+   "future",
+   "spaceflight",
+   "soviet-late"
+  ],
+  "scifi:scangrid": [
+   "future",
+   "electronics"
+  ],
+  "scifi:cairo": [
+   "future",
+   "mid-century"
+  ],
+  "scifi:pentagon": [
+   "future",
+   "mid-century"
+  ],
+  "chinese:bingwen": [
+   "ming",
+   "qing",
+   "joseon"
+  ],
+  "chinese:window": [
+   "ming",
+   "qing"
+  ],
+  "chinese:coin": [
+   "ming",
+   "qing",
+   "joseon"
+  ],
+  "southasian:jali": [
+   "mughal",
+   "rajput"
+  ],
+  "southasian:ogee": [
+   "mughal",
+   "safavid",
+   "ottoman",
+   "renaissance",
+   "indian-textile"
+  ],
+  "brick:hazarbaf": [
+   "seljuk",
+   "timurid",
+   "safavid",
+   "victorian"
+  ],
+  "brick:herringbone": [
+   "roman",
+   "romanesque",
+   "renaissance",
+   "domestic"
+  ],
+  "brick:subway": [
+   "domestic",
+   "victorian",
+   "mid-century"
+  ],
+  "sectile:cosmati": [
+   "roman",
+   "byzantine",
+   "romanesque"
+  ],
+  "baroque:damask": [
+   "renaissance",
+   "baroque",
+   "victorian"
+  ],
+  "baroque:trellis": [
+   "baroque",
+   "neoclassical",
+   "victorian"
+  ],
+  "baroque:guilloche": [
+   "banknote"
+  ],
+  "victorian:grille": [
+   "victorian",
+   "belle-epoque",
+   "neoclassical"
+  ],
+  "victorian:encaustic": [
+   "victorian",
+   "belle-epoque",
+   "latin-america"
+  ],
+  "modern:constructivist": [
+   "soviet-1920s-30s"
+  ],
+  "modern:breeze": [
+   "mid-century",
+   "brutalist",
+   "soviet-late"
+  ],
+  "modern:grid": [
+   "mid-century",
+   "corporate-modern",
+   "soviet-late"
+  ],
+  "modern:memphis": [
+   "memphis"
+  ],
+  "african:bogolan": [
+   "west-africa"
+  ],
+  "african:ndebele": [
+   "southern-africa"
+  ],
+  "african:stampgrid": [
+   "west-africa"
+  ],
+  "steppe:horn": [
+   "steppe",
+   "central-asia",
+   "mongolia"
+  ],
+  "pacific:tapa": [
+   "pacific"
+  ],
+  "maritime:net": [
+   "maritime"
+  ],
+  "maritime:rope": [
+   "maritime"
+  ],
+  "maritime:wave": [
+   "maritime",
+   "hellenistic",
+   "roman",
+   "neoclassical",
+   "aegean"
+  ],
+  "soviet:coffer": [
+   "soviet-late"
+  ],
+  "soviet:wheat": [
+   "soviet-late"
+  ],
+  "tudor:knot": [
+   "renaissance",
+   "gothic"
+  ],
+  "tudor:rose": [
+   "gothic",
+   "renaissance"
+  ],
+  "mongol:olzii": [
+   "mongolia",
+   "tibet",
+   "steppe"
+  ],
+  "indus:pipal": [
+   "indus"
+  ],
+  "indus:scales": [
+   "indus"
+  ],
+  "sasanian:roundel": [
+   "sasanian",
+   "byzantine",
+   "central-asia"
+  ],
+  "sasanian:interlace": [
+   "byzantine",
+   "coptic",
+   "sasanian",
+   "roman"
+  ],
+  "louis:guilloche": [
+   "neoclassical",
+   "hellenistic",
+   "roman",
+   "renaissance"
+  ],
+  "louis:fleur": [
+   "neoclassical",
+   "baroque",
+   "gothic"
+  ],
+  "paleo:chevron": [
+   "paleolithic"
+  ],
+  "paleo:ochre": [
+   "paleolithic"
+  ]
+ }
+}

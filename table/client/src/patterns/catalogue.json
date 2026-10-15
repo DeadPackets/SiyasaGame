@@ -1,0 +1,3043 @@
+[
+ {
+  "id": "girih:4.8.8",
+  "name": "girih 4.8.8",
+  "recipe": {
+   "layers": [
+    {
+     "family": "girih",
+     "params": {
+      "tiling": "4.8.8",
+      "angle": 67.5,
+      "width": 2.4,
+      "line": "c",
+      "fills": {
+       "star8": "a"
+      }
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "girih:6.6.6",
+  "name": "girih 6.6.6",
+  "recipe": {
+   "layers": [
+    {
+     "family": "girih",
+     "params": {
+      "tiling": "6.6.6",
+      "angle": 60,
+      "width": 2.4,
+      "delta": 0.25,
+      "fills": {
+       "star6": "a/0.6"
+      }
+     }
+    }
+   ],
+   "cell": "hex"
+  },
+  "pal": {
+   "a": "#4f86d6",
+   "b": "#0a1630",
+   "c": "#b9cdee"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "girih:3.12.12",
+  "name": "girih 3.12.12 · zellij",
+  "recipe": {
+   "layers": [
+    {
+     "family": "girih",
+     "params": {
+      "tiling": "3.12.12",
+      "angle": 66,
+      "width": 2.2,
+      "petals": 0.42,
+      "fills": {
+       "star12": "a",
+       "petal": "a/0.6",
+       "core": "c"
+      }
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#38b2a3",
+   "b": "#082220",
+   "c": "#aee3d8"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "name": "girih 4.6.12",
+  "recipe": {
+   "cell": "hex",
+   "layers": [
+    {
+     "family": "girih",
+     "params": {
+      "tiling": "4.6.12",
+      "angle": 60,
+      "width": 2.2,
+      "outline": 0.9,
+      "line": "c",
+      "edge": "b",
+      "fills": {
+       "star12": "a",
+       "star6": "a/0.6"
+      }
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#c8a24a",
+   "b": "#241c0e",
+   "c": "#e6d29a"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "id": "girih:4.6.12",
+  "tier": "hero"
+ },
+ {
+  "id": "girih:10.bowtie",
+  "name": "girih 10.bowtie · 72°",
+  "recipe": {
+   "layers": [
+    {
+     "family": "girih",
+     "params": {
+      "tiling": "10.bowtie",
+      "angle": 72,
+      "width": 2,
+      "outline": 0.8,
+      "line": "c",
+      "edge": "b",
+      "fills": {
+       "star10": "a",
+       "core": "c/0.5"
+      }
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "girih:16.4",
+  "name": "girih 16.4 · interlace",
+  "recipe": {
+   "layers": [
+    {
+     "family": "girih",
+     "params": {
+      "tiling": "16.4",
+      "angle": 70,
+      "width": 2.6,
+      "outline": 1,
+      "interlace": true,
+      "line": "a",
+      "edge": "b",
+      "fills": {
+       "star": "a/0.25"
+      }
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#ddc6f2"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "zellij:star",
+  "name": "zellij star · Islamism hand-made",
+  "recipe": {
+   "layers": [
+    {
+     "family": "zellij",
+     "params": {
+      "motif": "star"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#33a873",
+   "b": "#0c2118",
+   "c": "#aae8c6"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "zellij:burst",
+  "name": "zellij burst · Nasserism hand-made",
+  "recipe": {
+   "layers": [
+    {
+     "family": "zellij",
+     "params": {
+      "motif": "burst"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a110d",
+   "c": "#f6bcad"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "zellij:chevron",
+  "name": "zellij chevron · military hand-made",
+  "recipe": {
+   "layers": [
+    {
+     "family": "zellij",
+     "params": {
+      "motif": "chevron"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "zellij:circles",
+  "name": "zellij circles · liberalism hand-made",
+  "recipe": {
+   "layers": [
+    {
+     "family": "zellij",
+     "params": {
+      "motif": "circles"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#5583d8",
+   "b": "#121a2c",
+   "c": "#bccff5"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "zellij:lattice",
+  "name": "zellij lattice · Salafism hand-made",
+  "recipe": {
+   "layers": [
+    {
+     "family": "zellij",
+     "params": {
+      "motif": "lattice"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#ddc6f2"
+  },
+  "tags": [
+   "fatimid",
+   "mamluk",
+   "ottoman-arab",
+   "seljuk",
+   "timurid",
+   "safavid",
+   "ottoman",
+   "maghrebi",
+   "andalusi",
+   "mughal"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "japanese:asanoha",
+  "name": "japanese asanoha",
+  "recipe": {
+   "layers": [
+    {
+     "family": "japanese",
+     "params": {
+      "motif": "asanoha",
+      "scale": 1,
+      "stroke": 2.4
+     }
+    }
+   ],
+   "cell": "hex"
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "japan-classical",
+   "edo"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "japanese:seigaiha",
+  "name": "japanese seigaiha",
+  "recipe": {
+   "layers": [
+    {
+     "family": "japanese",
+     "params": {
+      "motif": "seigaiha",
+      "scale": 2,
+      "rings": 4,
+      "seq": [
+       "a",
+       "b",
+       "a",
+       "c"
+      ]
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "japan-classical",
+   "edo"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "japanese:shippo",
+  "name": "japanese shippo",
+  "recipe": {
+   "layers": [
+    {
+     "family": "japanese",
+     "params": {
+      "motif": "shippo",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a0f0b",
+   "c": "#efb7a6"
+  },
+  "tags": [
+   "japan-classical",
+   "edo"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "japanese:kikko",
+  "name": "japanese kikko",
+  "recipe": {
+   "cell": "hex",
+   "layers": [
+    {
+     "family": "japanese",
+     "params": {
+      "motif": "kikko",
+      "scale": 1,
+      "gap": 1.6,
+      "rings": 2,
+      "seq": [
+       "a",
+       "b"
+      ],
+      "inner": "flower"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "japan-classical",
+   "edo",
+   "joseon"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "japanese:sayagata",
+  "name": "japanese sayagata",
+  "recipe": {
+   "layers": [
+    {
+     "family": "japanese",
+     "params": {
+      "motif": "sayagata",
+      "scale": 2,
+      "stroke": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#d3b9ec"
+  },
+  "tags": [
+   "edo",
+   "ming"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "japanese:kagome",
+  "name": "japanese kagome",
+  "recipe": {
+   "layers": [
+    {
+     "family": "japanese",
+     "params": {
+      "motif": "kagome",
+      "scale": 1,
+      "stroke": 3.5,
+      "interlace": true
+     }
+    }
+   ],
+   "cell": "hex"
+  },
+  "pal": {
+   "a": "#33a873",
+   "b": "#0c2118",
+   "c": "#9fdcbb"
+  },
+  "tags": [
+   "japan-classical",
+   "edo"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "tech:circuit",
+  "name": "tech circuit",
+  "recipe": {
+   "layers": [
+    {
+     "family": "tech",
+     "params": {
+      "motif": "circuit",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3fa7a0",
+   "b": "#0b1f1e",
+   "c": "#bfe9e3"
+  },
+  "tags": [
+   "electronics",
+   "future"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "tech:cubes",
+  "name": "tech cubes",
+  "recipe": {
+   "layers": [
+    {
+     "family": "tech",
+     "params": {
+      "motif": "cubes",
+      "scale": 2,
+      "left": "a/0.55",
+      "right": "b"
+     }
+    }
+   ],
+   "cell": "hex"
+  },
+  "pal": {
+   "a": "#4f86d6",
+   "b": "#0a1630",
+   "c": "#b9cdee"
+  },
+  "tags": [
+   "roman",
+   "victorian",
+   "anglo-american-folk",
+   "mid-century"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "deco:fan",
+  "name": "deco fan",
+  "recipe": {
+   "layers": [
+    {
+     "family": "deco",
+     "params": {
+      "motif": "fan",
+      "scale": 1,
+      "rings": 3,
+      "ribs": 14,
+      "seq": [
+       "b",
+       "a"
+      ],
+      "edge": "c"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "art-deco"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "deco:chevron",
+  "name": "deco chevron",
+  "recipe": {
+   "layers": [
+    {
+     "family": "deco",
+     "params": {
+      "motif": "chevron",
+      "scale": 2,
+      "bands": 2,
+      "dot": 1.2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "art-deco"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "deco:chevron",
+  "name": "deco chevron 3 bands",
+  "recipe": {
+   "layers": [
+    {
+     "family": "deco",
+     "params": {
+      "motif": "chevron",
+      "scale": 1,
+      "bands": 3,
+      "fan": 13,
+      "depth": 0.3
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3fa7a0",
+   "b": "#0b1f1e",
+   "c": "#bfe9e3"
+  },
+  "tags": [
+   "art-deco"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "deco:sunburst",
+  "name": "deco sunburst",
+  "recipe": {
+   "layers": [
+    {
+     "family": "deco",
+     "params": {
+      "motif": "sunburst",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "art-deco"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "deco:sunburst",
+  "name": "deco sunburst rise brick",
+  "recipe": {
+   "layers": [
+    {
+     "family": "deco",
+     "params": {
+      "motif": "sunburst",
+      "scale": 2,
+      "rise": true,
+      "brick": true,
+      "rays": 20
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a110d",
+   "c": "#f6bcad"
+  },
+  "tags": [
+   "art-deco"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "textile:quilt",
+  "name": "textile quilt · lemoyne",
+  "recipe": {
+   "layers": [
+    {
+     "family": "textile",
+     "params": {
+      "motif": "quilt",
+      "block": "lemoyne",
+      "scale": 1,
+      "star": "a",
+      "star2": "a/0.65",
+      "centre": "c",
+      "corner": "c/0.3",
+      "sash": 0.12,
+      "stone": "c"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#4f86d6",
+   "b": "#0a1630",
+   "c": "#b9cdee"
+  },
+  "tags": [
+   "anglo-american-folk"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "fret:meander",
+  "name": "fret meander",
+  "recipe": {
+   "layers": [
+    {
+     "family": "fret",
+     "params": {
+      "motif": "meander",
+      "scale": 1,
+      "alt": true
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3fb39a",
+   "b": "#082420",
+   "c": "#bfeadf"
+  },
+  "tags": [
+   "hellenistic",
+   "roman",
+   "neoclassical"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "fret:leiwen",
+  "name": "fret leiwen",
+  "recipe": {
+   "layers": [
+    {
+     "family": "fret",
+     "params": {
+      "motif": "leiwen",
+      "scale": 2,
+      "turns": 3,
+      "box": "a/0.25"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#a57ad6",
+   "b": "#1e1030",
+   "c": "#ddc8f2"
+  },
+  "tags": [
+   "china-ancient",
+   "ming",
+   "qing",
+   "joseon",
+   "edo"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "fret:knot",
+  "name": "fret knot",
+  "recipe": {
+   "seed": 3,
+   "layers": [
+    {
+     "family": "fret",
+     "params": {
+      "motif": "knot",
+      "grid": 2,
+      "pattern": "lattice"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "celtic-insular",
+   "norse",
+   "coptic",
+   "ethiopian",
+   "tibet",
+   "steppe"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "heraldic:tracery",
+  "name": "heraldic tracery",
+  "recipe": {
+   "layers": [
+    {
+     "family": "heraldic",
+     "params": {
+      "motif": "tracery"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#d3b9ec"
+  },
+  "tags": [
+   "gothic",
+   "gothic-revival"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "heraldic:scales",
+  "name": "heraldic scales",
+  "recipe": {
+   "layers": [
+    {
+     "family": "heraldic",
+     "params": {
+      "motif": "scales",
+      "rib": "c/0.5"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "hellenistic",
+   "roman",
+   "romanesque",
+   "japan-classical",
+   "edo",
+   "nature"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "heraldic:vair",
+  "name": "heraldic vair",
+  "recipe": {
+   "layers": [
+    {
+     "family": "heraldic",
+     "params": {
+      "motif": "vair",
+      "scale": 3
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#5583d8",
+   "b": "#121a2c",
+   "c": "#bccff5"
+  },
+  "tags": [
+   "gothic",
+   "renaissance"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "ancient:circles",
+  "name": "ancient circles",
+  "recipe": {
+   "layers": [
+    {
+     "family": "ancient",
+     "params": {
+      "motif": "circles",
+      "scale": 1,
+      "radius": 0.71,
+      "dot": 1.4,
+      "ring": 0.3
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#4f86d6",
+   "b": "#0a1630",
+   "c": "#b9cdee"
+  },
+  "tags": [
+   "indus",
+   "mesopotamian",
+   "roman",
+   "byzantine",
+   "fatimid",
+   "mamluk"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "ancient:stepfret",
+  "name": "ancient stepfret",
+  "recipe": {
+   "layers": [
+    {
+     "family": "ancient",
+     "params": {
+      "motif": "stepfret",
+      "scale": 1,
+      "alt": true,
+      "block": "c/0.4",
+      "outline": 0.5
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#e0533c",
+   "b": "#2a0d09",
+   "c": "#f7c9b8"
+  },
+  "tags": [
+   "mesoamerica",
+   "andes"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "ancient:spirals",
+  "name": "ancient spirals",
+  "recipe": {
+   "layers": [
+    {
+     "family": "ancient",
+     "params": {
+      "motif": "spirals",
+      "scale": 3,
+      "dot": 1.5
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "aegean",
+   "hellenistic",
+   "celtic-insular"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "scifi:hexarmour",
+  "name": "scifi hexarmour",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "hexarmour",
+      "scale": 3
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#8e9aa8",
+   "b": "#14181d",
+   "c": "#cdd5de"
+  },
+  "tags": [
+   "future",
+   "spaceflight"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "scifi:isogrid",
+  "name": "scifi isogrid",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "isogrid",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3fa7a0",
+   "b": "#0b1f1e",
+   "c": "#bfe9e3"
+  },
+  "tags": [
+   "spaceflight",
+   "future"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "scifi:honeycomb",
+  "name": "scifi honeycomb",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "honeycomb",
+      "scale": 4
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "spaceflight",
+   "future",
+   "nature"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "scifi:rings",
+  "name": "scifi rings",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "rings",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#5583d8",
+   "b": "#121a2c",
+   "c": "#bccff5"
+  },
+  "tags": [
+   "future",
+   "spaceflight"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "scifi:heatshield",
+  "name": "scifi heatshield",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "heatshield",
+      "scale": 4
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#8e9aa8",
+   "b": "#14181d",
+   "c": "#cdd5de"
+  },
+  "tags": [
+   "spaceflight",
+   "future"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "scifi:solar",
+  "name": "scifi solar",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "solar",
+      "scale": 3
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#5583d8",
+   "b": "#121a2c",
+   "c": "#bccff5"
+  },
+  "tags": [
+   "spaceflight",
+   "future",
+   "electronics"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "scifi:geodesic",
+  "name": "scifi geodesic",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "geodesic",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3fa7a0",
+   "b": "#0b1f1e",
+   "c": "#bfe9e3"
+  },
+  "tags": [
+   "mid-century",
+   "spaceflight",
+   "future"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "chinese:window",
+  "name": "chinese window",
+  "recipe": {
+   "layers": [
+    {
+     "family": "chinese",
+     "params": {
+      "motif": "window"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#38b2a3",
+   "b": "#082220",
+   "c": "#aee3d8"
+  },
+  "tags": [
+   "ming",
+   "qing"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "chinese:coin",
+  "name": "chinese coin",
+  "recipe": {
+   "layers": [
+    {
+     "family": "chinese",
+     "params": {
+      "motif": "coin",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "ming",
+   "qing",
+   "joseon"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "southasian:jali",
+  "name": "southasian jali",
+  "recipe": {
+   "layers": [
+    {
+     "family": "southasian",
+     "params": {
+      "motif": "jali"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a0f0b",
+   "c": "#efb7a6"
+  },
+  "tags": [
+   "mughal",
+   "rajput"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "sectile:cosmati",
+  "name": "sectile cosmati",
+  "recipe": {
+   "layers": [
+    {
+     "family": "sectile",
+     "params": {
+      "motif": "cosmati",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "roman",
+   "byzantine",
+   "romanesque"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "maritime:wave",
+  "name": "maritime wave",
+  "recipe": {
+   "layers": [
+    {
+     "family": "maritime",
+     "params": {
+      "motif": "wave"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a0f0b",
+   "c": "#efb7a6"
+  },
+  "tags": [
+   "maritime",
+   "hellenistic",
+   "roman",
+   "neoclassical"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "mashrabiya:turned",
+  "name": "mashrabiya diagonal",
+  "recipe": {
+   "layers": [
+    {
+     "family": "mashrabiya",
+     "params": {
+      "motif": "turned",
+      "scale": 3
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#ddc6f2"
+  },
+  "tags": [
+   "mamluk",
+   "ottoman-arab"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "mashrabiya:turned",
+  "name": "mashrabiya square",
+  "recipe": {
+   "layers": [
+    {
+     "family": "mashrabiya",
+     "params": {
+      "motif": "turned",
+      "scale": 3,
+      "diagonal": false
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "mamluk",
+   "ottoman-arab"
+  ],
+  "tier": "support"
+ },
+ {
+  "name": "rosette · ray (Nasserism round 1)",
+  "recipe": {
+   "layers": [
+    {
+     "family": "rosette",
+     "params": {
+      "n": 16,
+      "size": 0.96,
+      "rings": [
+       {
+        "r": 1,
+        "w": 1.4,
+        "slot": "c"
+       },
+       {
+        "r": 0.34,
+        "w": 1,
+        "slot": "c"
+       }
+      ],
+      "petals": [
+       {
+        "shape": "dart",
+        "r0": 0.36,
+        "r1": 0.97,
+        "width": 0.75,
+        "slot": "a"
+       }
+      ],
+      "disc": {
+       "r": 0.22,
+       "slot": "c"
+      },
+      "dots": [
+       {
+        "r": 0.28,
+        "mult": 1,
+        "size": 1,
+        "slot": "b"
+       }
+      ],
+      "filler": {
+       "kind": "star",
+       "n": 8,
+       "size": 0.5,
+       "inner": 0.42,
+       "slot": "a",
+       "dot": 2,
+       "dotSlot": "c"
+      },
+      "links": {
+       "w": 1.8,
+       "slot": "c"
+      }
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a110d",
+   "c": "#f6bcad"
+  },
+  "tags": [
+   "mesopotamian",
+   "hellenistic",
+   "roman",
+   "byzantine",
+   "romanesque",
+   "gothic",
+   "seljuk",
+   "mamluk",
+   "ottoman"
+  ],
+  "id": "rosette:*",
+  "tier": "support"
+ },
+ {
+  "name": "rosette · lens",
+  "recipe": {
+   "layers": [
+    {
+     "family": "rosette",
+     "params": {
+      "n": 12,
+      "size": 0.86,
+      "rings": [
+       {
+        "r": 0.9,
+        "w": 1.2,
+        "slot": "c"
+       }
+      ],
+      "petals": [
+       {
+        "shape": "lens",
+        "r0": 0.15,
+        "r1": 0.8,
+        "width": 0.5
+       }
+      ],
+      "links": {
+       "w": 2
+      },
+      "filler": {
+       "kind": "star",
+       "size": 0.3,
+       "slot": "c"
+      }
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "mesopotamian",
+   "hellenistic",
+   "roman",
+   "byzantine",
+   "romanesque",
+   "gothic",
+   "seljuk",
+   "mamluk",
+   "ottoman"
+  ],
+  "id": "rosette:*",
+  "tier": "support"
+ },
+ {
+  "id": "tech:traces",
+  "name": "tech traces",
+  "recipe": {
+   "layers": [
+    {
+     "family": "tech",
+     "params": {
+      "motif": "traces"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3fa7a0",
+   "b": "#0b1f1e",
+   "c": "#bfe9e3"
+  },
+  "tags": [
+   "electronics",
+   "future"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "tech:hexcells",
+  "name": "tech hexcells",
+  "recipe": {
+   "layers": [
+    {
+     "family": "tech",
+     "params": {
+      "motif": "hexcells",
+      "scale": 6
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "electronics",
+   "future"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "tech:scan",
+  "name": "tech scan",
+  "recipe": {
+   "layers": [
+    {
+     "family": "tech",
+     "params": {
+      "motif": "scan",
+      "rows": 4
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#ddc6f2"
+  },
+  "tags": [
+   "electronics",
+   "future",
+   "spaceflight"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "deco:arch",
+  "name": "deco arch",
+  "recipe": {
+   "layers": [
+    {
+     "family": "deco",
+     "params": {
+      "motif": "arch",
+      "scale": 1,
+      "nest": 4,
+      "seq": [
+       "a",
+       "b",
+       "c",
+       "b"
+      ],
+      "key": "c",
+      "rays": 9,
+      "offset": true
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#a57ad6",
+   "b": "#1e1030",
+   "c": "#ddc8f2"
+  },
+  "tags": [
+   "art-deco"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "deco:ziggurat",
+  "name": "deco ziggurat",
+  "recipe": {
+   "layers": [
+    {
+     "family": "deco",
+     "params": {
+      "motif": "ziggurat",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "art-deco"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "deco:ziggurat",
+  "name": "deco ziggurat line",
+  "recipe": {
+   "layers": [
+    {
+     "family": "deco",
+     "params": {
+      "motif": "ziggurat",
+      "scale": 1,
+      "steps": 4,
+      "bands": 5,
+      "seq": [
+       "a",
+       "b",
+       "c/0.6",
+       "b",
+       "a/0.6"
+      ]
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#5583d8",
+   "b": "#121a2c",
+   "c": "#bccff5"
+  },
+  "tags": [
+   "art-deco"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "textile:weave",
+  "name": "textile weave · houndstooth",
+  "recipe": {
+   "layers": [
+    {
+     "family": "textile",
+     "params": {
+      "motif": "weave",
+      "preset": "houndstooth",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#a57ad6",
+   "b": "#1e1030",
+   "c": "#ddc8f2"
+  },
+  "tags": [
+   "scottish",
+   "anglo-american-folk",
+   "domestic"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "textile:tartan",
+  "name": "textile tartan",
+  "recipe": {
+   "layers": [
+    {
+     "family": "textile",
+     "params": {
+      "motif": "tartan",
+      "sett": [
+       [
+        "a",
+        12
+       ],
+       [
+        "b",
+        3
+       ],
+       [
+        "c",
+        1
+       ],
+       [
+        "b",
+        3
+       ],
+       [
+        "a",
+        2
+       ],
+       [
+        "c",
+        6
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "scottish"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "textile:ikat",
+  "name": "textile ikat",
+  "recipe": {
+   "layers": [
+    {
+     "family": "textile",
+     "params": {
+      "motif": "ikat",
+      "scale": 1,
+      "nest": 3,
+      "dot": 1.5
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#4f86d6",
+   "b": "#0a1630",
+   "c": "#b9cdee"
+  },
+  "tags": [
+   "central-asia",
+   "southeast-asia",
+   "indian-textile",
+   "andes"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "textile:kente",
+  "name": "textile kente",
+  "recipe": {
+   "layers": [
+    {
+     "family": "textile",
+     "params": {
+      "motif": "kente",
+      "strips": 2,
+      "blocks": 3,
+      "motif2": "diamond",
+      "bars": 3
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#e0533c",
+   "b": "#2a0d09",
+   "c": "#f7c9b8"
+  },
+  "tags": [
+   "west-africa"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "textile:ticking",
+  "name": "textile ticking",
+  "recipe": {
+   "layers": [
+    {
+     "family": "textile",
+     "params": {
+      "motif": "ticking"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "domestic",
+   "anglo-american-folk",
+   "victorian"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "organic:scroll",
+  "name": "organic scroll",
+  "recipe": {
+   "layers": [
+    {
+     "family": "organic",
+     "params": {
+      "motif": "scroll",
+      "scale": 1,
+      "leaf": "palmette",
+      "petals": 8
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#e0533c",
+   "b": "#2a0d09",
+   "c": "#f7c9b8"
+  },
+  "tags": [
+   "hellenistic",
+   "roman",
+   "byzantine",
+   "seljuk",
+   "mamluk",
+   "ottoman",
+   "safavid",
+   "renaissance",
+   "baroque"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "organic:palmette",
+  "name": "organic palmette",
+  "recipe": {
+   "layers": [
+    {
+     "family": "organic",
+     "params": {
+      "motif": "palmette",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#a57ad6",
+   "b": "#1e1030",
+   "c": "#ddc8f2"
+  },
+  "tags": [
+   "pharaonic",
+   "mesopotamian",
+   "hellenistic",
+   "roman",
+   "neoclassical"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "organic:whiplash",
+  "name": "organic whiplash",
+  "recipe": {
+   "layers": [
+    {
+     "family": "organic",
+     "params": {
+      "motif": "whiplash",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "art-nouveau"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "organic:leaftrellis",
+  "name": "organic leaftrellis",
+  "recipe": {
+   "layers": [
+    {
+     "family": "organic",
+     "params": {
+      "motif": "leaftrellis"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a0f0b",
+   "c": "#efb7a6"
+  },
+  "tags": [
+   "nature",
+   "domestic"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "heraldic:foil",
+  "name": "heraldic foil",
+  "recipe": {
+   "layers": [
+    {
+     "family": "heraldic",
+     "params": {
+      "motif": "foil",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3fb39a",
+   "b": "#082420",
+   "c": "#bfeadf"
+  },
+  "tags": [
+   "gothic",
+   "gothic-revival"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "heraldic:seme",
+  "name": "heraldic seme fleur",
+  "recipe": {
+   "layers": [
+    {
+     "family": "heraldic",
+     "params": {
+      "motif": "seme",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#5583d8",
+   "b": "#121a2c",
+   "c": "#bccff5"
+  },
+  "tags": [
+   "gothic",
+   "renaissance"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "heraldic:seme",
+  "name": "heraldic seme ermine",
+  "recipe": {
+   "layers": [
+    {
+     "family": "heraldic",
+     "params": {
+      "motif": "seme",
+      "scale": 2,
+      "charge": "ermine"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a110d",
+   "c": "#f6bcad"
+  },
+  "tags": [
+   "gothic",
+   "renaissance"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "ancient:tocapu",
+  "name": "ancient tocapu",
+  "recipe": {
+   "layers": [
+    {
+     "family": "ancient",
+     "params": {
+      "motif": "tocapu"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#33a873",
+   "b": "#0c2118",
+   "c": "#9fdcbb"
+  },
+  "tags": [
+   "andes"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "scifi:orbit",
+  "name": "scifi orbit",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "orbit",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#ddc6f2"
+  },
+  "tags": [
+   "future",
+   "spaceflight"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "scifi:scangrid",
+  "name": "scifi scangrid",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "scangrid",
+      "scale": 2,
+      "ring": true
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#5583d8",
+   "b": "#121a2c",
+   "c": "#bccff5"
+  },
+  "tags": [
+   "future",
+   "electronics"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "scifi:cairo",
+  "name": "scifi cairo",
+  "recipe": {
+   "layers": [
+    {
+     "family": "scifi",
+     "params": {
+      "motif": "cairo",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "future",
+   "mid-century"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "chinese:bingwen",
+  "name": "chinese bingwen · plum blossom",
+  "recipe": {
+   "layers": [
+    {
+     "family": "chinese",
+     "params": {
+      "motif": "bingwen",
+      "blossom": 0.5
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#4f86d6",
+   "b": "#0a1630",
+   "c": "#b9cdee"
+  },
+  "tags": [
+   "ming",
+   "qing",
+   "joseon"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "southasian:ogee",
+  "name": "southasian ogee",
+  "recipe": {
+   "layers": [
+    {
+     "family": "southasian",
+     "params": {
+      "motif": "ogee",
+      "bud": true
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#d3b9ec"
+  },
+  "tags": [
+   "mughal",
+   "safavid",
+   "ottoman",
+   "renaissance",
+   "indian-textile"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "brick:hazarbaf",
+  "name": "brick hazarbaf",
+  "recipe": {
+   "layers": [
+    {
+     "family": "brick",
+     "params": {
+      "motif": "hazarbaf"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#33a873",
+   "b": "#0c2118",
+   "c": "#9fdcbb"
+  },
+  "tags": [
+   "seljuk",
+   "timurid",
+   "safavid",
+   "victorian"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "brick:herringbone",
+  "name": "brick herringbone",
+  "recipe": {
+   "layers": [
+    {
+     "family": "brick",
+     "params": {
+      "motif": "herringbone"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#4f86d6",
+   "b": "#0a1630",
+   "c": "#b9cdee"
+  },
+  "tags": [
+   "roman",
+   "romanesque",
+   "renaissance",
+   "domestic"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "brick:subway",
+  "name": "brick subway",
+  "recipe": {
+   "layers": [
+    {
+     "family": "brick",
+     "params": {
+      "motif": "subway",
+      "rows": 6,
+      "cols": 3
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#38b2a3",
+   "b": "#082220",
+   "c": "#aee3d8"
+  },
+  "tags": [
+   "domestic",
+   "victorian",
+   "mid-century"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "baroque:damask",
+  "name": "baroque damask",
+  "recipe": {
+   "layers": [
+    {
+     "family": "baroque",
+     "params": {
+      "motif": "damask",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a0f0b",
+   "c": "#efb7a6"
+  },
+  "tags": [
+   "renaissance",
+   "baroque",
+   "victorian"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "baroque:trellis",
+  "name": "baroque trellis",
+  "recipe": {
+   "layers": [
+    {
+     "family": "baroque",
+     "params": {
+      "motif": "trellis"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#d3b9ec"
+  },
+  "tags": [
+   "baroque",
+   "neoclassical",
+   "victorian"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "baroque:guilloche",
+  "name": "baroque guilloche",
+  "recipe": {
+   "layers": [
+    {
+     "family": "baroque",
+     "params": {
+      "motif": "guilloche"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#33a873",
+   "b": "#0c2118",
+   "c": "#9fdcbb"
+  },
+  "tags": [
+   "banknote"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "victorian:grille",
+  "name": "victorian grille",
+  "recipe": {
+   "layers": [
+    {
+     "family": "victorian",
+     "params": {
+      "motif": "grille",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#4f86d6",
+   "b": "#0a1630",
+   "c": "#b9cdee"
+  },
+  "tags": [
+   "victorian",
+   "belle-epoque",
+   "neoclassical"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "victorian:encaustic",
+  "name": "victorian encaustic",
+  "recipe": {
+   "layers": [
+    {
+     "family": "victorian",
+     "params": {
+      "motif": "encaustic",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#38b2a3",
+   "b": "#082220",
+   "c": "#aee3d8"
+  },
+  "tags": [
+   "victorian",
+   "belle-epoque",
+   "latin-america"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "modern:constructivist",
+  "name": "modern constructivist",
+  "recipe": {
+   "layers": [
+    {
+     "family": "modern",
+     "params": {
+      "motif": "constructivist",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "soviet-1920s-30s"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "modern:breeze",
+  "name": "modern breeze circle",
+  "recipe": {
+   "layers": [
+    {
+     "family": "modern",
+     "params": {
+      "motif": "breeze",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a110d",
+   "c": "#f6bcad"
+  },
+  "tags": [
+   "mid-century",
+   "brutalist"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "modern:breeze",
+  "name": "modern breeze petal",
+  "recipe": {
+   "layers": [
+    {
+     "family": "modern",
+     "params": {
+      "motif": "breeze",
+      "scale": 2,
+      "opening": "petal"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#f2d99e"
+  },
+  "tags": [
+   "mid-century",
+   "brutalist"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "modern:breeze",
+  "name": "modern breeze diamond",
+  "recipe": {
+   "layers": [
+    {
+     "family": "modern",
+     "params": {
+      "motif": "breeze",
+      "scale": 2,
+      "opening": "diamond"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3fa7a0",
+   "b": "#0b1f1e",
+   "c": "#bfe9e3"
+  },
+  "tags": [
+   "mid-century",
+   "brutalist"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "modern:grid",
+  "name": "modern grid",
+  "recipe": {
+   "layers": [
+    {
+     "family": "modern",
+     "params": {
+      "motif": "grid",
+      "stroke": 2.2,
+      "fineWidth": 1.1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#33a873",
+   "b": "#0c2118",
+   "c": "#9fdcbb"
+  },
+  "tags": [
+   "mid-century",
+   "corporate-modern"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "modern:memphis",
+  "name": "modern memphis",
+  "recipe": {
+   "layers": [
+    {
+     "family": "modern",
+     "params": {
+      "motif": "memphis"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#38b2a3",
+   "b": "#082220",
+   "c": "#aee3d8"
+  },
+  "tags": [
+   "memphis"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "african:bogolan",
+  "name": "african bogolan",
+  "recipe": {
+   "layers": [
+    {
+     "family": "african",
+     "params": {
+      "motif": "bogolan"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "west-africa"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "african:ndebele",
+  "name": "african ndebele",
+  "recipe": {
+   "layers": [
+    {
+     "family": "african",
+     "params": {
+      "motif": "ndebele",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d65842",
+   "b": "#2a0f0b",
+   "c": "#efb7a6"
+  },
+  "tags": [
+   "southern-africa"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "african:stampgrid",
+  "name": "african stampgrid",
+  "recipe": {
+   "layers": [
+    {
+     "family": "african",
+     "params": {
+      "motif": "stampgrid"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#9c66d2",
+   "b": "#1c1228",
+   "c": "#d3b9ec"
+  },
+  "tags": [
+   "west-africa"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "steppe:horn",
+  "name": "steppe horn",
+  "recipe": {
+   "layers": [
+    {
+     "family": "steppe",
+     "params": {
+      "motif": "horn"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#33a873",
+   "b": "#0c2118",
+   "c": "#9fdcbb"
+  },
+  "tags": [
+   "steppe",
+   "central-asia"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "pacific:tapa",
+  "name": "pacific tapa",
+  "recipe": {
+   "layers": [
+    {
+     "family": "pacific",
+     "params": {
+      "motif": "tapa"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#4f86d6",
+   "b": "#0a1630",
+   "c": "#b9cdee"
+  },
+  "tags": [
+   "pacific"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "maritime:net",
+  "name": "maritime net",
+  "recipe": {
+   "layers": [
+    {
+     "family": "maritime",
+     "params": {
+      "motif": "net"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#38b2a3",
+   "b": "#082220",
+   "c": "#aee3d8"
+  },
+  "tags": [
+   "maritime"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "maritime:rope",
+  "name": "maritime rope",
+  "recipe": {
+   "layers": [
+    {
+     "family": "maritime",
+     "params": {
+      "motif": "rope"
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#d49a3a",
+   "b": "#2a1d0f",
+   "c": "#ecd193"
+  },
+  "tags": [
+   "maritime"
+  ],
+  "tier": "support"
+ },
+ {
+  "id": "soviet:coffer",
+  "name": "soviet coffer",
+  "recipe": {
+   "layers": [
+    {
+     "family": "soviet",
+     "params": {
+      "motif": "coffer",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#c8413a",
+   "b": "#2a0f0d",
+   "c": "#f0c8a0"
+  },
+  "tags": [
+   "soviet-late"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "soviet:wheat",
+  "name": "soviet wheat",
+  "recipe": {
+   "layers": [
+    {
+     "family": "soviet",
+     "params": {
+      "motif": "wheat",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#c8413a",
+   "b": "#2a0f0d",
+   "c": "#f0c8a0"
+  },
+  "tags": [
+   "soviet-late"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "tudor:knot",
+  "name": "tudor knot",
+  "recipe": {
+   "layers": [
+    {
+     "family": "tudor",
+     "params": {
+      "motif": "knot",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#c9a24a",
+   "b": "#1f1a10",
+   "c": "#e6d3a2"
+  },
+  "tags": [
+   "renaissance",
+   "gothic"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "tudor:rose",
+  "name": "tudor rose",
+  "recipe": {
+   "layers": [
+    {
+     "family": "tudor",
+     "params": {
+      "motif": "rose",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#c9a24a",
+   "b": "#1f1a10",
+   "c": "#e6d3a2"
+  },
+  "tags": [
+   "gothic",
+   "renaissance"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "mongol:olzii",
+  "name": "mongol olzii",
+  "recipe": {
+   "layers": [
+    {
+     "family": "mongol",
+     "params": {
+      "motif": "olzii",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3f86c8",
+   "b": "#0e1a2a",
+   "c": "#e9d9a8"
+  },
+  "tags": [
+   "mongolia",
+   "tibet",
+   "steppe"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "indus:pipal",
+  "name": "indus pipal",
+  "recipe": {
+   "layers": [
+    {
+     "family": "indus",
+     "params": {
+      "motif": "pipal",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#c4683a",
+   "b": "#2a140b",
+   "c": "#efd2b0"
+  },
+  "tags": [
+   "indus"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "indus:scales",
+  "name": "indus scales",
+  "recipe": {
+   "layers": [
+    {
+     "family": "indus",
+     "params": {
+      "motif": "scales",
+      "scale": 4
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#c4683a",
+   "b": "#2a140b",
+   "c": "#efd2b0"
+  },
+  "tags": [
+   "indus"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "sasanian:roundel",
+  "name": "sasanian roundel",
+  "recipe": {
+   "layers": [
+    {
+     "family": "sasanian",
+     "params": {
+      "motif": "roundel",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3f9a86",
+   "b": "#0d211c",
+   "c": "#efe0b4"
+  },
+  "tags": [
+   "sasanian",
+   "byzantine",
+   "central-asia"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "sasanian:interlace",
+  "name": "sasanian interlace",
+  "recipe": {
+   "layers": [
+    {
+     "family": "sasanian",
+     "params": {
+      "motif": "interlace",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#3f9a86",
+   "b": "#0d211c",
+   "c": "#efe0b4"
+  },
+  "tags": [
+   "byzantine",
+   "coptic",
+   "sasanian",
+   "roman"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "louis:guilloche",
+  "name": "louis guilloche",
+  "recipe": {
+   "layers": [
+    {
+     "family": "louis",
+     "params": {
+      "motif": "guilloche",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#6f8fc8",
+   "b": "#151d2e",
+   "c": "#e9e2cc"
+  },
+  "tags": [
+   "neoclassical",
+   "hellenistic",
+   "roman",
+   "renaissance"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "louis:fleur",
+  "name": "louis fleur",
+  "recipe": {
+   "layers": [
+    {
+     "family": "louis",
+     "params": {
+      "motif": "fleur",
+      "scale": 1
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#6f8fc8",
+   "b": "#151d2e",
+   "c": "#e9e2cc"
+  },
+  "tags": [
+   "neoclassical",
+   "baroque",
+   "gothic"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "paleo:chevron",
+  "name": "paleo chevron",
+  "recipe": {
+   "layers": [
+    {
+     "family": "paleo",
+     "params": {
+      "motif": "chevron",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#c26a3a",
+   "b": "#22140c",
+   "c": "#e8c49a"
+  },
+  "tags": [
+   "paleolithic"
+  ],
+  "tier": "hero"
+ },
+ {
+  "id": "paleo:ochre",
+  "name": "paleo ochre",
+  "recipe": {
+   "layers": [
+    {
+     "family": "paleo",
+     "params": {
+      "motif": "ochre",
+      "scale": 2
+     }
+    }
+   ]
+  },
+  "pal": {
+   "a": "#c26a3a",
+   "b": "#22140c",
+   "c": "#e8c49a"
+  },
+  "tags": [
+   "paleolithic"
+  ],
+  "tier": "hero"
+ }
+]
