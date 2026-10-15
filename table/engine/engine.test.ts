@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import { loadPack } from "../bots/load";
 import { checkPack } from "./check";
-import type { Pack } from "./pack";
+import type { Effect, Pack } from "./pack";
 
 const egypt = loadPack("egypt-2011");
 const mars = loadPack("mars-2091");
@@ -126,5 +126,74 @@ describe("the month's card", () => {
     expect(shortlist(egypt, s)).toEqual([]);
     pass(s);
     expect(s.phase).toBe("play");
+  });
+});
+
+import { hand, play, takePick } from "./turn";
+
+const playing = (p: Pack = egypt) => { const s = newGame(p, { seed: 1 }); pass(s); return s; };
+const slot = (p: Pack, s: ReturnType<typeof newGame>, id: string) => hand(p, s).find((c) => c.id === id);
+
+describe("the hand", () => {
+  test("Talk lifts one faction by 8 for 1 Trust and uses a play", () => {
+    const s = playing();
+    play(egypt, s, "talk", "rev");
+    expect([s.support.rev, s.res.trust, s.plays]).toEqual([44, 4, 1]);
+  });
+  test("the hand waits for the month's card, and 2 plays is the limit", () => {
+    const s = newGame(egypt, { seed: 1 });
+    expect(hand(egypt, s).every((c) => c.why === "phase")).toBe(true);
+    pass(s);
+    play(egypt, s, "talk", "rev");
+    play(egypt, s, "talk", "rev");
+    expect(slot(egypt, s, "talk")?.why).toBe("plays");
+  });
+  test("3 cards in a stack unlock its power card; 2 offer its picks once", () => {
+    const s = at(egypt, "h01");
+    s.stacks.nat = 2;
+    const ev = choose(egypt, s, 0);
+    expect(ev).toContainEqual({ t: "unlock", id: "p-nat" });
+    expect(s.offer?.key).toBe("stack:nat");
+    expect(s.phase).toBe("pick");
+    const id = s.offer?.ids[0] as string;
+    takePick(egypt, s, id);
+    expect([s.phase, s.picked]).toEqual(["play", [id]]);
+    expect(s.offer).toBeNull();
+  });
+  test("a pick set with every card banned gives no offer", () => {
+    const s = newGame(egypt, { seed: 1, banned: egypt.deck.ideologies.nat.picks.map((m) => m.id) });
+    draw(egypt, s, "h01", 1);
+    s.stacks.nat = 1;
+    choose(egypt, s, 0);
+    expect([s.offer, s.phase]).toEqual([null, "play"]);
+  });
+  test("a major law needs its corner's zone", () => {
+    const s = playing();
+    s.unlocked.push("l-lib");
+    s.res = { money: 35, force: 9, voice: 9, trust: 9 };
+    s.stacks.lib = 5;
+    expect(slot(egypt, s, "l-lib")?.why).toBe("zone");
+    s.stacks.lib = 12;
+    expect(slot(egypt, s, "l-lib")?.ok).toBe(true);
+  });
+  test("a law is enacted once and its modifiers last", () => {
+    const s = playing();
+    s.stacks.nat = 5;
+    s.unlocked.push("l-nat");
+    play(egypt, s, "l-nat");
+    expect(s.laws).toEqual(["l-nat"]);
+    expect(slot(egypt, s, "l-nat")).toBeUndefined();
+    expect(s.mods).toContainEqual(egypt.deck.ideologies.nat.law.effects.find((e) => e.op === "income") as Effect);
+  });
+  test("a cost modifier changes a price; an exchange covers a shortfall", () => {
+    const s = playing();
+    s.mods.push({ op: "cost", family: "talk", kind: "trust", delta: -1 });
+    expect(slot(egypt, s, "talk")?.cost).toEqual({});
+    const t = playing();
+    t.res.trust = 0;
+    expect(slot(egypt, t, "talk")?.why).toBe("cost");
+    t.mods.push({ op: "exchange", from: "voice", to: "trust", rate: 0.5 });
+    play(egypt, t, "talk", "rev");
+    expect([t.res.voice, t.res.trust]).toEqual([2, 0]);
   });
 });

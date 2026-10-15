@@ -1,5 +1,5 @@
 import { band, clamp, standing, zone } from "./geo";
-import { type Card, type Pack, type Res, type Role, type Size, card, kindOf } from "./pack";
+import { type Card, type Pack, type Res, type Role, type Size, card, handDef, kindOf } from "./pack";
 import { addRes, apply, costOf, fileTo, gripBy, hash01, modsOf, moveBy, pay, plan, runTriggers, sizeNum } from "./rules";
 import { type Ev, type Outcome, type State, rand } from "./state";
 import { TUNE } from "./tune";
@@ -73,6 +73,23 @@ export function progress(p: Pack, s: State, ev: Ev[]) {
         ev.push({ t: "unlock", id: c.id });
       }
   }
+  while (!s.offer && s.phase !== "over") {
+    const z = zone(p, s);
+    const key = [
+      ...p.world.compass.filter((id) => s.stacks[id] >= TUNE.stack.pick).map((id) => `stack:${id}`),
+      ...(s.grip <= TUNE.pickOpen ? ["open"] : []),
+      ...(s.grip >= TUNE.pickIron ? ["iron"] : []),
+      ...(z === "centre" ? ["centre"] : []),
+    ].find((k) => !s.pickDone.includes(k));
+    if (!key) return;
+    s.pickDone.push(key);
+    const set = key.startsWith("stack:") ? p.deck.ideologies[key.slice(6)].picks : p.deck.picks[key as "iron" | "open" | "centre"];
+    const ids = set.map((m) => m.id).filter((id) => !s.banned.includes(id)).sort((a, b) => hash01(s.seed, a) - hash01(s.seed, b));
+    if (!ids.length) continue;
+    s.offer = { key, ids };
+    s.phase = "pick";
+    ev.push({ t: "offer", key, ids });
+  }
 }
 
 function after(p: Pack, s: State, ev: Ev[]) {
@@ -110,6 +127,70 @@ export function choose(p: Pack, s: State, i: number, nudge: Record<string, numbe
     ev.push({ t: "election", passed, standing: st });
     if (!passed) return end(s, { kind: "fallen", by: "election", month: s.month }, ev);
     s.elected++;
+  }
+  after(p, s, ev);
+  return ev;
+}
+
+export function takePick(p: Pack, s: State, id: string | null): Ev[] {
+  if (s.phase !== "pick" || !s.offer) throw new Error(`takePick in phase ${s.phase}`);
+  if (id !== null) {
+    if (!s.offer.ids.includes(id)) throw new Error(`${id} is not offered`);
+    s.mods.push(...(handDef(p, id)?.effects ?? []));
+    s.picked.push(id);
+  }
+  s.offer = null;
+  s.phase = "play";
+  const ev: Ev[] = [];
+  after(p, s, ev);
+  return ev;
+}
+
+export type Kind = "talk" | "address" | "law" | "power" | "grip" | "patron";
+export interface HandCard { id: string; kind: Kind; cost: Res; ok: boolean; why?: "phase" | "plays" | "zone" | "cost"; target: boolean }
+
+export function hand(p: Pack, s: State): HandCard[] {
+  const z = zone(p, s), b = band(s.grip), d = p.deck, out: HandCard[] = [];
+  const add = (id: string, kind: Kind, base: Res, inZone = true) => {
+    if (s.banned.includes(id)) return;
+    const cost = costOf(s, kind, base);
+    const why = s.phase !== "play" ? "phase" : s.plays < 1 ? "plays" : !inZone ? "zone" : plan(s, cost) === null ? "cost" : undefined;
+    out.push(why ? { id, kind, cost, ok: false, why, target: kind === "talk" } : { id, kind, cost, ok: true, target: kind === "talk" });
+  };
+  add("talk", "talk", TUNE.talk.cost);
+  add("address", "address", TUNE.address.cost);
+  for (const id of p.world.compass) {
+    const l = d.ideologies[id].law;
+    if (s.unlocked.includes(l.id) && !s.laws.includes(l.id)) add(l.id, "law", l.cost ?? {}, z === id);
+  }
+  if (z === "centre") for (const l of d.centreLaws) if (!s.laws.includes(l.id)) add(l.id, "law", l.cost ?? {});
+  for (const id of p.world.compass) {
+    const c = d.ideologies[id].power;
+    if (s.unlocked.includes(c.id)) add(c.id, "power", c.cost ?? {});
+  }
+  if (b !== "middle") for (const c of d.gripCards[b]) add(c.id, "grip", c.cost ?? {});
+  for (const h of p.world.patrons) {
+    const c = d.patronCards[h.id];
+    if (c && s.support[h.id] >= TUNE.patronCardAt) add(c.id, "patron", c.cost ?? {});
+  }
+  return out;
+}
+
+export function play(p: Pack, s: State, id: string, target?: string): Ev[] {
+  const h = hand(p, s).find((x) => x.id === id);
+  if (!h?.ok) throw new Error(`cannot play ${id}: ${h?.why ?? "not in hand"}`);
+  if (id === "talk" && !p.world.factions.some((f) => f.id === target)) throw new Error("Talk needs a faction");
+  const ev: Ev[] = [];
+  pay(s, h.cost, ev);
+  s.plays--;
+  if (id === "talk") moveBy(s, target as string, TUNE.talk.up, ev, "talk");
+  else if (id === "address") s.doubleNext = true;
+  else {
+    for (const e of handDef(p, id)?.effects ?? []) apply(p, s, e, ev);
+    if (h.kind === "law") {
+      s.laws.push(id);
+      ev.push({ t: "law", id });
+    }
   }
   after(p, s, ev);
   return ev;
