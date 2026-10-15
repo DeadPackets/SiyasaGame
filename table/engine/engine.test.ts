@@ -262,3 +262,23 @@ describe("month end", () => {
     expect(() => switchVision(egypt, s, "v3")).toThrow();
   });
 });
+
+import { describe as line } from "./describe";
+
+describe("rules lines", () => {
+  const every = (p: Pack): Effect[] => {
+    const d = p.deck;
+    const hands = [...Object.values(d.ideologies).flatMap((i) => [i.power, i.law, ...i.picks]), ...d.centreLaws, ...Object.values(d.picks).flat(), ...Object.values(d.gripCards).flat(), ...Object.values(d.patronCards)];
+    const answers = [...d.situations, ...d.history, ...d.callbacks, ...d.elections, ...Object.values(d.intents)].flatMap((c) => c.answers.flatMap((a) => a.effects ?? []));
+    return [...hands.flatMap((h) => h.effects), ...answers];
+  };
+  test.each([["egypt", egypt], ["mars", mars]] as const)("%s: every effect reads as a short line", (_, p) => {
+    for (const e of every(p)) {
+      if (e.op === "setFlag") continue;
+      const s = line(p, e);
+      expect(s).not.toMatch(/undefined|NaN|lean:|\[object/);
+      expect(s.length).toBeGreaterThan(5);
+      expect(s.split(/\s+/).length).toBeLessThanOrEqual(25);
+    }
+  });
+});
