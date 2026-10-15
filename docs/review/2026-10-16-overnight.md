@@ -20,11 +20,14 @@ The owner asked me to finish the game to v1.0 alone and log everything that need
 | N12 | The build check now has a ceiling as well as a floor: a Vision the focused bot fulfils in more than 85% of 40 terms is "too easy" and goes to the one rules-a repair, but never fails a build. On Rome, one $0.06 repair moved v5 from 100% to 47.5%; v4 went from 92.5% to 100% (v2 and v3 stay at about 95%). | The N1 prompt rules made 4 of 5 Rome Visions trivially reachable. | Repairs can trade one easy Vision for another; spread is still 25% to 100% on Rome. |
 | N13 | A built world's id is `w-` plus 8 characters of the build id (for example `w-1a2b3c4d`), not a slug of its title. | The id is needed before the world has a title. | URLs are less readable. |
 | N14 | Each Workflow step has its own budget in dollars: world 2.5, skin 0.6, music 0.4, each deck part 1.5, finish 0.4. Every model step is retried at most once. | Rome cost 6.06 in all; step retries pay again. | A world that needs more than 2.5 dollars of search fails. |
-| N15 | Deployed to **siyasa.deadpackets.pw only**. The old address unitedstatesofjev.deadpackets.pw still runs v4 untouched. I did not delete any v4 data (D1 `usoj`, Vectorize `usoj-scenarios`, the old DOs and Workflows): the spec says to delete them on launch day, but deletion cannot be undone, so it waits for you. | Destructive steps need your yes. | v4 keeps costing a little until you clean it up. |
+| N15 | **Launched.** After the first real build passed and the review fixes shipped, unitedstatesofjev.deadpackets.pw moved to the Siyasa Worker and now 301-redirects to siyasa.deadpackets.pw. To undo: remove that route from `table/wrangler.jsonc` and redeploy v4 from `main`. I did not delete any v4 data (D1 `usoj`, Vectorize `usoj-scenarios`, the old DOs and Workflows): the spec says to delete them on launch day, but deletion cannot be undone, so it waits for you. | Destructive steps need your yes. | v4 keeps costing a little until you clean it up. |
 | N16 | Vision badges live in the browser (localStorage), like saves. "Most played" counts terms started, all presets together; the spec asks for presets counted apart, which I skipped. | No accounts; a per-preset count needs a schema change for little gain. | Badges do not follow a player across devices. |
 | N17 | A built world's text is cleaned before it is listed: angle brackets removed, straight double quotes turned into curly ones. The board puts pack text into the page as HTML, and built worlds are public. | Stops one stranger's prompt from running code in everyone's browser. | A world that really needs a `<` or `"` loses it. |
 | N18 | The walkthrough runs inside a shadow root on the board page. | The board's CSS styles many of the same class names (.fac, .dot, .mark). | None seen; the E2E passes 13 of 13. |
 | N19 | Custom difficulty is a 5th column of controls in the mock's rules table (Story, Standard, Hard, Brutal, Custom); changing any Custom control selects Custom. | The mock showed the table read-only; the spec asks for controls. | A design call you have not seen. |
+| N20 | A build whose checks still fail after repairs now stops (no retry, no listing). A failed build gives the address one more try that day, but the global daily count never goes back. | The review showed refunds let spend escape `DAILY_BUILD_CAP`. | Some builds that the old code would have listed now fail. |
+| N21 | The build-time copy now says about 15 minutes (landing, library card, build clock). The first production build took 14 minutes: the world step alone took 8. | Telling players 5 minutes was false. | The 5-minute target is still open; it is the parked generation-speed work. |
+| N22 | The admin reindex route has its own secret `ADMIN_TOKEN` (in the root `.env` as `SIYASA_ADMIN_TOKEN`); `IDENTITY_SECRET` signs cookies only. | A leaked admin token should not let anyone forge identities. | None. |
 
 ## Spend
 
@@ -33,8 +36,14 @@ The owner asked me to finish the game to v1.0 alone and log everything that need
 | 2026-10-15 | Mars skin and music (spike pipeline) and its oath (1 Opus call) | 0.47 dollars |
 | 2026-10-15 | Rome 44 BC: run 1 dropped (about 0.7, not metered), run 2 6.06, Egypt reach-repair proof 0.16 | 6.92 dollars |
 | 2026-10-15 | Rome too-easy repair | 0.06 dollars |
+| 2026-10-15 | First production build (Egypt duplicate, now hidden as `w-89843ffa`), plus Jev and embedding calls in tests | about 6.2 dollars |
+| | **Total tonight** | **about 13.7 dollars** |
 
 ## Done
+
+- **v1.0 is live.** https://siyasa.deadpackets.pw, and the old address redirects there. All 5 sub-projects shipped: core game, online play, world builds, front door, replay and launch.
+- First production build end to end: checkPack 0 errors, 6 Visions all reachable (45% to 97.5%), 50 cards, 14 minutes, about 6.2 dollars.
+- Launch review (fresh reviewer, 17 findings): fixed the XSS through skin colours, the checks that did not block, the gate refunds, stuck builds, hidden worlds still served, the open play counter, IPv6 rate keys, paid checks before the gate, the wrong refund day, a build page freeze, the shared admin secret, cross-site posts and a lost slot (bf9335b).
 
 - Board on the engine with saves, epilogue, tutorial and Jev; walkthrough B over it (d018cb6, 12646bc). E2E: `table/e2e/play.py` (full Egypt term), `walk.py` (13 of 13), `front.py` (24 of 24), `prod.py` (production smoke, 4 of 4).
 - Live at https://siyasa.deadpackets.pw with Egypt, Mars and Rome in the library. Similar-world check verified in production (Egypt cosine 0.742, Rome 0.551, both matched by Jev).
@@ -47,6 +56,12 @@ The owner asked me to finish the game to v1.0 alone and log everything that need
 - Core game part 1: engine, checker, bots, balance pass (commits 7309cbe..92a0851).
 
 ## Open problems
+
+- **Turnstile is not set up.** Create a widget in the Cloudflare dashboard, then `wrangler secret put TURNSTILE_SECRET` and set `TURNSTILE_SITE_KEY` as a var. Until then a script can spend the daily cap (25 builds, about 155 dollars a day at worst). Lower `DAILY_BUILD_CAP` in `table/wrangler.jsonc` if that worries you.
+- Not fixed from the review: a model call can pass its step budget through `pause_turn` continuations (budget check only before the first call); a BC rule for pack dates in the world prompt (-0044 is used as 44 BC); the landing does not say why a submit fails when the Turnstile script is blocked.
+- The v4 data (D1 `usoj`, Vectorize `usoj-scenarios`, old DOs and Workflows) still exists. The spec says delete it at launch; deletion is yours to approve.
+- Build time is 14 minutes against the 5-minute product target (parked generation-speed work).
+- "Most played" counts all presets together (spec: apart). Audio got no extra polish pass beyond the board port.
 
 - My first production prompt was a near-copy of Egypt. The similar-world index was still processing (about 2 minutes of lag after seeding), so it started a real build. I let it run as the Workflow's end-to-end test (about 6 dollars) and will hide the duplicate.
 - Python's default user agent gets a 403 from Cloudflare on the API (bot protection). Browsers are fine.
