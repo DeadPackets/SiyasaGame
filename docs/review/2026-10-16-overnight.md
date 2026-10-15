@@ -84,3 +84,10 @@ The owner asked me to finish the game to v1.0 alone and log everything that need
 | O7 | N7 changed: remove the Jev daily call limit. |
 | O8 | N8 changed: a build starts only on a Jev answer. If Jev is down, builds are disabled. |
 | O9 | Other rulings: the owner is still deciding. |
+| O10 | Finishes leave the game: every skin renders gold leaf; the skin prompt stops choosing a finish. |
+| O11 | Board fixes from Mars play: one continuous deck texture with one light; ideology reveal held 1 s longer; drawn cards never cover "Your record"; long ideology names fit the reveal; hand clearly disabled with no plays left; month-end sounds sequenced, not stacked; centre preview never crops text. |
+| O12 | Powers: the build still writes them, but every power card must contain a player choice (any holder, any resource, grip direction, or ideology). The engine asks the player at play time. |
+| O13 | Danger: no change yet. Production logs every game for later analysis. |
+| O14 | Wording: plain-language rule in the world and deck prompts, and the 3 library packs get a text rewrite (numbers unchanged). |
+| O15 | Library: "Browse all worlds" in the landing hero, an obvious scroll cue, and a dedicated library page with search and filters. |
+| O16 | Mars music sounded Arabic: its brief uses darbuka dum/tek, accordion and a hijaz-like scale. Fix the music prompt for invented and future worlds and rebuild the Mars brief. |
