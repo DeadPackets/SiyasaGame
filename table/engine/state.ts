@@ -58,6 +58,7 @@ export interface State {
   switched: boolean;
   banned: string[];
   log: { month: number; card: string; answer: number; ideology: string }[];
+  track?: { month: number; support: Record<string, number>; grip: number; res: Record<Role, number> }[]; // one per month end, for balance analysis; older saves lack it
   over: Outcome | null;
 }
 
@@ -96,6 +97,7 @@ export function newGame(p: Pack, o: { seed: number; rules?: Preset | Rules; visi
     switched: false,
     banned: o.banned ?? [],
     log: [],
+    track: [],
     over: null,
   };
 }

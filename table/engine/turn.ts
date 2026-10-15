@@ -244,6 +244,8 @@ const driftMult = (p: Pack, s: State, id: string) =>
 export function endMonth(p: Pack, s: State): Ev[] {
   if (s.phase !== "play") throw new Error(`endMonth in phase ${s.phase}`);
   const ev: Ev[] = [], w = p.world, R = s.rules, H = [...w.factions, ...w.patrons];
+  const r1 = (x: number) => Math.round(x * 10) / 10;
+  (s.track ??= []).push({ month: s.month, support: Object.fromEntries(H.map((h) => [h.id, r1(s.support[h.id])])), grip: r1(s.grip), res: Object.fromEntries(ROLES.map((k) => [k, r1(s.res[k])])) as Record<Role, number> });
   const under = H.filter((h) => s.support[h.id] < R.actUnder);
   const fall = under.find((h) => s.plotting.includes(h.id));
   for (const h of under) {
