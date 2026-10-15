@@ -17,6 +17,6 @@
   "durable_objects": { "bindings": [{ "name": "GATE", "class_name": "GateDO" }] },
   "migrations": [{ "tag": "v1", "new_sqlite_classes": ["GateDO"] }],
   "workflows": [{ "name": "siyasa-build", "binding": "BUILD", "class_name": "WorldBuild" }],
-  "vars": { "DAILY_BUILD_CAP": "10" },
+  "vars": { "DAILY_BUILD_CAP": "10", "TURNSTILE_SITE_KEY": "0x4AAAAAAFXfSZm70FDICyyI" },
   "ratelimits": [{ "name": "RL", "namespace_id": "2001", "simple": { "limit": 60, "period": 60 } }]
 }
