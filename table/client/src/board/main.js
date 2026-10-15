@@ -15,7 +15,7 @@ import { makeField, MOTION } from "./field.js";
 import { initSeat, compassSVG, gripSVG, sealSVG, moveMarker, moveGrip, refreshVision, restOf, inZone, nearest, needFor, band, monthsLeft, pillarsMet, standing, standBand, refreshStanding, coalitionHTML, vision } from "./seat.js";
 import * as jev from "./jev.js";
 import { startTutor, spotlight, dimBoard } from "./tutor.js";
-import { earn, presetOf } from "../shared/badges.js";
+import { earn, presetOf, markPlayed } from "../shared/badges.js";
 
 // leaving elements ease out, never just vanish
 const fadeOut = (el, d = 0.16) => { if (!el || el.classList.contains("out")) return; el.classList.add("out"); el.style.pointerEvents = "none"; gsap.to(el, { opacity: 0, duration: d, ease: "soft", overwrite: true, onComplete: () => el.remove() }); };
@@ -1479,7 +1479,7 @@ function newTerm(o = {}) {
 }
 
 // the library's "most played" counts terms started, not page loads
-const played = () => fetch(`/api/worlds/${encodeURIComponent(WID)}/play`, { method: "POST" }).catch(() => {});
+const played = () => { markPlayed(WID); fetch(`/api/worlds/${encodeURIComponent(WID)}/play`, { method: "POST" }).catch(() => {}); };
 async function boot() {
   try { const res = await fetch(`/api/worlds/${encodeURIComponent(WID)}`); if (!res.ok) throw new Error(res.status); PACK = await res.json(); }
   catch { $("#center").innerHTML = `<div class="plate"><p class="t2 disp">This world did not load.</p><p class="t1">Reload the page to try again, or go back to the world list.</p></div>`; return; }

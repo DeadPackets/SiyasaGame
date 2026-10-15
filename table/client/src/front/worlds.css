@@ -1,0 +1,42 @@
+/* the library page: the landing's cards and type, its own masthead, search and filters */
+/* one spine per world in its strongest colour, as the landing's sash */
+.spines { display: flex; height: 4px; }
+.spines i { flex: 1; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; max-width: 84rem; margin: 0 auto; padding: clamp(1.25rem, 3vh, 2rem) clamp(1rem, 4vw, 4.5rem) 0; }
+.shelf { max-width: 84rem; margin: 0 auto; padding: clamp(2.5rem, 9vh, 5.5rem) clamp(1rem, 4vw, 4.5rem) 5rem; }
+.shead h1 { font-size: clamp(2.6rem, 5.5vw, 4.75rem); line-height: 1.04; letter-spacing: -.01em; text-wrap: balance; }
+.shead p { margin-top: .7rem; max-width: 42ch; text-wrap: pretty; }
+
+.find { display: grid; gap: 1.1rem; margin-top: clamp(1.75rem, 5vh, 3rem); }
+.qbox { display: flex; align-items: center; gap: .8rem; padding: .95rem 1.25rem; border-radius: var(--r); background: var(--panel); border: 1px solid color-mix(in oklab, var(--ink) 16%, var(--line)); box-shadow: 0 3px 8px rgb(0 0 0 / .45); transition: box-shadow .26s var(--ease-swift), border-color .26s var(--ease-swift); }
+.qbox:focus-within { border-color: color-mix(in oklab, var(--accent) 70%, var(--line)); box-shadow: 0 3px 8px rgb(0 0 0 / .45), 0 0 0 3px color-mix(in oklab, var(--accent) 35%, transparent); }
+.qbox svg { width: 1.35rem; height: 1.35rem; flex: none; fill: none; stroke: var(--ink2); stroke-width: 1.7; stroke-linecap: round; }
+.qbox input { flex: 1; min-width: 0; border: 0; background: none; color: var(--ink); font: 500 var(--t2)/1.3 var(--fb), system-ui, sans-serif; caret-color: var(--accent); }
+.qbox input:focus-visible { outline: none; } /* the box carries the ring */
+.qbox input::placeholder { color: var(--ink2); opacity: 1; }
+
+.rows { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.75rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+.chips button { display: inline-flex; align-items: baseline; gap: .4rem; padding: .45rem .95rem; border-radius: 999px; border: 1px solid var(--line); background: color-mix(in oklab, var(--panel) 60%, transparent); color: var(--ink2); transition: color .18s var(--ease-swift), border-color .18s var(--ease-swift), background-color .18s var(--ease-swift); }
+.chips button:hover { color: var(--ink); border-color: color-mix(in oklab, var(--ink) 40%, var(--line)); }
+.chips button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--ground); font-weight: 600; }
+.chips .n { font-size: .85em; font-variant-numeric: tabular-nums; opacity: .7; }
+
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: 2rem 0 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+#count { color: var(--ink2); font-variant-numeric: tabular-nums; }
+#count b { color: var(--ink); font-weight: 600; }
+.sort { display: inline-flex; align-items: center; gap: .5rem; }
+.sort select { padding: .5rem .8rem; border-radius: 10px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); font-family: var(--fb); cursor: pointer; }
+
+.empty { display: grid; justify-items: start; gap: .6rem; padding: 2.5rem 0 1rem; max-width: 46rem; }
+.empty .t2 { font-weight: 600; text-wrap: balance; overflow-wrap: anywhere; }
+.empty .acts { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: .6rem; }
+.empty .go { display: inline-flex; align-items: center; gap: .5rem; }
+.empty .go svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.empty .clear { color: var(--ink2); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.empty .clear:hover { color: var(--ink); }
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .top .browse { padding: .5rem .9rem; }
+}

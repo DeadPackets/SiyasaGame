@@ -12,3 +12,9 @@ export function earn(world, vision, rules) {
   try { localStorage.setItem(KEY, JSON.stringify(b)); } catch {}
   return true;
 }
+// Played: a term started on this world in this browser (or one still saved from before this list existed)
+const PLAYED = "siyasa-played";
+export const playedOn = (world) => { try { return (JSON.parse(localStorage.getItem(PLAYED)) ?? []).includes(world) || localStorage.getItem(`siyasa-save:${world}`) != null; } catch { return false; } };
+export function markPlayed(world) {
+  try { const p = JSON.parse(localStorage.getItem(PLAYED)) ?? []; if (!p.includes(world)) localStorage.setItem(PLAYED, JSON.stringify([...p, world])); } catch {}
+}

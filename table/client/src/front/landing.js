@@ -4,8 +4,7 @@ import { makeField } from "./bg.js";
 import { render, renderMedallion, colorize, dataURL } from "../patterns/engine.js";
 import emblem from "../patterns/emblem.js";
 import { TUNE } from "../../../engine/tune.ts";
-import { badges } from "../shared/badges.js";
-import { $, $$, esc, ARROW, MONTH, playURL, buildURL, pal, medal, medData, tileVars, face, json } from "./common.js";
+import { $, $$, esc, ARROW, MONTH, playURL, buildURL, pal, medData, tileVars, face, json, worldCard } from "./common.js";
 
 const SHOWN = 8;
 const MIN = 4;
@@ -332,26 +331,6 @@ function term(pack, ideo) {
   for (const [el, tl] of loops) { el._tl = tl; io.observe(el); }
 }
 
-// ---------- world cards: each in its own skin ----------
-const FIN = import("../patterns/finish.js").then((m) => (m.start() ? m : null), () => null);
-function worldCard(w) {
-  const two = (w.card?.ideologies || []).slice(0, 2), li = document.createElement("li"), ideas = two.map((x) => x.name).join(" and "), won = Object.keys(badges(w.id)).length;
-  li.innerHTML = `<a class="wcard" href="${playURL(w.id)}" aria-label="Play ${esc(w.title)}. ${esc(MONTH(w.date))}. ${esc(ideas)}">
-    <span class="band" aria-hidden="true"></span>
-    <span class="meds" aria-hidden="true">${two.map((x) => `<span class="med" style='background-image:url("${medData(x)}")'></span>`).join("")}</span>
-    <span class="wt t2 disp" title="${esc(w.title)}">${esc(w.title)}</span>
-    <span class="wd t1">${esc(MONTH(w.date))}</span>
-    <span class="wi t1">${esc(ideas)}</span>
-    ${won ? `<span class="wb t1">${won} ${won === 1 ? "Vision" : "Visions"} fulfilled</span>` : ""}
-    <span class="play t1">Play${ARROW}</span>
-  </a>`;
-  const a = li.firstElementChild;
-  if (two[0]) tileVars(a, two[0], 0.62);
-  if (w.card?.palette) applySkin(w.card, a).catch(() => {});
-  li._w = w;
-  FIN.then((fin) => { const f = w.card?.finish; if (fin && f) $$(".med", li).forEach((el, j) => fin.assign(fin.surface(el), medal(two[j]), pal(two[j]), f.type, f.foilSlot)); });
-  return li;
-}
 // a small library keeps one place open for the next world: it points back to the prompt
 function nextCard() {
   const li = document.createElement("li");
@@ -370,16 +349,14 @@ function library() {
   if (small) $("#lib-sub").textContent = LIST.length === 1 ? "One world is built so far. Play it, or build the next one." : `${LIST.length} worlds are built so far. Play one, or build the next one.`;
   const cards = LIST.map((w, i) => { const li = worldCard(w); li._played = i; li._hay = [w.title, w.polity, w.date, MONTH(w.date)].join(" ").toLowerCase(); return li; });
   const tail = small ? [nextCard()] : [];
-  let sort = "new", all = false;
+  let sort = "new";
   const show = () => {
     const q = filter.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
     const list = [...cards].sort(sort === "new" ? (a, b) => b._w.created - a._w.created : (a, b) => a._played - b._played);
     const hits = list.filter((li) => q.every((t) => li._hay.includes(t)));
     grid.replaceChildren(...list, ...tail);
     let n = 0;
-    for (const li of list) li.hidden = !hits.includes(li) || (!q.length && !all && n++ >= SHOWN);
-    more.hidden = q.length > 0 || cards.length <= SHOWN;
-    more.textContent = all ? "Show fewer worlds" : `Show all ${cards.length} worlds`;
+    for (const li of list) li.hidden = !hits.includes(li) || (!q.length && n++ >= SHOWN);
     none.hidden = hits.length > 0;
     if (!hits.length) { none.innerHTML = `No world in the library matches “${esc(filter.value.trim())}”. <button type="button">Build it instead</button>`; $("button", none).onclick = () => { const ta = $("#prompt"); if (!ta.disabled) ta.value = filter.value.trim(); scrollTo({ top: 0, behavior: RM ? "auto" : "smooth" }); ta.focus({ preventScroll: true }); }; }
     return [...list.filter((li) => !li.hidden), ...tail];
@@ -387,7 +364,8 @@ function library() {
   const fadeIn = (els) => gsap.fromTo(els, { opacity: 0, y: RM ? 0 : 10 }, { opacity: 1, y: 0, duration: RM ? 0.25 : 0.45, stagger: RM ? 0 : 0.03, ease: "settle" });
   fadeIn(show());
   filter.addEventListener("input", () => show());
-  more.addEventListener("click", () => { all = !all; const before = new Set(cards.filter((li) => !li.hidden)); fadeIn(show().filter((li) => !before.has(li))); });
+  more.hidden = small;
+  more.innerHTML = `Browse all ${cards.length} worlds${ARROW}`;
   for (const b of $$(".seg button")) b.addEventListener("click", () => {
     if (b.dataset.sort === sort) return;
     sort = b.dataset.sort;

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The library · Siyasa</title>
+<meta name="description" content="Every world built in Siyasa so far. Search them, pick one, and rule it for one term.">
+<meta property="og:title" content="The library · Siyasa">
+<meta property="og:description" content="Every world built in Siyasa so far. Search them, pick one, and rule it for one term.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://siyasa.deadpackets.pw/worlds">
+<link rel="icon" href="/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&display=swap">
+<link rel="stylesheet" href="./src/shared/tokens.css">
+<link rel="stylesheet" href="./src/front/landing.css">
+<link rel="stylesheet" href="./src/front/worlds.css">
+</head>
+<body>
+<div class="spines" aria-hidden="true"></div>
+<header class="top">
+  <a class="mark" href="/"><span class="mk" aria-hidden="true"></span><span class="t2 wm">Siyasa</span></a>
+  <a class="browse t1" href="/">Build a world<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+</header>
+<main class="shelf">
+  <div class="shead">
+    <h1 class="disp">The library</h1>
+    <p class="t2 soft" id="sub">Every world built so far. Pick one and rule it.</p>
+  </div>
+  <div class="find" role="search">
+    <label class="sr" for="q">Search the library</label>
+    <div class="qbox"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4.5 4.5"/></svg><input id="q" class="t2" type="search" placeholder="Search a title, place, year or month" autocomplete="off" spellcheck="false"></div>
+    <div class="rows">
+      <div class="chips" id="eras" role="group" aria-label="Era"></div>
+      <div class="chips" id="states" role="group" aria-label="Your record"></div>
+    </div>
+  </div>
+  <div class="bar">
+    <p class="t1" id="count" role="status"></p>
+    <label class="sort t1 soft">Sort <select id="sort" class="t1">
+      <option value="played">Most played</option>
+      <option value="new">Newest</option>
+      <option value="old">Oldest date</option>
+      <option value="late">Newest date</option>
+    </select></label>
+  </div>
+  <ul class="grid" id="grid"></ul>
+  <div class="empty" id="none" hidden></div>
+</main>
+<footer class="end t1 soft"><span class="wm">Siyasa</span> Name a world. Rule it.</footer>
+<script type="module" src="./src/front/worlds.js"></script>
+</body>
+</html>
